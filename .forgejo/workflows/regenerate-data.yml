@@ -19,9 +19,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            build-essential \
-            cmake \
-            ninja-build \
             libx11-dev \
             libxcursor-dev \
             libxi-dev \
@@ -35,41 +32,30 @@ jobs:
             libgif-dev \
             libwebp-dev \
             inkscape \
-            webp
+            webp \
+            curl \
+            sudo
+
           python3 -m pip install --upgrade pip
           python3 -m pip install --user pyyaml
+
           mkdir -p "$HOME/.cargo/bin"
           curl -L -o "$HOME/.cargo/bin/whiskers" "https://github.com/catppuccin/whiskers/releases/latest/download/whiskers-x86_64-unknown-linux-gnu"
           chmod +x "$HOME/.cargo/bin/whiskers"
-          export PATH="$HOME/.cargo/bin:$PATH"
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
-      - name: Build Aseprite
+      - name: Install Aseprite AppImage
         run: |
-          git clone https://github.com/aseprite/aseprite.git
-          cd aseprite
-          git submodule update --init --recursive
+          curl -L -o aseprite.AppImage "https://www.aseprite.org/downloads/aseprite-linux.AppImage"
+          chmod +x aseprite.AppImage
+          mkdir -p "$HOME/.local/bin"
+          ln -s "$PWD/aseprite.AppImage" "$HOME/.local/bin/aseprite"
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-          mkdir build
-          cd build
-
-          cmake \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DLAF_BACKEND=skia \
-            -DSKIA_USE_SYSTEM_LIBRARIES=ON \
-            -G Ninja \
-            ..
-
-          ninja -j1 aseprite
-
-      - name: Add Aseprite to PATH
+      - name: Ensure tools are on PATH
         run: |
-          echo "$PWD/aseprite/build/bin" >> $GITHUB_PATH
-          aseprite --version
-
-      - name: Ensure whiskers is on PATH
-        run: |
-          export PATH="$HOME/.cargo/bin:$PATH"
           which whiskers
+          ./aseprite.AppImage --version
 
       - name: Run whiskers
         run: |
