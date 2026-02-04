@@ -40,7 +40,7 @@ for cat in categories_data:
             flag_name = flag_info["name"]
             lines.append(
                 f"- {flag_name} ([Mocha](themes/mocha/{flag_key}/), [Macchiato](themes/macchiato/{flag_key}/), [Frappé](themes/frappe/{flag_key}/), [Latte](themes/latte/{flag_key}/))"
-                f"  - [Composite](assets/composite/{flag_key}.webp), [Grid](assets/grid/{flag_key}.webp), [Row](assets/row/{flag_key}.webp)"
+                f"  - ![Composite](assets/composite/{flag_key}.webp), ![Grid](assets/grid/{flag_key}.webp), ![Row](assets/row/{flag_key}.webp)"
             )
 
     lines.append("\n</details>\n")
