@@ -35,7 +35,7 @@ lines.append("<!-- the following section is auto-generated, do not edit -->\n")
 for cat in categories_data:
     key = cat["key"]
     name = cat["name"]
-    lines.append(f"<details open>")
+    lines.append(f"<details closed>")
     lines.append(f"<summary>{name}</summary>\n")
     for flag_name in category_flags[key]:
         lines.append(f"- {flag_name}")
