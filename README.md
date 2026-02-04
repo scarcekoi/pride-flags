@@ -92,15 +92,6 @@
 </details>
 
 <details closed>
-<summary>Gay</summary>
-
-<img src="assets/composite/gay.webp" alt="Gay composite" style="width:50%;"/>
-<img src="assets/grid/gay.webp" alt="Gay grid" style="width:50%;"/>
-<img src="assets/row/gay.webp" alt="Gay row" style="width:50%;"/>
-
-</details>
-
-<details closed>
 <summary>Genderfluid</summary>
 
 <img src="assets/composite/genderfluid.webp" alt="Genderfluid composite" style="width:50%;"/>
@@ -151,6 +142,15 @@
 <img src="assets/composite/lesbian.webp" alt="Lesbian composite" style="width:50%;"/>
 <img src="assets/grid/lesbian.webp" alt="Lesbian grid" style="width:50%;"/>
 <img src="assets/row/lesbian.webp" alt="Lesbian row" style="width:50%;"/>
+
+</details>
+
+<details closed>
+<summary>LGBT</summary>
+
+<img src="assets/composite/lgbt.webp" alt="LGBT composite" style="width:50%;"/>
+<img src="assets/grid/lgbt.webp" alt="LGBT grid" style="width:50%;"/>
+<img src="assets/row/lgbt.webp" alt="LGBT row" style="width:50%;"/>
 
 </details>
 
@@ -212,7 +212,6 @@
 - Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappe/aroace/), [Latte](themes/latte/aroace/))
 - Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappe/asexual/), [Latte](themes/latte/asexual/))
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/), [Latte](themes/latte/bisexual/))
-- Gay ([Mocha](themes/mocha/gay/), [Macchiato](themes/macchiato/gay/), [Frappé](themes/frappe/gay/), [Latte](themes/latte/gay/))
 - Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/), [Latte](themes/latte/greysexual/))
 - Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/), [Latte](themes/latte/gynesexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/), [Latte](themes/latte/lesbian/))
@@ -261,7 +260,6 @@
 <summary>Orientation</summary>
 
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/), [Latte](themes/latte/bisexual/))
-- Gay ([Mocha](themes/mocha/gay/), [Macchiato](themes/macchiato/gay/), [Frappé](themes/frappe/gay/), [Latte](themes/latte/gay/))
 - Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/), [Latte](themes/latte/greysexual/))
 - Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/), [Latte](themes/latte/gynesexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/), [Latte](themes/latte/lesbian/))
@@ -274,6 +272,7 @@
 <summary>Other</summary>
 
 - Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/), [Latte](themes/latte/greysexual/))
+- LGBT ([Mocha](themes/mocha/lgbt/), [Macchiato](themes/macchiato/lgbt/), [Frappé](themes/frappe/lgbt/), [Latte](themes/latte/lgbt/))
 
 </details>
 

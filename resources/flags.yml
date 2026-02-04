@@ -26,9 +26,6 @@ flags:
   femboy:
     name: Femboy
     categories: [gender, expression]
-  gay:
-    name: Gay
-    categories: [attraction, orientation]
   genderfluid:
     name: Genderfluid
     categories: [gender, fluidity]
@@ -47,6 +44,9 @@ flags:
   lesbian:
     name: Lesbian
     categories: [attraction, orientation]
+  lgbt:
+    name: LGBT
+    categories: [other]
   nonbinary:
     name: Nonbinary
     categories: [gender]
