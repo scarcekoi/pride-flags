@@ -155,6 +155,15 @@
 </details>
 
 <details closed>
+<summary>Neutrois</summary>
+
+<img src="assets/composite/neutrois.webp" alt="Neutrois composite" style="width:50%;"/>
+<img src="assets/grid/neutrois.webp" alt="Neutrois grid" style="width:50%;"/>
+<img src="assets/row/neutrois.webp" alt="Neutrois row" style="width:50%;"/>
+
+</details>
+
+<details closed>
 <summary>Nonbinary</summary>
 
 <img src="assets/composite/nonbinary.webp" alt="Nonbinary composite" style="width:50%;"/>
@@ -250,6 +259,7 @@
 - Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frappe/genderfluid/), [Latte](themes/latte/genderfluid/))
 - Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappe/genderqueer/), [Latte](themes/latte/genderqueer/))
 - Intersex ([Mocha](themes/mocha/intersex/), [Macchiato](themes/macchiato/intersex/), [Frappé](themes/frappe/intersex/), [Latte](themes/latte/intersex/))
+- Neutrois ([Mocha](themes/mocha/neutrois/), [Macchiato](themes/macchiato/neutrois/), [Frappé](themes/frappe/neutrois/), [Latte](themes/latte/neutrois/))
 - Nonbinary ([Mocha](themes/mocha/nonbinary/), [Macchiato](themes/macchiato/nonbinary/), [Frappé](themes/frappe/nonbinary/), [Latte](themes/latte/nonbinary/))
 - Transgender ([Mocha](themes/mocha/transgender/), [Macchiato](themes/macchiato/transgender/), [Frappé](themes/frappe/transgender/), [Latte](themes/latte/transgender/))
 - Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frappe/trigender/), [Latte](themes/latte/trigender/))
