@@ -35,6 +35,9 @@ flags:
   genderqueer:
     name: Genderqueer
     categories: [gender]
+  greysexual:
+    name: Greysexual
+    categories: [attraction, orientation, other]
   gynesexual:
     name: Gynesexual
     categories: [attraction, orientation]
