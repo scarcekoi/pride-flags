@@ -2,7 +2,7 @@
 name: New Flag
 about: Request a new flag
 title: "[New Flag] "
-labels: enhancement
+labels: [new flag]
 assignees: ""
 ---
 

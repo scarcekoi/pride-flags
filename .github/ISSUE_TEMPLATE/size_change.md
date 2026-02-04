@@ -2,7 +2,7 @@
 name: Size Change
 about: Request a size change for an existing flag
 title: "[Size Change] "
-labels: enhancement
+labels: [size change]
 assignees: ""
 ---
 
