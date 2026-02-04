@@ -6,7 +6,7 @@ on:
 jobs:
   regenerate:
     if: github.actor != 'forgejo-actions'
-    runs-on: codeberg-small
+    runs-on: codeberg-tiny
 
     steps:
       - uses: actions/checkout@v4
@@ -19,9 +19,12 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install --user pyyaml
-          curl -s https://sh.rustup.rs -sSf | sh -s -- -y
+          mkdir -p "$HOME/.cargo/bin"
+          curl -L -o /tmp/whiskers.tar.gz "https://github.com/catppuccin/whiskers/releases/latest/download/whiskers-x86_64-unknown-linux-gnu"
+          tar -xzf /tmp/whiskers.tar.gz -C /tmp
+          mv /tmp/whiskers "$HOME/.cargo/bin/whiskers"
+          chmod +x "$HOME/.cargo/bin/whiskers"
           export PATH="$HOME/.cargo/bin:$PATH"
-          cargo install catppuccin-whiskers
 
       - name: Ensure whiskers is on PATH
         run: |
