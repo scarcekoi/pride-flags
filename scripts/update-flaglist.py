@@ -39,7 +39,7 @@ for cat in categories_data:
         if key in flag_info.get("categories", []):
             flag_name = flag_info["name"]
             lines.append(
-                f"- {flag_name} ([Mocha](themes/mocha/{flag_key}/), [Macchiato](themes/macchiato/{flag_key}/), [Frappé](themes/frappe/{flag_key}/))"
+                f"- {flag_name} ([Mocha](themes/mocha/{flag_key}/), [Macchiato](themes/macchiato/{flag_key}/), [Frappé](themes/frappe/{flag_key}/), [Latte](themes/latte/{flag_key}/))"
             )
 
     lines.append("\n</details>\n")
