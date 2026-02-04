@@ -20,7 +20,7 @@
 <!-- AUTOGEN:FLAGLIST START -->
 <!-- the following section is auto-generated, do not edit -->
 
-<details open>
+<details closed>
 <summary>Attraction</summary>
 
 - Aromantic Asexual
@@ -34,7 +34,7 @@
 
 </details>
 
-<details open>
+<details closed>
 <summary>Expression</summary>
 
 - Demiboy
@@ -43,7 +43,7 @@
 
 </details>
 
-<details open>
+<details closed>
 <summary>Fluidity</summary>
 
 - Genderfluid
@@ -53,7 +53,7 @@
 
 </details>
 
-<details open>
+<details closed>
 <summary>Gender</summary>
 
 - Agender
@@ -69,7 +69,7 @@
 
 </details>
 
-<details open>
+<details closed>
 <summary>Orientation</summary>
 
 - Bisexual
@@ -81,13 +81,13 @@
 
 </details>
 
-<details open>
+<details closed>
 <summary>Other</summary>
 
 
 </details>
 
-<details open>
+<details closed>
 <summary>Romantic</summary>
 
 - Aromantic
