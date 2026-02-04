@@ -7,7 +7,7 @@ assignees: ""
 ---
 
 ## Name of Flag
-A clear and concise description of what the bug is.
+The name of the flag you want to request.
 
 ## Link to Flag
-A link to either an image, a Wikipedia page, etc.
+A link to an image, a Wikipedia page, etc.
