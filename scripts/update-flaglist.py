@@ -38,7 +38,9 @@ for cat in categories_data:
     lines.append(f"<details closed>")
     lines.append(f"<summary>{name}</summary>\n")
     for flag_name in category_flags[key]:
-        lines.append(f"- {flag_name}")
+        lines.append(
+            f"- {flag_name} ([Mocha](themes/mocha/{flag_name}/), [macchiato](themes/macchiato/{flag_name}/), [Frappé](themes/frappe/{flag_name}/))"
+        )
     lines.append("\n</details>\n")
 
 lines.append("<!-- AUTOGEN:FLAGLIST END -->")
