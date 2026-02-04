@@ -44,13 +44,14 @@ jobs:
           chmod +x "$HOME/.cargo/bin/whiskers"
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
-      - name: Extract Aseprite AppImage
+      - name: Make Aseprite AppImage executable and add to PATH
         run: |
-          mkdir -p ./resources/aseprite
-          ./resources/Aseprite.AppImage --appimage-extract
-          mv squashfs-root/* ./resources/aseprite/
-          rm ./resources/Aseprite.AppImage
-          sudo ln -sf $PWD/resources/aseprite/AppRun /usr/local/bin/aseprite
+          chmod +x ./resources/Aseprite.AppImage
+          # Create a local symlink for easier access
+          ln -sf $(pwd)/resources/Aseprite.AppImage $(pwd)/aseprite
+          chmod +x aseprite
+          # Add repository root to PATH so scripts can find "aseprite"
+          echo "$(pwd)" >> $GITHUB_PATH
           aseprite --version
 
       - name: Ensure tools are on PATH
