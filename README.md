@@ -15,6 +15,88 @@
 1. Download the flags in your flavor of your choice.
 2. Enjoy!
 
+## Flags
+
+<!-- AUTOGEN:FLAGLIST START -->
+<!-- the following section is auto-generated, do not edit -->
+
+<details open>
+<summary>Attraction</summary>
+
+- Aromantic Asexual
+- Asexual
+- Bisexual
+- Gay
+- Gynesexual
+- Lesbian
+- Pansexual
+- Polysexual
+
+</details>
+
+<details open>
+<summary>Expression</summary>
+
+- Demiboy
+- Demigirl
+- Femboy
+
+</details>
+
+<details open>
+<summary>Fluidity</summary>
+
+- Genderfluid
+- Pansexual
+- Polysexual
+- Trigender
+
+</details>
+
+<details open>
+<summary>Gender</summary>
+
+- Agender
+- Cisgender
+- Demiboy
+- Demigirl
+- Femboy
+- Genderfluid
+- Genderqueer
+- Nonbinary
+- Transgender
+- Trigender
+
+</details>
+
+<details open>
+<summary>Orientation</summary>
+
+- Bisexual
+- Gay
+- Gynesexual
+- Lesbian
+- Pansexual
+- Polysexual
+
+</details>
+
+<details open>
+<summary>Other</summary>
+
+
+</details>
+
+<details open>
+<summary>Romantic</summary>
+
+- Aromantic
+- Aromantic Asexual
+
+</details>
+
+<!-- AUTOGEN:FLAGLIST END -->
+
 ## 💝 Thanks to
 
 - [Scarce Koi](https://github.com/scarcekoi)
