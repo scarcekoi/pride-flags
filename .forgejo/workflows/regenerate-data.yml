@@ -1,0 +1,29 @@
+name: Regenerate data
+
+on:
+  push:
+
+jobs:
+  regenerate:
+    if: github.actor != 'forgejo-actions'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run regeneration scripts
+        run: ./scripts/run-scripts.sh
+
+      - name: Commit regenerated files
+        run: |
+          if ! git diff --quiet; then
+            git config user.name "forgejo-actions"
+            git config user.email "forgejo-actions@users.noreply.local"
+            git add .
+            git commit -m "chore: regenerate data"
+            git push
+          fi
