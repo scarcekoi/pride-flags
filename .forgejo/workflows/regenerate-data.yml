@@ -19,6 +19,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y inkscape
+          sudo apt-get install -y cwebp
           python3 -m pip install --upgrade pip
           python3 -m pip install --user pyyaml
           mkdir -p "$HOME/.cargo/bin"
