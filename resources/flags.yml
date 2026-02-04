@@ -41,6 +41,9 @@ flags:
   gynesexual:
     name: Gynesexual
     categories: [attraction, orientation]
+  intersex:
+    name: Intersex
+    categories: [gender]
   lesbian:
     name: Lesbian
     categories: [attraction, orientation]
