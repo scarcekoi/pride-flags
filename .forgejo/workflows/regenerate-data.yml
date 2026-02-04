@@ -55,11 +55,11 @@ jobs:
           cmake \
             -DCMAKE_BUILD_TYPE=Release \
             -DLAF_BACKEND=skia \
-            -DSKIA_DIR=../skia \
+            -DSKIA_USE_SYSTEM_LIBRARIES=ON \
             -G Ninja \
             ..
 
-          ninja aseprite
+          ninja -j1 aseprite
 
       - name: Add Aseprite to PATH
         run: |
