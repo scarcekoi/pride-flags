@@ -41,7 +41,7 @@ jobs:
 
       - name: Create files
         run: |
-          ./scripts/create-files.py
+          ./scripts/create-files.py all
           if ! git diff --quiet; then
             git add .
             git commit -m "chore: create files" --allow-empty
