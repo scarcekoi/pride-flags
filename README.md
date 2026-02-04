@@ -5,7 +5,6 @@
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
-<!-- The FAQ section is optional. Remove if needed.-->
 ## 🙋 FAQ
 
 - Q: **_"What file formats are available?"_**\
@@ -24,10 +23,6 @@
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
-</p>
-
-<p align="center">
-	Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
 </p>
 
 <p align="center">
