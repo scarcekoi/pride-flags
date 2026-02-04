@@ -1,0 +1,14 @@
+- key: attraction
+  name: Attraction
+- key: expression
+  name: Expression
+- key: fluidity
+  name: Fluidity
+- key: gender
+  name: Gender
+- key: orientation
+  name: Orientation
+- key: other
+  name: Other
+- key: romantic
+  name: Romantic

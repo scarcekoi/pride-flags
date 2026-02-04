@@ -1,0 +1,58 @@
+flags:
+  agender:
+    name: Agender
+    categories: [gender]
+  aroace:
+    name: Aromantic Asexual
+    categories: [attraction, romantic]
+  aromantic:
+    name: Aromantic
+    categories: [romantic]
+  asexual:
+    name: Asexual
+    categories: [attraction]
+  bisexual:
+    name: Bisexual
+    categories: [attraction, orientation]
+  cisgender:
+    name: Cisgender
+    categories: [gender]
+  demiboy:
+    name: Demiboy
+    categories: [gender, expression]
+  demigirl:
+    name: Demigirl
+    categories: [gender, expression]
+  femboy:
+    name: Femboy
+    categories: [gender, expression]
+  gay:
+    name: Gay
+    categories: [attraction, orientation]
+  genderfluid:
+    name: Genderfluid
+    categories: [gender, fluidity]
+  genderqueer:
+    name: Genderqueer
+    categories: [gender]
+  gynesexual:
+    name: Gynesexual
+    categories: [attraction, orientation]
+  lesbian:
+    name: Lesbian
+    categories: [attraction, orientation]
+  nonbinary:
+    name: Nonbinary
+    categories: [gender]
+  pansexual:
+    name: Pansexual
+    categories: [attraction, orientation, fluidity]
+  polysexual:
+    name: Polysexual
+    categories: [attraction, orientation, fluidity]
+  transgender:
+    name: Transgender
+    categories: [gender]
+  trigender:
+    name: Trigender
+    categories: [gender, fluidity]
