@@ -5,11 +5,6 @@
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
-## 🙋 FAQ
-
-- Q: **_"What file formats are available?"_**\
-  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `PNG`, and `SVG`.
-
 ## Flags
 
 <!-- AUTOGEN:FLAGLIST START -->
@@ -91,6 +86,11 @@
 </details>
 
 <!-- AUTOGEN:FLAGLIST END -->
+
+## 🙋 FAQ
+
+- Q: **_"What file formats are available?"_**\
+  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `PNG`, and `SVG`.
 
 ## Usage
 
