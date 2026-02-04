@@ -2,7 +2,7 @@
 name: Colour Change
 about: Request a colour change for an existing flag
 title: "[Colour Change] "
-labels: enhancement
+labels: [colour change]
 assignees: ""
 ---
 
