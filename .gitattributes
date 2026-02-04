@@ -10,4 +10,5 @@
 *.yml filter=lfs diff=lfs merge=lfs -text
 *.py filter=lfs diff=lfs merge=lfs -text
 *.webp filter=lfs diff=lfs merge=lfs -text
+*.editorconfig filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
