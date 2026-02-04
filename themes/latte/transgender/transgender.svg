@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="1000" height="100" fill="#209fb5" />
-<rect x="0" y="100" width="1000" height="100" fill="#e64553" />
-<rect x="0" y="200" width="1000" height="100" fill="#dc8a78" />
-<rect x="0" y="300" width="1000" height="100" fill="#e64553" />
-<rect x="0" y="400" width="1000" height="100" fill="#209fb5" />
-</svg>
