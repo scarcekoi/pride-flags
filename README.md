@@ -13,180 +13,180 @@
 <details closed>
 <summary>Agender</summary>
 
-<img src="assets/composite/agender.webp" alt="Agender composite"/>
-<img src="assets/grid/agender.webp" alt="Agender grid"/>
-<img src="assets/row/agender.webp" alt="Agender row"/>
+<img src="assets/composite/agender.webp" alt="Agender composite" style="width:50%;"/>
+<img src="assets/grid/agender.webp" alt="Agender grid" style="width:50%;"/>
+<img src="assets/row/agender.webp" alt="Agender row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Aromantic</summary>
 
-<img src="assets/composite/aromantic.webp" alt="Aromantic composite"/>
-<img src="assets/grid/aromantic.webp" alt="Aromantic grid"/>
-<img src="assets/row/aromantic.webp" alt="Aromantic row"/>
+<img src="assets/composite/aromantic.webp" alt="Aromantic composite" style="width:50%;"/>
+<img src="assets/grid/aromantic.webp" alt="Aromantic grid" style="width:50%;"/>
+<img src="assets/row/aromantic.webp" alt="Aromantic row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Aromantic Asexual</summary>
 
-<img src="assets/composite/aroace.webp" alt="Aromantic Asexual composite"/>
-<img src="assets/grid/aroace.webp" alt="Aromantic Asexual grid"/>
-<img src="assets/row/aroace.webp" alt="Aromantic Asexual row"/>
+<img src="assets/composite/aroace.webp" alt="Aromantic Asexual composite" style="width:50%;"/>
+<img src="assets/grid/aroace.webp" alt="Aromantic Asexual grid" style="width:50%;"/>
+<img src="assets/row/aroace.webp" alt="Aromantic Asexual row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Asexual</summary>
 
-<img src="assets/composite/asexual.webp" alt="Asexual composite"/>
-<img src="assets/grid/asexual.webp" alt="Asexual grid"/>
-<img src="assets/row/asexual.webp" alt="Asexual row"/>
+<img src="assets/composite/asexual.webp" alt="Asexual composite" style="width:50%;"/>
+<img src="assets/grid/asexual.webp" alt="Asexual grid" style="width:50%;"/>
+<img src="assets/row/asexual.webp" alt="Asexual row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Bisexual</summary>
 
-<img src="assets/composite/bisexual.webp" alt="Bisexual composite"/>
-<img src="assets/grid/bisexual.webp" alt="Bisexual grid"/>
-<img src="assets/row/bisexual.webp" alt="Bisexual row"/>
+<img src="assets/composite/bisexual.webp" alt="Bisexual composite" style="width:50%;"/>
+<img src="assets/grid/bisexual.webp" alt="Bisexual grid" style="width:50%;"/>
+<img src="assets/row/bisexual.webp" alt="Bisexual row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Cisgender</summary>
 
-<img src="assets/composite/cisgender.webp" alt="Cisgender composite"/>
-<img src="assets/grid/cisgender.webp" alt="Cisgender grid"/>
-<img src="assets/row/cisgender.webp" alt="Cisgender row"/>
+<img src="assets/composite/cisgender.webp" alt="Cisgender composite" style="width:50%;"/>
+<img src="assets/grid/cisgender.webp" alt="Cisgender grid" style="width:50%;"/>
+<img src="assets/row/cisgender.webp" alt="Cisgender row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Demiboy</summary>
 
-<img src="assets/composite/demiboy.webp" alt="Demiboy composite"/>
-<img src="assets/grid/demiboy.webp" alt="Demiboy grid"/>
-<img src="assets/row/demiboy.webp" alt="Demiboy row"/>
+<img src="assets/composite/demiboy.webp" alt="Demiboy composite" style="width:50%;"/>
+<img src="assets/grid/demiboy.webp" alt="Demiboy grid" style="width:50%;"/>
+<img src="assets/row/demiboy.webp" alt="Demiboy row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Demigirl</summary>
 
-<img src="assets/composite/demigirl.webp" alt="Demigirl composite"/>
-<img src="assets/grid/demigirl.webp" alt="Demigirl grid"/>
-<img src="assets/row/demigirl.webp" alt="Demigirl row"/>
+<img src="assets/composite/demigirl.webp" alt="Demigirl composite" style="width:50%;"/>
+<img src="assets/grid/demigirl.webp" alt="Demigirl grid" style="width:50%;"/>
+<img src="assets/row/demigirl.webp" alt="Demigirl row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Femboy</summary>
 
-<img src="assets/composite/femboy.webp" alt="Femboy composite"/>
-<img src="assets/grid/femboy.webp" alt="Femboy grid"/>
-<img src="assets/row/femboy.webp" alt="Femboy row"/>
+<img src="assets/composite/femboy.webp" alt="Femboy composite" style="width:50%;"/>
+<img src="assets/grid/femboy.webp" alt="Femboy grid" style="width:50%;"/>
+<img src="assets/row/femboy.webp" alt="Femboy row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Gay</summary>
 
-<img src="assets/composite/gay.webp" alt="Gay composite"/>
-<img src="assets/grid/gay.webp" alt="Gay grid"/>
-<img src="assets/row/gay.webp" alt="Gay row"/>
+<img src="assets/composite/gay.webp" alt="Gay composite" style="width:50%;"/>
+<img src="assets/grid/gay.webp" alt="Gay grid" style="width:50%;"/>
+<img src="assets/row/gay.webp" alt="Gay row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Genderfluid</summary>
 
-<img src="assets/composite/genderfluid.webp" alt="Genderfluid composite"/>
-<img src="assets/grid/genderfluid.webp" alt="Genderfluid grid"/>
-<img src="assets/row/genderfluid.webp" alt="Genderfluid row"/>
+<img src="assets/composite/genderfluid.webp" alt="Genderfluid composite" style="width:50%;"/>
+<img src="assets/grid/genderfluid.webp" alt="Genderfluid grid" style="width:50%;"/>
+<img src="assets/row/genderfluid.webp" alt="Genderfluid row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Genderqueer</summary>
 
-<img src="assets/composite/genderqueer.webp" alt="Genderqueer composite"/>
-<img src="assets/grid/genderqueer.webp" alt="Genderqueer grid"/>
-<img src="assets/row/genderqueer.webp" alt="Genderqueer row"/>
+<img src="assets/composite/genderqueer.webp" alt="Genderqueer composite" style="width:50%;"/>
+<img src="assets/grid/genderqueer.webp" alt="Genderqueer grid" style="width:50%;"/>
+<img src="assets/row/genderqueer.webp" alt="Genderqueer row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Greysexual</summary>
 
-<img src="assets/composite/greysexual.webp" alt="Greysexual composite"/>
-<img src="assets/grid/greysexual.webp" alt="Greysexual grid"/>
-<img src="assets/row/greysexual.webp" alt="Greysexual row"/>
+<img src="assets/composite/greysexual.webp" alt="Greysexual composite" style="width:50%;"/>
+<img src="assets/grid/greysexual.webp" alt="Greysexual grid" style="width:50%;"/>
+<img src="assets/row/greysexual.webp" alt="Greysexual row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Gynesexual</summary>
 
-<img src="assets/composite/gynesexual.webp" alt="Gynesexual composite"/>
-<img src="assets/grid/gynesexual.webp" alt="Gynesexual grid"/>
-<img src="assets/row/gynesexual.webp" alt="Gynesexual row"/>
+<img src="assets/composite/gynesexual.webp" alt="Gynesexual composite" style="width:50%;"/>
+<img src="assets/grid/gynesexual.webp" alt="Gynesexual grid" style="width:50%;"/>
+<img src="assets/row/gynesexual.webp" alt="Gynesexual row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Lesbian</summary>
 
-<img src="assets/composite/lesbian.webp" alt="Lesbian composite"/>
-<img src="assets/grid/lesbian.webp" alt="Lesbian grid"/>
-<img src="assets/row/lesbian.webp" alt="Lesbian row"/>
+<img src="assets/composite/lesbian.webp" alt="Lesbian composite" style="width:50%;"/>
+<img src="assets/grid/lesbian.webp" alt="Lesbian grid" style="width:50%;"/>
+<img src="assets/row/lesbian.webp" alt="Lesbian row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Nonbinary</summary>
 
-<img src="assets/composite/nonbinary.webp" alt="Nonbinary composite"/>
-<img src="assets/grid/nonbinary.webp" alt="Nonbinary grid"/>
-<img src="assets/row/nonbinary.webp" alt="Nonbinary row"/>
+<img src="assets/composite/nonbinary.webp" alt="Nonbinary composite" style="width:50%;"/>
+<img src="assets/grid/nonbinary.webp" alt="Nonbinary grid" style="width:50%;"/>
+<img src="assets/row/nonbinary.webp" alt="Nonbinary row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Pansexual</summary>
 
-<img src="assets/composite/pansexual.webp" alt="Pansexual composite"/>
-<img src="assets/grid/pansexual.webp" alt="Pansexual grid"/>
-<img src="assets/row/pansexual.webp" alt="Pansexual row"/>
+<img src="assets/composite/pansexual.webp" alt="Pansexual composite" style="width:50%;"/>
+<img src="assets/grid/pansexual.webp" alt="Pansexual grid" style="width:50%;"/>
+<img src="assets/row/pansexual.webp" alt="Pansexual row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Polysexual</summary>
 
-<img src="assets/composite/polysexual.webp" alt="Polysexual composite"/>
-<img src="assets/grid/polysexual.webp" alt="Polysexual grid"/>
-<img src="assets/row/polysexual.webp" alt="Polysexual row"/>
+<img src="assets/composite/polysexual.webp" alt="Polysexual composite" style="width:50%;"/>
+<img src="assets/grid/polysexual.webp" alt="Polysexual grid" style="width:50%;"/>
+<img src="assets/row/polysexual.webp" alt="Polysexual row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Transgender</summary>
 
-<img src="assets/composite/transgender.webp" alt="Transgender composite"/>
-<img src="assets/grid/transgender.webp" alt="Transgender grid"/>
-<img src="assets/row/transgender.webp" alt="Transgender row"/>
+<img src="assets/composite/transgender.webp" alt="Transgender composite" style="width:50%;"/>
+<img src="assets/grid/transgender.webp" alt="Transgender grid" style="width:50%;"/>
+<img src="assets/row/transgender.webp" alt="Transgender row" style="width:50%;"/>
 
 </details>
 
 <details closed>
 <summary>Trigender</summary>
 
-<img src="assets/composite/trigender.webp" alt="Trigender composite"/>
-<img src="assets/grid/trigender.webp" alt="Trigender grid"/>
-<img src="assets/row/trigender.webp" alt="Trigender row"/>
+<img src="assets/composite/trigender.webp" alt="Trigender composite" style="width:50%;"/>
+<img src="assets/grid/trigender.webp" alt="Trigender grid" style="width:50%;"/>
+<img src="assets/row/trigender.webp" alt="Trigender row" style="width:50%;"/>
 
 </details>
 

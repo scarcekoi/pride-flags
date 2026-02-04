@@ -25,10 +25,14 @@ for flag_key, flag_info in sorted_flags:
     lines.append(f"<details closed>")
     lines.append(f"<summary>{flag_name}</summary>\n")
     lines.append(
-        f'<img src="assets/composite/{flag_key}.webp" alt="{flag_name} composite"/>'
+        f'<img src="assets/composite/{flag_key}.webp" alt="{flag_name} composite" style="width:50%;"/>'
     )
-    lines.append(f'<img src="assets/grid/{flag_key}.webp" alt="{flag_name} grid"/>')
-    lines.append(f'<img src="assets/row/{flag_key}.webp" alt="{flag_name} row"/>')
+    lines.append(
+        f'<img src="assets/grid/{flag_key}.webp" alt="{flag_name} grid" style="width:50%;"/>'
+    )
+    lines.append(
+        f'<img src="assets/row/{flag_key}.webp" alt="{flag_name} row" style="width:50%;"/>'
+    )
     lines.append("\n</details>\n")
 
 lines.append("<!-- AUTOGEN:PREVIEWS END -->")
