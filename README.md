@@ -17,6 +17,7 @@
 - Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappe/asexual/))
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/))
 - Gay ([Mocha](themes/mocha/gay/), [Macchiato](themes/macchiato/gay/), [Frappé](themes/frappe/gay/))
+- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/))
 - Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/))
 - Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappe/pansexual/))
@@ -64,6 +65,7 @@
 
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/))
 - Gay ([Mocha](themes/mocha/gay/), [Macchiato](themes/macchiato/gay/), [Frappé](themes/frappe/gay/))
+- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/))
 - Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/))
 - Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappe/pansexual/))
@@ -74,6 +76,7 @@
 <details closed>
 <summary>Other</summary>
 
+- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/))
 
 </details>
 
