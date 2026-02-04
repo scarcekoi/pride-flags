@@ -44,13 +44,14 @@ jobs:
           chmod +x "$HOME/.cargo/bin/whiskers"
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
-      - name: Install Aseprite AppImage
+      - name: Extract Aseprite AppImage
         run: |
-          curl -L -o aseprite.AppImage "https://www.aseprite.org/downloads/aseprite-linux.AppImage"
-          chmod +x aseprite.AppImage
-          mkdir -p "$HOME/.local/bin"
-          ln -s "$PWD/aseprite.AppImage" "$HOME/.local/bin/aseprite"
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          mkdir -p ./resources/aseprite
+          ./resources/Aseprite.AppImage --appimage-extract
+          mv squashfs-root/* ./resources/aseprite/
+          rm ./resources/Aseprite.AppImage
+          sudo ln -sf $PWD/resources/aseprite/AppRun /usr/local/bin/aseprite
+          aseprite --version
 
       - name: Ensure tools are on PATH
         run: |
