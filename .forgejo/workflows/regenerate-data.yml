@@ -6,7 +6,7 @@ on:
 jobs:
   regenerate:
     if: github.actor != 'forgejo-actions'
-    runs-on: codeberg-tiny
+    runs-on: codeberg-small
 
     steps:
       - uses: actions/checkout@v4
