@@ -11,7 +11,7 @@ whiskers:
 <rect x="0" y="0" width="1000" height="100" fill="{{if(cond=flavor.light, t=overlay2.hex, f=overlay0.hex)}}" />
 <rect x="0" y="100" width="1000" height="100" fill="{{if(cond=flavor.light, t=overlay0.hex, f=overlay2.hex)}}" />
 <rect x="0" y="200" width="1000" height="100" fill="{{blue.hex}}" />
-<rect x="0" y="300" width="1000" height="100" fill="{{text.hex}}" />
+<rect x="0" y="300" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
 <rect x="0" y="400" width="1000" height="100" fill="{{blue.hex}}" />
 <rect x="0" y="500" width="1000" height="100" fill="{{if(cond=flavor.light, t=overlay0.hex, f=overlay2.hex)}}" />
 <rect x="0" y="600" width="1000" height="100" fill="{{if(cond=flavor.light, t=overlay2.hex, f=overlay0.hex)}}" />
