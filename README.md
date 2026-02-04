@@ -10,11 +10,6 @@
 - Q: **_"What file formats are available?"_**\
   A: Currently, the available file formats are `ASE`, `ASEPRITE`, `PNG`, and `SVG`.
 
-## Usage
-
-1. Download the flags in your flavor of your choice.
-2. Enjoy!
-
 ## Flags
 
 <!-- AUTOGEN:FLAGLIST START -->
@@ -96,6 +91,11 @@
 </details>
 
 <!-- AUTOGEN:FLAGLIST END -->
+
+## Usage
+
+1. Download the flags in your flavor of your choice.
+2. Enjoy!
 
 ## 💝 Thanks to
 
