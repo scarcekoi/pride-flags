@@ -15,15 +15,60 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Run regeneration scripts
-        run: ./scripts/run-scripts.sh
-
-      - name: Commit regenerated files
+      - name: Install dependencies
         run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install --user pyyaml
+          curl -s https://sh.rustup.rs -sSf | sh -s -- -y
+          export PATH="$HOME/.cargo/bin:$PATH"
+          cargo install catppuccin-whiskers
+
+      - name: Ensure whiskers is on PATH
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          which whiskers
+
+      - name: Run whiskers
+        run: |
+          git config user.name "forgejo-actions"
+          git config user.email "forgejo-actions@users.noreply.local"
+          ./scripts/whiskers-run.sh
           if ! git diff --quiet; then
-            git config user.name "forgejo-actions"
-            git config user.email "forgejo-actions@users.noreply.local"
             git add .
-            git commit -m "chore: regenerate data"
-            git push
-          fi
+            git commit -m "chore: whiskers run" --allow-empty
+
+      - name: Create files
+        run: |
+          ./scripts/create-files.py
+          if ! git diff --quiet; then
+            git add .
+            git commit -m "chore: create files" --allow-empty
+
+      - name: Run catwalk
+        run: |
+          ./scripts/catwalk-run.py
+          if ! git diff --quiet; then
+            git add .
+            git commit -m "chore: catwalk run" --allow-empty
+
+      - name: Update flaglist
+        run: |
+          ./scripts/update-flaglist.py
+          if ! git diff --quiet; then
+            git add .
+            git commit -m "chore: update flaglist" --allow-empty
+
+      - name: Update previews
+        run: |
+          ./scripts/update-previews.py
+          if ! git diff --quiet; then
+            git add .
+            git commit -m "chore: update previews" --allow-empty
+
+      - name: Squash all commits into one
+        run: |
+          git reset --soft $(git rev-list --max-parents=0 HEAD)
+          git commit -m "chore: regenerate data (whiskers run, create files, catwalk run, update flaglist, update previews)"
+
+      - name: Push final commit
+        run: git push --force
