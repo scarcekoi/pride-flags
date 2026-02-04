@@ -20,7 +20,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y inkscape
           sudo apt-get install -y webp
-          sudo apt-get install -y aseprite
+          sudo apt install -y flatpak
+          flatpak install flathub org.aseprite.Aseprite
+          flatpak run org.aseprite.Aseprite
           python3 -m pip install --upgrade pip
           python3 -m pip install --user pyyaml
           mkdir -p "$HOME/.cargo/bin"
