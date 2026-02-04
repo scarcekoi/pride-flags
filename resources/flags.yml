@@ -47,6 +47,9 @@ flags:
   lgbt:
     name: LGBT
     categories: [other]
+  neutrois:
+    name: Neutrois
+    categories: [gender]
   nonbinary:
     name: Nonbinary
     categories: [gender]
