@@ -23,61 +23,61 @@
 <details closed>
 <summary>Attraction</summary>
 
-- Aromantic Asexual ([Mocha](themes/mocha/Aromantic Asexual/), [macchiato](themes/macchiato/Aromantic Asexual/), [Frappé](themes/frappe/Aromantic Asexual/))
-- Asexual ([Mocha](themes/mocha/Asexual/), [macchiato](themes/macchiato/Asexual/), [Frappé](themes/frappe/Asexual/))
-- Bisexual ([Mocha](themes/mocha/Bisexual/), [macchiato](themes/macchiato/Bisexual/), [Frappé](themes/frappe/Bisexual/))
-- Gay ([Mocha](themes/mocha/Gay/), [macchiato](themes/macchiato/Gay/), [Frappé](themes/frappe/Gay/))
-- Gynesexual ([Mocha](themes/mocha/Gynesexual/), [macchiato](themes/macchiato/Gynesexual/), [Frappé](themes/frappe/Gynesexual/))
-- Lesbian ([Mocha](themes/mocha/Lesbian/), [macchiato](themes/macchiato/Lesbian/), [Frappé](themes/frappe/Lesbian/))
-- Pansexual ([Mocha](themes/mocha/Pansexual/), [macchiato](themes/macchiato/Pansexual/), [Frappé](themes/frappe/Pansexual/))
-- Polysexual ([Mocha](themes/mocha/Polysexual/), [macchiato](themes/macchiato/Polysexual/), [Frappé](themes/frappe/Polysexual/))
+- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappe/aroace/))
+- Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappe/asexual/))
+- Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/))
+- Gay ([Mocha](themes/mocha/gay/), [Macchiato](themes/macchiato/gay/), [Frappé](themes/frappe/gay/))
+- Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/))
+- Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/))
+- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappe/pansexual/))
+- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappe/polysexual/))
 
 </details>
 
 <details closed>
 <summary>Expression</summary>
 
-- Demiboy ([Mocha](themes/mocha/Demiboy/), [macchiato](themes/macchiato/Demiboy/), [Frappé](themes/frappe/Demiboy/))
-- Demigirl ([Mocha](themes/mocha/Demigirl/), [macchiato](themes/macchiato/Demigirl/), [Frappé](themes/frappe/Demigirl/))
-- Femboy ([Mocha](themes/mocha/Femboy/), [macchiato](themes/macchiato/Femboy/), [Frappé](themes/frappe/Femboy/))
+- Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappe/demiboy/))
+- Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappe/demigirl/))
+- Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappe/femboy/))
 
 </details>
 
 <details closed>
 <summary>Fluidity</summary>
 
-- Genderfluid ([Mocha](themes/mocha/Genderfluid/), [macchiato](themes/macchiato/Genderfluid/), [Frappé](themes/frappe/Genderfluid/))
-- Pansexual ([Mocha](themes/mocha/Pansexual/), [macchiato](themes/macchiato/Pansexual/), [Frappé](themes/frappe/Pansexual/))
-- Polysexual ([Mocha](themes/mocha/Polysexual/), [macchiato](themes/macchiato/Polysexual/), [Frappé](themes/frappe/Polysexual/))
-- Trigender ([Mocha](themes/mocha/Trigender/), [macchiato](themes/macchiato/Trigender/), [Frappé](themes/frappe/Trigender/))
+- Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frappe/genderfluid/))
+- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappe/pansexual/))
+- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappe/polysexual/))
+- Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frappe/trigender/))
 
 </details>
 
 <details closed>
 <summary>Gender</summary>
 
-- Agender ([Mocha](themes/mocha/Agender/), [macchiato](themes/macchiato/Agender/), [Frappé](themes/frappe/Agender/))
-- Cisgender ([Mocha](themes/mocha/Cisgender/), [macchiato](themes/macchiato/Cisgender/), [Frappé](themes/frappe/Cisgender/))
-- Demiboy ([Mocha](themes/mocha/Demiboy/), [macchiato](themes/macchiato/Demiboy/), [Frappé](themes/frappe/Demiboy/))
-- Demigirl ([Mocha](themes/mocha/Demigirl/), [macchiato](themes/macchiato/Demigirl/), [Frappé](themes/frappe/Demigirl/))
-- Femboy ([Mocha](themes/mocha/Femboy/), [macchiato](themes/macchiato/Femboy/), [Frappé](themes/frappe/Femboy/))
-- Genderfluid ([Mocha](themes/mocha/Genderfluid/), [macchiato](themes/macchiato/Genderfluid/), [Frappé](themes/frappe/Genderfluid/))
-- Genderqueer ([Mocha](themes/mocha/Genderqueer/), [macchiato](themes/macchiato/Genderqueer/), [Frappé](themes/frappe/Genderqueer/))
-- Nonbinary ([Mocha](themes/mocha/Nonbinary/), [macchiato](themes/macchiato/Nonbinary/), [Frappé](themes/frappe/Nonbinary/))
-- Transgender ([Mocha](themes/mocha/Transgender/), [macchiato](themes/macchiato/Transgender/), [Frappé](themes/frappe/Transgender/))
-- Trigender ([Mocha](themes/mocha/Trigender/), [macchiato](themes/macchiato/Trigender/), [Frappé](themes/frappe/Trigender/))
+- Agender ([Mocha](themes/mocha/agender/), [Macchiato](themes/macchiato/agender/), [Frappé](themes/frappe/agender/))
+- Cisgender ([Mocha](themes/mocha/cisgender/), [Macchiato](themes/macchiato/cisgender/), [Frappé](themes/frappe/cisgender/))
+- Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappe/demiboy/))
+- Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappe/demigirl/))
+- Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappe/femboy/))
+- Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frappe/genderfluid/))
+- Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappe/genderqueer/))
+- Nonbinary ([Mocha](themes/mocha/nonbinary/), [Macchiato](themes/macchiato/nonbinary/), [Frappé](themes/frappe/nonbinary/))
+- Transgender ([Mocha](themes/mocha/transgender/), [Macchiato](themes/macchiato/transgender/), [Frappé](themes/frappe/transgender/))
+- Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frappe/trigender/))
 
 </details>
 
 <details closed>
 <summary>Orientation</summary>
 
-- Bisexual ([Mocha](themes/mocha/Bisexual/), [macchiato](themes/macchiato/Bisexual/), [Frappé](themes/frappe/Bisexual/))
-- Gay ([Mocha](themes/mocha/Gay/), [macchiato](themes/macchiato/Gay/), [Frappé](themes/frappe/Gay/))
-- Gynesexual ([Mocha](themes/mocha/Gynesexual/), [macchiato](themes/macchiato/Gynesexual/), [Frappé](themes/frappe/Gynesexual/))
-- Lesbian ([Mocha](themes/mocha/Lesbian/), [macchiato](themes/macchiato/Lesbian/), [Frappé](themes/frappe/Lesbian/))
-- Pansexual ([Mocha](themes/mocha/Pansexual/), [macchiato](themes/macchiato/Pansexual/), [Frappé](themes/frappe/Pansexual/))
-- Polysexual ([Mocha](themes/mocha/Polysexual/), [macchiato](themes/macchiato/Polysexual/), [Frappé](themes/frappe/Polysexual/))
+- Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/))
+- Gay ([Mocha](themes/mocha/gay/), [Macchiato](themes/macchiato/gay/), [Frappé](themes/frappe/gay/))
+- Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/))
+- Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/))
+- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappe/pansexual/))
+- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappe/polysexual/))
 
 </details>
 
@@ -90,8 +90,8 @@
 <details closed>
 <summary>Romantic</summary>
 
-- Aromantic ([Mocha](themes/mocha/Aromantic/), [macchiato](themes/macchiato/Aromantic/), [Frappé](themes/frappe/Aromantic/))
-- Aromantic Asexual ([Mocha](themes/mocha/Aromantic Asexual/), [macchiato](themes/macchiato/Aromantic Asexual/), [Frappé](themes/frappe/Aromantic Asexual/))
+- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappe/aroace/))
+- Aromantic ([Mocha](themes/mocha/aromantic/), [Macchiato](themes/macchiato/aromantic/), [Frappé](themes/frappe/aromantic/))
 
 </details>
 

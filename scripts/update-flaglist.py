@@ -15,7 +15,6 @@ with flags_file.open("r") as f:
 with categories_file.open("r") as f:
     categories_data = yaml.safe_load(f)
 
-# Map category key -> list of flag names
 category_flags = {cat["key"]: [] for cat in categories_data}
 
 for flag_key, flag_info in flags_data.get("flags", {}).items():
@@ -23,11 +22,9 @@ for flag_key, flag_info in flags_data.get("flags", {}).items():
         if cat in category_flags:
             category_flags[cat].append(flag_info["name"])
 
-# Sort flags alphabetically within categories
 for cat in category_flags:
     category_flags[cat].sort()
 
-# Generate Markdown section
 lines = []
 lines.append("<!-- AUTOGEN:FLAGLIST START -->")
 lines.append("<!-- the following section is auto-generated, do not edit -->\n")
@@ -37,17 +34,20 @@ for cat in categories_data:
     name = cat["name"]
     lines.append(f"<details closed>")
     lines.append(f"<summary>{name}</summary>\n")
-    for flag_name in category_flags[key]:
-        lines.append(
-            f"- {flag_name} ([Mocha](themes/mocha/{flag_name}/), [macchiato](themes/macchiato/{flag_name}/), [Frappé](themes/frappe/{flag_name}/))"
-        )
+
+    for flag_key, flag_info in flags_data.get("flags", {}).items():
+        if key in flag_info.get("categories", []):
+            flag_name = flag_info["name"]
+            lines.append(
+                f"- {flag_name} ([Mocha](themes/mocha/{flag_key}/), [Macchiato](themes/macchiato/{flag_key}/), [Frappé](themes/frappe/{flag_key}/))"
+            )
+
     lines.append("\n</details>\n")
 
 lines.append("<!-- AUTOGEN:FLAGLIST END -->")
 
 new_section = "\n".join(lines)
 
-# Replace section in README
 readme_text = readme_file.read_text()
 updated_text = re.sub(
     r"<!-- AUTOGEN:FLAGLIST START -->.*?<!-- AUTOGEN:FLAGLIST END -->",
