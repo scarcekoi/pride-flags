@@ -18,17 +18,53 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y inkscape
-          sudo apt-get install -y webp
-          sudo apt install -y flatpak
-          flatpak install flathub org.aseprite.Aseprite
-          flatpak run org.aseprite.Aseprite
+          sudo apt-get install -y \
+            build-essential \
+            cmake \
+            ninja-build \
+            libx11-dev \
+            libxcursor-dev \
+            libxi-dev \
+            libgl1-mesa-dev \
+            libfontconfig1-dev \
+            libharfbuzz-dev \
+            libfreetype6-dev \
+            zlib1g-dev \
+            libjpeg-dev \
+            libpng-dev \
+            libgif-dev \
+            libwebp-dev \
+            inkscape \
+            webp
           python3 -m pip install --upgrade pip
           python3 -m pip install --user pyyaml
           mkdir -p "$HOME/.cargo/bin"
           curl -L -o "$HOME/.cargo/bin/whiskers" "https://github.com/catppuccin/whiskers/releases/latest/download/whiskers-x86_64-unknown-linux-gnu"
           chmod +x "$HOME/.cargo/bin/whiskers"
           export PATH="$HOME/.cargo/bin:$PATH"
+
+      - name: Build Aseprite
+        run: |
+          git clone https://github.com/aseprite/aseprite.git
+          cd aseprite
+          git submodule update --init --recursive
+
+          mkdir build
+          cd build
+
+          cmake \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DLAF_BACKEND=skia \
+            -DSKIA_DIR=../skia \
+            -G Ninja \
+            ..
+
+          ninja aseprite
+
+      - name: Add Aseprite to PATH
+        run: |
+          echo "$PWD/aseprite/build/bin" >> $GITHUB_PATH
+          aseprite --version
 
       - name: Ensure whiskers is on PATH
         run: |
