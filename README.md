@@ -93,7 +93,7 @@
 ## 🙋 FAQ
 
 - Q: **_"What file formats are available?"_**\
-  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `PNG`, and `SVG`.
+  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `PNG`, `SVG`, and `WEBP`.
 
 ## Usage
 
