@@ -137,6 +137,15 @@
 </details>
 
 <details closed>
+<summary>Intersex</summary>
+
+<img src="assets/composite/intersex.webp" alt="Intersex composite" style="width:50%;"/>
+<img src="assets/grid/intersex.webp" alt="Intersex grid" style="width:50%;"/>
+<img src="assets/row/intersex.webp" alt="Intersex row" style="width:50%;"/>
+
+</details>
+
+<details closed>
 <summary>Lesbian</summary>
 
 <img src="assets/composite/lesbian.webp" alt="Lesbian composite" style="width:50%;"/>
