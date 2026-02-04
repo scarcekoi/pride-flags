@@ -11,7 +11,7 @@ print(" ".join(flags.keys()))
 PYTHON
 )
 
-LAYOUTS="composite grid row stacked"
+LAYOUTS="composite grid row"
 
 for flag in $FLAGS; do
     for layout in $LAYOUTS; do
