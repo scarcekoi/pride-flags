@@ -11,95 +11,73 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
         with:
-          python-version: "3.x"
+          extra_nix_config: |
+            experimental-features = nix-command flakes
 
-      - name: Install dependencies
+      - name: Enter Nix shell (warm cache)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libx11-dev \
-            libxcursor-dev \
-            libxi-dev \
-            libgl1-mesa-dev \
-            libfontconfig1-dev \
-            libharfbuzz-dev \
-            libfreetype6-dev \
-            zlib1g-dev \
-            libjpeg-dev \
-            libpng-dev \
-            libgif-dev \
-            libwebp-dev \
-            inkscape \
-            webp \
-            curl \
-            sudo
-
-          python3 -m pip install --upgrade pip
-          python3 -m pip install --user pyyaml
-
-          mkdir -p "$HOME/.cargo/bin"
-          curl -L -o "$HOME/.cargo/bin/whiskers" "https://github.com/catppuccin/whiskers/releases/latest/download/whiskers-x86_64-unknown-linux-gnu"
-          chmod +x "$HOME/.cargo/bin/whiskers"
-          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-
-      - name: Make Aseprite AppImage executable and add to PATH
-        run: |
-          chmod +x ./resources/Aseprite.AppImage
-          # Create a local symlink for easier access
-          ln -sf $(pwd)/resources/Aseprite.AppImage $(pwd)/aseprite
-          chmod +x aseprite
-          # Add repository root to PATH so scripts can find "aseprite"
-          echo "$(pwd)" >> $GITHUB_PATH
-          aseprite --version
-
-      - name: Ensure tools are on PATH
-        run: |
-          which whiskers
-          ./aseprite.AppImage --version
+          nix develop -c true
 
       - name: Run whiskers
         run: |
+          nix develop -c bash -e <<'EOF'
           git config user.name "forgejo-actions"
           git config user.email "forgejo-actions@users.noreply.local"
+
           ./scripts/whiskers-run.sh
+
           if ! git diff --quiet; then
             git add .
             git commit -m "chore: whiskers run" --allow-empty
           fi
+          EOF
 
       - name: Create files
         run: |
+          nix develop -c bash -e <<'EOF'
           ./scripts/create-files.py all
+
           if ! git diff --quiet; then
             git add .
             git commit -m "chore: create files" --allow-empty
           fi
+          EOF
 
       - name: Run catwalk
         run: |
+          nix develop -c bash -e <<'EOF'
           ./scripts/catwalk-run.py
+
           if ! git diff --quiet; then
             git add .
             git commit -m "chore: catwalk run" --allow-empty
           fi
+          EOF
 
       - name: Update flaglist
         run: |
+          nix develop -c bash -e <<'EOF'
           ./scripts/update-flaglist.py
+
           if ! git diff --quiet; then
             git add .
             git commit -m "chore: update flaglist" --allow-empty
           fi
+          EOF
 
       - name: Update previews
         run: |
+          nix develop -c bash -e <<'EOF'
           ./scripts/update-previews.py
+
           if ! git diff --quiet; then
             git add .
             git commit -m "chore: update previews" --allow-empty
           fi
+          EOF
 
       - name: Squash all commits into one
         run: |
