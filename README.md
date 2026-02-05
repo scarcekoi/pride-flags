@@ -74,6 +74,15 @@
 </details>
 
 <details closed>
+<summary>Demigender</summary>
+
+<img src="assets/composite/demigender.webp" alt="Demigender composite" style="width:50%;"/>
+<img src="assets/grid/demigender.webp" alt="Demigender grid" style="width:50%;"/>
+<img src="assets/row/demigender.webp" alt="Demigender row" style="width:50%;"/>
+
+</details>
+
+<details closed>
 <summary>Demigirl</summary>
 
 <img src="assets/composite/demigirl.webp" alt="Demigirl composite" style="width:50%;"/>
@@ -233,6 +242,7 @@
 <summary>Expression</summary>
 
 - Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappe/demiboy/), [Latte](themes/latte/demiboy/))
+- Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappe/demigender/), [Latte](themes/latte/demigender/))
 - Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappe/demigirl/), [Latte](themes/latte/demigirl/))
 - Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappe/femboy/), [Latte](themes/latte/femboy/))
 
@@ -254,6 +264,7 @@
 - Agender ([Mocha](themes/mocha/agender/), [Macchiato](themes/macchiato/agender/), [Frappé](themes/frappe/agender/), [Latte](themes/latte/agender/))
 - Cisgender ([Mocha](themes/mocha/cisgender/), [Macchiato](themes/macchiato/cisgender/), [Frappé](themes/frappe/cisgender/), [Latte](themes/latte/cisgender/))
 - Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappe/demiboy/), [Latte](themes/latte/demiboy/))
+- Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappe/demigender/), [Latte](themes/latte/demigender/))
 - Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappe/demigirl/), [Latte](themes/latte/demigirl/))
 - Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappe/femboy/), [Latte](themes/latte/femboy/))
 - Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frappe/genderfluid/), [Latte](themes/latte/genderfluid/))
