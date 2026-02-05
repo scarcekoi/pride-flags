@@ -2,6 +2,9 @@
 
 🎉 First off, thanks for taking the time to contribute! 🎉
 
+> [!IMPORTANT]
+> The regenerate data action currently does not work. Any help to fix it is much appreciated.
+
 ## Guidelines
 
 The following is a set of guidelines for contributing to this repository. Use your best judgment, and feel free to propose
