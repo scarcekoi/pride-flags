@@ -20,6 +20,9 @@ flags:
   demiboy:
     name: Demiboy
     categories: [gender, expression]
+  demigender:
+    name: Demigender
+    categories: [gender, expression]
   demigirl:
     name: Demigirl
     categories: [gender, expression]
