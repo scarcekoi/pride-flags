@@ -11,10 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Nix
+      - name: Install Nix (single-user)
         run: |
-          curl -L https://nixos.org/nix/install | sh
+          curl -L https://nixos.org/nix/install | sh -s -- --no-daemon
           . $HOME/.nix-profile/etc/profile.d/nix.sh
+          export NIX_CONFIG="experimental-features = nix-command flakes"
 
       - name: Enter Nix shell (warm cache)
         run: |
