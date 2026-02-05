@@ -11,11 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Nix (single-user)
+      - name: Install Nix (home directory, no root)
         run: |
-          curl -L https://nixos.org/nix/install | sh -s -- --no-daemon
-          . $HOME/.nix-profile/etc/profile.d/nix.sh
+          export NIX_INSTALL_DIR=$HOME/.nix
+          mkdir -p $NIX_INSTALL_DIR
+          curl -L https://releases.nixos.org/nix/nix-2.33.2/nix-2.33.2-x86_64-linux.tar.xz | tar -xJ -C $NIX_INSTALL_DIR
+          export PATH="$NIX_INSTALL_DIR/bin:$PATH"
           export NIX_CONFIG="experimental-features = nix-command flakes"
+          nix --version
 
       - name: Enter Nix shell (warm cache)
         run: |
