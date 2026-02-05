@@ -62,9 +62,15 @@ flags:
   polysexual:
     name: Polysexual
     categories: [attraction, orientation, fluidity]
+  transfeminine:
+    name: Transfeminine
+    categories: [gender, expression]
   transgender:
     name: Transgender
     categories: [gender]
+  transmasculine:
+    name: Transmasculine
+    categories: [gender, expression]
   trigender:
     name: Trigender
     categories: [gender, fluidity]
