@@ -332,7 +332,7 @@
 ## 🙋 FAQ
 
 - Q: **_"What file formats are available?"_**\
-  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `PNG`, `SVG`, and `WEBP`.
+  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `BMP`, `CSS`, `FLC`, `FLI`, `JPEG`, `JPG`, `PCX`, `PCC`, `PNG`, `QOI`, `TGA`, and `WEBP`.
 
 ## Usage
 

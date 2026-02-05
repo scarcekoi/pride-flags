@@ -26,10 +26,25 @@ else:
         sys.exit(1)
     flags_to_process = [target]
 
-formats = ["png", "webp", "ase", "aseprite"]
+formats = [
+    "ase",
+    "aseprite",
+    "bmp",
+    "css",
+    "flc",
+    "fli",
+    "jpeg",
+    "jpg",
+    "pcx",
+    "pcc",
+    "png",
+    "qoi",
+    "tga",
+    "webp",
+]
 
 for flag_key in flags_to_process:
-    for theme_dir in themes_dir.iterdir():  # mocha, macchiato, frappe, latte
+    for theme_dir in themes_dir.iterdir():
         if not theme_dir.is_dir():
             continue
 
@@ -38,58 +53,27 @@ for flag_key in flags_to_process:
             print(f"SVG not found: {svg_path}")
             continue
 
+        tmp_png = svg_path.with_suffix(".tmp.png")
+        # Export a temporary PNG from SVG
+        subprocess.run(
+            [
+                "inkscape",
+                str(svg_path),
+                "--export-type=png",
+                "--export-filename",
+                str(tmp_png),
+                "--export-background-opacity=0",
+            ],
+            check=True,
+        )
+
         for fmt in formats:
             output_path = svg_path.with_suffix(f".{fmt}")
+            subprocess.run(
+                ["aseprite", "-b", str(tmp_png), "--save-as", str(output_path)],
+                check=True,
+            )
 
-            if fmt == "png":
-                subprocess.run(
-                    [
-                        "inkscape",
-                        str(svg_path),
-                        "--export-type=png",
-                        "--export-filename",
-                        str(output_path),
-                        "--export-background-opacity=0",
-                    ],
-                    check=True,
-                )
+        tmp_png.unlink()
 
-            elif fmt == "webp":
-                tmp_png = output_path.with_suffix(".tmp.png")
-                subprocess.run(
-                    [
-                        "inkscape",
-                        str(svg_path),
-                        "--export-type=png",
-                        "--export-filename",
-                        str(tmp_png),
-                        "--export-background-opacity=0",
-                    ],
-                    check=True,
-                )
-                subprocess.run(
-                    ["cwebp", str(tmp_png), "-q", "100", "-o", str(output_path)],
-                    check=True,
-                )
-                tmp_png.unlink()
-
-            elif fmt in ["ase", "aseprite"]:
-                tmp_png = output_path.with_suffix(".tmp.png")
-                subprocess.run(
-                    [
-                        "inkscape",
-                        str(svg_path),
-                        "--export-type=png",
-                        "--export-filename",
-                        str(tmp_png),
-                        "--export-background-opacity=0",
-                    ],
-                    check=True,
-                )
-                subprocess.run(
-                    ["aseprite", "-b", str(tmp_png), "--save-as", str(output_path)],
-                    check=True,
-                )
-                tmp_png.unlink()
-
-print("All files exported at maximum quality.")
+print("All files exported at maximum quality via Aseprite.")
