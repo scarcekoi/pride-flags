@@ -200,11 +200,29 @@
 </details>
 
 <details closed>
+<summary>Transfeminine</summary>
+
+<img src="assets/composite/transfeminine.webp" alt="Transfeminine composite" style="width:50%;"/>
+<img src="assets/grid/transfeminine.webp" alt="Transfeminine grid" style="width:50%;"/>
+<img src="assets/row/transfeminine.webp" alt="Transfeminine row" style="width:50%;"/>
+
+</details>
+
+<details closed>
 <summary>Transgender</summary>
 
 <img src="assets/composite/transgender.webp" alt="Transgender composite" style="width:50%;"/>
 <img src="assets/grid/transgender.webp" alt="Transgender grid" style="width:50%;"/>
 <img src="assets/row/transgender.webp" alt="Transgender row" style="width:50%;"/>
+
+</details>
+
+<details closed>
+<summary>Transmasculine</summary>
+
+<img src="assets/composite/transmasculine.webp" alt="Transmasculine composite" style="width:50%;"/>
+<img src="assets/grid/transmasculine.webp" alt="Transmasculine grid" style="width:50%;"/>
+<img src="assets/row/transmasculine.webp" alt="Transmasculine row" style="width:50%;"/>
 
 </details>
 
@@ -245,6 +263,8 @@
 - Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappe/demigender/), [Latte](themes/latte/demigender/))
 - Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappe/demigirl/), [Latte](themes/latte/demigirl/))
 - Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappe/femboy/), [Latte](themes/latte/femboy/))
+- Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappe/transfeminine/), [Latte](themes/latte/transfeminine/))
+- Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frappe/transmasculine/), [Latte](themes/latte/transmasculine/))
 
 </details>
 
@@ -272,7 +292,9 @@
 - Intersex ([Mocha](themes/mocha/intersex/), [Macchiato](themes/macchiato/intersex/), [Frappé](themes/frappe/intersex/), [Latte](themes/latte/intersex/))
 - Neutrois ([Mocha](themes/mocha/neutrois/), [Macchiato](themes/macchiato/neutrois/), [Frappé](themes/frappe/neutrois/), [Latte](themes/latte/neutrois/))
 - Nonbinary ([Mocha](themes/mocha/nonbinary/), [Macchiato](themes/macchiato/nonbinary/), [Frappé](themes/frappe/nonbinary/), [Latte](themes/latte/nonbinary/))
+- Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappe/transfeminine/), [Latte](themes/latte/transfeminine/))
 - Transgender ([Mocha](themes/mocha/transgender/), [Macchiato](themes/macchiato/transgender/), [Frappé](themes/frappe/transgender/), [Latte](themes/latte/transgender/))
+- Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frappe/transmasculine/), [Latte](themes/latte/transmasculine/))
 - Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frappe/trigender/), [Latte](themes/latte/trigender/))
 
 </details>
