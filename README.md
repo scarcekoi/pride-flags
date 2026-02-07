@@ -340,15 +340,15 @@
 
 <!-- AUTOGEN:FLAGLIST END -->
 
-## 🙋 FAQ
-
-- Q: **_"What file formats are available?"_**\
-  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `BMP`, `CSS`, `FLC`, `FLI`, `JPEG`, `JPG`, `PCX`, `PCC`, `PNG`, `QOI`, `TGA`, and `WEBP`.
-
 ## Usage
 
 1. Download the flags in your flavor of your choice.
 2. Enjoy!
+
+## 🙋 FAQ
+
+- Q: **_"What file formats are available?"_**\
+  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `BMP`, `CSS`, `FLC`, `FLI`, `JPEG`, `JPG`, `PCX`, `PCC`, `PNG`, `QOI`, `TGA`, and `WEBP`.
 
 ## 💝 Thanks to
 
