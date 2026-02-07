@@ -205,10 +205,12 @@
 
 - Init
 - Update
+- Regenerate data
 
 #### Cliff
 
 - Update changelog
+- Add commit links
 
 #### Finromantic
 
