@@ -6,10 +6,12 @@
 #### Changelog
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9c650f629ffc67e7ae665eaf552c0afbb1f4754c)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0e89b695772fa9e2f3d287a5a4bc7cc7de4c7704)
 
 #### Release
 
 - [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/268457d6cbc2cdc45e3e8e29fcfd4d592dfdb219)
+- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/9f6476903a5e74c8d072c4f808aa1237ee1debc4)
 ## [1.0.8] - 2026-02-07
 
 
