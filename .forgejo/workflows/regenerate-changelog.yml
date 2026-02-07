@@ -16,9 +16,10 @@ jobs:
 
       - name: Install git-cliff
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-          export PATH="$HOME/.cargo/bin:$PATH"
-          cargo install git-cliff
+          curl -L "https://github.com/orhun/git-cliff/releases/download/v2.12.0/git-cliff-2.12.0-x86_64-unknown-linux-gnu.tar.gz" -o git-cliff.tar.gz
+          tar -xzf git-cliff.tar.gz
+          chmod +x git-cliff
+          mv git-cliff /usr/local/bin/
           git-cliff --version
 
       - name: Generate CHANGELOG.md
