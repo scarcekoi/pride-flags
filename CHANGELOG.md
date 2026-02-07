@@ -200,18 +200,18 @@
 
 #### Transfeminine
 
-- [Update colours](https://codeberg.org/scarcekoi/pride-flags/commit/864bef32149404ade59e9d93a63b41da6d784315)
+- [Update colours](https://codeberg.org/scarcekoi/pride-flags/commit/b21d409e4f8870ffdac7656f11f1bc7fcafa3058)
 
 #### Transmasculine
 
-- [Change colours](https://codeberg.org/scarcekoi/pride-flags/commit/f8b6b6176d6d550a521722967f1ab0a2100b3b40)
+- [Change colours](https://codeberg.org/scarcekoi/pride-flags/commit/1ca70b2bd430b32ae2acbfd3a6d574dd0e7c7985)
 
 ### ⚙️ Miscellaneous Tasks
 
 
 #### ISSUE_TEMPLATE
 
-- [Update titles](https://codeberg.org/scarcekoi/pride-flags/commit/38e43378b217a39f055845cb7df14419a4a0167c)
+- [Update titles](https://codeberg.org/scarcekoi/pride-flags/commit/825acb38ccc3a5d862586c832cf88570a670ab01)
 
 #### Changelog
 
@@ -222,8 +222,9 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2e083d596ed9af6b455f449aeb8713233c9d4e44)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9e458d1d6140a4f8b1bf5f2358431cacdde51c8a)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/82baf39eb007258cbfe1a267cbe5926655a5fed7)
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1c1405c7461c1b5f0e9255224aaaf870620dfd90)
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/8e2c0b124429cf261be4186d1cd75eeab90a244d)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0165fd72f6e0c0b56a1e7c2aa9505a22cabd5086)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/ef37d171a9a15f6ecb4102c254830ff561f9d4b8)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0ca20b14dc65a1d270b26ae0c96e8b03c194ef27)
 
 #### Cliff
 
@@ -267,8 +268,8 @@
 
 #### Transfeminine
 
-- [Generate data](https://codeberg.org/scarcekoi/pride-flags/commit/90ad43c330eeb1a7c4a3590d37da9ab5ff34335c)
+- [Generate data](https://codeberg.org/scarcekoi/pride-flags/commit/53e51fbd7b501322fd2d433815aec5f34894ef6e)
 
 #### Transmasculine
 
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c711b3d206882df0371b2854717cdc7e16262302)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/8711358accd511ea3d9c4a4bf439096cef483c51)
