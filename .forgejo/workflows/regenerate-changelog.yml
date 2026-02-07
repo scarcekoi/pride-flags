@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  regen-changelog:
+  regenerate-changelog:
     runs-on: codeberg-small
     steps:
       - name: Checkout repository
