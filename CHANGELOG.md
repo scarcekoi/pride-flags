@@ -1,4 +1,5 @@
-## [unreleased]
+## [1.0.8] - 2026-02-07
+
 
 ### 🚀 Features
 
@@ -15,11 +16,13 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/db8dbf960a983d8a0479de05da04d7127090952e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5cf21ccc07412456540f64d8bb1d0de40db7496c)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1596bef22e35d6d41fe972f656cf27b7cdfeea8e)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/7bf87d723c5fdc00cc3a5cf3ffda6a55ae98ccb5)
 
 #### Release
 
 - [Fix release creation job](https://codeberg.org/scarcekoi/pride-flags/commit/450ef2880b283bebcd3f4521df0293f8b462b538)
 - [Change fj back to github](https://codeberg.org/scarcekoi/pride-flags/commit/417150cdcbc3ceae95fb645e03f2832e1d885d3c)
+- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/5226f603e84dfb566eccfc708a6736e49cdfd68e)
 
 #### Transandrogynous
 
