@@ -2,137 +2,225 @@
 
 ### 🚀 Features
 
+
+#### Aroace
+
 - Init
-- Add macchiato
-- *(gynesexual)* Init
-- *(templates)* Initialize svg templates and generate
-- Remove badges
-- Remove ico
-- Remove ico
-- *(femboy)* Init
-- *(templates)* Add run script
-- Add other flavours
-- *(lesbian)* Init
-- *(demigirl)* Init
-- *(lesbian)* Add other files
-- *(demiboy)* Init
-- *(cisgender)* Init
-- *(aroace)* Init
-- *(aromantic)* Init
-- *(greysexual)* Init
-- *(latte)* Init
-- *(latte)* Add other file formats
-- *(mocha)* Add webp
-- *(macchiato)* Add webp
-- *(frappe)* Add webp
-- *(latte)* Add webp
-- *(assets)* Add assets
-- *(assets)* Remove stacked
-- *(intersex)* Init and misc
-- Add editorconfig
-- Add new flag issue template
-- Add new issue templates
-- Update issue template labels
-- *(neutrois)* Init
-- *(demigender)* Init
-- Transmasc/fem init
-- Remove generate data workflow
-- *(finromantic)* Init
+
+#### Aromantic
+
+- Init
+
+#### Assets
+
+- Add assets
+- Remove stacked
+
+#### Cisgender
+
+- Init
+
+#### Demiboy
+
+- Init
+
+#### Demigender
+
+- Init
+
+#### Demigirl
+
+- Init
+
+#### Femboy
+
+- Init
+
+#### Finromantic
+
+- Init
+
+#### Frappe
+
+- Add webp
+
+#### Greysexual
+
+- Init
+
+#### Gynesexual
+
+- Init
+
+#### Intersex
+
+- Init and misc
+
+#### Latte
+
+- Init
+- Add other file formats
+- Add webp
+
+#### Lesbian
+
+- Init
+- Add other files
+
+#### Macchiato
+
+- Add webp
+
+#### Mocha
+
+- Add webp
+
+#### Neutrois
+
+- Init
+
+#### Templates
+
+- Initialize svg templates and generate
+- Add run script
 
 ### 🐛 Bug Fixes
 
-- *(mocha)* Add pride files back
-- Svg scaling
-- Unthemed elements
-- *(scripts)* Update path
-- *(bisexual)* Template to update bisexual instead of asexual and change red to pink
-- *(demiboy)* Add latte override
-- *(intersex)* Change peach to yellow
-- *(demiboy)* Add latte override
-- *(neutrois)* Change rosewater to text
-- *(asexual)* Remove s
-- *(transgender)* Update latte colours
+
+#### Asexual
+
+- Remove s
+
+#### Bisexual
+
+- Template to update bisexual instead of asexual and change red to pink
+
+#### Demiboy
+
+- Add latte override
+- Add latte override
+
+#### Intersex
+
+- Change peach to yellow
+
+#### Mocha
+
+- Add pride files back
+
+#### Neutrois
+
+- Change rosewater to text
+
+#### Scripts
+
+- Update path
+
+#### Transgender
+
+- Update latte colours
 
 ### 🚜 Refactor
 
-- *(gay)* Rename to pride
-- *(trans)* Use less jarring colours
-- *(transgender)* Trans to transgender
-- *(pansexual)* Update names and top colour
-- *(mocha)* Directory
-- *(scripts)* Rename and move whiskers run script
-- *(pride)* Rename to gay
-- *(cisgender)* File names
-- *(pansexual)* Change mauve to pink
-- *(gay)* Change to lgbt
+
+#### Cisgender
+
+- File names
+
+#### Gay
+
+- Rename to pride
+- Change to lgbt
+
+#### Mocha
+
+- Directory
+
+#### Pansexual
+
+- Update names and top colour
+- Change mauve to pink
+
+#### Pride
+
+- Rename to gay
+
+#### Scripts
+
+- Rename and move whiskers run script
+
+#### Trans
+
+- Use less jarring colours
+
+#### Transgender
+
+- Trans to transgender
 
 ### 📚 Documentation
 
-- *(readme)* Init
-- Use catppuccin template
-- *(readme)* Remove preview
-- *(readme)* Remove copyright
-- *(readme)* Add flags section
-- *(readme)* Change flags to start closed
-- *(readme)* Add links
-- *(readme)* Fix links
-- *(readme)* Move flags above usage
-- *(readme)* Move above faq
-- *(readme)* Add webp
-- *(contributing)* Init
-- Update name
-- *(contributing)* Add note
-- *(license)* Update date
-- *(contributing)* Remove regenerate data note
+
+#### Contributing
+
+- Init
+- Add note
+- Remove regenerate data note
+
+#### License
+
+- Update date
+
+#### Readme
+
+- Init
+- Remove preview
+- Remove copyright
+- Add flags section
+- Change flags to start closed
+- Add links
+- Fix links
+- Move flags above usage
+- Move above faq
+- Add webp
 
 ### 🎨 Styling
 
-- *(pansexual)* Change sky to sapphire
-- *(neutrois)* Fix width
-- *(lesbian)* Fix width
+
+#### Lesbian
+
+- Fix width
+
+#### Neutrois
+
+- Fix width
+
+#### Pansexual
+
+- Change sky to sapphire
 
 ### ⚙️ Miscellaneous Tasks
 
+
+#### Changelog
+
 - Init
-- Regenerate flags
-- Regenerate flaglist
-- Add images to flaglist
-- Update flaglist images
-- Add preview generation
-- Update previews
-- Update previews size
-- Update assets
-- Regenerate previews
-- Generate previews
-- *(previews)* Re-generate data
-- Regenerate data init
-- *(regenerate-data)* Change runs on
-- *(regenerate-data)* Separate scripts
-- *(regenerate-data)* Update runs on
-- *(regenerate-data)* Update whiskers install
-- Replace whiskers installation method
-- Fix create files
-- Install inkscape
-- Install cwebp
-- Install webp
-- Install aseprite
-- Install aseprite with flatpak
-- Fix aseprite
-- Fix cmake
-- Use aseprite appimage
-- Update aseprite appimage
-- Use aseprite appimage
-- Nix init
-- Fix nix install
-- Fix nix
-- Fix nix install
 - Update
+
+#### Finromantic
+
 - Regenerate data
-- Move issue template to forgejo folder
-- Regenerate data
-- Regenerate data
-- Regenerate data
-- Regenerate data
-- *(scripts)* Add bmp, css, jpeg, jpg, pcc, pcx, qoi, and tga
-- *(finromantic)* Regenerate data
-- *(changelog)* Init
+
+#### Previews
+
+- Re-generate data
+
+#### Regenerate-data
+
+- Change runs on
+- Separate scripts
+- Update runs on
+- Update whiskers install
+
+#### Scripts
+
+- Add bmp, css, jpeg, jpg, pcc, pcx, qoi, and tga
