@@ -1,7 +1,7 @@
 ---
 name: Size Change
 about: Request a size change for an existing flag
-title: "[Size Change] "
+title: "Name of Flag"
 labels: [size change]
 assignees: ""
 ---
