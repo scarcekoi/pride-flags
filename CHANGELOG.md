@@ -14,10 +14,12 @@
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/db8dbf960a983d8a0479de05da04d7127090952e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5cf21ccc07412456540f64d8bb1d0de40db7496c)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1596bef22e35d6d41fe972f656cf27b7cdfeea8e)
 
 #### Release
 
 - [Fix release creation job](https://codeberg.org/scarcekoi/pride-flags/commit/450ef2880b283bebcd3f4521df0293f8b462b538)
+- [Change fj back to github](https://codeberg.org/scarcekoi/pride-flags/commit/417150cdcbc3ceae95fb645e03f2832e1d885d3c)
 
 #### Transandrogynous
 
