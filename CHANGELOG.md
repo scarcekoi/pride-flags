@@ -5,242 +5,244 @@
 
 #### Aroace
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/f63a23d6786fa00675920fb6285781c17400a2f2)
 
 #### Aromantic
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/49eba5106f56fb9d5f807de6e2ef30a0e493dc25)
 
 #### Assets
 
-- Add assets
-- Remove stacked
+- [Add assets](https://codeberg.org/scarcekoi/pride-flags/commit/ce777617bb8b4a8de6093dc141cf27a283a90ab3)
+- [Remove stacked](https://codeberg.org/scarcekoi/pride-flags/commit/81a9882662d8ae1ffc5d67d0bfceabbcb23ec77c)
 
 #### Cisgender
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/a32edd190c2bb041b4368c1b40a2e9f23fe208c1)
 
 #### Demiboy
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/8d8773b697a816688ae49526a46649f589917a98)
 
 #### Demigender
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/071326fe7755a9736f552688f4808c7ae936f41c)
 
 #### Demigirl
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/b87aaa62995e8813e97d722d002c2a37d8b713d6)
 
 #### Femboy
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/f73dc645ad17e4e7b8b11f0aeaa5cda9d1675d59)
 
 #### Finromantic
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/ebfd98ac0cffb3a6dcbbc26c61945da0ba6f6e90)
 
 #### Frappe
 
-- Add webp
+- [Add webp](https://codeberg.org/scarcekoi/pride-flags/commit/0c6d1d10c0ddf7df896c090c8ff7cc066ee9d04a)
 
 #### Greysexual
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/30590d9565e1c726c03443036156e903b9db2cb3)
 
 #### Gynesexual
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/75c649cb3ffbb4d70ca83eedc81feb65a068166e)
 
 #### Intersex
 
-- Init and misc
+- [Init and misc](https://codeberg.org/scarcekoi/pride-flags/commit/56de18189318180239c368b264f02642494c7b23)
 
 #### Latte
 
-- Init
-- Add other file formats
-- Add webp
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/16adf8b93af8fd6d3d0f1688536e7d6f2a5b067c)
+- [Add other file formats](https://codeberg.org/scarcekoi/pride-flags/commit/0eb215a43e2138b752da1460fb4bc73dccd75b65)
+- [Add webp](https://codeberg.org/scarcekoi/pride-flags/commit/8f865cc28a2d0411e3d57989fb09150200915d34)
 
 #### Lesbian
 
-- Init
-- Add other files
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/b3cdf22b88a6b7a96f83c180372218d9e46ac393)
+- [Add other files](https://codeberg.org/scarcekoi/pride-flags/commit/8a6dd73facc520ca2216c0b88c4d32b905157eec)
 
 #### Macchiato
 
-- Add webp
+- [Add webp](https://codeberg.org/scarcekoi/pride-flags/commit/5a80b8b2778b743e9e54c9d70395b751bf0f7f9d)
 
 #### Mocha
 
-- Add webp
+- [Add webp](https://codeberg.org/scarcekoi/pride-flags/commit/9bd0fa89ab86035df7c89b317b927731a5e01dd8)
 
 #### Neutrois
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/88df7f71311508aa4bd226dbb77d0a0eed04e5fe)
 
 #### Templates
 
-- Initialize svg templates and generate
-- Add run script
+- [Initialize svg templates and generate](https://codeberg.org/scarcekoi/pride-flags/commit/e814f5b1960d331b5a5090fc3310678c0256913c)
+- [Add run script](https://codeberg.org/scarcekoi/pride-flags/commit/759398af471dfeead92e4b745a01e1d2bcaf3272)
 
 ### 🐛 Bug Fixes
 
 
 #### Asexual
 
-- Remove s
+- [Remove s](https://codeberg.org/scarcekoi/pride-flags/commit/1b23f1524ffd6d2c84f6905e24f5eb4a99d01d7d)
 
 #### Bisexual
 
-- Template to update bisexual instead of asexual and change red to pink
+- [Template to update bisexual instead of asexual and change red to pink](https://codeberg.org/scarcekoi/pride-flags/commit/036ec25ac40aa82ddcb1aa6bee9327a4e83b82bc)
 
 #### Demiboy
 
-- Add latte override
-- Add latte override
+- [Add latte override](https://codeberg.org/scarcekoi/pride-flags/commit/cd06b9fa53c50c4fde6d0094fa348e563a201c2f)
+- [Add latte override](https://codeberg.org/scarcekoi/pride-flags/commit/5baca535e54b9ed482002617ac639ed6a032c960)
 
 #### Intersex
 
-- Change peach to yellow
+- [Change peach to yellow](https://codeberg.org/scarcekoi/pride-flags/commit/33d19d9d94a953c188b152ff86275e2a4d962cf7)
 
 #### Mocha
 
-- Add pride files back
+- [Add pride files back](https://codeberg.org/scarcekoi/pride-flags/commit/5db6142cfae8fd48db53f92731bf9b2ad5506227)
 
 #### Neutrois
 
-- Change rosewater to text
+- [Change rosewater to text](https://codeberg.org/scarcekoi/pride-flags/commit/adbf60c91176e9d5bc14a1e58530c2e52c698e87)
 
 #### Scripts
 
-- Update path
+- [Update path](https://codeberg.org/scarcekoi/pride-flags/commit/8329d1a4b7ae14a42e16bba0da531a63ab707d79)
 
 #### Transgender
 
-- Update latte colours
+- [Update latte colours](https://codeberg.org/scarcekoi/pride-flags/commit/a5caa1d218727e16a45d5ddf36ee13c8a20a62c4)
 
 ### 🚜 Refactor
 
 
 #### Cisgender
 
-- File names
+- [File names](https://codeberg.org/scarcekoi/pride-flags/commit/8ad0213d5e34ab777bfe6741d6f8533a846281ae)
 
 #### Gay
 
-- Rename to pride
-- Change to lgbt
+- [Rename to pride](https://codeberg.org/scarcekoi/pride-flags/commit/4e4081cc1691c9a4b2285163ae14ee247da5aa07)
+- [Change to lgbt](https://codeberg.org/scarcekoi/pride-flags/commit/7d2903ab526b55f8a6e32ce4662d5da27a4c4e28)
 
 #### Mocha
 
-- Directory
+- [Directory](https://codeberg.org/scarcekoi/pride-flags/commit/8a3fa4bd7d74478a8c7b6150402a693e155a9015)
 
 #### Pansexual
 
-- Update names and top colour
-- Change mauve to pink
+- [Update names and top colour](https://codeberg.org/scarcekoi/pride-flags/commit/d357bca5e47630ab32db6b7897bf3849e5682864)
+- [Change mauve to pink](https://codeberg.org/scarcekoi/pride-flags/commit/194b967a1db8b5d82e873148129698838c538060)
 
 #### Pride
 
-- Rename to gay
+- [Rename to gay](https://codeberg.org/scarcekoi/pride-flags/commit/ca67bc342344a0ab45aea693be4fc8673038131c)
 
 #### Scripts
 
-- Rename and move whiskers run script
+- [Rename and move whiskers run script](https://codeberg.org/scarcekoi/pride-flags/commit/1940587aee7a4354c1cefe561dc9b57ea1b91c17)
 
 #### Trans
 
-- Use less jarring colours
+- [Use less jarring colours](https://codeberg.org/scarcekoi/pride-flags/commit/f18da774de19eeeadfb7f230059b66abbb944b13)
 
 #### Transgender
 
-- Trans to transgender
+- [Trans to transgender](https://codeberg.org/scarcekoi/pride-flags/commit/d348414d90edce43af2fcc5f3e2e1e02280f3294)
 
 ### 📚 Documentation
 
 
 #### Contributing
 
-- Init
-- Add note
-- Remove regenerate data note
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/30e40f1276397de1cad95d973918476adac0188d)
+- [Add note](https://codeberg.org/scarcekoi/pride-flags/commit/360e03b8d3e721220062994225d5cf53766db87e)
+- [Remove regenerate data note](https://codeberg.org/scarcekoi/pride-flags/commit/218406c0f021859fcd68896a7a97ebee7c3a3013)
 
 #### License
 
-- Update date
+- [Update date](https://codeberg.org/scarcekoi/pride-flags/commit/576d8b9ec0573647aaeea77bcb924e427702b984)
 
 #### Readme
 
-- Init
-- Remove preview
-- Remove copyright
-- Add flags section
-- Change flags to start closed
-- Add links
-- Fix links
-- Move flags above usage
-- Move above faq
-- Add webp
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/ea30fa403205bb4734ad614624cf1cfb7acdad5d)
+- [Remove preview](https://codeberg.org/scarcekoi/pride-flags/commit/76be7bc97a812c8e11d2a4d9813511aeec8c138d)
+- [Remove copyright](https://codeberg.org/scarcekoi/pride-flags/commit/179d2e010cc6e74080c8d5a683466f9eabcdf0d3)
+- [Add flags section](https://codeberg.org/scarcekoi/pride-flags/commit/b24759d9fcb40f07872745169cf16aef8c7c27cd)
+- [Change flags to start closed](https://codeberg.org/scarcekoi/pride-flags/commit/59be7e0f5a8e71c66b5792f9b1b4cfcb5b9fb2c6)
+- [Add links](https://codeberg.org/scarcekoi/pride-flags/commit/85618ff32040c67ec1b91bf9fa845f05d0cd82ea)
+- [Fix links](https://codeberg.org/scarcekoi/pride-flags/commit/653b83246de291acbe59f94f56cb1a2fae4dcc58)
+- [Move flags above usage](https://codeberg.org/scarcekoi/pride-flags/commit/6a1b0cd1b24b2076c147b33850edc9e3fd61a1ad)
+- [Move above faq](https://codeberg.org/scarcekoi/pride-flags/commit/e2f49a38fa108fcae56b5c94f6ec0e3b7bb45888)
+- [Add webp](https://codeberg.org/scarcekoi/pride-flags/commit/fcd8ede97c3587e2d89064636c361ed6914de659)
 
 ### 🎨 Styling
 
 
 #### Lesbian
 
-- Fix width
+- [Fix width](https://codeberg.org/scarcekoi/pride-flags/commit/04f99f8b97856ee9c3f9b228f67f166ce5a5ce69)
 
 #### Neutrois
 
-- Fix width
+- [Fix width](https://codeberg.org/scarcekoi/pride-flags/commit/8ef8df8ec1e0f4669a1d5bd451bc6076cbfcf55a)
 
 #### Pansexual
 
-- Change sky to sapphire
+- [Change sky to sapphire](https://codeberg.org/scarcekoi/pride-flags/commit/c118642e9468e4ee1fade55399439f07b777aa19)
 
 ### ⚙️ Miscellaneous Tasks
 
 
 #### Changelog
 
-- Init
-- Update
-- Regenerate data
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/3aa62464967f954e9acf0d42f89c8dc55aba998e)
+- [Update](https://codeberg.org/scarcekoi/pride-flags/commit/bf328accf0d076daf0914de897bf5c59ceaa645a)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1733d6cbd6fcd43ff0270e3555b7bddb9b6dde2b)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/f5c2c300bbee4cf551f3738adbdde76443e30fc0)
 
 #### Cliff
 
-- Update changelog
-- Add commit links
+- [Update changelog](https://codeberg.org/scarcekoi/pride-flags/commit/16092552dc770f10212335bc3505508da57ad65b)
+- [Add commit links](https://codeberg.org/scarcekoi/pride-flags/commit/b68dffc0328aa76287b97a6080ad314c45d2062e)
+- [Link commit text to commit](https://codeberg.org/scarcekoi/pride-flags/commit/f129058ca28af5e8ebe76e4311f271993fe125f3)
 
 #### Finromantic
 
-- Regenerate data
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/90b2e0930ae1fe07fb3744fe80bc23e1f97247ad)
 
 #### Previews
 
-- Re-generate data
+- [Re-generate data](https://codeberg.org/scarcekoi/pride-flags/commit/6f42a665b1c213d86a9c510bc245a6279257e03b)
 
 #### Regenerate-changelog
 
-- Init
-- Upgrade from codeberg-tiny to codeberg-small
-- Use different git cliff install
-- Change git cliff install
-- Change git cliff install
-- Upgrade from small to medium
-- Fix changelog generation job
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/2f2df092085f6c3b7d510ca21f987209d467a3eb)
+- [Upgrade from codeberg-tiny to codeberg-small](https://codeberg.org/scarcekoi/pride-flags/commit/e3b9f0d0f412bc4c8ac023e9593997bb27f86c81)
+- [Use different git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/18cfecea8349228a8eee2ec1926c90eaca31eab7)
+- [Change git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/d332ae70f1b79402c24ea6fa4cb389aa1635e87e)
+- [Change git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/deec0400a9bbb8ef931421a4913e95fc45298d37)
+- [Upgrade from small to medium](https://codeberg.org/scarcekoi/pride-flags/commit/f38dda001859a950585c66fd9c167601adfb3b73)
+- [Fix changelog generation job](https://codeberg.org/scarcekoi/pride-flags/commit/195f4d812be4c415b90546632fc97c91880f1aa2)
 
 #### Regenerate-data
 
-- Change runs on
-- Separate scripts
-- Update runs on
-- Update whiskers install
+- [Change runs on](https://codeberg.org/scarcekoi/pride-flags/commit/fc9462dcacfedaad17053530d6317de35e9dbd66)
+- [Separate scripts](https://codeberg.org/scarcekoi/pride-flags/commit/0c021a22083a84a73e43888cf4ca974d045b2379)
+- [Update runs on](https://codeberg.org/scarcekoi/pride-flags/commit/04a32c478738a48aa732ab07e3576eee6776fba9)
+- [Update whiskers install](https://codeberg.org/scarcekoi/pride-flags/commit/69e2a1e1f301e9de0033e055909415912a70cac8)
 
 #### Release
 
-- Init
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/1e82d443b260a9d43ab563003d9191a8030787c0)
 
 #### Scripts
 
-- Add bmp, css, jpeg, jpg, pcc, pcx, qoi, and tga
+- [Add bmp, css, jpeg, jpg, pcc, pcx, qoi, and tga](https://codeberg.org/scarcekoi/pride-flags/commit/2b0377aafea931e7367804bc65c8469129f9d04d)
