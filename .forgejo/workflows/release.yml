@@ -60,15 +60,14 @@ jobs:
 
       - name: Create release
         env:
-          FJ_API_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
+          TEA_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
         run: |
           TAG="${{ steps.get_tag.outputs.tag }}"
           CHANGELOG_FILE="${TAG}-changelog.md"
           echo "${{ steps.changelog.outputs.changelog }}" > "$CHANGELOG_FILE"
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix --extra-experimental-features "nix-command flakes" shell nixpkgs#tea -c \
-            tea release create \
-              --remote "origin" \
+            tea releases create \
               --repo "scarcekoi/pride-flags" \
               --tag "$TAG" \
               --title "$TAG" \
