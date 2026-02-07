@@ -7,6 +7,11 @@
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9c650f629ffc67e7ae665eaf552c0afbb1f4754c)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0e89b695772fa9e2f3d287a5a4bc7cc7de4c7704)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c91c211bf6d01d41a296f4d65c36587182c3c4c4)
+
+#### Regenerate-changelog
+
+- [Downgrade from medium to small](https://codeberg.org/scarcekoi/pride-flags/commit/67559c5ab042334d38d070a0123d097f3fd016a6)
 
 #### Release
 
