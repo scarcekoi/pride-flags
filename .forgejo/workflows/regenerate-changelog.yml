@@ -7,7 +7,7 @@ on:
 
 jobs:
   regen-changelog:
-    runs-on: codeberg-tiny
+    runs-on: codeberg-small
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
