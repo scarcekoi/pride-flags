@@ -18,7 +18,6 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y zip python3 python3-yaml
-          cargo install codeberg-cli
 
       - name: Install git-cliff
         run: |
@@ -58,13 +57,14 @@ jobs:
           FJ_API_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
         run: |
           TAG="${{ steps.get_tag.outputs.tag }}"
-          berg release create \
-            --repo "scarcekoi/pride-flags" \
-            --tag "$TAG" \
-            --name "$TAG" \
-            --description "${{ steps.changelog.outputs.changelog }}" \
-            --assets "mocha.zip" \
-            --assets "macchiato.zip" \
-            --assets "frappe.zip" \
-            --assets "latte.zip" \
-            --assets flag_zips/*.zip
+          nix shell nixpkgs#codeberg-cli -c \
+            berg release create \
+              --repo "scarcekoi/pride-flags" \
+              --tag "$TAG" \
+              --name "$TAG" \
+              --description "${{ steps.changelog.outputs.changelog }}" \
+              --assets "mocha.zip" \
+              --assets "macchiato.zip" \
+              --assets "frappe.zip" \
+              --assets "latte.zip" \
+              --assets flag_zips/*.zip
