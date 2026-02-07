@@ -182,6 +182,7 @@
 - [Move flags above usage](https://codeberg.org/scarcekoi/pride-flags/commit/6a1b0cd1b24b2076c147b33850edc9e3fd61a1ad)
 - [Move above faq](https://codeberg.org/scarcekoi/pride-flags/commit/e2f49a38fa108fcae56b5c94f6ec0e3b7bb45888)
 - [Add webp](https://codeberg.org/scarcekoi/pride-flags/commit/fcd8ede97c3587e2d89064636c361ed6914de659)
+- [Move faq after usage section](https://codeberg.org/scarcekoi/pride-flags/commit/5f0ec95f16d302b2a8e91a12fc3c933c62829996)
 
 ### 🎨 Styling
 
@@ -227,6 +228,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0ca20b14dc65a1d270b26ae0c96e8b03c194ef27)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/887b1146853f2434ee01a5a6640d3c3a0b97866d)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c93d0d719dd20840d10a1fb52aebd22e81ef1f91)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3b749f1249b726482519d24d06290f550ae25a64)
 
 #### Cliff
 
