@@ -342,7 +342,7 @@
 
 ## Usage
 
-1. Download the flags in your flavor of your choice.
+1. Download the flags in your flavor of your choice from [themes](themes)
 2. Enjoy!
 
 ## 🙋 FAQ
