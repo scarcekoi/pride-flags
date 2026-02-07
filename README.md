@@ -101,6 +101,15 @@
 </details>
 
 <details closed>
+<summary>Finromantic</summary>
+
+<img src="assets/composite/finromantic.webp" alt="Finromantic composite" style="width:50%;"/>
+<img src="assets/grid/finromantic.webp" alt="Finromantic grid" style="width:50%;"/>
+<img src="assets/row/finromantic.webp" alt="Finromantic row" style="width:50%;"/>
+
+</details>
+
+<details closed>
 <summary>Genderfluid</summary>
 
 <img src="assets/composite/genderfluid.webp" alt="Genderfluid composite" style="width:50%;"/>
@@ -248,6 +257,7 @@
 - Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappe/aroace/), [Latte](themes/latte/aroace/))
 - Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappe/asexual/), [Latte](themes/latte/asexual/))
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/), [Latte](themes/latte/bisexual/))
+- Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappe/finromantic/), [Latte](themes/latte/finromantic/))
 - Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/), [Latte](themes/latte/greysexual/))
 - Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/), [Latte](themes/latte/gynesexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/), [Latte](themes/latte/lesbian/))
@@ -303,6 +313,7 @@
 <summary>Orientation</summary>
 
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/), [Latte](themes/latte/bisexual/))
+- Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappe/finromantic/), [Latte](themes/latte/finromantic/))
 - Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/), [Latte](themes/latte/greysexual/))
 - Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/), [Latte](themes/latte/gynesexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/), [Latte](themes/latte/lesbian/))
