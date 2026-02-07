@@ -22,7 +22,7 @@ jobs:
       - name: Install Nix
         run: |
           curl -L https://nixos.org/nix/install | sh -s -- --daemon
-          . /etc/profile
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix --version
 
       - name: Install git-cliff
@@ -38,7 +38,7 @@ jobs:
         run: |
           TAG=$(git describe --tags --abbrev=0)
           echo "Latest tag: $TAG"
-          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "tag=$TAG" >> $FJ_OUTPUT
 
       - name: Create zip files for themes
         run: |
@@ -54,15 +54,16 @@ jobs:
           LATEST_TAG=$(git describe --tags --abbrev=0)
           PREV_TAG=$(git describe --tags --abbrev=0 $LATEST_TAG^)
           git-cliff --tag "$PREV_TAG..$LATEST_TAG" > changelog.md
-          echo "changelog<<EOF" >> $GITHUB_OUTPUT
-          cat changelog.md >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          echo "changelog<<EOF" >> $FJ_OUTPUT
+          cat changelog.md >> $FJ_OUTPUT
+          echo "EOF" >> $FJ_OUTPUT
 
       - name: Create release
         env:
           FJ_API_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
         run: |
           TAG="${{ steps.get_tag.outputs.tag }}"
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix shell nixpkgs#codeberg-cli -c \
             berg release create \
               --repo "scarcekoi/pride-flags" \
