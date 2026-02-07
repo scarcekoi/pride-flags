@@ -15,11 +15,13 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5eac501f8e8032f8be75d4fef1c5194842305a45)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/96a6b399ecbc43fd55272f471cd4d854d11ce7d3)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bb8aa6b2aca8c0db762dce8ec218cdba901d98c5)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/08629883019416985a7b022ac43d0f7c1f027564)
 
 #### Release
 
 - [Upgrade from tiny to small](https://codeberg.org/scarcekoi/pride-flags/commit/65ff80ba6888c8d7b8f2a6c62f71168620bd7460)
 - [Fix git cliff not working](https://codeberg.org/scarcekoi/pride-flags/commit/9eec4dcc415b25cb707862b3edf3c87d04fa910f)
+- [Install codeberg cli](https://codeberg.org/scarcekoi/pride-flags/commit/2315c40fe380730f8e2d978d026c8ad1f23b9587)
 ## [1.0.0] - 2026-02-07
 
 
