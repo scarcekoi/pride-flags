@@ -16,9 +16,10 @@ jobs:
 
       - name: Install git-cliff
         run: |
-          curl -L -o git-cliff https://github.com/orhun/git-cliff/releases/latest/download/git-cliff-x86_64-unknown-linux-musl
-          chmod +x git-cliff
-          ./git-cliff --version
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          export PATH="$HOME/.cargo/bin:$PATH"
+          cargo install git-cliff
+          git-cliff --version
 
       - name: Generate CHANGELOG.md
         run: git cliff -o CHANGELOG.md
