@@ -226,6 +226,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/ef37d171a9a15f6ecb4102c254830ff561f9d4b8)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0ca20b14dc65a1d270b26ae0c96e8b03c194ef27)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/887b1146853f2434ee01a5a6640d3c3a0b97866d)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c93d0d719dd20840d10a1fb52aebd22e81ef1f91)
 
 #### Cliff
 
@@ -263,6 +264,7 @@
 
 - [Init](https://codeberg.org/scarcekoi/pride-flags/commit/1e82d443b260a9d43ab563003d9191a8030787c0)
 - [Update name](https://codeberg.org/scarcekoi/pride-flags/commit/eb38a54fb5eee1bfd98ef6bedef25c9a59558b91)
+- [Generate changelog](https://codeberg.org/scarcekoi/pride-flags/commit/89718f1cf8f46c70b0e7e1764fba5b4b275ac7cb)
 
 #### Scripts
 
