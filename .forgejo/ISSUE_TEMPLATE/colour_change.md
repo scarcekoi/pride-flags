@@ -1,7 +1,7 @@
 ---
 name: Colour Change
 about: Request a colour change for an existing flag
-title: "[Colour Change] "
+title: "Name of Flag"
 labels: [colour change]
 assignees: ""
 ---

@@ -1,7 +1,7 @@
 ---
 name: New Flag
 about: Request a new flag
-title: "[New Flag] "
+title: "Name of Flag"
 labels: [new flag]
 assignees: ""
 ---
