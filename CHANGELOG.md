@@ -1,3 +1,15 @@
+## [unreleased]
+
+### ⚙️ Miscellaneous Tasks
+
+
+#### Changelog
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9c650f629ffc67e7ae665eaf552c0afbb1f4754c)
+
+#### Release
+
+- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/268457d6cbc2cdc45e3e8e29fcfd4d592dfdb219)
 ## [1.0.8] - 2026-02-07
 
 
