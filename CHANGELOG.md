@@ -205,6 +205,10 @@
 ### ⚙️ Miscellaneous Tasks
 
 
+#### ISSUE_TEMPLATE
+
+- [Update titles](https://codeberg.org/scarcekoi/pride-flags/commit/38e43378b217a39f055845cb7df14419a4a0167c)
+
 #### Changelog
 
 - [Init](https://codeberg.org/scarcekoi/pride-flags/commit/3aa62464967f954e9acf0d42f89c8dc55aba998e)
@@ -214,6 +218,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2e083d596ed9af6b455f449aeb8713233c9d4e44)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9e458d1d6140a4f8b1bf5f2358431cacdde51c8a)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/82baf39eb007258cbfe1a267cbe5926655a5fed7)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1c1405c7461c1b5f0e9255224aaaf870620dfd90)
 
 #### Cliff
 
