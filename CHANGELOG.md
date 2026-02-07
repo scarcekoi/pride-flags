@@ -19,7 +19,6 @@
 - *(cisgender)* Init
 - *(aroace)* Init
 - *(aromantic)* Init
-- Add flags readme section
 - *(greysexual)* Init
 - *(latte)* Init
 - *(latte)* Add other file formats
@@ -42,7 +41,6 @@
 
 ### 🐛 Bug Fixes
 
-- Rename gay -> pride
 - *(mocha)* Add pride files back
 - Svg scaling
 - Unthemed elements
@@ -57,6 +55,7 @@
 
 ### 🚜 Refactor
 
+- *(gay)* Rename to pride
 - *(trans)* Use less jarring colours
 - *(transgender)* Trans to transgender
 - *(pansexual)* Update names and top colour
@@ -73,16 +72,18 @@
 - Use catppuccin template
 - *(readme)* Remove preview
 - *(readme)* Remove copyright
+- *(readme)* Add flags section
 - *(readme)* Change flags to start closed
-- *(flags)* Add links
-- *(flags)* Fix links
-- *(flags)* Move flags above usage
-- *(flags)* Move above faq
+- *(readme)* Add links
+- *(readme)* Fix links
+- *(readme)* Move flags above usage
+- *(readme)* Move above faq
 - *(readme)* Add webp
 - *(contributing)* Init
 - Update name
 - *(contributing)* Add note
 - *(license)* Update date
+- *(contributing)* Remove regenerate data note
 
 ### 🎨 Styling
 
@@ -134,3 +135,4 @@
 - Regenerate data
 - *(scripts)* Add bmp, css, jpeg, jpg, pcc, pcx, qoi, and tga
 - *(finromantic)* Regenerate data
+- *(changelog)* Init
