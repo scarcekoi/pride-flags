@@ -16,8 +16,10 @@ jobs:
 
       - name: Install git-cliff
         run: |
-          sudo pacman -S --noconfirm git-cliff || true
-          git cliff --version
+          curl -L https://github.com/orhun/git-cliff/releases/latest/download/git-cliff-x86_64-unknown-linux-musl.tar.gz -o git-cliff.tar.gz
+          tar -xzf git-cliff.tar.gz
+          chmod +x git-cliff
+          ./git-cliff --version
 
       - name: Generate CHANGELOG.md
         run: git cliff -o CHANGELOG.md
