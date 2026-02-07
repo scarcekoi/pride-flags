@@ -23,6 +23,9 @@ body = """
 trim = true
 # Render body even when there are no releases to process.
 render_always = true
+# Link commits
+link_commits = true
+commit_url = "https://codeberg.org/scarcekoi/pride-flags/commit/{{hash}}"
 # An array of regex based postprocessors to modify the changelog.
 postprocessors = [
     # Replace the placeholder <REPO> with a URL.
