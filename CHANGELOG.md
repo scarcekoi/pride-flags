@@ -206,6 +206,10 @@
 - Init
 - Update
 
+#### Cliff
+
+- Update changelog
+
 #### Finromantic
 
 - Regenerate data
@@ -214,12 +218,26 @@
 
 - Re-generate data
 
+#### Regenerate-changelog
+
+- Init
+- Upgrade from codeberg-tiny to codeberg-small
+- Use different git cliff install
+- Change git cliff install
+- Change git cliff install
+- Upgrade from small to medium
+- Fix changelog generation job
+
 #### Regenerate-data
 
 - Change runs on
 - Separate scripts
 - Update runs on
 - Update whiskers install
+
+#### Release
+
+- Init
 
 #### Scripts
 
