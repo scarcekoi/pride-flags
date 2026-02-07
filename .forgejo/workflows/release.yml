@@ -1,4 +1,4 @@
-name: Release Themes and Flags
+name: Create Release
 
 on:
   push:
