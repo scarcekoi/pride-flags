@@ -68,7 +68,7 @@ jobs:
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix --extra-experimental-features "nix-command flakes" shell nixpkgs#tea -c \
             tea release create \
-              --remote "https://codeberg.org" \
+              --remote "origin" \
               --repo "scarcekoi/pride-flags" \
               --tag "$TAG" \
               --title "$TAG" \
