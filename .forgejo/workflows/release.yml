@@ -1,0 +1,74 @@
+name: Release Themes and Flags
+
+on:
+  push:
+    tags:
+      - "*" # triggers on any tag push
+
+jobs:
+  release:
+    runs-on: codeberg-tiny
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y zip python3 python3-yaml
+
+      - name: Get latest tag
+        id: get_tag
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          echo "Latest tag: $TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+      - name: Create zip files for themes
+        run: |
+          THEMES=(mocha macchiato frappe latte)
+          for theme in "${THEMES[@]}"; do
+            zip -r "${theme}.zip" "themes/$theme"
+          done
+
+      - name: Read flags.yml and create per-flag zips
+        run: |
+          python3 - << 'EOF'
+          import yaml, os, zipfile, shutil
+
+          with open('./resources/flags.yml') as f:
+              data = yaml.safe_load(f)
+
+          flavors = ['mocha','macchiato','frappe','latte']
+
+          os.makedirs('flag_zips', exist_ok=True)
+
+          for flag in data['flags']:
+              zip_name = os.path.join('flag_zips', f'{flag}.zip')
+              with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as z:
+                  for flavor in flavors:
+                      folder = f'{flavor}/{flag}'
+                      if os.path.isdir(folder):
+                          for root, _, files in os.walk(folder):
+                              for file in files:
+                                  # add as flavor/filename.ext
+                                  z.write(os.path.join(root, file), arcname=os.path.join(flavor, file))
+          EOF
+
+      - name: Create release on Forgejo
+        env:
+          FJ_API_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
+        run: |
+          TAG="${{ steps.get_tag.outputs.tag }}"
+          berg release create \
+            --repo "scarcekoi/pride-flags" \
+            --tag "$TAG" \
+            --name "$TAG" \
+            --description "Automated release for tag $TAG" \
+            --assets "mocha.zip" \
+            --assets "macchiato.zip" \
+            --assets "frappe.zip" \
+            --assets "latte.zip" \
+            --assets flag_zips/*.zip
