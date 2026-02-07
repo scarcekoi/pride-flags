@@ -33,31 +33,18 @@ jobs:
             zip -r "${theme}.zip" "themes/$theme"
           done
 
-      - name: Read flags.yml and create per-flag zips
+      - name: Generate changelog
+        id: changelog
         run: |
-          python3 - << 'EOF'
-          import yaml, os, zipfile, shutil
+          git fetch --tags
+          LATEST_TAG=$(git describe --tags --abbrev=0)
+          PREV_TAG=$(git describe --tags --abbrev=0 $LATEST_TAG^)
+          git cliff --tag "$PREV_TAG..$LATEST_TAG" > changelog.md
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          cat changelog.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
-          with open('./resources/flags.yml') as f:
-              data = yaml.safe_load(f)
-
-          flavors = ['mocha','macchiato','frappe','latte']
-
-          os.makedirs('flag_zips', exist_ok=True)
-
-          for flag in data['flags']:
-              zip_name = os.path.join('flag_zips', f'{flag}.zip')
-              with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as z:
-                  for flavor in flavors:
-                      folder = f'{flavor}/{flag}'
-                      if os.path.isdir(folder):
-                          for root, _, files in os.walk(folder):
-                              for file in files:
-                                  # add as flavor/filename.ext
-                                  z.write(os.path.join(root, file), arcname=os.path.join(flavor, file))
-          EOF
-
-      - name: Create release on Forgejo
+      - name: Create release
         env:
           FJ_API_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
         run: |
@@ -66,7 +53,7 @@ jobs:
             --repo "scarcekoi/pride-flags" \
             --tag "$TAG" \
             --name "$TAG" \
-            --description "Automated release for tag $TAG" \
+            --description "${{ steps.changelog.outputs.changelog }}" \
             --assets "mocha.zip" \
             --assets "macchiato.zip" \
             --assets "frappe.zip" \
