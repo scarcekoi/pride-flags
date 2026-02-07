@@ -13,6 +13,11 @@
 #### Changelog
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/db8dbf960a983d8a0479de05da04d7127090952e)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5cf21ccc07412456540f64d8bb1d0de40db7496c)
+
+#### Release
+
+- [Fix release creation job](https://codeberg.org/scarcekoi/pride-flags/commit/450ef2880b283bebcd3f4521df0293f8b462b538)
 
 #### Transandrogynous
 
