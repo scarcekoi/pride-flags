@@ -1,3 +1,16 @@
+## [1.0.5] - 2026-02-07
+
+
+### ⚙️ Miscellaneous Tasks
+
+
+#### Changelog
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9ee15c211b55638385807ad6df5e894809caedc8)
+
+#### Release
+
+- [Install nix](https://codeberg.org/scarcekoi/pride-flags/commit/b2c7eac45426414cf0eb84375fbaa9f266b09898)
 ## [1.0.4] - 2026-02-07
 
 
