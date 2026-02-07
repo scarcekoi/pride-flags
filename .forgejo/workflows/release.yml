@@ -38,7 +38,7 @@ jobs:
         run: |
           TAG=$(git describe --tags --abbrev=0)
           echo "Latest tag: $TAG"
-          echo "tag=$TAG" >> $FJ_OUTPUT
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
 
       - name: Create zip files for themes
         run: |
@@ -54,9 +54,9 @@ jobs:
           LATEST_TAG=$(git describe --tags --abbrev=0)
           PREV_TAG=$(git describe --tags --abbrev=0 $LATEST_TAG^)
           git-cliff --tag "$PREV_TAG..$LATEST_TAG" > changelog.md
-          echo "changelog<<EOF" >> $FJ_OUTPUT
-          cat changelog.md >> $FJ_OUTPUT
-          echo "EOF" >> $FJ_OUTPUT
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          cat changelog.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create release
         env:
