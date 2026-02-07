@@ -16,7 +16,7 @@ body = """
 {% if scope %}
 #### {{ scope | upper_first }}{% endif %}
 {% for commit in scoped_commits %}
-- {% if commit.breaking %}[**breaking**] {% endif %}{{ commit.message | upper_first }}{% endfor %}{% endfor %}
+- {% if commit.breaking %}[**breaking**] {% endif %}[{{ commit.message | upper_first }}](https://codeberg.org/scarcekoi/pride-flags/commit/{{ commit.id }}){% endfor %}{% endfor %}
 {% endfor %}
 """
 # Remove leading and trailing whitespaces from the changelog's body.
