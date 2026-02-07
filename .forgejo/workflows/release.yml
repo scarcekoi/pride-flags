@@ -64,7 +64,7 @@ jobs:
         run: |
           TAG="${{ steps.get_tag.outputs.tag }}"
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-          nix shell nixpkgs#codeberg-cli -c \
+          nix shell nixpkgs#codeberg-cli --extra-experimental-features nix-command -c \
             berg release create \
               --repo "scarcekoi/pride-flags" \
               --tag "$TAG" \
