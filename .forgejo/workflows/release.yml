@@ -63,17 +63,18 @@ jobs:
           FJ_API_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
         run: |
           TAG="${{ steps.get_tag.outputs.tag }}"
+          CHANGELOG_FILE="${TAG}-changelog.md"
+          echo "${{ steps.changelog.outputs.changelog }}" > "$CHANGELOG_FILE"
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix --extra-experimental-features "nix-command flakes" shell nixpkgs#tea -c \
             tea release create \
-              --host "https://codeberg.org" \
-              --owner "scarcekoi" \
-              --repo "pride-flags" \
-              --tag-name "$TAG" \
+              --remote "https://codeberg.org" \
+              --repo "scarcekoi/pride-flags" \
+              --tag "$TAG" \
               --title "$TAG" \
-              --description "${{ steps.changelog.outputs.changelog }}" \
-              --assets "mocha.zip" \
-              --assets "macchiato.zip" \
-              --assets "frappe.zip" \
-              --assets "latte.zip" \
-              --assets flag_zips/*.zip
+              --note-file "$CHANGELOG_FILE" \
+              --asset "mocha.zip" \
+              --asset "macchiato.zip" \
+              --asset "frappe.zip" \
+              --asset "latte.zip" \
+              --asset flag_zips/*.zip
