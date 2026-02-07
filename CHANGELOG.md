@@ -198,6 +198,10 @@
 
 - [Change sky to sapphire](https://codeberg.org/scarcekoi/pride-flags/commit/c118642e9468e4ee1fade55399439f07b777aa19)
 
+#### Transfeminine
+
+- [Update colours](https://codeberg.org/scarcekoi/pride-flags/commit/864bef32149404ade59e9d93a63b41da6d784315)
+
 ### ⚙️ Miscellaneous Tasks
 
 
@@ -209,6 +213,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/f5c2c300bbee4cf551f3738adbdde76443e30fc0)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2e083d596ed9af6b455f449aeb8713233c9d4e44)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9e458d1d6140a4f8b1bf5f2358431cacdde51c8a)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/82baf39eb007258cbfe1a267cbe5926655a5fed7)
 
 #### Cliff
 
@@ -249,3 +254,7 @@
 #### Scripts
 
 - [Add bmp, css, jpeg, jpg, pcc, pcx, qoi, and tga](https://codeberg.org/scarcekoi/pride-flags/commit/2b0377aafea931e7367804bc65c8469129f9d04d)
+
+#### Transfeminine
+
+- [Generate data](https://codeberg.org/scarcekoi/pride-flags/commit/90ad43c330eeb1a7c4a3590d37da9ab5ff34335c)
