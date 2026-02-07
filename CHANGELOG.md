@@ -1,4 +1,18 @@
-## [unreleased]
+## [1.0.4] - 2026-02-07
+
+
+### ⚙️ Miscellaneous Tasks
+
+
+#### Changelog
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3cfa435b96c6a993fb2b16922421278d24df3ee1)
+
+#### Release
+
+- [Use temporary nix shell](https://codeberg.org/scarcekoi/pride-flags/commit/2a511a66d79f28893ca59e78cd7664d5cb4db720)
+## [1.0.3] - 2026-02-07
+
 
 ### 📚 Documentation
 
