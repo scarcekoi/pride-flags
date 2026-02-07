@@ -202,6 +202,10 @@
 
 - [Update colours](https://codeberg.org/scarcekoi/pride-flags/commit/864bef32149404ade59e9d93a63b41da6d784315)
 
+#### Transmasculine
+
+- [Change colours](https://codeberg.org/scarcekoi/pride-flags/commit/f8b6b6176d6d550a521722967f1ab0a2100b3b40)
+
 ### ⚙️ Miscellaneous Tasks
 
 
@@ -219,6 +223,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9e458d1d6140a4f8b1bf5f2358431cacdde51c8a)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/82baf39eb007258cbfe1a267cbe5926655a5fed7)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1c1405c7461c1b5f0e9255224aaaf870620dfd90)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/8e2c0b124429cf261be4186d1cd75eeab90a244d)
 
 #### Cliff
 
@@ -263,3 +268,7 @@
 #### Transfeminine
 
 - [Generate data](https://codeberg.org/scarcekoi/pride-flags/commit/90ad43c330eeb1a7c4a3590d37da9ab5ff34335c)
+
+#### Transmasculine
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c711b3d206882df0371b2854717cdc7e16262302)
