@@ -1,5 +1,26 @@
 ## [unreleased]
 
+### 📚 Documentation
+
+
+#### Readme
+
+- [Add themes link](https://codeberg.org/scarcekoi/pride-flags/commit/8469011d06e7aea58ce0a21b5be6d6fcc282bdfc)
+
+### ⚙️ Miscellaneous Tasks
+
+
+#### Changelog
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5eac501f8e8032f8be75d4fef1c5194842305a45)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/96a6b399ecbc43fd55272f471cd4d854d11ce7d3)
+
+#### Release
+
+- [Upgrade from tiny to small](https://codeberg.org/scarcekoi/pride-flags/commit/65ff80ba6888c8d7b8f2a6c62f71168620bd7460)
+## [1.0.0] - 2026-02-07
+
+
 ### 🚀 Features
 
 
@@ -183,7 +204,6 @@
 - [Move above faq](https://codeberg.org/scarcekoi/pride-flags/commit/e2f49a38fa108fcae56b5c94f6ec0e3b7bb45888)
 - [Add webp](https://codeberg.org/scarcekoi/pride-flags/commit/fcd8ede97c3587e2d89064636c361ed6914de659)
 - [Move faq after usage section](https://codeberg.org/scarcekoi/pride-flags/commit/5f0ec95f16d302b2a8e91a12fc3c933c62829996)
-- [Add themes link](https://codeberg.org/scarcekoi/pride-flags/commit/8469011d06e7aea58ce0a21b5be6d6fcc282bdfc)
 
 ### 🎨 Styling
 
@@ -230,7 +250,6 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/887b1146853f2434ee01a5a6640d3c3a0b97866d)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c93d0d719dd20840d10a1fb52aebd22e81ef1f91)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3b749f1249b726482519d24d06290f550ae25a64)
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5eac501f8e8032f8be75d4fef1c5194842305a45)
 
 #### Cliff
 
