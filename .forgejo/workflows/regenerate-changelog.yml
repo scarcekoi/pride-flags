@@ -16,8 +16,7 @@ jobs:
 
       - name: Install git-cliff
         run: |
-          curl -L https://github.com/orhun/git-cliff/releases/latest/download/git-cliff-x86_64-unknown-linux-musl.tar.gz -o git-cliff.tar.gz
-          tar -xzf git-cliff.tar.gz
+          curl -L -o git-cliff https://github.com/orhun/git-cliff/releases/latest/download/git-cliff-x86_64-unknown-linux-musl
           chmod +x git-cliff
           ./git-cliff --version
 
