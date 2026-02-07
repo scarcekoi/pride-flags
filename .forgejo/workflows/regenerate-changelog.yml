@@ -22,7 +22,9 @@ jobs:
           git-cliff --version
 
       - name: Generate CHANGELOG.md
-        run: git cliff -o CHANGELOG.md
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          git-cliff -o CHANGELOG.md
 
       - name: Commit and push changelog
         env:
