@@ -208,6 +208,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1733d6cbd6fcd43ff0270e3555b7bddb9b6dde2b)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/f5c2c300bbee4cf551f3738adbdde76443e30fc0)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2e083d596ed9af6b455f449aeb8713233c9d4e44)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9e458d1d6140a4f8b1bf5f2358431cacdde51c8a)
 
 #### Cliff
 
@@ -232,7 +233,7 @@
 - [Change git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/deec0400a9bbb8ef931421a4913e95fc45298d37)
 - [Upgrade from small to medium](https://codeberg.org/scarcekoi/pride-flags/commit/f38dda001859a950585c66fd9c167601adfb3b73)
 - [Fix changelog generation job](https://codeberg.org/scarcekoi/pride-flags/commit/195f4d812be4c415b90546632fc97c91880f1aa2)
-- [Update git-cliff extract command](https://codeberg.org/scarcekoi/pride-flags/commit/f38e98abda5e2e8a81c7370b1403e98dff7320e4)
+- [Update git-cliff extract command](https://codeberg.org/scarcekoi/pride-flags/commit/77d1d7dc692c33abcca37e34b35a38b74032d96b)
 
 #### Regenerate-data
 
