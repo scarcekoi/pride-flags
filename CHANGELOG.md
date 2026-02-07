@@ -1,3 +1,22 @@
+## [unreleased]
+
+### 🚀 Features
+
+
+#### Transandrogynous
+
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/3d65471fa8b27d698a52cd4d9311aedac536c3e7)
+
+### ⚙️ Miscellaneous Tasks
+
+
+#### Changelog
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/db8dbf960a983d8a0479de05da04d7127090952e)
+
+#### Transandrogynous
+
+- [Generate data](https://codeberg.org/scarcekoi/pride-flags/commit/ab9efcf50fc4778be8dd80eb022cb29b11ed1dd2)
 ## [1.0.5] - 2026-02-07
 
 
