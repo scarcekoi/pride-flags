@@ -7,11 +7,13 @@
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/7c8e70ae4c802f67c9e171fb25b44c6999bf07d5)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bd3a60643462819d02b80fd65448fe26438bdc7d)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/6227779d1598b180a0326cf4c93f04c3cc98ae13)
 
 #### Release
 
 - [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/9b254c5d7ce4dbcc6196daf830ea9d1c3c13dd28)
 - [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/c2f1839f4242e16490aeffd1534da27ea5a031f4)
+- [Use curl instead of tea cli](https://codeberg.org/scarcekoi/pride-flags/commit/c7e808c9eee1a56ff92b9b5ce130d24243e23deb)
 ## [1.0.11] - 2026-02-07
 
 
