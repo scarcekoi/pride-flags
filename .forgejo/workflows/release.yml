@@ -58,22 +58,32 @@ jobs:
           cat changelog.md >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: Create release
+      - name: Create release via API
         env:
-          TEA_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
+          FORGEJO_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
         run: |
           TAG="${{ steps.get_tag.outputs.tag }}"
           CHANGELOG_FILE="${TAG}-changelog.md"
           echo "${{ steps.changelog.outputs.changelog }}" > "$CHANGELOG_FILE"
-          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-          nix --extra-experimental-features "nix-command flakes" shell nixpkgs#tea -c \
-            tea releases create \
-              --repo "scarcekoi/pride-flags" \
-              --tag "$TAG" \
-              --title "$TAG" \
-              --note-file "$CHANGELOG_FILE" \
-              --asset "mocha.zip" \
-              --asset "macchiato.zip" \
-              --asset "frappe.zip" \
-              --asset "latte.zip" \
-              --asset flag_zips/*.zip
+
+          RESPONSE=$(curl -s -X POST https://codeberg.org/api/v1/repos/scarcekoi/pride-flags/releases \
+            -H "Authorization: token $FORGEJO_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"tag_name\": \"$TAG\",
+              \"name\": \"$TAG\",
+              \"body\": \"$(sed 's/"/\\"/g' $CHANGELOG_FILE)\",
+              \"draft\": false,
+              \"prerelease\": false
+            }")
+
+          echo "$RESPONSE"
+
+          RELEASE_ID=$(echo "$RESPONSE" | python3 -c "import sys, json; print(json.load(sys.stdin)['id'])")
+
+          for FILE in mocha.zip macchiato.zip frappe.zip latte.zip flag_zips/*.zip; do
+            curl -X POST \
+              -H "Authorization: token $FORGEJO_TOKEN" \
+              -F "attachment=@$FILE" \
+              "https://codeberg.org/api/v1/repos/scarcekoi/pride-flags/releases/$RELEASE_ID/assets"
+          done
