@@ -1,4 +1,5 @@
-## [unreleased]
+## [1.0.17] - 2026-02-19
+
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -6,10 +7,13 @@
 #### Changelog
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/279607322a33ed55a7b78332507633e02e5026b5)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/db9f6c6f1bb836aac647a5af376a739c795f8584)
 
 #### Release
 
 - [Fix](https://codeberg.org/scarcekoi/pride-flags/commit/b7d925159c25ddaf343061ba3d14f85dbdc9c14e)
+- [Fix](https://codeberg.org/scarcekoi/pride-flags/commit/e68dccc4e27c5aede5d642064f071937d4311acb)
+- [Remove nix install](https://codeberg.org/scarcekoi/pride-flags/commit/58605e81df24450e436d4011637e727f5b621bd1)
 ## [1.0.14] - 2026-02-18
 
 
