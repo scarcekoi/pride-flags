@@ -6,6 +6,7 @@
 #### Dist
 
 - [Add dist/release](https://codeberg.org/scarcekoi/pride-flags/commit/d778bee16ec7c90a98a50d35436036f1b6796264)
+- [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/33a1581c11c0aa46f306e81711d14d836ac60d04)
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -21,6 +22,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5d2e781bcba028bdb2484ca6fbd18e0e2b9a18a3)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/305268f46edc3e25d404e9d913ca427c34b21306)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/d6ffbce8c3b95d027c22469934221045cb909bd0)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a9be50f910662e171d76bee0411a4e95e35cb004)
 
 #### Regenerate-changelog
 
