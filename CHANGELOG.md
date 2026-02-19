@@ -3,11 +3,19 @@
 ### 🚀 Features
 
 
+#### Cisgender
+
+- [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/329ddcca342487137c1086f2beb473dc71b9e3e1)
+- [Remove files](https://codeberg.org/scarcekoi/pride-flags/commit/e070b926bb31f179c5af7be8a030a529feff21c8)
+
 #### Dist
 
 - [Add dist/release](https://codeberg.org/scarcekoi/pride-flags/commit/d778bee16ec7c90a98a50d35436036f1b6796264)
 - [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/33a1581c11c0aa46f306e81711d14d836ac60d04)
 - [Remove old files](https://codeberg.org/scarcekoi/pride-flags/commit/1a9f697d5d7be6636d7205a1bea59275f4f5525e)
+
+### 💼 Other
+
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -41,6 +49,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2dd615b2e6b2eda97ea938fdc3d6d1698a7a1a99)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/e143af75c4413f2106184ea513855b9b28e652b0)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/690928594cd4efb4f3dfe86b286a5024686049bb)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2122d37e3ff4f2dc2c6e81f835822955942343cf)
 
 #### Regenerate
 
@@ -96,6 +105,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0f83f1e4a3be943d194c8139716029c7bc8fafea)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/cf9ea62aa81ddfe4dbc9bc3339ac88df256b5daf)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0ae7f7ca4e6308726c1e89d837d2b9d9082a325a)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/600fbe9f6364f15219cb03389dac55dc3b677ab4)
 
 ### ◀️ Revert
 
