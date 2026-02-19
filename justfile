@@ -13,11 +13,11 @@ catwalk:
     ./scripts/catwalk-run.sh
 
 flaglist:
-    ./scripts/update-flaglist.py
+    ./scripts/update-flaglist.py all
 
 preview:
     ./scripts/update-previews.py
 
 optimise:
-    ./scripts/optipng.in
+    ./scripts/optimise.sh
 

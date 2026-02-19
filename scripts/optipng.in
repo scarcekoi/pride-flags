@@ -1,9 +1,0 @@
-#!/bin/bash
-
-#
-# Simple script that helps parallelise optipng and svgo
-#
-
-find assets/ -type f -name "*.png" | parallel -j$(($(nproc)-2)) optipng -o7 -zm1-9 -strip all -fix -preserve -clobber -quiet
-
-find themes/ -type f -name "*.svg" | parallel -j$(($(nproc)-2)) svgo --multipass

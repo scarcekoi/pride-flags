@@ -1,5 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="250" height="200" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="250" height="100" fill="#ea76cb" />
-<rect x="0" y="100" width="250" height="100" fill="#1e66f5" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="200" shape-rendering="crispEdges"><path fill="#ea76cb" d="M0 0h250v100H0z"/><path fill="#1e66f5" d="M0 100h250v100H0z"/></svg>
