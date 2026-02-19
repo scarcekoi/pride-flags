@@ -20,11 +20,13 @@ jobs:
       - name: Create zip archives for themes
         run: |
           mkdir -p dist/release
+          ls dist/release
           THEMES=(mocha macchiato frappe latte)
           for theme in "${THEMES[@]}"; do
             zip -r "${theme}.zip" "themes/$theme"
             echo "Archived $theme to dist/release/${theme}.zip"
           done
+          ls dist/release
 
       - name: Commit and push release files
         env:
