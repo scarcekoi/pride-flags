@@ -46,7 +46,7 @@ jobs:
         run: |
           git fetch --tags
           LATEST_TAG=$(git describe --tags --abbrev=0)
-          PREV_TAG=$(git describe --tags --abbrev=0 $LATEST_TAG^)
+          PREV_TAG=$(git tag --sort=-creatordate | grep -B1 "^$LATEST_TAG$" | head -n1)
           git-cliff --tag "$PREV_TAG..$LATEST_TAG" > changelog.md
           echo "changelog<<EOF" >> $GITHUB_OUTPUT
           cat changelog.md >> $GITHUB_OUTPUT
