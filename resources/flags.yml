@@ -14,9 +14,6 @@ flags:
   bisexual:
     name: Bisexual
     categories: [attraction, orientation]
-  cisgender:
-    name: Cisgender
-    categories: [gender]
   demiboy:
     name: Demiboy
     categories: [gender, expression]
