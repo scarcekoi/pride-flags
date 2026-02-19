@@ -24,4 +24,5 @@
 *.qoi filter=lfs diff=lfs merge=lfs -text
 *.tga filter=lfs diff=lfs merge=lfs -text
 *.toml filter=lfs diff=lfs merge=lfs -text
+*.gitkeep filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
