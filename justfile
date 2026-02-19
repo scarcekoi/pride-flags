@@ -21,3 +21,5 @@ preview:
 optimise:
     ./scripts/optimise.sh
 
+archive:
+    ./scripts/archive.sh
