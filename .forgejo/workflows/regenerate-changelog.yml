@@ -1,4 +1,4 @@
-name: Update Changelog
+name: Regenerate Changelog
 
 on:
   push:
