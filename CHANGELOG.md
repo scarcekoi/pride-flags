@@ -6,6 +6,11 @@
 #### Changelog
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1a1514d90c07c573bcc781f8c012dd1f4d625686)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5f3abb29a818cca5e2d96ca03aff9ba184d0d897)
+
+#### Regenerate-changelog
+
+- [Update name](https://codeberg.org/scarcekoi/pride-flags/commit/27e47ce8935c389f1eb335f17abfbc56001eb246)
 
 #### Release
 
