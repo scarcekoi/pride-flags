@@ -50,7 +50,7 @@ jobs:
           git push
 
   regenerate-release-files:
-    runs-on: codeberg-tiny
+    runs-on: codeberg-small
     needs: regenerate-changelog
     steps:
       - name: Checkout repository
