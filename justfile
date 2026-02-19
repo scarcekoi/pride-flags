@@ -1,21 +1,21 @@
 _default:
     @just --list
 
-do-everything: build gen-files catwalk flaglist preview optimise
+do-everything: whiskers create-files catwalk update-flaglist update-previews optimise
 
-build:
+whiskers:
     ./scripts/whiskers-run.sh
 
-gen-files:
+create-files:
     ./scripts/create-files.py all
 
 catwalk:
     ./scripts/catwalk-run.sh
 
-flaglist:
+update-flaglist:
     ./scripts/update-flaglist.py all
 
-preview:
+update-previews:
     ./scripts/update-previews.py
 
 optimise:

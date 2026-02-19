@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 import re
+import yaml
+
 from pathlib import Path
 from io import StringIO
-
-import yaml
 
 flags_file = Path("./resources/flags.yml")
 readme_file = Path("./README.md")
@@ -19,41 +19,26 @@ sorted_flags = sorted(
 
 
 def generate_preview_section() -> str:
-    """Build HTML section with zero intermediate allocations."""
     buf = StringIO()
-    write = buf.write  # Micro-optimization: cache method reference
-
-    write("<!-- AUTOGEN:PREVIEWS START -->\n")
-    write("<!-- the following section is auto-generated, do not edit -->\n\n")
-
-    # Template strings (avoid repeated f-string evaluation)
-    img_template = '<img src="assets/{}/{}.webp" alt="{} {}" style="width:50%;"/>\n'
+    buf.write("<!-- AUTOGEN:PREVIEWS START -->\n")
+    buf.write("<!-- the following section is auto-generated, please edit scripts/update-previews.py to change this. -->\n\n")
 
     for flag_key, flag_info in sorted_flags:
         flag_name = flag_info["name"]
-        write("<details closed>\n<summary>")
-        write(flag_name)
-        write("</summary>\n")
-
-        # Batch writes for all images
-        write(
-            img_template.format(
-                flag_key, "composite",
-                flag_name, "composite"
-            )
+        buf.write(
+            f"<details closed>\n"
+            f"<summary>{flag_name}</summary>\n"
+            f'<img src="assets/composite/{flag_key}.webp" alt="{flag_name} composite" style="width:50%;"/>\n'
+            f'<img src="assets/grid/{flag_key}.webp" alt="{flag_name} grid" style="width:50%;"/>\n'
+            f'<img src="assets/row/{flag_key}.webp" alt="{flag_name} row" style="width:50%;"/>\n'
+            f"</details>\n\n"
         )
-        write(img_template.format(flag_key, "grid", flag_name, "grid"))
-        write(img_template.format(flag_key, "row", flag_name, "row"))
 
-        write("</details>\n\n")
-
-    write("<!-- AUTOGEN:PREVIEWS END -->")
+    buf.write("<!-- AUTOGEN:PREVIEWS END -->")
     return buf.getvalue()
 
 
 new_section = generate_preview_section()
-
-# Read once, write once
 readme_text = readme_file.read_text()
 updated_text = re.sub(
     r"<!-- AUTOGEN:PREVIEWS START -->.*?<!-- AUTOGEN:PREVIEWS END -->",

@@ -8,9 +8,9 @@ whiskers:
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
 <svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="1000" height="100" fill="{{green.hex}}" />
-<rect x="0" y="100" width="1000" height="100" fill="{{teal.hex}}" />
-<rect x="0" y="200" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
-<rect x="0" y="300" width="1000" height="100" fill="{{overlay0.hex}}" />
-<rect x="0" y="400" width="1000" height="100" fill="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" />
+<rect x="0" y="0" width="1000" height="100" fill="{{green.hex}}" stroke="{{green.hex}}" />
+<rect x="0" y="100" width="1000" height="100" fill="{{teal.hex}}" stroke="{{teal.hex}}" />
+<rect x="0" y="200" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" stroke="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
+<rect x="0" y="300" width="1000" height="100" fill="{{overlay0.hex}}" stroke="{{overlay0.hex}}" />
+<rect x="0" y="400" width="1000" height="100" fill="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" stroke="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" />
 </svg>

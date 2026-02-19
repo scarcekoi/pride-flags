@@ -5,7 +5,7 @@ import subprocess
 import sys
 import yaml
 
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from multiprocessing import cpu_count
 from pathlib import Path
 from shutil import which
@@ -31,78 +31,109 @@ else:
         sys.exit(1)
     flags_to_process = [target]
 
-formats = [
-    "ase", "aseprite", "bmp", "css", "flc", "fli", "jpeg", "jpg",
-    "pcx", "pcc", "png", "qoi", "tga", "webp",
-]
+formats = ["ase", "aseprite", "bmp", "flc", "jpeg", "jpg", "pcx", "pcc", "qoi", "tga", "webp"]
 
-TOOL: str = which("aseprite") or which("libresprite") or ""
-if not TOOL:
+# Format routing: which tool handles each format best
+ASEPRITE_FORMATS = {"ase", "aseprite", "bmp", "flc", "pcx", "pcc", "tga"}
+IMAGEMAGICK_FORMATS = {"jpg", "jpeg", "webp", "qoi"}
+
+# Tool detection
+CONVERT = which("convert") or ""
+ASEPRITE = which("aseprite") or which("libresprite") or ""
+
+if not CONVERT:
+    raise RuntimeError("ImageMagick (convert) not found on system!")
+if not ASEPRITE:
     raise RuntimeError("Neither aseprite nor libresprite found on system!")
 
 
 def export_svg_to_png(svg_path: Path) -> Path | None:
-    """Export SVG to PNG using cairosvg (pure Python, no external tools)."""
-    tmp_png = svg_path.with_suffix(".tmp.png")
+    """Convert SVG to PNG using cairosvg."""
+    png_path = svg_path.with_suffix(".png")
 
     try:
         import cairosvg
-        cairosvg.svg2png(url=str(svg_path), write_to=str(tmp_png), dpi=96)
-        return tmp_png
+        cairosvg.svg2png(url=str(svg_path), write_to=str(png_path), dpi=96)
+        return png_path
     except ImportError:
-        print(
-            "ERROR: cairosvg not installed. Run: pip install cairosvg",
-            file=sys.stderr
-        )
+        print("ERROR: cairosvg not installed. Run: pip install cairosvg", file=sys.stderr)
         sys.exit(1)
     except Exception as e:
         print(f"cairosvg failed for {svg_path}: {e}", file=sys.stderr)
         return None
 
 
-def convert_png_to_format(tmp_png: Path, fmt: str, max_retries: int = 2) -> bool:
-    """Convert PNG to target format with retry logic."""
-    output_path = tmp_png.with_suffix(f".{fmt}")
-    for attempt in range(max_retries):
-        try:
-            with open(os.devnull, 'w') as devnull:
-                subprocess.run(
-                    [TOOL, "-b", str(tmp_png), "--save-as", str(output_path)],
-                    check=True,
-                    stdout=devnull,
-                    stderr=devnull,
-                    timeout=30,
-                )
-            return True
-        except subprocess.TimeoutExpired:
-            if attempt < max_retries - 1:
-                print(f"Timeout for {fmt}, retrying...", file=sys.stderr)
-        except subprocess.CalledProcessError:
-            print(f"Conversion to {fmt} failed", file=sys.stderr)
-            return False
-    return False
+def convert_png_to_format(png_path: Path, fmt: str) -> bool:
+    """Convert PNG to target format using the best tool for that format."""
+    output_path = png_path.with_stem(png_path.stem.replace(".png", "")).with_suffix(f".{fmt}")
+
+    # Route to the best tool
+    if fmt in ASEPRITE_FORMATS:
+        cmd = [ASEPRITE, "-b", str(png_path), "--save-as", str(output_path)]
+    else:
+        cmd = [CONVERT, str(png_path), str(output_path)]
+
+    try:
+        with open(os.devnull, 'w') as devnull:
+            subprocess.run(cmd, check=True, stdout=devnull, stderr=devnull, timeout=10)
+        return True
+    except Exception as e:
+        print(f"Failed {fmt} for {png_path}: {e}", file=sys.stderr)
+        return False
+
+
+def convert_png_to_all_formats(png_path: Path) -> int:
+    """Parallel format conversion for a single PNG."""
+    success_count = 0
+
+    with ProcessPoolExecutor(max_workers=4) as fmt_executor:
+        fmt_futures = {
+            fmt_executor.submit(convert_png_to_format, png_path, fmt): fmt
+            for fmt in formats
+        }
+
+        for future in as_completed(fmt_futures):
+            if future.result():
+                success_count += 1
+
+    return success_count
+
+
+def batch_export_svgs(svg_paths: list[Path]) -> dict[Path, Path]:
+    """Parallel SVG→PNG export for a batch of SVGs."""
+    results = {}
+
+    with ProcessPoolExecutor(max_workers=cpu_count()) as executor:
+        futures = {
+            executor.submit(export_svg_to_png, svg): svg
+            for svg in svg_paths
+        }
+
+        for future in as_completed(futures):
+            svg = futures[future]
+            png = future.result()
+            if png:
+                results[svg] = png
+
+    return results
 
 
 def process_flag_theme(flag_key: str, theme_dir: Path) -> tuple[str, str, int]:
-    """Process a single flag/theme combo."""
+    """Process a single flag/theme combo: SVG → PNG → all formats."""
     svg_path = theme_dir / flag_key / f"{flag_key}.svg"
-
     if not svg_path.exists():
         return (flag_key, theme_dir.name, 0)
 
-    tmp_png = export_svg_to_png(svg_path)
-    if not tmp_png:
+    png_path = export_svg_to_png(svg_path)
+    if not png_path:
         return (flag_key, theme_dir.name, 0)
 
-    # Parallelize format conversions
-    with ThreadPoolExecutor(max_workers=4) as fmt_executor:
-        futures = [
-            fmt_executor.submit(convert_png_to_format, tmp_png, fmt)
-            for fmt in formats
-        ]
-        success_count = sum(1 for f in futures if f.result())
+    # Parallel format conversion
+    success_count = convert_png_to_all_formats(png_path)
 
-    tmp_png.unlink()
+    # Clean up PNG after all conversions
+    png_path.unlink(missing_ok=True)
+
     return (flag_key, theme_dir.name, success_count)
 
 
@@ -118,27 +149,23 @@ def main() -> None:
         print("No work to do!", file=sys.stderr)
         return
 
-    max_workers = min(cpu_count(), len(work_queue))
+    # Cap workers to avoid resource thrashing
+    max_workers = min(cpu_count() - 1, len(work_queue), 8)
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
-        future_to_task = {
-            executor.submit(process_flag_theme, flag_key, theme_dir):
-                (flag_key, theme_dir.name)
+        futures = {
+            executor.submit(process_flag_theme, flag_key, theme_dir): (flag_key, theme_dir.name)
             for flag_key, theme_dir in work_queue
         }
 
-        total = len(future_to_task)
+        with tqdm(total=len(futures), desc="Processing", unit="flag/theme") as pbar:
+            for future in as_completed(futures):
+                flag_key, theme_name, success_count = future.result()
+                status = "✓" if success_count == len(formats) else "⚠" if success_count > 0 else "✗"
+                pbar.update(1)
+                pbar.write(f"{status} {flag_key}/{theme_name}: {success_count}/{len(formats)}")
 
-        for future in tqdm(
-            as_completed(future_to_task.keys()),
-            total=total,
-            desc="Processing"
-        ):
-            flag_key, theme_name, success_count = future.result()
-            status = "✓" if success_count > 0 else "✗"
-            tqdm.write(f"{status} {flag_key}/{theme_name}: {success_count}/{len(formats)} formats")
-
-    print(f"\n✓ All files exported via cairosvg + {TOOL}.")
+    print(f"\n✓ All files exported via cairosvg + aseprite/imagemagick.")
 
 
 if __name__ == "__main__":
