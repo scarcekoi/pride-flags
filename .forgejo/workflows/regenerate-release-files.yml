@@ -17,12 +17,12 @@ jobs:
             dist/release/
             themes/
 
-      - name: Create zip files for themes
+      - name: Create tar.xz archives for themes
         run: |
           mkdir -p dist/release
           THEMES=(mocha macchiato frappe latte)
           for theme in "${THEMES[@]}"; do
-            tar -I 'xz -T0 -c -z --best -' -cf "dist/release/${theme}.tar.xz" "themes/$theme"
+            tar -c "themes/$theme" | xz -T0 -9 > "dist/release/${theme}.tar.xz"
           done
 
       - name: Commit and push release files
