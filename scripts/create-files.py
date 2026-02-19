@@ -133,9 +133,6 @@ def process_flag_theme(flag_key: str, theme_dir: Path) -> tuple[str, str, int]:
     # Parallel format conversion
     success_count = convert_png_to_all_formats(png_path)
 
-    # Clean up PNG after all conversions
-    png_path.unlink(missing_ok=True)
-
     return (flag_key, theme_dir.name, success_count)
 
 

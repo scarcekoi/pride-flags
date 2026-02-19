@@ -158,6 +158,13 @@
 </details>
 
 <details closed>
+<summary>Sapphic</summary>
+<img src="assets/composite/sapphic.webp" alt="Sapphic composite" style="width:50%;"/>
+<img src="assets/grid/sapphic.webp" alt="Sapphic grid" style="width:50%;"/>
+<img src="assets/row/sapphic.webp" alt="Sapphic row" style="width:50%;"/>
+</details>
+
+<details closed>
 <summary>Transandrogynous</summary>
 <img src="assets/composite/transandrogynous.webp" alt="Transandrogynous composite" style="width:50%;"/>
 <img src="assets/grid/transandrogynous.webp" alt="Transandrogynous grid" style="width:50%;"/>
@@ -219,6 +226,7 @@
 - Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/), [Latte](themes/latte/pansexual/))
 - Polyamorous ([Mocha](themes/mocha/polyam/), [Macchiato](themes/macchiato/polyam/), [Frappé](themes/frappé/polyam/), [Latte](themes/latte/polyam/))
 - Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
+- Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frappé/sapphic/), [Latte](themes/latte/sapphic/))
 - Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frappé/womasexual/), [Latte](themes/latte/womasexual/))
 
 </details>
@@ -229,6 +237,7 @@
 - Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappé/demiboy/), [Latte](themes/latte/demiboy/))
 - Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappé/demigender/), [Latte](themes/latte/demigender/))
 - Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappé/demigirl/), [Latte](themes/latte/demigirl/))
+- Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappé/genderqueer/), [Latte](themes/latte/genderqueer/))
 - Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frappé/transandrogynous/), [Latte](themes/latte/transandrogynous/))
 - Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappé/transfeminine/), [Latte](themes/latte/transfeminine/))
 - Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frappé/transmasculine/), [Latte](themes/latte/transmasculine/))
@@ -268,6 +277,7 @@
 <details closed>
 <summary>Orientation</summary>
 
+- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappé/aroace/), [Latte](themes/latte/aroace/))
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappé/bisexual/), [Latte](themes/latte/bisexual/))
 - Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappé/finromantic/), [Latte](themes/latte/finromantic/))
 - Gay Men ([Mocha](themes/mocha/gay-man/), [Macchiato](themes/macchiato/gay-man/), [Frappé](themes/frappé/gay-man/), [Latte](themes/latte/gay-man/))
@@ -275,6 +285,7 @@
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappé/lesbian/), [Latte](themes/latte/lesbian/))
 - Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/), [Latte](themes/latte/pansexual/))
 - Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
+- Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frappé/sapphic/), [Latte](themes/latte/sapphic/))
 - Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frappé/womasexual/), [Latte](themes/latte/womasexual/))
 
 </details>
