@@ -14,9 +14,6 @@
 - [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/33a1581c11c0aa46f306e81711d14d836ac60d04)
 - [Remove old files](https://codeberg.org/scarcekoi/pride-flags/commit/1a9f697d5d7be6636d7205a1bea59275f4f5525e)
 
-### 💼 Other
-
-
 ### ⚙️ CI/CD
 
 
@@ -64,6 +61,9 @@
 - [Use zip and create flag and flavour archives](https://codeberg.org/scarcekoi/pride-flags/commit/28478d412600e1c1b27f38989ba72ef532588f7c)
 - [Update](https://codeberg.org/scarcekoi/pride-flags/commit/7ea18d4b5765aa6f9db40ffe2c65de6aff4550ec)
 
+### 🔀 Merges
+
+
 ### ⚙️ Chores
 
 
@@ -98,10 +98,12 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/690928594cd4efb4f3dfe86b286a5024686049bb)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2122d37e3ff4f2dc2c6e81f835822955942343cf)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/29f347a822a756ef8eaf742691692670d1e56fb3)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bb756040c30aeee7d89cd44c3bdcbb65a686786e)
 
 #### Cliff
 
 - [Add separate ci and chore commit parsers](https://codeberg.org/scarcekoi/pride-flags/commit/9915ab215c3054cf8ac032af4b348d38e132d8bc)
+- [Add merge commit parser](https://codeberg.org/scarcekoi/pride-flags/commit/6ee21f8f67588d084871219dcaf8057d319543d2)
 
 #### Release files
 
