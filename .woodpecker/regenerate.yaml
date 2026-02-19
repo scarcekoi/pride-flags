@@ -3,7 +3,11 @@ when:
     branch: master
 
 clone:
-  disable: true
+  git:
+    image: alpine/git
+    settings:
+      depth: 0
+      lfs: false
 
 steps:
   - name: regenerate-changelog
@@ -12,12 +16,6 @@ steps:
       GIT_AUTHOR_NAME: forgejo-actions
       GIT_AUTHOR_EMAIL: forgejo-actions@users.noreply.local
     commands:
-      - git init
-      - git remote add origin https://${CI_REPO_OWNER}:${CI_REPO_TOKEN}@codeberg.org/${CI_REPO}.git
-      - git config core.sparseCheckout true
-      - echo "CHANGELOG.md" >> .git/info/sparse-checkout
-      - git pull --depth=0 origin master
-
       - |
         export DEBIAN_FRONTEND=noninteractive
         apt-get update
