@@ -62,9 +62,6 @@ flags:
   polysexual:
     name: Polysexual
     categories: [attraction, orientation, fluidity]
-  sapphic:
-    name: Sapphic
-    categories: [attraction, orientation]
   transandrogynous:
     name: Transandrogynous
     categories: [gender, expression]
