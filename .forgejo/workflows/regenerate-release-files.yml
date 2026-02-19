@@ -22,7 +22,7 @@ jobs:
           mkdir -p dist/release
           THEMES=(mocha macchiato frappe latte)
           for theme in "${THEMES[@]}"; do
-            tar -c "themes/$theme" | xz -T0 -9 > "dist/release/${theme}.tar.xz"
+            tar -cJf "dist/release/${theme}.tar.xz" -C "themes" "$theme"
           done
 
       - name: Commit and push release files
