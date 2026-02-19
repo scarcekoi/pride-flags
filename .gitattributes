@@ -31,3 +31,4 @@
 *.in filter=lfs diff=lfs merge=lfs -text
 *.flc filter=lfs diff=lfs merge=lfs -text
 *.fli filter=lfs diff=lfs merge=lfs -text
+*.xz filter=lfs diff=lfs merge=lfs -text
