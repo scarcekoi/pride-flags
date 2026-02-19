@@ -78,6 +78,9 @@ jobs:
           git config user.name "$GIT_AUTHOR_NAME"
           git config user.email "$GIT_AUTHOR_EMAIL"
 
+          git fetch origin master
+          git rebase origin/master
+
           git add dist/release/*
-          git diff --cached --quiet || git commit -m "chore(release files): update for ${{ needs.regenerate-changelog.outputs.latest_tag }}"
+          git diff --cached --quiet || git commit -m "chore(release-files): regenerate data"
           git push origin master
