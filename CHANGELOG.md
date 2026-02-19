@@ -7,12 +7,20 @@
 
 - [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/329ddcca342487137c1086f2beb473dc71b9e3e1)
 - [Remove files](https://codeberg.org/scarcekoi/pride-flags/commit/e070b926bb31f179c5af7be8a030a529feff21c8)
+- [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/c239ab074a55fb5628fa139a8de889cc49b1f770)
 
 #### Dist
 
 - [Add dist/release](https://codeberg.org/scarcekoi/pride-flags/commit/d778bee16ec7c90a98a50d35436036f1b6796264)
 - [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/33a1581c11c0aa46f306e81711d14d836ac60d04)
 - [Remove old files](https://codeberg.org/scarcekoi/pride-flags/commit/1a9f697d5d7be6636d7205a1bea59275f4f5525e)
+
+### 🐛 Bug Fixes
+
+
+#### Intersex
+
+- [Remove crisp edge rendering](https://codeberg.org/scarcekoi/pride-flags/commit/a67beac3f413e6d91805102b3d9bf718b6fd82ad)
 
 ### ⚙️ CI/CD
 
@@ -64,6 +72,21 @@
 ### 🔀 Merges
 
 
+### 🚜 Refactor
+
+
+#### Intersex
+
+- [Use same format as other svgs](https://codeberg.org/scarcekoi/pride-flags/commit/30873a2f36c9df13d350e20da39d02724ed720ee)
+- [Use consistent xml format](https://codeberg.org/scarcekoi/pride-flags/commit/4a9ef2a1c514775c3883f3b0cb697c75879e61cf)
+
+### 📚 Documentation
+
+
+#### Readme
+
+- [Remove cisgender](https://codeberg.org/scarcekoi/pride-flags/commit/e994a414ba6c872125954bad507610d5acd46a36)
+
 ### ⚙️ Chores
 
 
@@ -99,6 +122,11 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2122d37e3ff4f2dc2c6e81f835822955942343cf)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/29f347a822a756ef8eaf742691692670d1e56fb3)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bb756040c30aeee7d89cd44c3bdcbb65a686786e)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5ac682fe84bc7b26ecf501e6937f410d5fa1289a)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/19ad99a3b14454cec8088747b841d3017e3cea68)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3e9d66a54ac679126417346d3559321ddc6d9a3c)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/480db5ce09c12929121603ed0e7ea7fb066270fb)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/557c05b9a33de65f80e56bf045aa0a656f18172e)
 
 #### Cliff
 
@@ -117,6 +145,15 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0ae7f7ca4e6308726c1e89d837d2b9d9082a325a)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/600fbe9f6364f15219cb03389dac55dc3b677ab4)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/f17cb8589eddd7814144ec4de89c66bf2d5a2c04)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/8508930e96c2e3732f2064c7b2bfa77bcb2082c9)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/50514186a21151ca3b0fcc1c763eb65279036c46)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bcdcc38b445d1634d2358c180dd03f4554d9354e)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/d3a07efd842a5a62413ab7ca212918071c09e55e)
+
+#### Resources
+
+- [Add sapphic and update existing tags](https://codeberg.org/scarcekoi/pride-flags/commit/992a2c5e967ef955f1c953c155848532bee965d5)
+- [Remove sapphic](https://codeberg.org/scarcekoi/pride-flags/commit/da290561c3804719fa0c4035e3553bf7fbe1f010)
 
 ### ◀️ Revert
 
