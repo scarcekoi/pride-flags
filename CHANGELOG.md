@@ -1,5 +1,12 @@
 ## [unreleased]
 
+### 🚀 Features
+
+
+#### Dist
+
+- [Add dist/release](https://codeberg.org/scarcekoi/pride-flags/commit/d778bee16ec7c90a98a50d35436036f1b6796264)
+
 ### ⚙️ Miscellaneous Tasks
 
 
@@ -11,6 +18,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c51812eea397fc19263f8b404ce02ca6c70972a1)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/7bb50ccdcffbb0330cb0c87dc068e95c02abe981)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c28a754ac0f4715f9328edac562affa426c375e9)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5d2e781bcba028bdb2484ca6fbd18e0e2b9a18a3)
 
 #### Regenerate-changelog
 
@@ -18,6 +26,10 @@
 - [Change fetch depth to 100 for repo checkout](https://codeberg.org/scarcekoi/pride-flags/commit/c69f0a09044db21f30c53c340cb5545b3b165266)
 - [Downgrade from codeberg-small to codeberg-tiny](https://codeberg.org/scarcekoi/pride-flags/commit/559decf68379aa3e18a97c561eacbf536fcbd3b1)
 - [Update repo checkout](https://codeberg.org/scarcekoi/pride-flags/commit/23f243f41a2dfd60f425c422689cdb7e4b7eb1f8)
+
+#### Regenerate-release-files
+
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/2389556b0c8b147a85cbb9bb7fdd854d3caad6ad)
 
 #### Release
 
