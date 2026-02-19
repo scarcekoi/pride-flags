@@ -22,7 +22,7 @@ jobs:
           mkdir -p dist/release
           THEMES=(mocha macchiato frappe latte)
           for theme in "${THEMES[@]}"; do
-            tar -cJf "dist/release/${theme}.tar.xz" -C "themes" "$theme"
+            zip -r "${theme}.zip" "themes/$theme"
             echo "Archived $theme to dist/release/${theme}.tar.xz"
           done
 
