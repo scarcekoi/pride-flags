@@ -23,7 +23,7 @@ jobs:
           ls dist/release
           THEMES=(mocha macchiato frappe latte)
           for theme in "${THEMES[@]}"; do
-            zip -r "${theme}.zip" "themes/$theme"
+            zip -r "dist/release/${theme}.zip" "themes/$theme"
             echo "Archived $theme to dist/release/${theme}.zip"
           done
           ls dist/release
