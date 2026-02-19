@@ -23,6 +23,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/305268f46edc3e25d404e9d913ca427c34b21306)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/d6ffbce8c3b95d027c22469934221045cb909bd0)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a9be50f910662e171d76bee0411a4e95e35cb004)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/d03ebe8673fb08bfd41ae15dfdd7d8b177c60ef8)
 
 #### Regenerate-changelog
 
@@ -36,6 +37,7 @@
 - [Init](https://codeberg.org/scarcekoi/pride-flags/commit/2389556b0c8b147a85cbb9bb7fdd854d3caad6ad)
 - [Update repo checkout job name](https://codeberg.org/scarcekoi/pride-flags/commit/1ba5adda2b781d3ef67f82384a634b035a137f68)
 - [Update archive creation](https://codeberg.org/scarcekoi/pride-flags/commit/3b7abbb90671369bd79d55f56134b49b9f1f059c)
+- [Update tar command](https://codeberg.org/scarcekoi/pride-flags/commit/f89290dd858c0e11f609e81d43a1d5b8b8cd5a8e)
 
 #### Release
 
