@@ -99,6 +99,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2122d37e3ff4f2dc2c6e81f835822955942343cf)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/29f347a822a756ef8eaf742691692670d1e56fb3)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bb756040c30aeee7d89cd44c3bdcbb65a686786e)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5ac682fe84bc7b26ecf501e6937f410d5fa1289a)
 
 #### Cliff
 
@@ -117,6 +118,12 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0ae7f7ca4e6308726c1e89d837d2b9d9082a325a)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/600fbe9f6364f15219cb03389dac55dc3b677ab4)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/f17cb8589eddd7814144ec4de89c66bf2d5a2c04)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/8508930e96c2e3732f2064c7b2bfa77bcb2082c9)
+
+#### Resources
+
+- [Add sapphic and update existing tags](https://codeberg.org/scarcekoi/pride-flags/commit/992a2c5e967ef955f1c953c155848532bee965d5)
+- [Remove sapphic](https://codeberg.org/scarcekoi/pride-flags/commit/da290561c3804719fa0c4035e3553bf7fbe1f010)
 
 ### ◀️ Revert
 
