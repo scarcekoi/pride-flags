@@ -1,9 +1,9 @@
+/* themes/frappe/lgbt/lgbt.css */
 :root {
-  /* LGBT Flag – 6 stripes: red, peach, yellow, green, sky, mauve */
   --ctp-lgbt-red: #e78284;
-  --ctp-lgbt-peach: #ef9f76;
+  --ctp-lgbt-orange: #ef9f76;
   --ctp-lgbt-yellow: #e5c890;
   --ctp-lgbt-green: #a6d189;
-  --ctp-lgbt-sky: #99d1db;
-  --ctp-lgbt-mauve: #ca9ee6;
+  --ctp-lgbt-blue: #99d1db;
+  --ctp-lgbt-purple: #ca9ee6;
 }

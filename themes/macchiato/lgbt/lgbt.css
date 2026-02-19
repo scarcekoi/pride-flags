@@ -1,9 +1,9 @@
+/* themes/macchiato/lgbt/lgbt.css */
 :root {
-  /* LGBT Flag – 6 stripes: red, peach, yellow, green, sky, mauve */
   --ctp-lgbt-red: #ed8796;
-  --ctp-lgbt-peach: #f5a97f;
+  --ctp-lgbt-orange: #f5a97f;
   --ctp-lgbt-yellow: #eed49f;
   --ctp-lgbt-green: #a6da95;
-  --ctp-lgbt-sky: #91d7e3;
-  --ctp-lgbt-mauve: #c6a0f6;
+  --ctp-lgbt-blue: #91d7e3;
+  --ctp-lgbt-purple: #c6a0f6;
 }

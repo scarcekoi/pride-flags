@@ -6,13 +6,10 @@ whiskers:
   filename: "themes/{{flavor.identifier}}/transmasculine/transmasculine.svg"
   hex_format: "#{{r}}{{g}}{{b}}"
 ---
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="1000" height="700" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="1000" height="100" fill="{{if(cond=flavor.light, t=rosewater.hex, f=maroon.hex)}}" stroke="{{if(cond=flavor.light, t=rosewater.hex, f=maroon.hex)}}" />
-<rect x="0" y="100" width="1000" height="100" fill="{{teal.hex}}" stroke="{{teal.hex}}" />
-<rect x="0" y="200" width="1000" height="100" fill="{{sapphire.hex}}" stroke="{{sapphire.hex}}" />
-<rect x="0" y="300" width="1000" height="100" fill="{{blue.hex}}" stroke="{{blue.hex}}" />
-<rect x="0" y="400" width="1000" height="100" fill="{{sapphire.hex}}" stroke="{{sapphire.hex}}" />
-<rect x="0" y="500" width="1000" height="100" fill="{{teal.hex}}" stroke="{{teal.hex}}" />
-<rect x="0" y="600" width="1000" height="100" fill="{{if(cond=flavor.light, t=rosewater.hex, f=maroon.hex)}}" stroke="{{if(cond=flavor.light, t=rosewater.hex, f=maroon.hex)}}" />
-</svg>
+/* themes/{{flavor.identifier}}/transmasculine/transmasculine.css */
+:root {
+    --ctp-{{flavor.identifier}}-transmasculine-pink: {{if(cond=flavor.light, t=rosewater.hex, f=maroon.hex)}};
+    --ctp-{{flavor.identifier}}-transmasculine-lighter-blue: {{sky.hex}};
+    --ctp-{{flavor.identifier}}-transmasculine-light-blue: {{sapphire.hex}};
+    --ctp-{{flavor.identifier}}-transmasculine-blue: {{blue.hex}};
+}

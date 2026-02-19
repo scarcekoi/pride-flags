@@ -3,13 +3,13 @@ whiskers:
   version: "^2.5.1"
   matrix:
     - flavor
-  filename: "themes/{{flavor.identifier}}/nonbinary/nonbinary.svg"
+  filename: "themes/{{flavor.identifier}}/nonbinary/nonbinary.css"
   hex_format: "#{{r}}{{g}}{{b}}"
 ---
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="800" height="400" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="800" height="100" fill="{{yellow.hex}}" stroke="{{yellow.hex}}" />
-<rect x="0" y="100" width="800" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" stroke="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
-<rect x="0" y="200" width="800" height="100" fill="{{mauve.hex}}" stroke="{{mauve.hex}}" />
-<rect x="0" y="300" width="800" height="100" fill="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" stroke="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" />
-</svg>
+/* themes/{{flavor.identifier}}/nonbinary/nonbinary.css */
+:root {
+  --ctp-{{flavor.identifier}}-nonbinary-yellow: {{yellow.hex}};
+  --ctp-{{flavor.identifier}}-nonbinary-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+  --ctp-{{flavor.identifier}}-nonbinary-purple: {{mauve.hex}};
+  --ctp-{{flavor.identifier}}-nonbinary-black: {{if(cond=flavor.light, t=text.hex, f=crust.hex)}};
+}

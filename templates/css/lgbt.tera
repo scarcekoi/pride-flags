@@ -6,12 +6,12 @@ whiskers:
   filename: "themes/{{flavor.identifier}}/lgbt/lgbt.css"
   hex_format: "#{{r}}{{g}}{{b}}"
 ---
+/* themes/{{flavor.identifier}}/lgbt/lgbt.css */
 :root {
-  /* LGBT Flag – 6 stripes: red, peach, yellow, green, sky, mauve */
   --ctp-lgbt-red: {{red.hex}};
-  --ctp-lgbt-peach: {{peach.hex}};
+  --ctp-lgbt-orange: {{peach.hex}};
   --ctp-lgbt-yellow: {{yellow.hex}};
   --ctp-lgbt-green: {{green.hex}};
-  --ctp-lgbt-sky: {{sky.hex}};
-  --ctp-lgbt-mauve: {{mauve.hex}};
+  --ctp-lgbt-blue: {{sky.hex}};
+  --ctp-lgbt-purple: {{mauve.hex}};
 }

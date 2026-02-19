@@ -1,9 +1,9 @@
+/* themes/latte/lgbt/lgbt.css */
 :root {
-  /* LGBT Flag – 6 stripes: red, peach, yellow, green, sky, mauve */
   --ctp-lgbt-red: #d20f39;
-  --ctp-lgbt-peach: #fe640b;
+  --ctp-lgbt-orange: #fe640b;
   --ctp-lgbt-yellow: #df8e1d;
   --ctp-lgbt-green: #40a02b;
-  --ctp-lgbt-sky: #04a5e5;
-  --ctp-lgbt-mauve: #8839ef;
+  --ctp-lgbt-blue: #04a5e5;
+  --ctp-lgbt-purple: #8839ef;
 }

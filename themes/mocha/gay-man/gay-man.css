@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="1000" height="100" fill="#94e2d5" stroke="#94e2d5" />
-<rect x="0" y="100" width="1000" height="100" fill="#89dceb" stroke="#89dceb" />
-<rect x="0" y="200" width="1000" height="100" fill="#cdd6f4" stroke="#cdd6f4" />
-<rect x="0" y="300" width="1000" height="100" fill="#74c7ec" stroke="#74c7ec" />
-<rect x="0" y="400" width="1000" height="100" fill="#89b4fa" stroke="#89b4fa" />
-<rect x="0" y="400" width="1000" height="100" fill="#0a5ce0" stroke="#0a5ce0" />
-</svg>
+/* themes/mocha/gay-man/gay-man.css */
+:root {
+  --ctp-mocha-gay-man-dark-teal: #44ccb5;
+  --ctp-mocha-gay-man-teal: #6bd7c5;
+  --ctp-mocha-gay-man-light-teal: #94e2d5;
+  --ctp-mocha-gay-man-white: #cdd6f4;
+  --ctp-mocha-gay-man-light-blue: #74c7ec;
+  --ctp-mocha-gay-man-blue: #89b4fa;
+  --ctp-mocha-gay-man-purple: #cba6f7;
+}
