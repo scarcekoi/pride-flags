@@ -59,6 +59,7 @@ jobs:
           fetch-depth: 0
           sparse-checkout: |
             dist/release/
+            resources/flags.yml
             themes/
 
       - name: Create zip archives for themes and flags
