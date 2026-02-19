@@ -5,6 +5,19 @@
 
 #### Changelog
 
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/279607322a33ed55a7b78332507633e02e5026b5)
+
+#### Release
+
+- [Fix](https://codeberg.org/scarcekoi/pride-flags/commit/b7d925159c25ddaf343061ba3d14f85dbdc9c14e)
+## [1.0.14] - 2026-02-18
+
+
+### ⚙️ Miscellaneous Tasks
+
+
+#### Changelog
+
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/7c8e70ae4c802f67c9e171fb25b44c6999bf07d5)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bd3a60643462819d02b80fd65448fe26438bdc7d)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/6227779d1598b180a0326cf4c93f04c3cc98ae13)
