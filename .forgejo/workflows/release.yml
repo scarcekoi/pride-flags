@@ -90,8 +90,12 @@ jobs:
           fi
 
           for FILE in mocha.zip macchiato.zip frappe.zip latte.zip flag_zips/*.zip; do
-            curl -X POST \
-              -H "Authorization: token $FORGEJO_TOKEN" \
-              -F "attachment=@$FILE" \
-              "https://codeberg.org/api/v1/repos/scarcekoi/pride-flags/releases/$RELEASE_ID/assets"
+            if [[ -f "$FILE" ]]; then
+              curl -X POST \
+                -H "Authorization: token $FORGEJO_TOKEN" \
+                -F "attachment=@$FILE" \
+                "https://codeberg.org/api/v1/repos/scarcekoi/pride-flags/releases/$RELEASE_ID/assets"
+            else
+              echo "File not found: $FILE"
+            fi
           done
