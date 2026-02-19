@@ -1,0 +1,37 @@
+name: Regenerate Release Files
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  regenerate-release-files:
+    runs-on: codeberg-tiny
+    steps:
+      - name: Checkout repository sparsely
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          sparse-checkout: |
+            dist/release/
+            themes/
+
+      - name: Create zip files for themes
+        run: |
+          mkdir -p dist/release
+          THEMES=(mocha macchiato frappe latte)
+          for theme in "${THEMES[@]}"; do
+            tar -I 'xz -T0 -c -z --best -' -cf "dist/release/${theme}.tar.xz" "themes/$theme"
+          done
+
+      - name: Commit and push release files
+        env:
+          GIT_AUTHOR_NAME: "forgejo-actions"
+          GIT_AUTHOR_EMAIL: "forgejo-actions@users.noreply.local"
+        run: |
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          git add dist/release/*
+          git diff --cached --quiet || git commit -m "chore(release files): update for $LATEST_TAG"
+          git push
