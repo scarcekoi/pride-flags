@@ -56,15 +56,6 @@
 </details>
 
 <details closed>
-<summary>Cisgender</summary>
-
-<img src="assets/composite/cisgender.webp" alt="Cisgender composite" style="width:50%;"/>
-<img src="assets/grid/cisgender.webp" alt="Cisgender grid" style="width:50%;"/>
-<img src="assets/row/cisgender.webp" alt="Cisgender row" style="width:50%;"/>
-
-</details>
-
-<details closed>
 <summary>Demiboy</summary>
 
 <img src="assets/composite/demiboy.webp" alt="Demiboy composite" style="width:50%;"/>
@@ -267,10 +258,8 @@
 - Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappe/asexual/), [Latte](themes/latte/asexual/))
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/), [Latte](themes/latte/bisexual/))
 - Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappe/finromantic/), [Latte](themes/latte/finromantic/))
-- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/), [Latte](themes/latte/greysexual/))
 - Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/), [Latte](themes/latte/gynesexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/), [Latte](themes/latte/lesbian/))
-- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappe/pansexual/), [Latte](themes/latte/pansexual/))
 - Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappe/polysexual/), [Latte](themes/latte/polysexual/))
 
 </details>
@@ -282,6 +271,7 @@
 - Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappe/demigender/), [Latte](themes/latte/demigender/))
 - Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappe/demigirl/), [Latte](themes/latte/demigirl/))
 - Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappe/femboy/), [Latte](themes/latte/femboy/))
+- Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappe/genderqueer/), [Latte](themes/latte/genderqueer/))
 - Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frappe/transandrogynous/), [Latte](themes/latte/transandrogynous/))
 - Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappe/transfeminine/), [Latte](themes/latte/transfeminine/))
 - Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frappe/transmasculine/), [Latte](themes/latte/transmasculine/))
@@ -292,7 +282,6 @@
 <summary>Fluidity</summary>
 
 - Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frappe/genderfluid/), [Latte](themes/latte/genderfluid/))
-- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappe/pansexual/), [Latte](themes/latte/pansexual/))
 - Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappe/polysexual/), [Latte](themes/latte/polysexual/))
 - Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frappe/trigender/), [Latte](themes/latte/trigender/))
 
@@ -302,7 +291,6 @@
 <summary>Gender</summary>
 
 - Agender ([Mocha](themes/mocha/agender/), [Macchiato](themes/macchiato/agender/), [Frappé](themes/frappe/agender/), [Latte](themes/latte/agender/))
-- Cisgender ([Mocha](themes/mocha/cisgender/), [Macchiato](themes/macchiato/cisgender/), [Frappé](themes/frappe/cisgender/), [Latte](themes/latte/cisgender/))
 - Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappe/demiboy/), [Latte](themes/latte/demiboy/))
 - Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappe/demigender/), [Latte](themes/latte/demigender/))
 - Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappe/demigirl/), [Latte](themes/latte/demigirl/))
@@ -323,8 +311,8 @@
 <details closed>
 <summary>Orientation</summary>
 
+- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappe/aroace/), [Latte](themes/latte/aroace/))
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/), [Latte](themes/latte/bisexual/))
-- Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappe/finromantic/), [Latte](themes/latte/finromantic/))
 - Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/), [Latte](themes/latte/greysexual/))
 - Gynesexual ([Mocha](themes/mocha/gynesexual/), [Macchiato](themes/macchiato/gynesexual/), [Frappé](themes/frappe/gynesexual/), [Latte](themes/latte/gynesexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappe/lesbian/), [Latte](themes/latte/lesbian/))
