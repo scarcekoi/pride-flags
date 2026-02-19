@@ -3,7 +3,7 @@ whiskers:
   version: "^2.5.1"
   matrix:
     - flavor
-  filename: "themes/{{flavor.identifier}}/mlm/mlm.svg"
+  filename: "themes/{{flavor.identifier}}/gay-man/gay-man.css"
   hex_format: "#{{r}}{{g}}{{b}}"
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
