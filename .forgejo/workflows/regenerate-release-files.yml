@@ -37,4 +37,4 @@ jobs:
           git config user.email "$GIT_AUTHOR_EMAIL"
           git add dist/release/*
           git diff --cached --quiet || git commit -m "chore(release files): update for $LATEST_TAG"
-          git push
+          git push --force-with-lease
