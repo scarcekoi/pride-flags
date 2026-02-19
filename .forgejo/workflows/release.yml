@@ -38,7 +38,7 @@ jobs:
         run: |
           THEMES=(mocha macchiato frappe latte)
           for theme in "${THEMES[@]}"; do
-            zip -r "${theme}.zip" "themes/$theme"
+            tar -I 'xz -T0 -c -z --best -' -cf "${theme}.tar.xz" "themes/$theme"
           done
 
       - name: Generate changelog
@@ -83,7 +83,7 @@ jobs:
             exit 1
           fi
 
-          for FILE in mocha.zip macchiato.zip frappe.zip latte.zip flag_zips/*.zip; do
+          for FILE in mocha.tar.xz macchiato.tar.xz frappe.tar.xz latte.tar.xz flag_zips/*.zip; do
             if [[ -f "$FILE" ]]; then
               curl -X POST \
                 -H "Authorization: token $FORGEJO_TOKEN" \
