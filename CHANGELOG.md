@@ -3,13 +3,68 @@
 ### 🚀 Features
 
 
+#### Cisgender
+
+- [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/329ddcca342487137c1086f2beb473dc71b9e3e1)
+- [Remove files](https://codeberg.org/scarcekoi/pride-flags/commit/e070b926bb31f179c5af7be8a030a529feff21c8)
+
 #### Dist
 
 - [Add dist/release](https://codeberg.org/scarcekoi/pride-flags/commit/d778bee16ec7c90a98a50d35436036f1b6796264)
 - [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/33a1581c11c0aa46f306e81711d14d836ac60d04)
 - [Remove old files](https://codeberg.org/scarcekoi/pride-flags/commit/1a9f697d5d7be6636d7205a1bea59275f4f5525e)
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ CI/CD
+
+
+#### Regenerate
+
+- [Regenerate-release-files update](https://codeberg.org/scarcekoi/pride-flags/commit/5d148b1989dfde13716567f6e63e52b9ada47ff7)
+- [Regenerate-release-files update](https://codeberg.org/scarcekoi/pride-flags/commit/be682b20804ff906f888f06a6caf797f65692118)
+- [Regenerate-release-files update zip creation](https://codeberg.org/scarcekoi/pride-flags/commit/3c6fb4c13acea71baeb1cc87fee8a2a043177059)
+- [Regenerate-release-files - add flags.yml](https://codeberg.org/scarcekoi/pride-flags/commit/09af321f084eb7a9a82f6ec81c3568f917d892aa)
+- [Regenerate-release-files update](https://codeberg.org/scarcekoi/pride-flags/commit/6c44f2d99b1ae65cd42e919f89a5424a41b88bb6)
+- [Regenerate-release-files update dirs](https://codeberg.org/scarcekoi/pride-flags/commit/13aaaac59acde0133ddb837f0181001fd5631de9)
+- [Use woodpecker ci instead of forgejo actions](https://codeberg.org/scarcekoi/pride-flags/commit/b83cd74a04881c016009895a82839fdacdd8d867)
+- [Escape colon](https://codeberg.org/scarcekoi/pride-flags/commit/19ef57941bb4f852f1fefe3c3a0c0e252ed8f3e9)
+- [Update](https://codeberg.org/scarcekoi/pride-flags/commit/d92c391457740e01d6a5117fe136247f4bf2cefe)
+- [Update](https://codeberg.org/scarcekoi/pride-flags/commit/eebd37a52bcb1a008e2be71eb0ad62e7c69166b5)
+- [Update](https://codeberg.org/scarcekoi/pride-flags/commit/a7acd776bae59547d5743bb3eb0d38da7a53e17a)
+- [Use built-in clone](https://codeberg.org/scarcekoi/pride-flags/commit/74ce862f6cfb2219b457ca4e15ec187a157da580)
+- [Use diff image](https://codeberg.org/scarcekoi/pride-flags/commit/d5d85a7564a73900144fa10999de85301b8617f3)
+
+#### Regenerate-changelog
+
+- [Update name](https://codeberg.org/scarcekoi/pride-flags/commit/27e47ce8935c389f1eb335f17abfbc56001eb246)
+- [Change fetch depth to 100 for repo checkout](https://codeberg.org/scarcekoi/pride-flags/commit/c69f0a09044db21f30c53c340cb5545b3b165266)
+- [Downgrade from codeberg-small to codeberg-tiny](https://codeberg.org/scarcekoi/pride-flags/commit/559decf68379aa3e18a97c561eacbf536fcbd3b1)
+- [Update repo checkout](https://codeberg.org/scarcekoi/pride-flags/commit/23f243f41a2dfd60f425c422689cdb7e4b7eb1f8)
+
+#### Regenerate-release-files
+
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/2389556b0c8b147a85cbb9bb7fdd854d3caad6ad)
+- [Update repo checkout job name](https://codeberg.org/scarcekoi/pride-flags/commit/1ba5adda2b781d3ef67f82384a634b035a137f68)
+- [Update archive creation](https://codeberg.org/scarcekoi/pride-flags/commit/3b7abbb90671369bd79d55f56134b49b9f1f059c)
+- [Update tar command](https://codeberg.org/scarcekoi/pride-flags/commit/f89290dd858c0e11f609e81d43a1d5b8b8cd5a8e)
+- [Update archive creation](https://codeberg.org/scarcekoi/pride-flags/commit/3dd2c20160ba4cb98c357efab09b7e30c88e7be0)
+- [Use zip instead of tar.xz](https://codeberg.org/scarcekoi/pride-flags/commit/4aa6524b2fcdd536cc51a114cb7c4ded6f87b152)
+- [Add ls check to zip creation](https://codeberg.org/scarcekoi/pride-flags/commit/8d66a8825bae3f5e29b17a37dd5a57a7d7ed62e9)
+- [Fix dir](https://codeberg.org/scarcekoi/pride-flags/commit/38562e925c93ece19325dad4626d8c670959c8e5)
+- [Update push command](https://codeberg.org/scarcekoi/pride-flags/commit/8157e9e93df9ba29c0d3daaeceaed94990f190bc)
+- [Update commit and push](https://codeberg.org/scarcekoi/pride-flags/commit/7cf1ed57ed0816ed88140b1a362a657025afd529)
+
+#### Release
+
+- [Zip job update](https://codeberg.org/scarcekoi/pride-flags/commit/e974acc9dba1626d49cd046e5f024e6f53736729)
+- [Update actions/checkout from v3 to v6](https://codeberg.org/scarcekoi/pride-flags/commit/04e2abbc69aee7bda65e5a0423604625e84566af)
+- [Update changelog generation](https://codeberg.org/scarcekoi/pride-flags/commit/573b514c6a00256b663a34a68fa57f527767d047)
+- [Use zip and create flag and flavour archives](https://codeberg.org/scarcekoi/pride-flags/commit/28478d412600e1c1b27f38989ba72ef532588f7c)
+- [Update](https://codeberg.org/scarcekoi/pride-flags/commit/7ea18d4b5765aa6f9db40ffe2c65de6aff4550ec)
+
+### 🔀 Merges
+
+
+### ⚙️ Chores
 
 
 #### Changelog
@@ -40,42 +95,15 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/74cae91cb04ca2fff4929120090f5dba7caef5ee)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2dd615b2e6b2eda97ea938fdc3d6d1698a7a1a99)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/e143af75c4413f2106184ea513855b9b28e652b0)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/690928594cd4efb4f3dfe86b286a5024686049bb)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2122d37e3ff4f2dc2c6e81f835822955942343cf)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/29f347a822a756ef8eaf742691692670d1e56fb3)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bb756040c30aeee7d89cd44c3bdcbb65a686786e)
 
-#### Regenerate
+#### Cliff
 
-- [Regenerate-release-files update](https://codeberg.org/scarcekoi/pride-flags/commit/5d148b1989dfde13716567f6e63e52b9ada47ff7)
-- [Regenerate-release-files update](https://codeberg.org/scarcekoi/pride-flags/commit/be682b20804ff906f888f06a6caf797f65692118)
-- [Regenerate-release-files update zip creation](https://codeberg.org/scarcekoi/pride-flags/commit/3c6fb4c13acea71baeb1cc87fee8a2a043177059)
-- [Regenerate-release-files - add flags.yml](https://codeberg.org/scarcekoi/pride-flags/commit/09af321f084eb7a9a82f6ec81c3568f917d892aa)
-- [Regenerate-release-files update](https://codeberg.org/scarcekoi/pride-flags/commit/6c44f2d99b1ae65cd42e919f89a5424a41b88bb6)
-- [Regenerate-release-files update dirs](https://codeberg.org/scarcekoi/pride-flags/commit/13aaaac59acde0133ddb837f0181001fd5631de9)
-
-#### Regenerate-changelog
-
-- [Update name](https://codeberg.org/scarcekoi/pride-flags/commit/27e47ce8935c389f1eb335f17abfbc56001eb246)
-- [Change fetch depth to 100 for repo checkout](https://codeberg.org/scarcekoi/pride-flags/commit/c69f0a09044db21f30c53c340cb5545b3b165266)
-- [Downgrade from codeberg-small to codeberg-tiny](https://codeberg.org/scarcekoi/pride-flags/commit/559decf68379aa3e18a97c561eacbf536fcbd3b1)
-- [Update repo checkout](https://codeberg.org/scarcekoi/pride-flags/commit/23f243f41a2dfd60f425c422689cdb7e4b7eb1f8)
-
-#### Regenerate-release-files
-
-- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/2389556b0c8b147a85cbb9bb7fdd854d3caad6ad)
-- [Update repo checkout job name](https://codeberg.org/scarcekoi/pride-flags/commit/1ba5adda2b781d3ef67f82384a634b035a137f68)
-- [Update archive creation](https://codeberg.org/scarcekoi/pride-flags/commit/3b7abbb90671369bd79d55f56134b49b9f1f059c)
-- [Update tar command](https://codeberg.org/scarcekoi/pride-flags/commit/f89290dd858c0e11f609e81d43a1d5b8b8cd5a8e)
-- [Update archive creation](https://codeberg.org/scarcekoi/pride-flags/commit/3dd2c20160ba4cb98c357efab09b7e30c88e7be0)
-- [Use zip instead of tar.xz](https://codeberg.org/scarcekoi/pride-flags/commit/4aa6524b2fcdd536cc51a114cb7c4ded6f87b152)
-- [Add ls check to zip creation](https://codeberg.org/scarcekoi/pride-flags/commit/8d66a8825bae3f5e29b17a37dd5a57a7d7ed62e9)
-- [Fix dir](https://codeberg.org/scarcekoi/pride-flags/commit/38562e925c93ece19325dad4626d8c670959c8e5)
-- [Update push command](https://codeberg.org/scarcekoi/pride-flags/commit/8157e9e93df9ba29c0d3daaeceaed94990f190bc)
-- [Update commit and push](https://codeberg.org/scarcekoi/pride-flags/commit/7cf1ed57ed0816ed88140b1a362a657025afd529)
-
-#### Release
-
-- [Zip job update](https://codeberg.org/scarcekoi/pride-flags/commit/e974acc9dba1626d49cd046e5f024e6f53736729)
-- [Update actions/checkout from v3 to v6](https://codeberg.org/scarcekoi/pride-flags/commit/04e2abbc69aee7bda65e5a0423604625e84566af)
-- [Update changelog generation](https://codeberg.org/scarcekoi/pride-flags/commit/573b514c6a00256b663a34a68fa57f527767d047)
-- [Use zip and create flag and flavour archives](https://codeberg.org/scarcekoi/pride-flags/commit/28478d412600e1c1b27f38989ba72ef532588f7c)
+- [Add separate ci and chore commit parsers](https://codeberg.org/scarcekoi/pride-flags/commit/9915ab215c3054cf8ac032af4b348d38e132d8bc)
+- [Add merge commit parser](https://codeberg.org/scarcekoi/pride-flags/commit/6ee21f8f67588d084871219dcaf8057d319543d2)
 
 #### Release files
 
@@ -86,26 +114,44 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/41ac91a776f40c3d964fc8ca5b40e29f28a67a73)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0f83f1e4a3be943d194c8139716029c7bc8fafea)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/cf9ea62aa81ddfe4dbc9bc3339ac88df256b5daf)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0ae7f7ca4e6308726c1e89d837d2b9d9082a325a)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/600fbe9f6364f15219cb03389dac55dc3b677ab4)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/f17cb8589eddd7814144ec4de89c66bf2d5a2c04)
+
+### ◀️ Revert
+
 ## [1.0.17] - 2026-02-19
 
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ CI/CD
 
-
-#### Changelog
-
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/279607322a33ed55a7b78332507633e02e5026b5)
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/db9f6c6f1bb836aac647a5af376a739c795f8584)
 
 #### Release
 
 - [Fix](https://codeberg.org/scarcekoi/pride-flags/commit/b7d925159c25ddaf343061ba3d14f85dbdc9c14e)
 - [Fix](https://codeberg.org/scarcekoi/pride-flags/commit/e68dccc4e27c5aede5d642064f071937d4311acb)
 - [Remove nix install](https://codeberg.org/scarcekoi/pride-flags/commit/58605e81df24450e436d4011637e727f5b621bd1)
+
+### ⚙️ Chores
+
+
+#### Changelog
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/279607322a33ed55a7b78332507633e02e5026b5)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/db9f6c6f1bb836aac647a5af376a739c795f8584)
 ## [1.0.14] - 2026-02-18
 
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ CI/CD
+
+
+#### Release
+
+- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/9b254c5d7ce4dbcc6196daf830ea9d1c3c13dd28)
+- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/c2f1839f4242e16490aeffd1534da27ea5a031f4)
+- [Use curl instead of tea cli](https://codeberg.org/scarcekoi/pride-flags/commit/c7e808c9eee1a56ff92b9b5ce130d24243e23deb)
+
+### ⚙️ Chores
 
 
 #### Changelog
@@ -113,24 +159,11 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/7c8e70ae4c802f67c9e171fb25b44c6999bf07d5)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bd3a60643462819d02b80fd65448fe26438bdc7d)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/6227779d1598b180a0326cf4c93f04c3cc98ae13)
-
-#### Release
-
-- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/9b254c5d7ce4dbcc6196daf830ea9d1c3c13dd28)
-- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/c2f1839f4242e16490aeffd1534da27ea5a031f4)
-- [Use curl instead of tea cli](https://codeberg.org/scarcekoi/pride-flags/commit/c7e808c9eee1a56ff92b9b5ce130d24243e23deb)
 ## [1.0.11] - 2026-02-07
 
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ CI/CD
 
-
-#### Changelog
-
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9c650f629ffc67e7ae665eaf552c0afbb1f4754c)
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0e89b695772fa9e2f3d287a5a4bc7cc7de4c7704)
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c91c211bf6d01d41a296f4d65c36587182c3c4c4)
-- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/933bb8e3052abc315d88dd8f88137132dc8e0c25)
 
 #### Regenerate-changelog
 
@@ -141,6 +174,16 @@
 - [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/268457d6cbc2cdc45e3e8e29fcfd4d592dfdb219)
 - [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/9f6476903a5e74c8d072c4f808aa1237ee1debc4)
 - [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/3fbc5756a29188f35c6a38166b377f79eeeea60c)
+
+### ⚙️ Chores
+
+
+#### Changelog
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9c650f629ffc67e7ae665eaf552c0afbb1f4754c)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0e89b695772fa9e2f3d287a5a4bc7cc7de4c7704)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/c91c211bf6d01d41a296f4d65c36587182c3c4c4)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/933bb8e3052abc315d88dd8f88137132dc8e0c25)
 ## [1.0.8] - 2026-02-07
 
 
@@ -151,7 +194,16 @@
 
 - [Init](https://codeberg.org/scarcekoi/pride-flags/commit/3d65471fa8b27d698a52cd4d9311aedac536c3e7)
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ CI/CD
+
+
+#### Release
+
+- [Fix release creation job](https://codeberg.org/scarcekoi/pride-flags/commit/450ef2880b283bebcd3f4521df0293f8b462b538)
+- [Change fj back to github](https://codeberg.org/scarcekoi/pride-flags/commit/417150cdcbc3ceae95fb645e03f2832e1d885d3c)
+- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/5226f603e84dfb566eccfc708a6736e49cdfd68e)
+
+### ⚙️ Chores
 
 
 #### Changelog
@@ -161,43 +213,51 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1596bef22e35d6d41fe972f656cf27b7cdfeea8e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/7bf87d723c5fdc00cc3a5cf3ffda6a55ae98ccb5)
 
-#### Release
-
-- [Fix release creation job](https://codeberg.org/scarcekoi/pride-flags/commit/450ef2880b283bebcd3f4521df0293f8b462b538)
-- [Change fj back to github](https://codeberg.org/scarcekoi/pride-flags/commit/417150cdcbc3ceae95fb645e03f2832e1d885d3c)
-- [Fix release creation](https://codeberg.org/scarcekoi/pride-flags/commit/5226f603e84dfb566eccfc708a6736e49cdfd68e)
-
 #### Transandrogynous
 
 - [Generate data](https://codeberg.org/scarcekoi/pride-flags/commit/ab9efcf50fc4778be8dd80eb022cb29b11ed1dd2)
 ## [1.0.5] - 2026-02-07
 
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ CI/CD
+
+
+#### Release
+
+- [Install nix](https://codeberg.org/scarcekoi/pride-flags/commit/b2c7eac45426414cf0eb84375fbaa9f266b09898)
+
+### ⚙️ Chores
 
 
 #### Changelog
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/9ee15c211b55638385807ad6df5e894809caedc8)
-
-#### Release
-
-- [Install nix](https://codeberg.org/scarcekoi/pride-flags/commit/b2c7eac45426414cf0eb84375fbaa9f266b09898)
 ## [1.0.4] - 2026-02-07
 
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ CI/CD
+
+
+#### Release
+
+- [Use temporary nix shell](https://codeberg.org/scarcekoi/pride-flags/commit/2a511a66d79f28893ca59e78cd7664d5cb4db720)
+
+### ⚙️ Chores
 
 
 #### Changelog
 
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3cfa435b96c6a993fb2b16922421278d24df3ee1)
+## [1.0.3] - 2026-02-07
+
+
+### ⚙️ CI/CD
+
 
 #### Release
 
-- [Use temporary nix shell](https://codeberg.org/scarcekoi/pride-flags/commit/2a511a66d79f28893ca59e78cd7664d5cb4db720)
-## [1.0.3] - 2026-02-07
-
+- [Fix git cliff not working](https://codeberg.org/scarcekoi/pride-flags/commit/9eec4dcc415b25cb707862b3edf3c87d04fa910f)
+- [Install codeberg cli](https://codeberg.org/scarcekoi/pride-flags/commit/2315c40fe380730f8e2d978d026c8ad1f23b9587)
 
 ### 📚 Documentation
 
@@ -206,7 +266,7 @@
 
 - [Add themes link](https://codeberg.org/scarcekoi/pride-flags/commit/8469011d06e7aea58ce0a21b5be6d6fcc282bdfc)
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ Chores
 
 
 #### Changelog
@@ -219,8 +279,6 @@
 #### Release
 
 - [Upgrade from tiny to small](https://codeberg.org/scarcekoi/pride-flags/commit/65ff80ba6888c8d7b8f2a6c62f71168620bd7460)
-- [Fix git cliff not working](https://codeberg.org/scarcekoi/pride-flags/commit/9eec4dcc415b25cb707862b3edf3c87d04fa910f)
-- [Install codeberg cli](https://codeberg.org/scarcekoi/pride-flags/commit/2315c40fe380730f8e2d978d026c8ad1f23b9587)
 ## [1.0.0] - 2026-02-07
 
 
@@ -344,6 +402,33 @@
 
 - [Update latte colours](https://codeberg.org/scarcekoi/pride-flags/commit/a5caa1d218727e16a45d5ddf36ee13c8a20a62c4)
 
+### ⚙️ CI/CD
+
+
+#### Regenerate-changelog
+
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/2f2df092085f6c3b7d510ca21f987209d467a3eb)
+- [Upgrade from codeberg-tiny to codeberg-small](https://codeberg.org/scarcekoi/pride-flags/commit/e3b9f0d0f412bc4c8ac023e9593997bb27f86c81)
+- [Use different git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/18cfecea8349228a8eee2ec1926c90eaca31eab7)
+- [Change git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/d332ae70f1b79402c24ea6fa4cb389aa1635e87e)
+- [Change git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/deec0400a9bbb8ef931421a4913e95fc45298d37)
+- [Upgrade from small to medium](https://codeberg.org/scarcekoi/pride-flags/commit/f38dda001859a950585c66fd9c167601adfb3b73)
+- [Fix changelog generation job](https://codeberg.org/scarcekoi/pride-flags/commit/195f4d812be4c415b90546632fc97c91880f1aa2)
+- [Update git-cliff extract command](https://codeberg.org/scarcekoi/pride-flags/commit/77d1d7dc692c33abcca37e34b35a38b74032d96b)
+
+#### Regenerate-data
+
+- [Change runs on](https://codeberg.org/scarcekoi/pride-flags/commit/fc9462dcacfedaad17053530d6317de35e9dbd66)
+- [Separate scripts](https://codeberg.org/scarcekoi/pride-flags/commit/0c021a22083a84a73e43888cf4ca974d045b2379)
+- [Update runs on](https://codeberg.org/scarcekoi/pride-flags/commit/04a32c478738a48aa732ab07e3576eee6776fba9)
+- [Update whiskers install](https://codeberg.org/scarcekoi/pride-flags/commit/69e2a1e1f301e9de0033e055909415912a70cac8)
+
+#### Release
+
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/1e82d443b260a9d43ab563003d9191a8030787c0)
+- [Update name](https://codeberg.org/scarcekoi/pride-flags/commit/eb38a54fb5eee1bfd98ef6bedef25c9a59558b91)
+- [Generate changelog](https://codeberg.org/scarcekoi/pride-flags/commit/89718f1cf8f46c70b0e7e1764fba5b4b275ac7cb)
+
 ### 🚜 Refactor
 
 
@@ -431,7 +516,7 @@
 
 - [Change colours](https://codeberg.org/scarcekoi/pride-flags/commit/1ca70b2bd430b32ae2acbfd3a6d574dd0e7c7985)
 
-### ⚙️ Miscellaneous Tasks
+### ⚙️ Chores
 
 
 #### ISSUE_TEMPLATE
@@ -467,30 +552,6 @@
 #### Previews
 
 - [Re-generate data](https://codeberg.org/scarcekoi/pride-flags/commit/6f42a665b1c213d86a9c510bc245a6279257e03b)
-
-#### Regenerate-changelog
-
-- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/2f2df092085f6c3b7d510ca21f987209d467a3eb)
-- [Upgrade from codeberg-tiny to codeberg-small](https://codeberg.org/scarcekoi/pride-flags/commit/e3b9f0d0f412bc4c8ac023e9593997bb27f86c81)
-- [Use different git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/18cfecea8349228a8eee2ec1926c90eaca31eab7)
-- [Change git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/d332ae70f1b79402c24ea6fa4cb389aa1635e87e)
-- [Change git cliff install](https://codeberg.org/scarcekoi/pride-flags/commit/deec0400a9bbb8ef931421a4913e95fc45298d37)
-- [Upgrade from small to medium](https://codeberg.org/scarcekoi/pride-flags/commit/f38dda001859a950585c66fd9c167601adfb3b73)
-- [Fix changelog generation job](https://codeberg.org/scarcekoi/pride-flags/commit/195f4d812be4c415b90546632fc97c91880f1aa2)
-- [Update git-cliff extract command](https://codeberg.org/scarcekoi/pride-flags/commit/77d1d7dc692c33abcca37e34b35a38b74032d96b)
-
-#### Regenerate-data
-
-- [Change runs on](https://codeberg.org/scarcekoi/pride-flags/commit/fc9462dcacfedaad17053530d6317de35e9dbd66)
-- [Separate scripts](https://codeberg.org/scarcekoi/pride-flags/commit/0c021a22083a84a73e43888cf4ca974d045b2379)
-- [Update runs on](https://codeberg.org/scarcekoi/pride-flags/commit/04a32c478738a48aa732ab07e3576eee6776fba9)
-- [Update whiskers install](https://codeberg.org/scarcekoi/pride-flags/commit/69e2a1e1f301e9de0033e055909415912a70cac8)
-
-#### Release
-
-- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/1e82d443b260a9d43ab563003d9191a8030787c0)
-- [Update name](https://codeberg.org/scarcekoi/pride-flags/commit/eb38a54fb5eee1bfd98ef6bedef25c9a59558b91)
-- [Generate changelog](https://codeberg.org/scarcekoi/pride-flags/commit/89718f1cf8f46c70b0e7e1764fba5b4b275ac7cb)
 
 #### Scripts
 

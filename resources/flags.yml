@@ -4,7 +4,7 @@ flags:
     categories: [gender]
   aroace:
     name: Aromantic Asexual
-    categories: [attraction, romantic]
+    categories: [attraction, orientation, romantic]
   aromantic:
     name: Aromantic
     categories: [romantic]
@@ -34,7 +34,7 @@ flags:
     categories: [gender, fluidity]
   genderqueer:
     name: Genderqueer
-    categories: [gender]
+    categories: [gender, expression]
   greysexual:
     name: Greysexual
     categories: [attraction, orientation, other]
