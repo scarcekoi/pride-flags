@@ -23,6 +23,7 @@ jobs:
           THEMES=(mocha macchiato frappe latte)
           for theme in "${THEMES[@]}"; do
             tar -cJf "dist/release/${theme}.tar.xz" -C "themes" "$theme"
+            echo "Archived $theme to dist/release/${theme}.tar.xz"
           done
 
       - name: Commit and push release files
