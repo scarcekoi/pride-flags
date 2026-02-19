@@ -86,8 +86,7 @@ jobs:
               THEME_FLAG_DIR="themes/$theme/$flag"
               if [[ -d "$THEME_FLAG_DIR" ]]; then
                 # Add the flag folder under the theme folder inside the zip
-                zip -r "$ZIP_FILE" "$THEME_FLAG_DIR" -x "*.DS_Store" -j
-                zipnote -w "$ZIP_FILE" <<< "@ $theme/"
+                zip -r "$ZIP_FILE" "$THEME_FLAG_DIR" -x "*.DS_Store"
               fi
             done
             echo "Created flag archive: $ZIP_FILE"
