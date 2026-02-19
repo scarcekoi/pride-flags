@@ -26,7 +26,7 @@ steps:
       - git-cliff --version
 
       - TAG=$(git describe --tags --abbrev=0)
-      - echo "Latest tag: $TAG"
+      - echo "Latest tag\: $TAG"
 
       - git-cliff -o CHANGELOG.md
 
