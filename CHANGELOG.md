@@ -14,6 +14,13 @@
 - [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/33a1581c11c0aa46f306e81711d14d836ac60d04)
 - [Remove old files](https://codeberg.org/scarcekoi/pride-flags/commit/1a9f697d5d7be6636d7205a1bea59275f4f5525e)
 
+### 🐛 Bug Fixes
+
+
+#### Intersex
+
+- [Remove crisp edge rendering](https://codeberg.org/scarcekoi/pride-flags/commit/a67beac3f413e6d91805102b3d9bf718b6fd82ad)
+
 ### ⚙️ CI/CD
 
 
@@ -110,6 +117,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5ac682fe84bc7b26ecf501e6937f410d5fa1289a)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/19ad99a3b14454cec8088747b841d3017e3cea68)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3e9d66a54ac679126417346d3559321ddc6d9a3c)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/480db5ce09c12929121603ed0e7ea7fb066270fb)
 
 #### Cliff
 
