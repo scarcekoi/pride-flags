@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
-  <path fill="#f9e2af" stroke="#f9e2af"  d="M0 0h900v600H0z"/>
-  <circle cx="450" cy="300" r="147" fill="none" stroke-width="50" stroke="#cba6f7"/>
-</svg>
+/* themes/mocha/intersex/intersex.css */
+:root {
+  --ctp-mocha-intersex-yellow: #f9e2af;
+  --ctp-mocha-intersex-purple: #cba6f7;
+}
