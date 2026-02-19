@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" shape-rendering="crispEdges"><path fill="#f38ba8" stroke="#f38ba8" d="M0 0h1200v100H0z"/><path fill="#fab387" stroke="#fab387" d="M0 100h1200v100H0z"/><path fill="#f9e2af" stroke="#f9e2af" d="M0 200h1200v100H0z"/><path fill="#a6e3a1" stroke="#a6e3a1" d="M0 300h1200v100H0z"/><path fill="#89dceb" stroke="#89dceb" d="M0 400h1200v100H0z"/><path fill="#cba6f7" stroke="#cba6f7" d="M0 500h1200v100H0z"/></svg>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1200" height="600" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1200" height="100" fill="#f38ba8" stroke="#f38ba8" />
+<rect x="0" y="100" width="1200" height="100" fill="#fab387" stroke="#fab387" />
+<rect x="0" y="200" width="1200" height="100" fill="#f9e2af" stroke="#f9e2af" />
+<rect x="0" y="300" width="1200" height="100" fill="#a6e3a1" stroke="#a6e3a1" />
+<rect x="0" y="400" width="1200" height="100" fill="#89dceb" stroke="#89dceb" />
+<rect x="0" y="500" width="1200" height="100" fill="#cba6f7" stroke="#cba6f7" />
+</svg>

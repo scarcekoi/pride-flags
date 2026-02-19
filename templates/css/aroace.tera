@@ -1,0 +1,16 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/aroace/aroace.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/aroace/aroace.css */
+:root {
+  --ctp-{{flavor.identifier}}-aroace-orange: {{peach.hex}};
+  --ctp-{{flavor.identifier}}-aroace-yellow: {{yellow.hex}};
+  --ctp-{{flavor.identifier}}-aroace-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+  --ctp-{{flavor.identifier}}-aroace-light-blue: {{sky.hex}};
+  --ctp-{{flavor.identifier}}-aroace-dark-blue: {{blue.hex}};
+}

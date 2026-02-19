@@ -1,0 +1,16 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/demiboy/demiboy.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/demiboy/demiboy.css */
+:root {
+  --ctp-{{flavor.identifier}}-demiboy-light-gray: {{if(cond=flavor.light, t=overlay2.hex, f=overlay0.hex)}};
+  --ctp-{{flavor.identifier}}-demiboy-dark-gray: {{if(cond=flavor.light, t=overlay0.hex, f=overlay2.hex)}};
+  --ctp-{{flavor.identifier}}-demiboy-blue: {{blue.hex}};
+  --ctp-{{flavor.identifier}}-demiboy-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+}
+
