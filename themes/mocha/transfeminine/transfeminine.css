@@ -1,7 +1,7 @@
 /* themes/mocha/transfeminine/transfeminine.css */
 :root {
   --ctp-mocha-transfeminine-blue: #74c7ec;
-  --ctp-mocha-transfeminine-light-pink: #f5e0dc;
-  --ctp-mocha-transfeminine-pink: #eba0ac;
-  --ctp-mocha-transfeminine-red: #f38ba8;
+  --ctp-mocha-transfeminine-lighter-pink: #f5e0dc;
+  --ctp-mocha-transfeminine-light-pink: #eba0ac;
+  --ctp-mocha-transfeminine-pink: #f38ba8;
 }

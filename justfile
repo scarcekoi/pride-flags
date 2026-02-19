@@ -1,7 +1,7 @@
 _default:
     @just --list
 
-do-everything: whiskers create-files catwalk update-flaglist update-previews optimise
+do-everything: whiskers create-files catwalk optimise update-flaglist update-previews
 
 whiskers:
     ./scripts/whiskers-run.sh

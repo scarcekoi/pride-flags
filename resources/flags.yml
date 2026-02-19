@@ -14,9 +14,6 @@ flags:
   bisexual:
     name: Bisexual
     categories: [attraction, orientation]
-  cisgender:
-    name: Cisgender
-    categories: [gender]
   demiboy:
     name: Demiboy
     categories: [gender, expression]
@@ -26,11 +23,11 @@ flags:
   demigirl:
     name: Demigirl
     categories: [gender, expression]
-  femboy:
-    name: Femboy
-    categories: [gender, expression]
   finromantic:
     name: Finromantic
+    categories: [attraction, orientation]
+  gay-man:
+    name: Gay Men
     categories: [attraction, orientation]
   genderfluid:
     name: Genderfluid
@@ -41,9 +38,6 @@ flags:
   greysexual:
     name: Greysexual
     categories: [attraction, orientation, other]
-  gynesexual:
-    name: Gynesexual
-    categories: [attraction, orientation]
   intersex:
     name: Intersex
     categories: [gender]
@@ -62,6 +56,9 @@ flags:
   pansexual:
     name: Pansexual
     categories: [attraction, orientation, fluidity]
+  polyam:
+    name: Polyamorous
+    categories: [attraction]
   polysexual:
     name: Polysexual
     categories: [attraction, orientation, fluidity]
@@ -80,3 +77,6 @@ flags:
   trigender:
     name: Trigender
     categories: [gender, fluidity]
+  womasexual:
+    name: Womasexual
+    categories: [attraction, orientation]
