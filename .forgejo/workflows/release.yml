@@ -62,24 +62,32 @@ jobs:
         env:
           FORGEJO_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
         run: |
-          TAG="${{ steps.get_tag.outputs.tag }}"
+          TAG="${GITHUB_REF##*/}"
           CHANGELOG_FILE="${TAG}-changelog.md"
           echo "${{ steps.changelog.outputs.changelog }}" > "$CHANGELOG_FILE"
 
-          RESPONSE=$(curl -s -X POST https://codeberg.org/api/v1/repos/scarcekoi/pride-flags/releases \
+          JSON=$(python3 -c "import json; print(json.dumps({
+            'tag_name': '$TAG',
+            'name': '$TAG',
+            'body': open('$CHANGELOG_FILE').read(),
+            'draft': False,
+            'prerelease': False
+          }))")
+
+          RESPONSE=$(curl -s -X POST \
             -H "Authorization: token $FORGEJO_TOKEN" \
             -H "Content-Type: application/json" \
-            -d "{
-              \"tag_name\": \"$TAG\",
-              \"name\": \"$TAG\",
-              \"body\": \"$(sed 's/"/\\"/g' $CHANGELOG_FILE)\",
-              \"draft\": false,
-              \"prerelease\": false
-            }")
+            -d "$JSON" \
+            https://codeberg.org/api/v1/repos/scarcekoi/pride-flags/releases)
 
           echo "$RESPONSE"
 
-          RELEASE_ID=$(echo "$RESPONSE" | python3 -c "import sys, json; print(json.load(sys.stdin)['id'])")
+          RELEASE_ID=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('id',''))")
+
+          if [ -z "$RELEASE_ID" ]; then
+            echo "Release creation failed"
+            exit 1
+          fi
 
           for FILE in mocha.zip macchiato.zip frappe.zip latte.zip flag_zips/*.zip; do
             curl -X POST \
