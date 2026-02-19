@@ -3,14 +3,14 @@ whiskers:
   version: "^2.5.1"
   matrix:
     - flavor
-  filename: "themes/{{flavor.identifier}}/genderfluid/genderfluid.css"
+  filename: "themes/{{flavor.identifier}}/genderfluid/genderfluid.svg"
   hex_format: "#{{r}}{{g}}{{b}}"
 ---
-/* themes/{{flavor.identifier}}/genderfluid/genderfluid.css */
-:root {
-  --ctp-{{flavor.identifier}}-genderfluid-pink: {{pink.hex}};
-  --ctp-{{flavor.identifier}}-genderfluid-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
-  --ctp-{{flavor.identifier}}-genderfluid-purple: {{mauve.hex}};
-  --ctp-{{flavor.identifier}}-genderfluid-black: {{if(cond=flavor.light, t=text.hex, f=crust.hex)}};
-  --ctp-{{flavor.identifier}}-genderfluid-blue: {{blue.hex}};
-}
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1000" height="100" fill="{{pink.hex}}" stroke="{{pink.hex}}" />
+<rect x="0" y="100" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" stroke="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
+<rect x="0" y="200" width="1000" height="100" fill="{{mauve.hex}}" stroke="{{mauve.hex}}" />
+<rect x="0" y="300" width="1000" height="100" fill="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" stroke="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" />
+<rect x="0" y="400" width="1000" height="100" fill="{{blue.hex}}" stroke="{{blue.hex}}" />
+</svg>

@@ -6,9 +6,9 @@ whiskers:
   filename: "themes/{{flavor.identifier}}/greysexual/greysexual.css"
   hex_format: "#{{r}}{{g}}{{b}}"
 ---
-/* themes/{{flavor.identifier}}/genderqueer/genderqueer.css */
+/* themes/{{flavor.identifier}}/greysexual/greysexual.css */
 :root {
-  --ctp-{{flavor.identifier}}-genderqueer-purple: {{mauve.hex}};
-  --ctp-{{flavor.identifier}}-genderqueer-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
-  --ctp-{{flavor.identifier}}-genderqueer-green: {{green.hex}};
+  --ctp-{{flavor.identifier}}-greysexual-purple: {{mauve.hex}};
+  --ctp-{{flavor.identifier}}-greysexual-light-gray: {{overlay2.hex}};
+  --ctp-{{flavor.identifier}}-greysexual-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
 }
