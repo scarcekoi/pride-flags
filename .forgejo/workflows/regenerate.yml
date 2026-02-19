@@ -63,35 +63,7 @@ jobs:
             themes/
 
       - name: Create zip archives for themes and flags
-        run: |
-          mkdir -p dist/release/flags
-          mkdir -p dist/release/flavours
-
-          THEMES=(mocha macchiato frappe latte)
-
-          # Create theme archives (mocha.zip, etc.)
-          for theme in "${THEMES[@]}"; do
-            zip -r "dist/release/flavours/${theme}.zip" "themes/$theme"/*
-            echo "Created theme archive: dist/release/flavours/${theme}.zip"
-          done
-
-          # Read flags from resources/flags.yml
-          FLAGS=$(yq -r '.flags | keys[]' resources/flags.yml)
-
-          # Create flag archives (transgender.zip, etc.)
-          for flag in $FLAGS; do
-            ZIP_FILE="dist/release/flags/${flag}.zip"
-            rm -f "$ZIP_FILE"
-
-            for theme in "${THEMES[@]}"; do
-              THEME_FLAG_DIR="themes/$theme/$flag"
-              if [[ -d "$THEME_FLAG_DIR" ]]; then
-                # Add the flag folder under the theme folder inside the zip
-                zip -r "$ZIP_FILE" "$THEME_FLAG_DIR" -x "*.DS_Store"
-              fi
-            done
-            echo "Created flag archive: $ZIP_FILE"
-          done
+        run: scripts/archive.sh
 
       - name: Commit and push release files
         env:

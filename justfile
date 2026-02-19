@@ -20,3 +20,6 @@ update-previews:
 
 optimise:
     ./scripts/optimise.sh
+
+package:
+    ./scripts/archive.sh
