@@ -36,7 +36,7 @@ steps:
       - git add CHANGELOG.md
       - |
         if ! git diff --cached --quiet; then
-          git commit -m "chore(changelog): regenerate data"
+          git commit -m 'chore(changelog): regenerate data'
           git push origin master
         fi
 
@@ -86,7 +86,7 @@ steps:
       - git add dist/release/*
       - |
         if ! git diff --cached --quiet; then
-          git commit -m "chore(release-files): regenerate data"
+          git commit -m 'chore(release-files): regenerate data'
           git fetch origin master
           git rebase origin/master
           git push origin master
