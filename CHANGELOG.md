@@ -30,6 +30,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/4980f290c298de4294892524beb01b95f0a2d5c9)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/7770a202d76bf82bc79f9a4417756d06751ad81e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/681c105934425726c67a94237a34f2d196be59aa)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/e84d441a3547b94caa5f19c23a607ff3805c0cdf)
 
 #### Regenerate-changelog
 
@@ -57,6 +58,10 @@
 - [Update actions/checkout from v3 to v6](https://codeberg.org/scarcekoi/pride-flags/commit/04e2abbc69aee7bda65e5a0423604625e84566af)
 - [Update changelog generation](https://codeberg.org/scarcekoi/pride-flags/commit/573b514c6a00256b663a34a68fa57f527767d047)
 - [Use zip and create flag and flavour archives](https://codeberg.org/scarcekoi/pride-flags/commit/28478d412600e1c1b27f38989ba72ef532588f7c)
+
+#### Release files
+
+- [Update for](https://codeberg.org/scarcekoi/pride-flags/commit/f33f202e1a4e7a930661f5b80b49d50612681966)
 ## [1.0.17] - 2026-02-19
 
 
