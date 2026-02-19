@@ -25,6 +25,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a9be50f910662e171d76bee0411a4e95e35cb004)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/d03ebe8673fb08bfd41ae15dfdd7d8b177c60ef8)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0571370bb9e2927699e1906ee1447eb76954be5c)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/387d85ad6dc2a2b731b01bdf58af21adf31536ea)
 
 #### Regenerate-changelog
 
@@ -40,12 +41,14 @@
 - [Update archive creation](https://codeberg.org/scarcekoi/pride-flags/commit/3b7abbb90671369bd79d55f56134b49b9f1f059c)
 - [Update tar command](https://codeberg.org/scarcekoi/pride-flags/commit/f89290dd858c0e11f609e81d43a1d5b8b8cd5a8e)
 - [Update archive creation](https://codeberg.org/scarcekoi/pride-flags/commit/3dd2c20160ba4cb98c357efab09b7e30c88e7be0)
+- [Use zip instead of tar.xz](https://codeberg.org/scarcekoi/pride-flags/commit/4aa6524b2fcdd536cc51a114cb7c4ded6f87b152)
 
 #### Release
 
 - [Zip job update](https://codeberg.org/scarcekoi/pride-flags/commit/e974acc9dba1626d49cd046e5f024e6f53736729)
 - [Update actions/checkout from v3 to v6](https://codeberg.org/scarcekoi/pride-flags/commit/04e2abbc69aee7bda65e5a0423604625e84566af)
 - [Update changelog generation](https://codeberg.org/scarcekoi/pride-flags/commit/573b514c6a00256b663a34a68fa57f527767d047)
+- [Use zip and create flag and flavour archives](https://codeberg.org/scarcekoi/pride-flags/commit/28478d412600e1c1b27f38989ba72ef532588f7c)
 ## [1.0.17] - 2026-02-19
 
 
