@@ -13,6 +13,10 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          sparse-checkout: |
+            dist/release
+            resources/flags.yml
+            themes/
 
       - name: Install dependencies
         run: |
@@ -34,11 +38,35 @@ jobs:
           echo "Latest tag: $TAG"
           echo "tag=$TAG" >> $GITHUB_OUTPUT
 
-      - name: Create zip files for themes
+      - name: Create archives for themes and flags
         run: |
+          mkdir -p dist/release
+
           THEMES=(mocha macchiato frappe latte)
+
+          # Create theme archives (mocha.zip, etc.)
           for theme in "${THEMES[@]}"; do
-            tar -I 'xz -T0 -c -z --best -' -cf "${theme}.tar.xz" "themes/$theme"
+            zip -r "dist/release/${theme}.zip" "themes/$theme"/*
+            echo "Created theme archive: dist/release/${theme}.zip"
+          done
+
+          # Read flags from resources/flags.yml
+          FLAGS=$(yq -r '.flags | keys[]' resources/flags.yml)
+
+          # Create flag archives (transgender.zip, etc.)
+          for flag in $FLAGS; do
+            ZIP_FILE="dist/release/${flag}.zip"
+            rm -f "$ZIP_FILE"
+
+            for theme in "${THEMES[@]}"; do
+              THEME_FLAG_DIR="themes/$theme/$flag"
+              if [[ -d "$THEME_FLAG_DIR" ]]; then
+                # Add the flag folder under the theme folder inside the zip
+                zip -r "$ZIP_FILE" "$THEME_FLAG_DIR" -x "*.DS_Store" -j
+                zipnote -w "$ZIP_FILE" <<< "@ $theme/"
+              fi
+            done
+            echo "Created flag archive: $ZIP_FILE"
           done
 
       - name: Generate changelog
@@ -52,44 +80,17 @@ jobs:
           cat changelog.md >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: Create release via API
-        env:
-          FORGEJO_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
-        run: |
-          TAG="${GITHUB_REF##*/}"
-          CHANGELOG_FILE="${TAG}-changelog.md"
-          echo "${{ steps.changelog.outputs.changelog }}" > "$CHANGELOG_FILE"
-
-          JSON=$(python3 -c "import json; print(json.dumps({
-            'tag_name': '$TAG',
-            'name': '$TAG',
-            'body': open('$CHANGELOG_FILE').read(),
-            'draft': False,
-            'prerelease': False
-          }))")
-
-          RESPONSE=$(curl -s -X POST \
-            -H "Authorization: token $FORGEJO_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d "$JSON" \
-            https://codeberg.org/api/v1/repos/scarcekoi/pride-flags/releases)
-
-          echo "$RESPONSE"
-
-          RELEASE_ID=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('id',''))")
-
-          if [ -z "$RELEASE_ID" ]; then
-            echo "Release creation failed"
-            exit 1
-          fi
-
-          for FILE in mocha.tar.xz macchiato.tar.xz frappe.tar.xz latte.tar.xz flag_zips/*.zip; do
-            if [[ -f "$FILE" ]]; then
-              curl -X POST \
-                -H "Authorization: token $FORGEJO_TOKEN" \
-                -F "attachment=@$FILE" \
-                "https://codeberg.org/api/v1/repos/scarcekoi/pride-flags/releases/$RELEASE_ID/assets"
-            else
-              echo "File not found: $FILE"
-            fi
-          done
+      - name: Create release via Forgejo Action
+        uses: forgejo-actions/forgejo-release@v1
+        with:
+          token: ${{ secrets.FORGEJO_TOKEN }}
+          tag: ${{ steps.get_tag.outputs.tag }}
+          name: ${{ steps.get_tag.outputs.tag }}
+          body: ${{ steps.changelog.outputs.changelog }}
+          draft: false
+          prerelease: false
+          assets: |
+            dist/release/mocha.zip
+            dist/release/macchiato.zip
+            dist/release/frappe.zip
+            dist/release/latte.zip
