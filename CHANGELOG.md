@@ -70,6 +70,7 @@
 #### Intersex
 
 - [Use same format as other svgs](https://codeberg.org/scarcekoi/pride-flags/commit/30873a2f36c9df13d350e20da39d02724ed720ee)
+- [Use consistent xml format](https://codeberg.org/scarcekoi/pride-flags/commit/4a9ef2a1c514775c3883f3b0cb697c75879e61cf)
 
 ### ⚙️ Chores
 
@@ -108,6 +109,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bb756040c30aeee7d89cd44c3bdcbb65a686786e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/5ac682fe84bc7b26ecf501e6937f410d5fa1289a)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/19ad99a3b14454cec8088747b841d3017e3cea68)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3e9d66a54ac679126417346d3559321ddc6d9a3c)
 
 #### Cliff
 
@@ -128,6 +130,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/f17cb8589eddd7814144ec4de89c66bf2d5a2c04)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/8508930e96c2e3732f2064c7b2bfa77bcb2082c9)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/50514186a21151ca3b0fcc1c763eb65279036c46)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bcdcc38b445d1634d2358c180dd03f4554d9354e)
 
 #### Resources
 
