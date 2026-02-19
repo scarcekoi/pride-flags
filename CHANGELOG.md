@@ -35,12 +35,14 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/60e632113e8772929c0f0ad3a6310efaddf1e880)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/214c010de4d57773e70914e39bd8f835c084a612)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/ec8b58f3d989b0c9982d2d13bbfd12992a9860a7)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/6574f7870ad30a62e28169a17a0ccd13e59b4968)
 
 #### Regenerate
 
 - [Regenerate-release-files update](https://codeberg.org/scarcekoi/pride-flags/commit/5d148b1989dfde13716567f6e63e52b9ada47ff7)
 - [Regenerate-release-files update](https://codeberg.org/scarcekoi/pride-flags/commit/be682b20804ff906f888f06a6caf797f65692118)
 - [Regenerate-release-files update zip creation](https://codeberg.org/scarcekoi/pride-flags/commit/3c6fb4c13acea71baeb1cc87fee8a2a043177059)
+- [Regenerate-release-files - add flags.yml](https://codeberg.org/scarcekoi/pride-flags/commit/09af321f084eb7a9a82f6ec81c3568f917d892aa)
 
 #### Regenerate-changelog
 
