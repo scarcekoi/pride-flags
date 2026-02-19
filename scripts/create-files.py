@@ -70,6 +70,8 @@ def convert_png_to_format(png_path: Path, fmt: str) -> bool:
     # Route to the best tool
     if fmt in ASEPRITE_FORMATS:
         cmd = [ASEPRITE, "-b", str(png_path), "--save-as", str(output_path)]
+    elif fmt == "webp":
+        cmd = [CONVERT, str(png_path), "-define", "webp:lossless=true", str(output_path)]
     else:
         cmd = [CONVERT, str(png_path), str(output_path)]
 

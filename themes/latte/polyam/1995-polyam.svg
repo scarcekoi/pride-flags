@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" shape-rendering="crispEdges"><path fill="#1e66f5" stroke="#1e66f5" d="M0 0h600v100H0z"/><path fill="#d20f39" stroke="#d20f39" d="M0 100h600v100H0z"/><path fill="#4c4f69" stroke="#4c4f69" d="M0 200h600v100H0z"/><text x="300" y="183" fill="#df8e1d" dominant-baseline="middle" font-family="Times New Roman" font-size="150" text-anchor="middle">π</text></svg>
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="600" height="100" fill="#1e66f5" stroke="#1e66f5" />
+<rect x="0" y="100" width="600" height="100" fill="#d20f39" stroke="#d20f39" />
+<rect x="0" y="200" width="600" height="100" fill="#4c4f69" stroke="#4c4f69" />
+<text x="300" y="183" text-anchor="middle" dominant-baseline="middle" fill="#df8e1d" font-size="150" font-family="Times New Roman">π</text>
+</svg>
