@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="1000" height="100" fill="#8839ef" stroke="#8839ef" />
-<rect x="0" y="100" width="1000" height="100" fill="#ea76cb" stroke="#ea76cb" />
-<rect x="0" y="200" width="1000" height="100" fill="#dc8a78" stroke="#dc8a78" />
-<rect x="0" y="300" width="1000" height="100" fill="#e64553" stroke="#e64553" />
-<rect x="0" y="400" width="1000" height="100" fill="#d20f39" stroke="#d20f39" />
-</svg>
+/* themes/latte/finromantic/finromantic.css */
+:root {
+  --ctp-latte-finromantic-purple: #8839ef;
+  --ctp-latte-finromantic-pink: #ea76cb;
+  --ctp-latte-finromantic-light-pink: #dc8a78;
+  --ctp-latte-finromantic-maroon: #e64553;
+  --ctp-latte-finromantic-red: #d20f39;
+}

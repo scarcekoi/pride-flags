@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="600" height="100" fill="#cba6f7" stroke="#cba6f7" />
-<rect x="0" y="100" width="600" height="100" fill="#cdd6f4" stroke="#cdd6f4" />
-<rect x="0" y="200" width="600" height="100" fill="#a6e3a1" stroke="#a6e3a1" />
-</svg>
+/* themes/mocha/genderqueer/genderqueer.css */
+:root {
+  --ctp-mocha-genderqueer-purple: #cba6f7;
+  --ctp-mocha-genderqueer-white: #cdd6f4;
+  --ctp-mocha-genderqueer-green: #a6e3a1;
+}

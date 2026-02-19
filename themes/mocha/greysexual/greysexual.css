@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="1000" height="100" fill="#cba6f7" stroke="#cba6f7" />
-<rect x="0" y="100" width="1000" height="100" fill="#9399b2" stroke="#9399b2" />
-<rect x="0" y="200" width="1000" height="100" fill="#cdd6f4" stroke="#cdd6f4" />
-<rect x="0" y="300" width="1000" height="100" fill="#9399b2" stroke="#9399b2" />
-<rect x="0" y="400" width="1000" height="100" fill="#cba6f7" stroke="#cba6f7" />
-</svg>
+/* themes/mocha/greysexual/greysexual.css */
+:root {
+  --ctp-mocha-greysexual-purple: #cba6f7;
+  --ctp-mocha-greysexual-light-gray: #9399b2;
+  --ctp-mocha-greysexual-white: #cdd6f4;
+}

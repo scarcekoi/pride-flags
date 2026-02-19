@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-<rect x="0" y="0" width="600" height="100" fill="#8839ef" stroke="#8839ef" />
-<rect x="0" y="100" width="600" height="100" fill="#dce0e8" stroke="#dce0e8" />
-<rect x="0" y="200" width="600" height="100" fill="#40a02b" stroke="#40a02b" />
-</svg>
+/* themes/latte/genderqueer/genderqueer.css */
+:root {
+  --ctp-latte-genderqueer-purple: #8839ef;
+  --ctp-latte-genderqueer-white: #dce0e8;
+  --ctp-latte-genderqueer-green: #40a02b;
+}
