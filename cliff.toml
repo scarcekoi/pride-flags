@@ -69,6 +69,7 @@ commit_parsers = [
     { message = "^style", group = "<!-- 5 -->🎨 Styling" },
     { message = "^test", group = "<!-- 6 -->🧪 Testing" },
     { message = "^ci", group = "<!-- 11 -->⚙️ CI/CD" },
+    { message = "^merge:", group = "<!-- 12 -->🔀 Merges" },
     { message = "^chore\\(release\\): prepare for", skip = true },
     { message = "^chore\\(deps.*\\)", skip = true },
     { message = "^chore\\(pr\\)", skip = true },
