@@ -1,0 +1,110 @@
+name: Regenerate Changelog and Release Files
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  regenerate-changelog:
+    runs-on: codeberg-tiny
+    outputs:
+      latest_tag: ${{ steps.get_tag.outputs.tag }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          sparse-checkout: |
+            CHANGELOG.md
+
+      - name: Install git-cliff
+        run: |
+          curl -L "https://github.com/orhun/git-cliff/releases/download/v2.12.0/git-cliff-2.12.0-x86_64-unknown-linux-gnu.tar.gz" -o git-cliff.tar.gz
+          tar -xzf git-cliff.tar.gz --strip-components=1
+          chmod +x git-cliff
+          mv git-cliff /usr/local/bin/
+          git-cliff --version
+
+      - name: Get latest tag
+        id: get_tag
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          echo "Latest tag: $TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+      - name: Generate CHANGELOG.md
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          git-cliff -o CHANGELOG.md
+
+      - name: Commit and push changelog
+        env:
+          GIT_AUTHOR_NAME: "forgejo-actions"
+          GIT_AUTHOR_EMAIL: "forgejo-actions@users.noreply.local"
+        run: |
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          git add CHANGELOG.md
+          git diff --cached --quiet || git commit -m "chore(changelog): regenerate data"
+          git push
+
+  regenerate-release-files:
+    runs-on: codeberg-small
+    needs: regenerate-changelog
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          sparse-checkout: |
+            dist/release/
+            resources/flags.yml
+            themes/
+
+      - name: Create zip archives for themes and flags
+        run: |
+          mkdir -p dist/release/flags
+          mkdir -p dist/release/flavours
+
+          THEMES=(mocha macchiato frappe latte)
+
+          # Create theme archives (mocha.zip, etc.)
+          for theme in "${THEMES[@]}"; do
+            zip -r "dist/release/flavours/${theme}.zip" "themes/$theme"/*
+            echo "Created theme archive: dist/release/flavours/${theme}.zip"
+          done
+
+          # Read flags from resources/flags.yml
+          FLAGS=$(yq -r '.flags | keys[]' resources/flags.yml)
+
+          # Create flag archives (transgender.zip, etc.)
+          for flag in $FLAGS; do
+            ZIP_FILE="dist/release/flags/${flag}.zip"
+            rm -f "$ZIP_FILE"
+
+            for theme in "${THEMES[@]}"; do
+              THEME_FLAG_DIR="themes/$theme/$flag"
+              if [[ -d "$THEME_FLAG_DIR" ]]; then
+                # Add the flag folder under the theme folder inside the zip
+                zip -r "$ZIP_FILE" "$THEME_FLAG_DIR" -x "*.DS_Store"
+              fi
+            done
+            echo "Created flag archive: $ZIP_FILE"
+          done
+
+      - name: Commit and push release files
+        env:
+          GIT_AUTHOR_NAME: "forgejo-actions"
+          GIT_AUTHOR_EMAIL: "forgejo-actions@users.noreply.local"
+        run: |
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+
+          git add dist/release/*
+          git diff --cached --quiet || git commit -m "chore(release-files): regenerate data"
+
+          git fetch origin master
+          git rebase origin/master
+
+          git push origin master
