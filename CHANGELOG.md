@@ -15,6 +15,10 @@
 - [Remove](https://codeberg.org/scarcekoi/pride-flags/commit/33a1581c11c0aa46f306e81711d14d836ac60d04)
 - [Remove old files](https://codeberg.org/scarcekoi/pride-flags/commit/1a9f697d5d7be6636d7205a1bea59275f4f5525e)
 
+#### Gynephilia
+
+- [Init](https://codeberg.org/scarcekoi/pride-flags/commit/ad07f7e2f69e4c336c4b2bd639a2b59d40c72859)
+
 ### 🐛 Bug Fixes
 
 
@@ -140,11 +144,16 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/557c05b9a33de65f80e56bf045aa0a656f18172e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/08c5de622114f4013e632e14187e618c36346dc1)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a265856557e54569d87663d534e2409fb519cb3c)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3ba843d29efe0232797cf1a1a9528a0ee77b4050)
 
 #### Cliff
 
 - [Add separate ci and chore commit parsers](https://codeberg.org/scarcekoi/pride-flags/commit/9915ab215c3054cf8ac032af4b348d38e132d8bc)
 - [Add merge commit parser](https://codeberg.org/scarcekoi/pride-flags/commit/6ee21f8f67588d084871219dcaf8057d319543d2)
+
+#### Gynephilia
+
+- [Generate data](https://codeberg.org/scarcekoi/pride-flags/commit/7bd8229a5a9a0fb836483ca65adc2c00028b7b0b)
 
 #### Intersex
 
@@ -168,6 +177,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/d3a07efd842a5a62413ab7ca212918071c09e55e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a3641f2bd3240e66879797a1b5559070e82e3db5)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/cafc4d90a8c2c66d9d262f829694540c582b7127)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/60a86249d3a9ce92d278a65d4b6d83fc7d3c8c59)
 
 #### Resources
 
