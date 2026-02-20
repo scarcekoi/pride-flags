@@ -22,6 +22,10 @@
 ### 🐛 Bug Fixes
 
 
+#### Gynephilia
+
+- [Order of colours](https://codeberg.org/scarcekoi/pride-flags/commit/4e97af24ff54f61d9c0c95ea6b96cd7c71253e70)
+
 #### Intersex
 
 - [Remove crisp edge rendering](https://codeberg.org/scarcekoi/pride-flags/commit/a67beac3f413e6d91805102b3d9bf718b6fd82ad)
@@ -145,6 +149,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/08c5de622114f4013e632e14187e618c36346dc1)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a265856557e54569d87663d534e2409fb519cb3c)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3ba843d29efe0232797cf1a1a9528a0ee77b4050)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/ca11f98a0ef4841a5bae8b872c30c825b5435b67)
 
 #### Cliff
 
@@ -154,6 +159,7 @@
 #### Gynephilia
 
 - [Generate data](https://codeberg.org/scarcekoi/pride-flags/commit/7bd8229a5a9a0fb836483ca65adc2c00028b7b0b)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/670d8c60882b2dd17c0ec64e74d78fbca666c800)
 
 #### Intersex
 
@@ -178,6 +184,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a3641f2bd3240e66879797a1b5559070e82e3db5)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/cafc4d90a8c2c66d9d262f829694540c582b7127)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/60a86249d3a9ce92d278a65d4b6d83fc7d3c8c59)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2a6156f521ae03ce5830f927f744aa7b7d1d3dc6)
 
 #### Resources
 
