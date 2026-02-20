@@ -127,11 +127,16 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/3e9d66a54ac679126417346d3559321ddc6d9a3c)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/480db5ce09c12929121603ed0e7ea7fb066270fb)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/557c05b9a33de65f80e56bf045aa0a656f18172e)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/08c5de622114f4013e632e14187e618c36346dc1)
 
 #### Cliff
 
 - [Add separate ci and chore commit parsers](https://codeberg.org/scarcekoi/pride-flags/commit/9915ab215c3054cf8ac032af4b348d38e132d8bc)
 - [Add merge commit parser](https://codeberg.org/scarcekoi/pride-flags/commit/6ee21f8f67588d084871219dcaf8057d319543d2)
+
+#### Intersex
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/0a66785e948c41de6c1c42cfb32585cd374b0a4c)
 
 #### Release files
 
@@ -149,6 +154,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/50514186a21151ca3b0fcc1c763eb65279036c46)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bcdcc38b445d1634d2358c180dd03f4554d9354e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/d3a07efd842a5a62413ab7ca212918071c09e55e)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a3641f2bd3240e66879797a1b5559070e82e3db5)
 
 #### Resources
 
