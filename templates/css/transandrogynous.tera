@@ -10,5 +10,5 @@ whiskers:
 :root {
   --ctp-{{flavor.identifier}}-transandrogynous-purple: {{mauve.hex}};
   --ctp-{{flavor.identifier}}-transandrogynous-pink: {{pink.hex}};
-  --ctp-{{flavor.identifier}}-transandrogynous-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+  --ctp-{{flavor.identifier}}-transandrogynous-white: {{if(cond=flavor.light, t=crust.hex, f=rosewater.hex)}};
 }
