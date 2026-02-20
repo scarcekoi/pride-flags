@@ -87,8 +87,19 @@
 
 - [Remove cisgender](https://codeberg.org/scarcekoi/pride-flags/commit/e994a414ba6c872125954bad507610d5acd46a36)
 
+### 🎨 Styling
+
+
+#### Bisexual
+
+- [Update top colour](https://codeberg.org/scarcekoi/pride-flags/commit/feb1bfd9715dafd22711acb6e5ea08c4751e77f4)
+
 ### ⚙️ Chores
 
+
+#### Bisexual
+
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/2b26d4301129224774ee0add3d46c711b53ab18c)
 
 #### Changelog
 
@@ -128,6 +139,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/480db5ce09c12929121603ed0e7ea7fb066270fb)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/557c05b9a33de65f80e56bf045aa0a656f18172e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/08c5de622114f4013e632e14187e618c36346dc1)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a265856557e54569d87663d534e2409fb519cb3c)
 
 #### Cliff
 
@@ -155,6 +167,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/bcdcc38b445d1634d2358c180dd03f4554d9354e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/d3a07efd842a5a62413ab7ca212918071c09e55e)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/a3641f2bd3240e66879797a1b5559070e82e3db5)
+- [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/cafc4d90a8c2c66d9d262f829694540c582b7127)
 
 #### Resources
 
