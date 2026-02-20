@@ -38,6 +38,9 @@ flags:
   greysexual:
     name: Greysexual
     categories: [orientation, other]
+  gynephilia:
+    name: Gynephilia
+    categories: [attraction, orientation]
   gynesexual:
     name: Gynesexual
     categories: [attraction, orientation]
