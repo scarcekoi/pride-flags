@@ -8,7 +8,7 @@ whiskers:
 ---
 /* themes/{{flavor.identifier}}/bisexual/bisexual.css */
 :root {
-  --ctp-{{flavor.identifier}}-bisexual-pink: {{pink.hex}};
+  --ctp-{{flavor.identifier}}-bisexual-pink: {{if(cond=flavor.light, t=pink.hex, f=(mauve | mix(color=red, amount=0.8) | get(key="hex")))}};
   --ctp-{{flavor.identifier}}-bisexual-purple: {{mauve.hex}};
   --ctp-{{flavor.identifier}}-bisexual-blue: {{blue.hex}};
 }
