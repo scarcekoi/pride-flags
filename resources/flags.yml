@@ -26,6 +26,9 @@ flags:
   femboy:
     name: Femboy
     categories: [gender, expression]
+  finboy:
+    name: Finboy
+    categories: [gender, expression]
   finromantic:
     name: Finromantic
     categories: [attraction]
