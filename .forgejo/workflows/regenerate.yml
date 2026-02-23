@@ -26,13 +26,6 @@ jobs:
           mv git-cliff /usr/local/bin/
           git-cliff --version
 
-      - name: Get latest tag
-        id: get_tag
-        run: |
-          TAG=$(git describe --tags --abbrev=0)
-          echo "Latest tag: $TAG"
-          echo "tag=$TAG" >> $GITHUB_OUTPUT
-
       - name: Generate CHANGELOG.md
         run: |
           export PATH="$HOME/.cargo/bin:$PATH"
