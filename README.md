@@ -31,9 +31,9 @@
 <details closed>
 <summary>Aromantic Asexual</summary>
 
-<img src="assets/composite/aroace.webp" alt="Aromantic Asexual composite" style="width:50%;"/>
-<img src="assets/grid/aroace.webp" alt="Aromantic Asexual grid" style="width:50%;"/>
-<img src="assets/row/aroace.webp" alt="Aromantic Asexual row" style="width:50%;"/>
+<img src="assets/composite/aromantic asexual.webp" alt="Aromantic Asexual composite" style="width:50%;"/>
+<img src="assets/grid/aromantic asexual.webp" alt="Aromantic Asexual grid" style="width:50%;"/>
+<img src="assets/row/aromantic asexual.webp" alt="Aromantic Asexual row" style="width:50%;"/>
 
 </details>
 
@@ -272,7 +272,7 @@
 <details closed>
 <summary>Attraction</summary>
 
-- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappe/aroace/), [Latte](themes/latte/aroace/))
+- Aromantic Asexual ([Mocha](themes/mocha/aromantic asexual/), [Macchiato](themes/macchiato/aromantic asexual/), [Frappé](themes/frappe/aromantic asexual/), [Latte](themes/latte/aromantic asexual/))
 - Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappe/asexual/), [Latte](themes/latte/asexual/))
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/), [Latte](themes/latte/bisexual/))
 - Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappe/finromantic/), [Latte](themes/latte/finromantic/))
@@ -332,7 +332,7 @@
 <details closed>
 <summary>Orientation</summary>
 
-- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappe/aroace/), [Latte](themes/latte/aroace/))
+- Aromantic Asexual ([Mocha](themes/mocha/aromantic asexual/), [Macchiato](themes/macchiato/aromantic asexual/), [Frappé](themes/frappe/aromantic asexual/), [Latte](themes/latte/aromantic asexual/))
 - Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappe/bisexual/), [Latte](themes/latte/bisexual/))
 - Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappe/greysexual/), [Latte](themes/latte/greysexual/))
 - Gynephilia ([Mocha](themes/mocha/gynephilia/), [Macchiato](themes/macchiato/gynephilia/), [Frappé](themes/frappe/gynephilia/), [Latte](themes/latte/gynephilia/))
@@ -354,7 +354,7 @@
 <details closed>
 <summary>Romantic</summary>
 
-- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappe/aroace/), [Latte](themes/latte/aroace/))
+- Aromantic Asexual ([Mocha](themes/mocha/aromantic asexual/), [Macchiato](themes/macchiato/aromantic asexual/), [Frappé](themes/frappe/aromantic asexual/), [Latte](themes/latte/aromantic asexual/))
 - Aromantic ([Mocha](themes/mocha/aromantic/), [Macchiato](themes/macchiato/aromantic/), [Frappé](themes/frappe/aromantic/), [Latte](themes/latte/aromantic/))
 
 </details>
