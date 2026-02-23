@@ -362,7 +362,8 @@
 
 ## 💝 Thanks to
 
-- [Scarce Koi](https://github.com/scarcekoi)
+- [Scarce Koi](https://codeberg.org/scarcekoi)
+- [Toria](https://codeberg.org/ninetailedtori)
 
 &nbsp;
 
