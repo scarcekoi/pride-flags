@@ -2,7 +2,7 @@ flags:
   agender:
     name: Agender
     categories: [gender]
-  aroace:
+  aromantic asexual:
     name: Aromantic Asexual
     categories: [attraction, orientation, romantic]
   aromantic:
