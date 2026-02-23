@@ -10,9 +10,9 @@ whiskers:
 <svg version="1.1" width="1000" height="700" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
 <rect x="0" y="0" width="1000" height="100" fill="{{red.hex}}" />
 <rect x="0" y="100" width="1000" height="100" fill="{{maroon.hex}}" />
-<rect x="0" y="200" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
+<rect x="0" y="200" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=rosewater.hex)}}" />
 <rect x="0" y="300" width="1000" height="100" fill="{{blue.hex}}" />
-<rect x="0" y="400" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
+<rect x="0" y="400" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=rosewater.hex)}}" />
 <rect x="0" y="500" width="1000" height="100" fill="{{maroon.hex}}" />
 <rect x="0" y="600" width="1000" height="100" fill="{{red.hex}}" />
 </svg>
