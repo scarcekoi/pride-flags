@@ -160,11 +160,11 @@ def main() -> None:
         with tqdm(total=len(futures), desc="Processing", unit="flag/theme") as pbar:
             for future in as_completed(futures):
                 flag_key, theme_name, success_count = future.result()
-                status = "✓" if success_count == len(formats) else "⚠" if success_count > 0 else "✗"
+                status = ":3" if success_count == len(formats) else "⚠" if success_count > 0 else "3:"
                 pbar.update(1)
                 pbar.write(f"{status} {flag_key}/{theme_name}: {success_count}/{len(formats)}")
 
-    print(f"\n✓ All files exported via cairosvg + aseprite/imagemagick.")
+    print(f"\n:3 All files exported via cairosvg + aseprite/imagemagick.")
 
 
 if __name__ == "__main__":

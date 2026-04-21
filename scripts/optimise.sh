@@ -2,10 +2,14 @@
 
 JOBS=$(($(nproc) - 2))
 
-# Process all files in one parallel job pool
-{
-  find . -type f -name "*.png" -exec echo "optipng -o7 -zm1-9 -strip all -fix -preserve -clobber -quiet {}" \;
-  find . -type f -name "*.svg" -exec echo "svgo --multipass {}" \;
-  find . -type f -regex ".*\.jpe?g" -exec echo "jpegoptim -s -- {}" \;
-  find . -type f -name "*.gif" -exec echo "gifsicle --batch --optimize {}" \;
-} | parallel -j${JOBS}
+# PNG files
+find . -type f -name "*.png" -print0 |
+  parallel -0 -j${JOBS} 'optipng -o7 -zm1-9 -strip all -fix -preserve -clobber -quiet {} && echo "Processed: {}"'
+
+# SVG files
+find . -type f -name "*.svg" -print0 |
+  parallel -0 -j${JOBS} 'svgo --quiet --multipass {} && echo "Processed: {}"'
+
+# JPG/JPEG files
+find . -type f \( -name "*.jpg" -o -name "*.jpeg" \) -print0 |
+  parallel -0 -j${JOBS} 'jpegoptim --quiet -s -- {} && echo "Processed: {}"'

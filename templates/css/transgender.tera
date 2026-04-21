@@ -8,7 +8,7 @@ whiskers:
 ---
 /* themes/{{flavor.identifier}}/transgender/transgender.css */
 :root {
-  --ctp-{{flavor.identifier}}-transgender-sapphire.hex: {{sapphire.hex}};
+  --ctp-{{flavor.identifier}}-transgender-sapphire: {{sapphire.hex}};
   --ctp-{{flavor.identifier}}-transgender-pink: {{if(cond=flavor.light, t=rosewater.hex, f=maroon.hex)}};
   --ctp-{{flavor.identifier}}-transgender-white: {{if(cond=flavor.light, t=crust.hex, f=rosewater.hex)}};
 }

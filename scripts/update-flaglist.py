@@ -66,7 +66,7 @@ def main() -> None:
     )
 
     README_FILE.write_text(updated_text)
-    print("✓ Flags section updated.")
+    print(":3 Flags section updated.")
 
 
 if __name__ == "__main__":

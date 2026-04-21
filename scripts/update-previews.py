@@ -48,4 +48,4 @@ updated_text = re.sub(
 )
 readme_file.write_text(updated_text)
 
-print("✓ Previews section updated (500 entries).")
+print(":3 Previews section updated (500 entries).")
