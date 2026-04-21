@@ -1,0 +1,15 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/transmasculine/transmasculine.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/transmasculine/transmasculine.css */
+:root {
+  --ctp-{{flavor.identifier}}-transmasculine-pink: {{if(cond=flavor.light, t=rosewater.hex, f=maroon.hex)}};
+  --ctp-{{flavor.identifier}}-transmasculine-lighter-blue: {{sky.hex}};
+  --ctp-{{flavor.identifier}}-transmasculine-light-blue: {{sapphire.hex}};
+  --ctp-{{flavor.identifier}}-transmasculine-blue: {{blue.hex}};
+}

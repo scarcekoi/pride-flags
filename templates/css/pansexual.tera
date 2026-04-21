@@ -1,0 +1,14 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/pansexual/pansexual.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/pansexual/pansexual.css */
+:root {
+  --ctp-{{flavor.identifier}}-pansexual-pink: {{pink.hex}};
+  --ctp-{{flavor.identifier}}-pansexual-yellow: {{yellow.hex}};
+  --ctp-{{flavor.identifier}}-pansexual-blue: {{sapphire.hex}};
+}

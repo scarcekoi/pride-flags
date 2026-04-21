@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 
+import os
 import subprocess
 import sys
-from pathlib import Path
-
 import yaml
+
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from multiprocessing import cpu_count
+from pathlib import Path
+from shutil import which
+from tqdm import tqdm
 
 flags_file = Path("./resources/flags.yml")
 themes_dir = Path("./themes")
@@ -26,54 +31,141 @@ else:
         sys.exit(1)
     flags_to_process = [target]
 
-formats = [
-    "ase",
-    "aseprite",
-    "bmp",
-    "css",
-    "flc",
-    "fli",
-    "jpeg",
-    "jpg",
-    "pcx",
-    "pcc",
-    "png",
-    "qoi",
-    "tga",
-    "webp",
-]
+formats = ["ase", "aseprite", "bmp", "flc", "jpeg", "jpg", "pcx", "pcc", "qoi", "tga", "webp"]
 
-for flag_key in flags_to_process:
-    for theme_dir in themes_dir.iterdir():
-        if not theme_dir.is_dir():
-            continue
+# Format routing: which tool handles each format best
+ASEPRITE_FORMATS = {"ase", "aseprite", "bmp", "flc", "pcx", "pcc", "tga"}
+IMAGEMAGICK_FORMATS = {"jpg", "jpeg", "webp", "qoi"}
 
-        svg_path = theme_dir / flag_key / f"{flag_key}.svg"
-        if not svg_path.exists():
-            print(f"SVG not found: {svg_path}")
-            continue
+# Tool detection
+CONVERT = which("convert") or ""
+ASEPRITE = which("aseprite") or which("libresprite") or ""
 
-        tmp_png = svg_path.with_suffix(".tmp.png")
-        # Export a temporary PNG from SVG
-        subprocess.run(
-            [
-                "inkscape",
-                str(svg_path),
-                "--export-type=png",
-                "--export-filename",
-                str(tmp_png),
-                "--export-background-opacity=0",
-            ],
-            check=True,
-        )
+if not CONVERT:
+    raise RuntimeError("ImageMagick (convert) not found on system!")
+if not ASEPRITE:
+    raise RuntimeError("Neither aseprite nor libresprite found on system!")
 
-        for fmt in formats:
-            output_path = svg_path.with_suffix(f".{fmt}")
-            subprocess.run(
-                ["aseprite", "-b", str(tmp_png), "--save-as", str(output_path)],
-                check=True,
-            )
 
-        tmp_png.unlink()
+def export_svg_to_png(svg_path: Path) -> Path | None:
+    """Convert SVG to PNG using cairosvg."""
+    png_path = svg_path.with_suffix(".png")
 
-print("All files exported at maximum quality via Aseprite.")
+    try:
+        import cairosvg
+        cairosvg.svg2png(url=str(svg_path), write_to=str(png_path), dpi=96)
+        return png_path
+    except ImportError:
+        print("ERROR: cairosvg not installed. Run: pip install cairosvg", file=sys.stderr)
+        sys.exit(1)
+    except Exception as e:
+        print(f"cairosvg failed for {svg_path}: {e}", file=sys.stderr)
+        return None
+
+
+def convert_png_to_format(png_path: Path, fmt: str) -> bool:
+    """Convert PNG to target format using the best tool for that format."""
+    output_path = png_path.with_stem(png_path.stem.replace(".png", "")).with_suffix(f".{fmt}")
+
+    # Route to the best tool
+    if fmt in ASEPRITE_FORMATS:
+        cmd = [ASEPRITE, "-b", str(png_path), "--save-as", str(output_path)]
+    elif fmt == "webp":
+        cmd = [CONVERT, str(png_path), "-define", "webp:lossless=true", str(output_path)]
+    else:
+        cmd = [CONVERT, str(png_path), str(output_path)]
+
+    try:
+        with open(os.devnull, 'w') as devnull:
+            subprocess.run(cmd, check=True, stdout=devnull, stderr=devnull, timeout=10)
+        return True
+    except Exception as e:
+        print(f"Failed {fmt} for {png_path}: {e}", file=sys.stderr)
+        return False
+
+
+def convert_png_to_all_formats(png_path: Path) -> int:
+    """Parallel format conversion for a single PNG."""
+    success_count = 0
+
+    with ProcessPoolExecutor(max_workers=4) as fmt_executor:
+        fmt_futures = {
+            fmt_executor.submit(convert_png_to_format, png_path, fmt): fmt
+            for fmt in formats
+        }
+
+        for future in as_completed(fmt_futures):
+            if future.result():
+                success_count += 1
+
+    return success_count
+
+
+def batch_export_svgs(svg_paths: list[Path]) -> dict[Path, Path]:
+    """Parallel SVG→PNG export for a batch of SVGs."""
+    results = {}
+
+    with ProcessPoolExecutor(max_workers=cpu_count()) as executor:
+        futures = {
+            executor.submit(export_svg_to_png, svg): svg
+            for svg in svg_paths
+        }
+
+        for future in as_completed(futures):
+            svg = futures[future]
+            png = future.result()
+            if png:
+                results[svg] = png
+
+    return results
+
+
+def process_flag_theme(flag_key: str, theme_dir: Path) -> tuple[str, str, int]:
+    """Process a single flag/theme combo: SVG → PNG → all formats."""
+    svg_path = theme_dir / flag_key / f"{flag_key}.svg"
+    if not svg_path.exists():
+        return (flag_key, theme_dir.name, 0)
+
+    png_path = export_svg_to_png(svg_path)
+    if not png_path:
+        return (flag_key, theme_dir.name, 0)
+
+    # Parallel format conversion
+    success_count = convert_png_to_all_formats(png_path)
+
+    return (flag_key, theme_dir.name, success_count)
+
+
+def main() -> None:
+    theme_dirs = [d for d in themes_dir.iterdir() if d.is_dir()]
+    work_queue = [
+        (flag_key, theme_dir)
+        for flag_key in flags_to_process
+        for theme_dir in theme_dirs
+    ]
+
+    if not work_queue:
+        print("No work to do!", file=sys.stderr)
+        return
+
+    # Cap workers to avoid resource thrashing
+    max_workers = min(cpu_count() - 1, len(work_queue), 8)
+
+    with ProcessPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(process_flag_theme, flag_key, theme_dir): (flag_key, theme_dir.name)
+            for flag_key, theme_dir in work_queue
+        }
+
+        with tqdm(total=len(futures), desc="Processing", unit="flag/theme") as pbar:
+            for future in as_completed(futures):
+                flag_key, theme_name, success_count = future.result()
+                status = "✓" if success_count == len(formats) else "⚠" if success_count > 0 else "✗"
+                pbar.update(1)
+                pbar.write(f"{status} {flag_key}/{theme_name}: {success_count}/{len(formats)}")
+
+    print(f"\n✓ All files exported via cairosvg + aseprite/imagemagick.")
+
+
+if __name__ == "__main__":
+    main()

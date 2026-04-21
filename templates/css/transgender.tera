@@ -1,0 +1,14 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/transgender/transgender.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/transgender/transgender.css */
+:root {
+  --ctp-{{flavor.identifier}}-transgender-sapphire.hex: {{sapphire.hex}};
+  --ctp-{{flavor.identifier}}-transgender-pink: {{if(cond=flavor.light, t=rosewater.hex, f=maroon.hex)}};
+  --ctp-{{flavor.identifier}}-transgender-white: {{if(cond=flavor.light, t=crust.hex, f=rosewater.hex)}};
+}

@@ -1,0 +1,15 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/asexual/asexual.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/asexual/asexual.css */
+:root {
+  --ctp-{{flavor.identifier}}-asexual-black: {{if(cond=flavor.light, t=text.hex, f=crust.hex)}};
+  --ctp-{{flavor.identifier}}-asexual-gray: {{overlay0.hex}};
+  --ctp-{{flavor.identifier}}-asexual-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+  --ctp-{{flavor.identifier}}-asexual-purple: {{mauve.hex}};
+}

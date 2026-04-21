@@ -1,0 +1,18 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/polyam/polyam.svg"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" viewBox="0 0 600 300">
+<rect x="0" y="0" width="600" height="100" fill="{{blue.hex}}" stroke="{{blue.hex}}" />
+<rect x="0" y="100" width="600" height="100" fill="{{red.hex}}" stroke="{{red.hex}}" />
+<rect x="0" y="200" width="600" height="100" fill="{{mauve | sub(lightness=10) | get(key="hex")}}" stroke="{{mauve | sub(lightness=10) | get(key="hex")}}" />
+<polygon points="0,300 0,0 120,0 240,100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" stroke="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
+<path fill="{{yellow.hex}}" stroke="{{yellow.hex}}" d="M 126.570312 75 C 126.570312 93.410156 108.660156 108.332031 86.570312 108.332031 C 64.476562 108.332031 46.570312 93.410156 46.570312 75 C 46.570312 56.589844 64.476562 41.667969 86.570312 41.667969 C 108.660156 41.667969 126.570312 56.589844 126.570312 75 Z M 126.570312 75 "/>
+<path fill="{{yellow.hex}}" stroke="{{yellow.hex}}" d="M 126.570312 125 C 126.570312 143.410156 108.660156 158.332031 86.570312 158.332031 C 64.476562 158.332031 46.570312 143.410156 46.570312 125 C 46.570312 106.589844 64.476562 91.667969 86.570312 91.667969 C 108.660156 91.667969 126.570312 106.589844 126.570312 125 Z M 126.570312 125 "/>
+<path fill="{{yellow.hex}}" stroke="{{yellow.hex}}" d="M 114.851562 51.429688 L 173.136719 100 L 114.851562 148.570312 L 100 100 Z M 114.851562 51.429688 "/>
+</svg>
