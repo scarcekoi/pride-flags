@@ -1,2 +1,17 @@
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
-requires-python = ">=3.13"
+name = "catppuccin-pride-flags"
+version = "1.0.0"
+description = "Pride flag assets with Catppuccin color theming"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "scarcekoi" },
+  { name = "ninetailedtori", email = "ninetailedtori@uwu.gal" },
+]
+
+[project.urls]
+Repository = "https://github.com/catppuccin/pride-flags"

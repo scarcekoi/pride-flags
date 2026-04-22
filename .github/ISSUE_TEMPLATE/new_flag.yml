@@ -1,6 +1,7 @@
+---
 name: New Flag
 description: Request a new flag
-title: "[Flag]"
+title: '[Flag]'
 body:
   - id: flag
     type: textarea

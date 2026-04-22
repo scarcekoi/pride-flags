@@ -14,7 +14,7 @@
 ## Previews
 
 <!-- AUTOGEN:PREVIEWS START -->
-<!-- the following section is auto-generated, please edit scripts/update-previews.py to change this. -->
+<!-- the following section is auto-generated, do not edit -->
 
 <details closed>
 <summary>Agender</summary>
