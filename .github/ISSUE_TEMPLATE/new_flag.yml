@@ -1,0 +1,17 @@
+name: New Flag
+description: Request a new flag
+body:
+  - id: name
+    type: input
+    attributes:
+      label: Name of the flag
+      description: What is the name of the flag?
+    validations:
+      required: true
+  - id: flag
+    type: textarea
+    attributes:
+      label: Link/Picture
+      description: A link to or a picture of the flag you want added.
+    validations:
+      required: true
