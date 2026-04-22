@@ -331,6 +331,7 @@
 ## 💝 Thanks to
 
 - [Scarce Koi](https://github.com/scarcekoi)
+- [Toria](https://github.com/ninetailedtori)
 
 &nbsp;
 
