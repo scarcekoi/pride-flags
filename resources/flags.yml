@@ -2,7 +2,7 @@ flags:
   agender:
     name: Agender
     categories: [gender]
-  aromantic asexual:
+  aroace:
     name: Aromantic Asexual
     categories: [attraction, orientation, romantic]
   aromantic:
@@ -23,15 +23,12 @@ flags:
   demigirl:
     name: Demigirl
     categories: [gender, expression]
-  femboy:
-    name: Femboy
-    categories: [gender, expression]
-  finboy:
-    name: Finboy
-    categories: [gender, expression]
   finromantic:
     name: Finromantic
-    categories: [attraction]
+    categories: [attraction, orientation]
+  gay-man:
+    name: Gay Men
+    categories: [attraction, orientation]
   genderfluid:
     name: Genderfluid
     categories: [gender, fluidity]
@@ -40,13 +37,7 @@ flags:
     categories: [gender, expression]
   greysexual:
     name: Greysexual
-    categories: [orientation, other]
-  gynephilia:
-    name: Gynephilia
-    categories: [attraction, orientation]
-  gynesexual:
-    name: Gynesexual
-    categories: [attraction, orientation]
+    categories: [attraction, orientation, other]
   intersex:
     name: Intersex
     categories: [gender]
@@ -64,10 +55,16 @@ flags:
     categories: [gender]
   pansexual:
     name: Pansexual
-    categories: [orientation]
+    categories: [attraction, orientation, fluidity]
+  polyam:
+    name: Polyamorous
+    categories: [attraction]
   polysexual:
     name: Polysexual
     categories: [attraction, orientation, fluidity]
+  sapphic:
+    name: Sapphic
+    categories: [attraction, orientation]
   transandrogynous:
     name: Transandrogynous
     categories: [gender, expression]
@@ -83,3 +80,6 @@ flags:
   trigender:
     name: Trigender
     categories: [gender, fluidity]
+  womasexual:
+    name: Womasexual
+    categories: [attraction, orientation]

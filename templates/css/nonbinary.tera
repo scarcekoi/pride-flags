@@ -1,0 +1,15 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/nonbinary/nonbinary.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/nonbinary/nonbinary.css */
+:root {
+  --ctp-{{flavor.identifier}}-nonbinary-yellow: {{yellow.hex}};
+  --ctp-{{flavor.identifier}}-nonbinary-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+  --ctp-{{flavor.identifier}}-nonbinary-purple: {{mauve.hex}};
+  --ctp-{{flavor.identifier}}-nonbinary-black: {{if(cond=flavor.light, t=text.hex, f=crust.hex)}};
+}

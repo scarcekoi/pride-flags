@@ -1,0 +1,16 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/womasexual/womasexual.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/womasexual/womasexual.css */
+:root {
+  --ctp-{{flavor.identifier}}-womasexual-red: {{red.hex}};
+  --ctp-{{flavor.identifier}}-womasexual-maroon: {{maroon.hex}};
+  --ctp-{{flavor.identifier}}-womasexual-pink: {{pink.hex}};
+  --ctp-{{flavor.identifier}}-womasexual-light-pink: {{flamingo.hex}};
+  --ctp-{{flavor.identifier}}-womasexual-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+}

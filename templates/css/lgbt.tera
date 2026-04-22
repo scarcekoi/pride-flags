@@ -1,0 +1,17 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/lgbt/lgbt.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+/* themes/{{flavor.identifier}}/lgbt/lgbt.css */
+:root {
+  --ctp-lgbt-red: {{red.hex}};
+  --ctp-lgbt-orange: {{peach.hex}};
+  --ctp-lgbt-yellow: {{yellow.hex}};
+  --ctp-lgbt-green: {{green.hex}};
+  --ctp-lgbt-blue: {{sky.hex}};
+  --ctp-lgbt-purple: {{mauve.hex}};
+}
