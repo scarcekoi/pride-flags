@@ -1,14 +1,7 @@
 name: Size Change
 description: Request a size change for an existing flag
+title: "[Flag]"
 body:
-  - id: name
-    type: input
-    attributes:
-      label: Name of the flag
-      description: What is the name of the flag?
-      placeholder: Femboy...
-    validations:
-      required: true
   - id: change
     type: textarea
     attributes:
@@ -16,3 +9,8 @@ body:
       description: What size you want the flag changed to.
     validations:
       required: true
+  - id: additional_comments
+    type: textarea
+    attributes:
+      label: Any additional comments?
+      description: Add any information that hasn't been covered in the previous sections!
