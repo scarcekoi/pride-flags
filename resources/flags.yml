@@ -23,6 +23,9 @@ flags:
   demigirl:
     name: Demigirl
     categories: [gender, expression]
+  femboy:
+    name: Femboy
+    categories: [gender, expression]
   finromantic:
     name: Finromantic
     categories: [attraction, orientation]

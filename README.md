@@ -67,6 +67,13 @@
 </details>
 
 <details closed>
+<summary>Femboy</summary>
+<img src="assets/composite/femboy.webp" alt="Femboy composite" style="width:50%;"/>
+<img src="assets/grid/femboy.webp" alt="Femboy grid" style="width:50%;"/>
+<img src="assets/row/femboy.webp" alt="Femboy row" style="width:50%;"/>
+</details>
+
+<details closed>
 <summary>Finromantic</summary>
 <img src="assets/composite/finromantic.webp" alt="Finromantic composite" style="width:50%;"/>
 <img src="assets/grid/finromantic.webp" alt="Finromantic grid" style="width:50%;"/>
@@ -237,6 +244,7 @@
 - Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappé/demiboy/), [Latte](themes/latte/demiboy/))
 - Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappé/demigender/), [Latte](themes/latte/demigender/))
 - Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappé/demigirl/), [Latte](themes/latte/demigirl/))
+- Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappé/femboy/), [Latte](themes/latte/femboy/))
 - Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappé/genderqueer/), [Latte](themes/latte/genderqueer/))
 - Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frappé/transandrogynous/), [Latte](themes/latte/transandrogynous/))
 - Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappé/transfeminine/), [Latte](themes/latte/transfeminine/))
@@ -261,6 +269,7 @@
 - Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappé/demiboy/), [Latte](themes/latte/demiboy/))
 - Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappé/demigender/), [Latte](themes/latte/demigender/))
 - Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappé/demigirl/), [Latte](themes/latte/demigirl/))
+- Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappé/femboy/), [Latte](themes/latte/femboy/))
 - Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frappé/genderfluid/), [Latte](themes/latte/genderfluid/))
 - Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappé/genderqueer/), [Latte](themes/latte/genderqueer/))
 - Intersex ([Mocha](themes/mocha/intersex/), [Macchiato](themes/macchiato/intersex/), [Frappé](themes/frappé/intersex/), [Latte](themes/latte/intersex/))

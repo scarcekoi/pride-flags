@@ -1,6 +1,6 @@
 ---
 whiskers:
-  version: "^2.5.1"
+  version: "^2.9.0"
   matrix:
     - flavor
   filename: "themes/{{flavor.identifier}}/demiboy/demiboy.css"
@@ -13,4 +13,3 @@ whiskers:
   --ctp-{{flavor.identifier}}-demiboy-blue: {{blue.hex}};
   --ctp-{{flavor.identifier}}-demiboy-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
 }
-

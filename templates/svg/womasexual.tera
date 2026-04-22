@@ -1,6 +1,6 @@
 ---
 whiskers:
-  version: "^2.5.1"
+  version: "^2.9.0"
   matrix:
     - flavor
   filename: "themes/{{flavor.identifier}}/womasexual/womasexual.svg"
@@ -15,4 +15,3 @@ whiskers:
 <rect x="0" y="400" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" stroke="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
 
 </svg>
-
