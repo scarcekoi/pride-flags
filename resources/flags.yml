@@ -1,3 +1,4 @@
+---
 flags:
   agender:
     name: Agender
@@ -59,8 +60,13 @@ flags:
   pansexual:
     name: Pansexual
     categories: [attraction, orientation, fluidity]
-  polyam:
-    name: Polyamorous
+  polyam-evans:
+    name: Polyamorous - Jim Evans, 1995
+    parent: polyam
+    categories: [attraction]
+  polyam-howell:
+    name: Polyamorous - Red Howell, 1995
+    parent: polyam
     categories: [attraction]
   polysexual:
     name: Polysexual

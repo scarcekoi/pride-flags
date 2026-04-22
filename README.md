@@ -14,7 +14,7 @@
 ## Previews
 
 <!-- AUTOGEN:PREVIEWS START -->
-<!-- the following section is auto-generated, please edit scripts/update-previews.py to change this. -->
+<!-- the following section is auto-generated, do not edit -->
 
 <details closed>
 <summary>Agender</summary>
@@ -157,10 +157,17 @@
 </details>
 
 <details closed>
-<summary>Polyamorous</summary>
-<img src="assets/composite/polyam.webp" alt="Polyamorous composite" style="width:50%;"/>
-<img src="assets/grid/polyam.webp" alt="Polyamorous grid" style="width:50%;"/>
-<img src="assets/row/polyam.webp" alt="Polyamorous row" style="width:50%;"/>
+<summary>Polyamorous - Jim Evans, 1995</summary>
+<img src="assets/composite/polyam-evans.webp" alt="Polyamorous - Jim Evans, 1995 composite" style="width:50%;"/>
+<img src="assets/grid/polyam-evans.webp" alt="Polyamorous - Jim Evans, 1995 grid" style="width:50%;"/>
+<img src="assets/row/polyam-evans.webp" alt="Polyamorous - Jim Evans, 1995 row" style="width:50%;"/>
+</details>
+
+<details closed>
+<summary>Polyamorous - Red Howell, 1995</summary>
+<img src="assets/composite/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 composite" style="width:50%;"/>
+<img src="assets/grid/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 grid" style="width:50%;"/>
+<img src="assets/row/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 row" style="width:50%;"/>
 </details>
 
 <details closed>
@@ -237,7 +244,8 @@
 - Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappé/greysexual/), [Latte](themes/latte/greysexual/))
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappé/lesbian/), [Latte](themes/latte/lesbian/))
 - Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/), [Latte](themes/latte/pansexual/))
-- Polyamorous ([Mocha](themes/mocha/polyam/), [Macchiato](themes/macchiato/polyam/), [Frappé](themes/frappé/polyam/), [Latte](themes/latte/polyam/))
+- Polyamorous - Jim Evans, 1995 ([Mocha](themes/mocha/polyam-evans/), [Macchiato](themes/macchiato/polyam-evans/), [Frappé](themes/frappé/polyam-evans/), [Latte](themes/latte/polyam-evans/))
+- Polyamorous - Red Howell, 1995 ([Mocha](themes/mocha/polyam-howell/), [Macchiato](themes/macchiato/polyam-howell/), [Frappé](themes/frappé/polyam-howell/), [Latte](themes/latte/polyam-howell/))
 - Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
 - Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frappé/sapphic/), [Latte](themes/latte/sapphic/))
 - Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frappé/womasexual/), [Latte](themes/latte/womasexual/))
