@@ -4,7 +4,7 @@ whiskers:
   matrix:
     - flavor
   filename: "themes/{{flavor.identifier}}/aroace/aroace.css"
-  hex_format: "#{{r}}{{g}}{{b}}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 ---
 /* themes/{{flavor.identifier}}/aroace/aroace.css */
 :root {

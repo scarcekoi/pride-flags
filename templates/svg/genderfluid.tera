@@ -4,7 +4,7 @@ whiskers:
   matrix:
     - flavor
   filename: "themes/{{flavor.identifier}}/genderfluid/genderfluid.svg"
-  hex_format: "#{{r}}{{g}}{{b}}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
 <svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">

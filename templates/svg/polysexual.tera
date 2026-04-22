@@ -4,7 +4,7 @@ whiskers:
   matrix:
     - flavor
   filename: "themes/{{flavor.identifier}}/polysexual/polysexual.svg"
-  hex_format: "#{{r}}{{g}}{{b}}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 ---
 <?xml version="1.0" encoding="UTF-8" ?>
 <svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">

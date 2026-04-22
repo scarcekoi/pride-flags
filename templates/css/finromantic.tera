@@ -4,7 +4,7 @@ whiskers:
   matrix:
     - flavor
   filename: "themes/{{flavor.identifier}}/finromantic/finromantic.css"
-  hex_format: "#{{r}}{{g}}{{b}}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
 ---
 /* themes/{{flavor.identifier}}/finromantic/finromantic.css */
 :root {
