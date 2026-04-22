@@ -5,6 +5,12 @@
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
+<p align="center">
+	<a href="https://github.com/scarcekoi/pride-flags/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/pride-flags?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/scarcekoi/pride-flags/issues"><img src="https://img.shields.io/github/issues/catppuccin/pride-flags?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/scarcekoi/pride-flags/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/pride-flags?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+</p>
+
 ## Previews
 
 <!-- AUTOGEN:PREVIEWS START -->
