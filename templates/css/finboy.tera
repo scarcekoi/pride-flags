@@ -1,0 +1,16 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+  filename: "themes/{{flavor.identifier}}/finboy/finboy.css"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+---
+/* themes/{{flavor.identifier}}/finboy/finboy.css */
+:root {
+  --ctp-{{flavor.identifier}}-finboy-yellow: {{yellow.hex}}
+  --ctp-{{flavor.identifier}}-finboy-pink: {{pink.hex}}
+  --ctp-{{flavor.identifier}}-finboy-purple: {{mauve.hex}}
+  --ctp-{{flavor.identifier}}-finboy-blue: {{blue.hex}}
+  --ctp-{{flavor.identifier}}-finboy-light-blue: {{sky.hex}}
+}

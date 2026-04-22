@@ -1,40 +1,43 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 FLAGS_FILE="$SCRIPT_DIR/../resources/flags.yml"
 
-# Cache flags in a temp file (only re-parse if flags.yml changed)
 FLAGS_CACHE="/tmp/flags_cache.txt"
-if [ ! -f "$FLAGS_CACHE" ] || [ "$FLAGS_FILE" -nt "$FLAGS_CACHE" ]; then
-    python3 - <<PYTHON > "$FLAGS_CACHE"
+rm $FLAGS_CACHE
+
+python3 - <<PYTHON >"$FLAGS_CACHE"
 import yaml
 with open("$FLAGS_FILE") as f:
     data = yaml.safe_load(f)
 flags = data.get("flags", {})
-print(" ".join(flags.keys()))
+for flag_name, flag_config in flags.items():
+    # Get parent dir if defined, otherwise use flag name
+    if isinstance(flag_config, dict):
+        dir_name = flag_config.get("parent", flag_name)
+    else:
+        dir_name = flag_name
+    print(f"{flag_name}:{dir_name}")
 PYTHON
-fi
 
 FLAGS=$(cat "$FLAGS_CACHE")
 LAYOUTS="composite grid row"
 
-export_variant() {
-    flag=$1
-    layout=$2
-    catwalk \
-        "themes/latte/$flag/$flag.webp" \
-        "themes/frappe/$flag/$flag.webp" \
-        "themes/macchiato/$flag/$flag.webp" \
-        "themes/mocha/$flag/$flag.webp" \
-        -o "assets/$layout/$flag.webp" \
-        -l "$layout" -r 0
-}
-
-export -f export_variant
-
-# Generate all (flag, layout) combos with null delimiters
-for flag in $FLAGS; do
-    for layout in $LAYOUTS; do
-        printf '%s\0%s\0' "$flag" "$layout"
-    done
-done | xargs -0 -P 8 -n 2 sh -c 'export_variant "$@"' _
+for flag_with_dir in $FLAGS; do
+  flag="${flag_with_dir%:*}"
+  dir="${flag_with_dir#*:}"
+  for layout in $LAYOUTS; do
+    printf '%s\0%s\0%s\0' "$flag" "$layout" "$dir"
+  done
+done | xargs -0 -P 8 -n 3 bash -c '
+flag=$1
+layout=$2
+dir=$3
+catwalk \
+    "themes/latte/$dir/$flag.webp" \
+    "themes/frappe/$dir/$flag.webp" \
+    "themes/macchiato/$dir/$flag.webp" \
+    "themes/mocha/$dir/$flag.webp" \
+    -o "assets/$layout/$flag.webp" \
+    -l "$layout" -r 0
+' _

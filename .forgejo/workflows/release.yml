@@ -1,10 +1,9 @@
+---
 name: Create Release
-
 on:
   push:
     tags:
-      - "*" # triggers on any tag push
-
+      - '*' # triggers on any tag push
 jobs:
   release:
     runs-on: codeberg-small
@@ -17,12 +16,10 @@ jobs:
             dist/release
             resources/flags.yml
             themes/
-
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y zip python3 python3-yaml
-
       - name: Install git-cliff
         run: |
           curl -L "https://github.com/orhun/git-cliff/releases/download/v2.12.0/git-cliff-2.12.0-x86_64-unknown-linux-gnu.tar.gz" -o git-cliff.tar.gz
@@ -30,18 +27,15 @@ jobs:
           chmod +x git-cliff
           mv git-cliff /usr/local/bin/
           git-cliff --version
-
       - name: Get latest tag
         id: get_tag
         run: |
           TAG=$(git describe --tags --abbrev=0)
           echo "Latest tag: $TAG"
           echo "tag=$TAG" >> $GITHUB_OUTPUT
-
       - name: Create archives for themes and flags
         run: |
           mkdir -p dist/release
-
           THEMES=(mocha macchiato frappe latte)
 
           # Create theme archives (mocha.zip, etc.)
@@ -57,7 +51,6 @@ jobs:
           for flag in $FLAGS; do
             ZIP_FILE="dist/release/${flag}.zip"
             rm -f "$ZIP_FILE"
-
             for theme in "${THEMES[@]}"; do
               THEME_FLAG_DIR="themes/$theme/$flag"
               if [[ -d "$THEME_FLAG_DIR" ]]; then
@@ -68,7 +61,6 @@ jobs:
             done
             echo "Created flag archive: $ZIP_FILE"
           done
-
       - name: Generate changelog
         id: changelog
         run: |
@@ -79,7 +71,6 @@ jobs:
           echo "changelog<<EOF" >> $GITHUB_OUTPUT
           cat changelog.md >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
-
       - name: Create release via Forgejo Action
         uses: forgejo-actions/forgejo-release@v1
         with:
@@ -89,7 +80,7 @@ jobs:
           body: ${{ steps.changelog.outputs.changelog }}
           draft: false
           prerelease: false
-          assets: |
+          assets: |-
             dist/release/mocha.zip
             dist/release/macchiato.zip
             dist/release/frappe.zip
