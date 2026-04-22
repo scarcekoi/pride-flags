@@ -26,6 +26,7 @@ FLAGS_FILE = Path("resources/flags.yml")
 CATEGORIES_FILE = Path("resources/categories.yml")
 README_FILE = Path("README.md")
 THEMES_DIR = Path("themes")
+CANONICAL_HEIGHT = 1000
 
 EXPORT_FORMATS = ["ase", "aseprite", "bmp", "flc", "jpeg", "jpg", "pcx", "pcc",
                   "qoi", "tga", "webp"]
@@ -114,6 +115,51 @@ def m_process_templates() -> bool:
 
     print(f":3 all {len(l_tera_files)} templates good!")
     return True
+
+
+def m_scan_flag_dimensions(p_parent: str, p_flavours: list[str]) -> tuple[
+    int, int]:
+    """Get native dimensions from the first flavour of the parent group."""
+    l_path = f"themes/{p_flavours[0]}/{p_parent}/"
+    l_files = sorted(glob(f"{l_path}*.webp"))
+
+    if not l_files:
+        raise ValueError(f"No webp files in {l_path}")
+
+    with Image.open(l_files[0]) as l_img:
+        return l_img.width, l_img.height
+
+    return None
+
+
+def m_normalize_flavours(p_parent: str, p_flavours: list[str],
+                         p_native_width: int, p_native_height: int) -> dict[
+    str, str]:
+    """Scale all flavours to height=1000, preserving the aspect ratio."""
+    l_aspect = p_native_width / p_native_height
+    l_canonical_width = int(CANONICAL_HEIGHT * l_aspect)
+
+    l_scaled_paths = {}
+
+    for l_f in p_flavours:
+        l_path = f"themes/{l_f}/{p_parent}/"
+        l_files = sorted(glob(f"{l_path}*.webp"))
+
+        if not l_files:
+            raise FileNotFoundError(f"No webp files in {l_path}")
+
+        try:
+            with Image.open(l_files[0]) as l_img:
+                l_resized = l_img.resize((l_canonical_width, CANONICAL_HEIGHT),
+                                         Image.Resampling.LANCZOS)
+                l_temp = f"/tmp/catwalk_{p_parent}_{l_f}.webp"
+                l_resized.save(l_temp, "WEBP")
+                l_scaled_paths[l_f] = l_temp
+        except (IOError, OSError) as e:
+            raise RuntimeError(
+                f"Failed to process {l_f} flavor for {p_parent}: {e}") from e
+
+    return l_scaled_paths
 
 
 # --- Stage 2: SVG → PNG → Formats ---
@@ -227,21 +273,60 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
 
 # --- Stage 3: Composite Assembly ---
 def m_run_catwalk(p_flag: str, p_parent: str, p_layout: str,
-                  p_flavours: list[str]) -> tuple[str, bool, str]:
-    """Execute catwalk for flag+layout."""
-    l_inputs = [f"themes/{l_f}/{p_parent}/{p_flag}.webp" for l_f in p_flavours]
-    l_output = f"assets/{p_layout}/{p_flag}.webp"
+                  p_native_dims: tuple[int, int], p_flavours: list[str]) -> \
+    tuple[str, bool, str]:
+    """Execute catwalk with aspect-ratio-preserved scaling."""
+    l_scaled_paths = {}
 
-    l_cmd = ["catwalk", *l_inputs, "-o", l_output, "-l", p_layout, "-r", "0"]
+    try:
+        l_scaled_paths = m_normalize_flavours(p_parent, p_flavours,
+                                              *p_native_dims)
+        l_output = f"assets/{p_layout}/{p_flag}.webp"
 
-    l_result = subprocess.run(l_cmd, capture_output=True, text=True, timeout=15)
-    return f"{p_flag}:{p_layout}", l_result.returncode == 0, l_result.stderr
+        l_cmd = [
+            "catwalk",
+            *[l_scaled_paths[l_f] for l_f in p_flavours],
+            "-o", l_output,
+            "-l", p_layout,
+            "-r", "0"
+        ]
+
+        l_result = subprocess.run(l_cmd, capture_output=True, text=True,
+                                  timeout=15)
+        return f"{p_flag}:{p_layout}", l_result.returncode == 0, l_result.stderr
+
+    except subprocess.TimeoutExpired as e:
+        return f"{p_flag}:{p_layout}", False, f"catwalk timeout: {e}"
+    except KeyError as e:
+        return f"{p_flag}:{p_layout}", False, f"Missing flavor in scaled paths: {e}"
+    except RuntimeError as e:
+        return f"{p_flag}:{p_layout}", False, str(e)
+    finally:
+        # Explicit clean-up with specific error handling
+        for l_path in l_scaled_paths.values():
+            if l_path and os.path.exists(l_path):
+                try:
+                    os.remove(l_path)
+                except PermissionError as e:
+                    print(f"⚠ Can't delete temp file {l_path}: {e}",
+                          file=sys.stderr)
+                except OSError as e:
+                    print(f"⚠ OS error deleting {l_path}: {e}", file=sys.stderr)
 
 
 def m_stage_composite(p_flags: dict[str, str]) -> bool:
     """Generate composite assets via catwalk."""
+    # Cache native dimensions by parent
+    l_parent_dims = {}
+    for l_parent in set(p_flags.values()):
+        try:
+            l_parent_dims[l_parent] = m_scan_flag_dimensions(l_parent, FLAVOURS)
+        except Exception as e:
+            print(f"✗ Failed to scan {l_parent}: {e}", file=sys.stderr)
+            return False
+
     l_work = [
-        (l_flag, l_parent, l_layout)
+        (l_flag, l_parent, l_layout, l_parent_dims[l_parent])
         for l_flag, l_parent in p_flags.items()
         for l_layout in COMPOSITE_LAYOUTS
     ]
@@ -254,9 +339,9 @@ def m_stage_composite(p_flags: dict[str, str]) -> bool:
 
     with ThreadPoolExecutor(max_workers=l_max_workers) as l_executor:
         l_futures = {
-            l_executor.submit(m_run_catwalk, l_f, l_p, l_l, FLAVOURS): (l_f,
-                                                                        l_l)
-            for l_f, l_p, l_l in l_work
+            l_executor.submit(m_run_catwalk, l_f, l_p, l_l, l_dims, FLAVOURS): (
+                l_f, l_l)
+            for l_f, l_p, l_l, l_dims in l_work
         }
 
         with tqdm(total=len(l_futures), unit="composite",
