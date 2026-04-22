@@ -519,7 +519,7 @@ def m_main() -> int:
     """Run pipeline stages."""
     if len(sys.argv) < 2:
         print("usage: ./scripts/build.py <command>")
-        print("commands: templates, export, composite, optimize, all")
+        print("commands: templates, export, composite, optimize, package, all")
         return 1
 
     l_command = sys.argv[1].lower()
