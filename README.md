@@ -6,9 +6,9 @@
 </h3>
 
 <p align="center">
-	<a href="https://github.com/scarcekoi/pride-flags/stargazers"><img src="https://img.shields.io/github/stars/catppuccin/pride-flags?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/scarcekoi/pride-flags/issues"><img src="https://img.shields.io/github/issues/catppuccin/pride-flags?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/scarcekoi/pride-flags/contributors"><img src="https://img.shields.io/github/contributors/catppuccin/pride-flags?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/scarcekoi/pride-flags/stargazers"><img src="https://img.shields.io/github/stars/scarcekoi/pride-flags?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
+	<a href="https://github.com/scarcekoi/pride-flags/issues"><img src="https://img.shields.io/github/issues/scarcekoi/pride-flags?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
+	<a href="https://github.com/scarcekoi/pride-flags/contributors"><img src="https://img.shields.io/github/contributors/scarcekoi/pride-flags?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
 </p>
 
 ## Previews
