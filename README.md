@@ -166,11 +166,11 @@
 <img src="assets/row/polyam-evans.webp" alt="Polyamorous - Jim Evans, 1995 row" style="width:50%;"/>
 </details>
 
-<details>
-<summary>Polyamorous - Red Howell, 1995</summary>
-<img src="assets/composite/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 composite" style="width:50%;"/>
-<img src="assets/grid/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 grid" style="width:50%;"/>
-<img src="assets/row/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 row" style="width:50%;"/>
+<details closed>
+<summary>Polyamorous - Red Howell, 2022</summary>
+<img src="assets/composite/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 composite" style="width:50%;"/>
+<img src="assets/grid/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 grid" style="width:50%;"/>
+<img src="assets/row/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 row" style="width:50%;"/>
 </details>
 
 <details>
@@ -202,10 +202,10 @@
 </details>
 
 <details closed>
-<summary>Transfeminine - ryanyflags, 2022</summary>
-<img src="assets/composite/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2022 composite" style="width:50%;"/>
-<img src="assets/grid/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2022 grid" style="width:50%;"/>
-<img src="assets/row/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2022 row" style="width:50%;"/>
+<summary>Transfeminine - ryanyflags, 2019</summary>
+<img src="assets/composite/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2019 composite" style="width:50%;"/>
+<img src="assets/grid/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2019 grid" style="width:50%;"/>
+<img src="assets/row/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2019 row" style="width:50%;"/>
 </details>
 
 <details closed>
@@ -223,10 +223,10 @@
 </details>
 
 <details closed>
-<summary>Transmasculine - ryanyflags, 2022</summary>
-<img src="assets/composite/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2022 composite" style="width:50%;"/>
-<img src="assets/grid/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2022 grid" style="width:50%;"/>
-<img src="assets/row/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2022 row" style="width:50%;"/>
+<summary>Transmasculine - ryanyflags, 2019</summary>
+<img src="assets/composite/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2019 composite" style="width:50%;"/>
+<img src="assets/grid/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2019 grid" style="width:50%;"/>
+<img src="assets/row/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2019 row" style="width:50%;"/>
 </details>
 
 <details>
@@ -253,45 +253,19 @@
 <details>
 <summary>Attraction</summary>
 
-- Aromantic Asexual ([Mocha](themes/mocha/aroace/),
-  [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappé/aroace/),
-  [Latte](themes/latte/aroace/))
-- Asexual ([Mocha](themes/mocha/asexual/),
-  [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappé/asexual/),
-  [Latte](themes/latte/asexual/))
-- Bisexual ([Mocha](themes/mocha/bisexual/),
-  [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappé/bisexual/),
-  [Latte](themes/latte/bisexual/))
-- Finromantic ([Mocha](themes/mocha/finromantic/),
-  [Macchiato](themes/macchiato/finromantic/),
-  [Frappé](themes/frappé/finromantic/), [Latte](themes/latte/finromantic/))
-- Gay Men ([Mocha](themes/mocha/gay-man/),
-  [Macchiato](themes/macchiato/gay-man/), [Frappé](themes/frappé/gay-man/),
-  [Latte](themes/latte/gay-man/))
-- Greysexual ([Mocha](themes/mocha/greysexual/),
-  [Macchiato](themes/macchiato/greysexual/),
-  [Frappé](themes/frappé/greysexual/), [Latte](themes/latte/greysexual/))
-- Lesbian ([Mocha](themes/mocha/lesbian/),
-  [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappé/lesbian/),
-  [Latte](themes/latte/lesbian/))
-- Pansexual ([Mocha](themes/mocha/pansexual/),
-  [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/),
-  [Latte](themes/latte/pansexual/))
-- Polyamorous - Jim Evans, 1995 ([Mocha](themes/mocha/polyam-evans/),
-  [Macchiato](themes/macchiato/polyam-evans/),
-  [Frappé](themes/frappé/polyam-evans/), [Latte](themes/latte/polyam-evans/))
-- Polyamorous - Red Howell, 1995 ([Mocha](themes/mocha/polyam-howell/),
-  [Macchiato](themes/macchiato/polyam-howell/),
-  [Frappé](themes/frappé/polyam-howell/), [Latte](themes/latte/polyam-howell/))
-- Polysexual ([Mocha](themes/mocha/polysexual/),
-  [Macchiato](themes/macchiato/polysexual/),
-  [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
-- Sapphic ([Mocha](themes/mocha/sapphic/),
-  [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frappé/sapphic/),
-  [Latte](themes/latte/sapphic/))
-- Womasexual ([Mocha](themes/mocha/womasexual/),
-  [Macchiato](themes/macchiato/womasexual/),
-  [Frappé](themes/frappé/womasexual/), [Latte](themes/latte/womasexual/))
+- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappé/aroace/), [Latte](themes/latte/aroace/))
+- Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappé/asexual/), [Latte](themes/latte/asexual/))
+- Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappé/bisexual/), [Latte](themes/latte/bisexual/))
+- Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappé/finromantic/), [Latte](themes/latte/finromantic/))
+- Gay Men ([Mocha](themes/mocha/gay-man/), [Macchiato](themes/macchiato/gay-man/), [Frappé](themes/frappé/gay-man/), [Latte](themes/latte/gay-man/))
+- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappé/greysexual/), [Latte](themes/latte/greysexual/))
+- Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappé/lesbian/), [Latte](themes/latte/lesbian/))
+- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/), [Latte](themes/latte/pansexual/))
+- Polyamorous - Jim Evans, 1995 ([Mocha](themes/mocha/polyam-evans/), [Macchiato](themes/macchiato/polyam-evans/), [Frappé](themes/frappé/polyam-evans/), [Latte](themes/latte/polyam-evans/))
+- Polyamorous - Red Howell, 2022 ([Mocha](themes/mocha/polyam-howell/), [Macchiato](themes/macchiato/polyam-howell/), [Frappé](themes/frappé/polyam-howell/), [Latte](themes/latte/polyam-howell/))
+- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
+- Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frappé/sapphic/), [Latte](themes/latte/sapphic/))
+- Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frappé/womasexual/), [Latte](themes/latte/womasexual/))
 
 </details>
 
@@ -305,9 +279,9 @@
 - Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappé/genderqueer/), [Latte](themes/latte/genderqueer/))
 - Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frappé/transandrogynous/), [Latte](themes/latte/transandrogynous/))
 - Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappé/transfeminine/), [Latte](themes/latte/transfeminine/))
-- Transfeminine - ryanyflags, 2022 ([Mocha](themes/mocha/transfeminine-ryanyflags/), [Macchiato](themes/macchiato/transfeminine-ryanyflags/), [Frappé](themes/frappé/transfeminine-ryanyflags/), [Latte](themes/latte/transfeminine-ryanyflags/))
+- Transfeminine - ryanyflags, 2019 ([Mocha](themes/mocha/transfeminine-ryanyflags/), [Macchiato](themes/macchiato/transfeminine-ryanyflags/), [Frappé](themes/frappé/transfeminine-ryanyflags/), [Latte](themes/latte/transfeminine-ryanyflags/))
 - Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frappé/transmasculine/), [Latte](themes/latte/transmasculine/))
-- Transmasculine - ryanyflags, 2022 ([Mocha](themes/mocha/transmasculine-ryanyflags/), [Macchiato](themes/macchiato/transmasculine-ryanyflags/), [Frappé](themes/frappé/transmasculine-ryanyflags/), [Latte](themes/latte/transmasculine-ryanyflags/))
+- Transmasculine - ryanyflags, 2019 ([Mocha](themes/mocha/transmasculine-ryanyflags/), [Macchiato](themes/macchiato/transmasculine-ryanyflags/), [Frappé](themes/frappé/transmasculine-ryanyflags/), [Latte](themes/latte/transmasculine-ryanyflags/))
 
 </details>
 
@@ -344,10 +318,10 @@
 - Nonbinary ([Mocha](themes/mocha/nonbinary/), [Macchiato](themes/macchiato/nonbinary/), [Frappé](themes/frappé/nonbinary/), [Latte](themes/latte/nonbinary/))
 - Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frappé/transandrogynous/), [Latte](themes/latte/transandrogynous/))
 - Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappé/transfeminine/), [Latte](themes/latte/transfeminine/))
-- Transfeminine - ryanyflags, 2022 ([Mocha](themes/mocha/transfeminine-ryanyflags/), [Macchiato](themes/macchiato/transfeminine-ryanyflags/), [Frappé](themes/frappé/transfeminine-ryanyflags/), [Latte](themes/latte/transfeminine-ryanyflags/))
+- Transfeminine - ryanyflags, 2019 ([Mocha](themes/mocha/transfeminine-ryanyflags/), [Macchiato](themes/macchiato/transfeminine-ryanyflags/), [Frappé](themes/frappé/transfeminine-ryanyflags/), [Latte](themes/latte/transfeminine-ryanyflags/))
 - Transgender ([Mocha](themes/mocha/transgender/), [Macchiato](themes/macchiato/transgender/), [Frappé](themes/frappé/transgender/), [Latte](themes/latte/transgender/))
 - Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frappé/transmasculine/), [Latte](themes/latte/transmasculine/))
-- Transmasculine - ryanyflags, 2022 ([Mocha](themes/mocha/transmasculine-ryanyflags/), [Macchiato](themes/macchiato/transmasculine-ryanyflags/), [Frappé](themes/frappé/transmasculine-ryanyflags/), [Latte](themes/latte/transmasculine-ryanyflags/))
+- Transmasculine - ryanyflags, 2019 ([Mocha](themes/mocha/transmasculine-ryanyflags/), [Macchiato](themes/macchiato/transmasculine-ryanyflags/), [Frappé](themes/frappé/transmasculine-ryanyflags/), [Latte](themes/latte/transmasculine-ryanyflags/))
 - Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frappé/trigender/), [Latte](themes/latte/trigender/))
 
 </details>
