@@ -14,7 +14,7 @@ import sys
 import tarfile
 import tempfile
 import time
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ElementTree
 import yaml
 
 from PIL import Image
@@ -36,7 +36,6 @@ FLAGS_FILE = Path("resources/flags.yml")
 CATEGORIES_FILE = Path("resources/categories.yml")
 README_FILE = Path("README.md")
 THEMES_DIR = Path("themes")
-CANONICAL_HEIGHT = 1000
 MAX_CONVERT_RETRIES = 10
 CONVERT_RETRY_DELAY = 1
 
@@ -76,14 +75,13 @@ def m_load_flags() -> dict[str, str]:
 def m_get_svg_dimensions(p_svg_path: Path) -> tuple[int, int] | None:
     """Extract width and height from SVG file. Returns (width, height) or None."""
     try:
-        tree = ET.parse(p_svg_path)
+        tree = ElementTree.parse(p_svg_path)
         root = tree.getroot()
 
         width = root.get('width')
         height = root.get('height')
 
         if width and height:
-            # Strip 'px' or other units if present
             width = int(float(width.rstrip('px')))
             height = int(float(height.rstrip('px')))
             return width, height
@@ -106,6 +104,41 @@ def _flag_check(l_failed, l_count) -> bool:
     return True
 
 
+def m_scan_flag_dimensions(p_parent: str, p_flavours: list[str]) -> tuple[
+    int, int]:
+    """Get native dimensions from the first flavour of the parent group."""
+    l_path = f"themes/{p_flavours[0]}/{p_parent}/"
+    l_files = sorted(glob(f"{l_path}*.webp"))
+
+    if not l_files:
+        raise ValueError(f"No webp files in {l_path}")
+
+    with Image.open(l_files[0]) as l_img:
+        return l_img.width, l_img.height
+
+    return None
+
+
+def m_get_image_paths(p_flag: str, p_parent: str, p_flavours: list[str]) -> \
+    dict[str, str]:
+    """Get webp for each flavour, checking subdirectory if flag != parent."""
+    l_paths = {}
+
+    for l_f in p_flavours:
+        if p_flag != p_parent:
+            l_path = f"themes/{l_f}/{p_parent}/{p_flag}/{p_flag}.webp"
+        else:
+            l_path = f"themes/{l_f}/{p_parent}/{p_flag}.webp"
+
+        if not Path(l_path).exists():
+            raise FileNotFoundError(f"No webp file at {l_path}")
+
+        l_paths[l_f] = l_path
+
+    return l_paths
+
+
+# --- Stage 1: Generate SVGs - Whiskers ---
 def m_process_templates() -> bool:
     """Process .tera files with whiskers."""
     shutil.rmtree(THEMES_DIR, ignore_errors=True)
@@ -147,48 +180,14 @@ def m_process_templates() -> bool:
     return True
 
 
-def m_scan_flag_dimensions(p_parent: str, p_flavours: list[str]) -> tuple[
-    int, int]:
-    """Get native dimensions from the first flavour of the parent group."""
-    l_path = f"themes/{p_flavours[0]}/{p_parent}/"
-    l_files = sorted(glob(f"{l_path}*.webp"))
-
-    if not l_files:
-        raise ValueError(f"No webp files in {l_path}")
-
-    with Image.open(l_files[0]) as l_img:
-        return l_img.width, l_img.height
-
-    return None
-
-
-def m_get_image_paths(p_flag: str, p_parent: str, p_flavours: list[str]) -> \
-    dict[str, str]:
-    """Get webp for each flavour, checking subdirectory if flag != parent."""
-    l_paths = {}
-
-    for l_f in p_flavours:
-        if p_flag != p_parent:
-            l_path = f"themes/{l_f}/{p_parent}/{p_flag}/{p_flag}.webp"
-        else:
-            l_path = f"themes/{l_f}/{p_parent}/{p_flag}.webp"
-
-        if not Path(l_path).exists():
-            raise FileNotFoundError(f"No webp file at {l_path}")
-
-        l_paths[l_f] = l_path
-
-    return l_paths
-
-
-# --- Stage 2: SVG → PNG → Formats ---
+# --- Stage 2: SVG → PNG (Playwright) → Formats (ImageMagick & Aseprite) ---
 def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
-    """Convert SVG to PNG using Playwright. Returns path or None on fail."""
+    """Convert SVG to PNG using Playwright with retry logic. Returns path or None on fail."""
     l_png_path = p_svg_path.with_suffix(".png")
     try:
         from playwright.sync_api import sync_playwright
+        import time
 
-        # Get SVG dimensions dynamically
         l_dims = m_get_svg_dimensions(p_svg_path)
         if not l_dims:
             print(f"Could not determine SVG dimensions: {p_svg_path.name}",
@@ -197,14 +196,23 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
 
         l_width, l_height = l_dims
 
-        with sync_playwright() as p:
-            browser = p.chromium.launch()
-            page = browser.new_page(
-                viewport={"width": l_width, "height": l_height})
-            page.goto(f"file://{p_svg_path.resolve()}")
-            page.screenshot(path=str(l_png_path))
-            browser.close()
-        return l_png_path
+        for l_attempt in range(MAX_CONVERT_RETRIES):
+            try:
+                with sync_playwright() as p:
+                    browser = p.chromium.launch()
+                    page = browser.new_page(
+                        viewport={"width": l_width, "height": l_height})
+                    page.goto(f"file://{p_svg_path.resolve()}",
+                              wait_until="networkidle")
+                    page.screenshot(path=str(l_png_path))
+                    browser.close()
+                return l_png_path
+            except Exception as l_e:
+                if l_attempt < MAX_CONVERT_RETRIES - 1:
+                    time.sleep(CONVERT_RETRY_DELAY * (2 ** l_attempt))
+                else:
+                    raise l_e
+
     except Exception as p_e:
         print(f"svg render failed: {p_svg_path.name} ({p_e})", file=sys.stderr)
         return None
@@ -312,7 +320,7 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
     return True
 
 
-# --- Stage 3: Composite Assembly ---
+# --- Stage 3: Composite Assembly - Catwalk ---
 def m_run_catwalk(
     p_flag: str,
     p_parent: str,
@@ -364,7 +372,6 @@ def m_stage_composite(p_flags: dict[str, str]) -> bool:
     shutil.rmtree(ASSETS_DIR, ignore_errors=True)
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Create layout subdirectories
     for layout in COMPOSITE_LAYOUTS:
         (ASSETS_DIR / layout).mkdir(parents=True, exist_ok=True)
 
@@ -583,7 +590,6 @@ def m_create_theme_archives() -> bool:
 def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
     """Create tar.xz for each parent (combining all variants and themes)."""
 
-    # Group flags by parent
     l_by_parent = {}
     for l_flag, l_parent in p_flags.items():
         if l_parent not in l_by_parent:
@@ -600,10 +606,8 @@ def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
         for l_theme in FLAVOURS:
             l_parent_dir = THEMES_DIR / l_theme / l_parent
             if l_parent_dir.exists():
-                # Glob all files in the directory
                 l_files = list(l_parent_dir.glob("*"))
                 for l_file in l_files:
-                    # Store as theme/filename
                     l_rel = l_file.relative_to(THEMES_DIR)
                     l_tar_paths.append(str(l_rel))
 
@@ -642,6 +646,7 @@ def m_stage_package_archives(p_flags: dict[str, str]) -> bool:
     return l_ok
 
 
+# --- Command Runner ---
 def main() -> int:
     """Run pipeline stages."""
     parser = argparse.ArgumentParser(
@@ -652,7 +657,6 @@ def main() -> int:
     subparsers = parser.add_subparsers(dest='command',
                                        help='available commands')
 
-    # Define subcommands
     subparsers.add_parser('templates', help='Process templates')
     subparsers.add_parser('export', help='Export flags')
     subparsers.add_parser('composite', help='Generate composite assets')
@@ -679,7 +683,6 @@ def main() -> int:
         "package": lambda: m_stage_package_archives(l_flags),
     }
 
-    # Determine which stages to run
     if args.command == "all":
         l_stages_to_run = list(l_stages.items())
     else:
