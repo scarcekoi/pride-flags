@@ -1,3 +1,12 @@
+## [] - 2026-04-23
+
+
+### ⚙️ Chores
+
+
+#### Changelog
+
+- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/a016010a61febf5639eb0a5c6ffa5f9569f9b823)
 ## [continuous-release] - 2026-04-23
 
 
