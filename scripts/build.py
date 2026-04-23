@@ -14,6 +14,7 @@ import sys
 import tarfile
 import tempfile
 import time
+import xml.etree.ElementTree as ET
 import yaml
 
 from PIL import Image
@@ -70,6 +71,27 @@ def m_load_flags() -> dict[str, str]:
         l_flags[l_flag_name] = l_parent or l_flag_name
 
     return l_flags
+
+
+def m_get_svg_dimensions(p_svg_path: Path) -> tuple[int, int] | None:
+    """Extract width and height from SVG file. Returns (width, height) or None."""
+    try:
+        tree = ET.parse(p_svg_path)
+        root = tree.getroot()
+
+        width = root.get('width')
+        height = root.get('height')
+
+        if width and height:
+            # Strip 'px' or other units if present
+            width = int(float(width.rstrip('px')))
+            height = int(float(height.rstrip('px')))
+            return width, height
+    except Exception as p_e:
+        print(f"Failed to parse SVG dimensions from {p_svg_path.name}: {p_e}",
+              file=sys.stderr)
+
+    return None
 
 
 def _flag_check(l_failed, l_count) -> bool:
@@ -166,9 +188,19 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
     try:
         from playwright.sync_api import sync_playwright
 
+        # Get SVG dimensions dynamically
+        l_dims = m_get_svg_dimensions(p_svg_path)
+        if not l_dims:
+            print(f"Could not determine SVG dimensions: {p_svg_path.name}",
+                  file=sys.stderr)
+            return None
+
+        l_width, l_height = l_dims
+
         with sync_playwright() as p:
             browser = p.chromium.launch()
-            page = browser.new_page(viewport={"width": 600, "height": 300})
+            page = browser.new_page(
+                viewport={"width": l_width, "height": l_height})
             page.goto(f"file://{p_svg_path.resolve()}")
             page.screenshot(path=str(l_png_path))
             browser.close()
