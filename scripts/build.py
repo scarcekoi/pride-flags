@@ -4,13 +4,19 @@ Asset pipeline: templates → exports → composites → optimisation.
 Subcommands: templates, export, composite, optimise, all.
 """
 
+import argparse
+import cairosvg
 import os
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 import yaml
 
+from PIL import Image
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from glob import glob
 from io import StringIO
 from multiprocessing import cpu_count
 from pathlib import Path
@@ -19,7 +25,8 @@ from tqdm import tqdm
 
 # --- Constants ---
 FLAVOURS = ["latte", "frappe", "macchiato", "mocha"]
-DIST_DIR = Path("dist/release")
+DIST_DIR = Path("dist")
+ASSETS_DIR = Path("assets")
 FLAGS_DIR = DIST_DIR / "flags"
 FLAVOURS_DIR = DIST_DIR / "flavours"
 FLAGS_FILE = Path("resources/flags.yml")
@@ -61,12 +68,6 @@ def m_load_flags() -> dict[str, str]:
     return l_flags
 
 
-def m_ensure_dirs() -> None:
-    """Create output directories."""
-    FLAGS_DIR.mkdir(parents=True, exist_ok=True)
-    FLAVOURS_DIR.mkdir(parents=True, exist_ok=True)
-
-
 def _flag_check(l_failed, l_count) -> bool:
     """Check archive results."""
     if l_failed:
@@ -81,6 +82,10 @@ def _flag_check(l_failed, l_count) -> bool:
 
 def m_process_templates() -> bool:
     """Process .tera files with whiskers."""
+
+    shutil.rmtree(THEMES_DIR, ignore_errors=True)
+    THEMES_DIR.mkdir(parents=True, exist_ok=True)
+
     l_templates_dir = Path(__file__).resolve().parent.parent / "templates"
     l_tera_files = sorted(l_templates_dir.glob("**/*.tera"))
 
@@ -132,14 +137,10 @@ def m_scan_flag_dimensions(p_parent: str, p_flavours: list[str]) -> tuple[
     return None
 
 
-def m_normalize_flavours(p_parent: str, p_flavours: list[str],
-                         p_native_width: int, p_native_height: int) -> dict[
+def m_get_image_paths(p_parent: str, p_flavours: list[str]) -> dict[
     str, str]:
-    """Scale all flavours to height=1000, preserving the aspect ratio."""
-    l_aspect = p_native_width / p_native_height
-    l_canonical_width = int(CANONICAL_HEIGHT * l_aspect)
-
-    l_scaled_paths = {}
+    """Get first webp from each flavour for the parent."""
+    l_raw_paths = {}
 
     for l_f in p_flavours:
         l_path = f"themes/{l_f}/{p_parent}/"
@@ -148,30 +149,14 @@ def m_normalize_flavours(p_parent: str, p_flavours: list[str],
         if not l_files:
             raise FileNotFoundError(f"No webp files in {l_path}")
 
-        try:
-            with Image.open(l_files[0]) as l_img:
-                l_resized = l_img.resize((l_canonical_width, CANONICAL_HEIGHT),
-                                         Image.Resampling.LANCZOS)
-                l_temp = f"/tmp/catwalk_{p_parent}_{l_f}.webp"
-                l_resized.save(l_temp, "WEBP")
-                l_scaled_paths[l_f] = l_temp
-        except (IOError, OSError) as e:
-            raise RuntimeError(
-                f"Failed to process {l_f} flavor for {p_parent}: {e}") from e
+        l_raw_paths[l_f] = l_files[0]
 
-    return l_scaled_paths
+    return l_raw_paths
 
 
 # --- Stage 2: SVG → PNG → Formats ---
 def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
     """Convert SVG to PNG. Returns path or None on fail."""
-    try:
-        import cairosvg
-    except ImportError:
-        print("✗ cairosvg not installed. run: pip install cairosvg",
-              file=sys.stderr)
-        sys.exit(1)
-
     l_png_path = p_svg_path.with_suffix(".png")
     try:
         cairosvg.svg2png(url=str(p_svg_path), write_to=str(l_png_path), dpi=96)
@@ -272,20 +257,20 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
 
 
 # --- Stage 3: Composite Assembly ---
-def m_run_catwalk(p_flag: str, p_parent: str, p_layout: str,
-                  p_native_dims: tuple[int, int], p_flavours: list[str]) -> \
-    tuple[str, bool, str]:
-    """Execute catwalk with aspect-ratio-preserved scaling."""
-    l_scaled_paths = {}
-
+def m_run_catwalk(
+    p_flag: str,
+    p_parent: str,
+    p_layout: str,
+    p_flavours: list[str]
+) -> tuple[str, bool, str]:
+    """Execute catwalk and normalize output."""
     try:
-        l_scaled_paths = m_normalize_flavours(p_parent, p_flavours,
-                                              *p_native_dims)
+        l_paths = m_get_image_paths(p_parent, p_flavours)
         l_output = f"assets/{p_layout}/{p_flag}.webp"
 
         l_cmd = [
             "catwalk",
-            *[l_scaled_paths[l_f] for l_f in p_flavours],
+            *[l_paths[l_f] for l_f in p_flavours],
             "-o", l_output,
             "-l", p_layout,
             "-r", "0"
@@ -293,40 +278,46 @@ def m_run_catwalk(p_flag: str, p_parent: str, p_layout: str,
 
         l_result = subprocess.run(l_cmd, capture_output=True, text=True,
                                   timeout=15)
+
+        if l_result.returncode == 0:
+            with Image.open(l_output) as l_img:
+                if l_img.mode != 'RGBA':
+                    l_img = l_img.convert('RGBA')
+
+                l_aspect = l_img.width / l_img.height
+                l_new_width = int(CANONICAL_HEIGHT * l_aspect)
+                l_resized = l_img.resize((l_new_width, CANONICAL_HEIGHT),
+                                         Image.Resampling.LANCZOS)
+
+                # Crop transparent borders
+                l_alpha = l_resized.split()[-1]
+                l_bbox = l_alpha.getbbox()
+
+                if l_bbox:
+                    l_final = l_resized.crop(l_bbox)
+                    l_final.save(l_output, "WEBP")
+
         return f"{p_flag}:{p_layout}", l_result.returncode == 0, l_result.stderr
 
-    except subprocess.TimeoutExpired as e:
-        return f"{p_flag}:{p_layout}", False, f"catwalk timeout: {e}"
-    except KeyError as e:
-        return f"{p_flag}:{p_layout}", False, f"Missing flavor in scaled paths: {e}"
+    except FileNotFoundError as e:
+        return f"{p_flag}:{p_layout}", False, str(e)
     except RuntimeError as e:
         return f"{p_flag}:{p_layout}", False, str(e)
-    finally:
-        # Explicit clean-up with specific error handling
-        for l_path in l_scaled_paths.values():
-            if l_path and os.path.exists(l_path):
-                try:
-                    os.remove(l_path)
-                except PermissionError as e:
-                    print(f"⚠ Can't delete temp file {l_path}: {e}",
-                          file=sys.stderr)
-                except OSError as e:
-                    print(f"⚠ OS error deleting {l_path}: {e}", file=sys.stderr)
+    except (IOError, OSError) as e:
+        return f"{p_flag}:{p_layout}", False, f"Image processing failed: {e}"
 
 
 def m_stage_composite(p_flags: dict[str, str]) -> bool:
     """Generate composite assets via catwalk."""
-    # Cache native dimensions by parent
-    l_parent_dims = {}
-    for l_parent in set(p_flags.values()):
-        try:
-            l_parent_dims[l_parent] = m_scan_flag_dimensions(l_parent, FLAVOURS)
-        except Exception as e:
-            print(f"✗ Failed to scan {l_parent}: {e}", file=sys.stderr)
-            return False
+    shutil.rmtree(ASSETS_DIR, ignore_errors=True)
+    ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Create layout subdirectories
+    for layout in COMPOSITE_LAYOUTS:
+        (ASSETS_DIR / layout).mkdir(parents=True, exist_ok=True)
 
     l_work = [
-        (l_flag, l_parent, l_layout, l_parent_dims[l_parent])
+        (l_flag, l_parent, l_layout)
         for l_flag, l_parent in p_flags.items()
         for l_layout in COMPOSITE_LAYOUTS
     ]
@@ -339,9 +330,9 @@ def m_stage_composite(p_flags: dict[str, str]) -> bool:
 
     with ThreadPoolExecutor(max_workers=l_max_workers) as l_executor:
         l_futures = {
-            l_executor.submit(m_run_catwalk, l_f, l_p, l_l, l_dims, FLAVOURS): (
+            l_executor.submit(m_run_catwalk, l_f, l_p, l_l, FLAVOURS): (
                 l_f, l_l)
-            for l_f, l_p, l_l, l_dims in l_work
+            for l_f, l_p, l_l in l_work
         }
 
         with tqdm(total=len(l_futures), unit="composite",
@@ -517,9 +508,10 @@ def m_stage_update_readme() -> bool:
     return True
 
 
-# --- Stage 5: Packaging ---
+# --- Stage 6: Packaging ---
 def m_create_theme_archives() -> bool:
     """Create tar.xz for each theme."""
+
     print(f"packaging {len(FLAVOURS)} themes...")
     l_failed = []
 
@@ -549,27 +541,39 @@ def m_create_theme_archives() -> bool:
 
 
 def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
-    """Create tar.xz for each flag (combining all themes)."""
-    print(f"packaging {len(p_flags)} flags...")
+    """Create tar.xz for each parent (combining all variants and themes)."""
+
+    # Group flags by parent
+    l_by_parent = {}
+    for l_flag, l_parent in p_flags.items():
+        if l_parent not in l_by_parent:
+            l_by_parent[l_parent] = []
+        l_by_parent[l_parent].append(l_flag)
+
+    print(f"packaging {len(l_by_parent)} parents...")
     l_failed = []
 
-    for l_flag, l_parent in tqdm(p_flags.items(), desc="flags", unit="flag"):
-        l_dest = FLAGS_DIR / f"{l_flag}.tar.xz"
+    for l_parent, l_flags in tqdm(
+        l_by_parent.items(),
+        desc="parents",
+        unit="parent"
+    ):
+        l_dest = FLAGS_DIR / f"{l_parent}.tar.xz"
         l_dest.unlink(missing_ok=True)
 
         l_tar_paths = []
         for l_theme in FLAVOURS:
-            l_flag_dir = THEMES_DIR / l_theme / l_parent
-            if l_flag_dir.exists():
+            l_parent_dir = THEMES_DIR / l_theme / l_parent
+            if l_parent_dir.exists():
                 # Glob all files in the directory
-                l_files = list(l_flag_dir.glob("*"))
+                l_files = list(l_parent_dir.glob("*"))
                 for l_file in l_files:
                     # Store as theme/filename
                     l_rel = l_file.relative_to(THEMES_DIR)
                     l_tar_paths.append(str(l_rel))
 
         if not l_tar_paths:
-            tqdm.write(f"  ⚠ {l_flag} has no assets")
+            tqdm.write(f"  ⚠ {l_parent} has no assets")
             continue
 
         l_result = subprocess.run(
@@ -581,17 +585,21 @@ def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
         )
 
         if l_result.returncode != 0:
-            l_failed.append((l_flag, l_result.stderr))
-            tqdm.write(f"  ✗ {l_flag}")
+            l_failed.append((l_parent, l_result.stderr))
+            tqdm.write(f"  ✗ {l_parent}")
         else:
-            tqdm.write(f"  ✓ {l_flag}")
+            tqdm.write(f"  ✓ {l_parent}")
 
-    return _flag_check(l_failed, len(p_flags))
+    return _flag_check(l_failed, len(l_by_parent))
 
 
 def m_stage_package_archives(p_flags: dict[str, str]) -> bool:
     """Create tar.xz archives for themes and flags."""
-    m_ensure_dirs()
+
+    shutil.rmtree(DIST_DIR, ignore_errors=True)
+    (DIST_DIR / "flavours").mkdir(parents=True, exist_ok=True)
+    (DIST_DIR / "flags").mkdir(parents=True, exist_ok=True)
+
     l_ok = m_create_theme_archives() and m_create_flag_archives(p_flags)
 
     if l_ok:
@@ -599,17 +607,34 @@ def m_stage_package_archives(p_flags: dict[str, str]) -> bool:
     return l_ok
 
 
-# --- CLI Dispatcher ---
-def m_main() -> int:
+def main() -> int:
     """Run pipeline stages."""
-    if len(sys.argv) < 2:
-        print("usage: ./scripts/build.py <command>")
-        print("commands: templates, export, composite, optimize, package, all")
+    parser = argparse.ArgumentParser(
+        prog='build.py',
+        description='Flag theme asset build pipeline'
+    )
+
+    subparsers = parser.add_subparsers(dest='command',
+                                       help='available commands')
+
+    # Define subcommands
+    subparsers.add_parser('templates', help='Process templates')
+    subparsers.add_parser('export', help='Export flags')
+    subparsers.add_parser('composite', help='Generate composite assets')
+    subparsers.add_parser('optimize', help='Optimize images')
+    subparsers.add_parser('readme', help='Update README')
+    subparsers.add_parser('package', help='Package archives')
+    subparsers.add_parser('all', help='Run all stages')
+
+    args = parser.parse_args()
+
+    if not args.command:
+        parser.print_help()
         return 1
 
-    l_command = sys.argv[1].lower()
     l_flags = m_load_flags()
 
+    # Stage definitions
     l_stages = {
         "templates": m_process_templates,
         "export": lambda: m_stage_export(l_flags),
@@ -619,20 +644,11 @@ def m_main() -> int:
         "package": lambda: m_stage_package_archives(l_flags),
     }
 
-    if l_command == "all":
-        l_stages_to_run = [
-            ("templates", m_process_templates),
-            ("export", lambda: m_stage_export(l_flags)),
-            ("composite", lambda: m_stage_composite(l_flags)),
-            ("optimize", m_stage_optimize),
-            ("readme", lambda: m_stage_update_readme()),
-            ("package", lambda: m_stage_package_archives(l_flags)),
-        ]
-    elif l_command in l_stages:
-        l_stages_to_run = [(l_command, l_stages[l_command])]
+    # Determine which stages to run
+    if args.command == "all":
+        l_stages_to_run = list(l_stages.items())
     else:
-        print(f"unknown command: {l_command}", file=sys.stderr)
-        return 1
+        l_stages_to_run = [(args.command, l_stages[args.command])]
 
     print()
     for l_name, l_stage in l_stages_to_run:
@@ -652,4 +668,4 @@ def m_main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(m_main())
+    sys.exit(main())
