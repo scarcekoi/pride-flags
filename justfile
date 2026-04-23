@@ -1,30 +1,30 @@
-setup := "source venv/bin/activate && pip install -r requirements.txt --upgrade"
+setup := "./venv/bin/python -m pip install -r requirements.txt --upgrade && ./venv/bin/python -m playwright install chromium"
 
 templates:
     {{ setup }}
-    python scripts/build.py templates
+    ./venv/bin/python scripts/build.py templates
 
 export:
     {{ setup }}
-    python scripts/build.py export
+    ./venv/bin/python scripts/build.py export
 
 composite:
     {{ setup }}
-    python scripts/build.py composite
+    ./venv/bin/python scripts/build.py composite
 
 optimize:
     {{ setup }}
-    python scripts/build.py optimize
+    ./venv/bin/python scripts/build.py optimize
 
 readme:
     {{ setup }}
-    python scripts/build.py readme
+    ./venv/bin/python scripts/build.py readme
 
 package:
     {{ setup }}
-    python scripts/build.py package
+    ./venv/bin/python scripts/build.py package
 
 [default]
 all:
     {{ setup }}
-    python scripts/build.py all
+    ./venv/bin/python scripts/build.py all

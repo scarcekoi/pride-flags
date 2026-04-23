@@ -25,6 +25,21 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.10'
+      - name: Cache npm
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-svgo
+          restore-keys: ${{ runner.os }}-npm-
+      - name: Cache Playwright
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright/
+          key: ${{ runner.os }}-playwright-chromium-${{ hashFiles('**/requirements.txt')
+            }}
+          restore-keys: ${{ runner.os }}-playwright-chromium-
       - name: Install system deps
         if: steps.cache-build.outputs.cache-hit != 'true'
         run: |
@@ -47,13 +62,6 @@ jobs:
       - name: Setup Catwalk
         if: steps.cache-build.outputs.cache-hit != 'true'
         uses: catppuccin/setup-catwalk@v1
-      - name: Cache npm
-        if: steps.cache-build.outputs.cache-hit != 'true'
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-svgo
-          restore-keys: ${{ runner.os }}-npm-
       - name: Cache pip
         if: steps.cache-build.outputs.cache-hit != 'true'
         uses: actions/cache@v4
@@ -66,6 +74,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
       - name: Run build pipeline
         if: steps.cache-build.outputs.cache-hit != 'true'
         run: python scripts/build.py all

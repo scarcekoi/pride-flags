@@ -1,16 +1,17 @@
-#!/usr/bin/env python3
 """
 Asset pipeline: templates → exports → composites → optimisation.
 Subcommands: templates, export, composite, optimise, all.
 """
 
 import argparse
-import cairosvg
+import json
+import json
 import os
 import re
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
 import time
 import yaml
@@ -21,6 +22,7 @@ from glob import glob
 from io import StringIO
 from multiprocessing import cpu_count
 from pathlib import Path
+from playwright.sync_api import sync_playwright
 from shutil import which
 
 # --- Constants ---
@@ -84,7 +86,6 @@ def _flag_check(l_failed, l_count) -> bool:
 
 def m_process_templates() -> bool:
     """Process .tera files with whiskers."""
-
     shutil.rmtree(THEMES_DIR, ignore_errors=True)
     THEMES_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -139,29 +140,38 @@ def m_scan_flag_dimensions(p_parent: str, p_flavours: list[str]) -> tuple[
     return None
 
 
-def m_get_image_paths(p_parent: str, p_flavours: list[str]) -> dict[
-    str, str]:
-    """Get first webp from each flavour for the parent."""
-    l_raw_paths = {}
+def m_get_image_paths(p_flag: str, p_parent: str, p_flavours: list[str]) -> \
+    dict[str, str]:
+    """Get webp for each flavour, checking subdirectory if flag != parent."""
+    l_paths = {}
 
     for l_f in p_flavours:
-        l_path = f"themes/{l_f}/{p_parent}/"
-        l_files = sorted(glob(f"{l_path}*.webp"))
+        if p_flag != p_parent:
+            l_path = f"themes/{l_f}/{p_parent}/{p_flag}/{p_flag}.webp"
+        else:
+            l_path = f"themes/{l_f}/{p_parent}/{p_flag}.webp"
 
-        if not l_files:
-            raise FileNotFoundError(f"No webp files in {l_path}")
+        if not Path(l_path).exists():
+            raise FileNotFoundError(f"No webp file at {l_path}")
 
-        l_raw_paths[l_f] = l_files[0]
+        l_paths[l_f] = l_path
 
-    return l_raw_paths
+    return l_paths
 
 
 # --- Stage 2: SVG → PNG → Formats ---
 def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
-    """Convert SVG to PNG. Returns path or None on fail."""
+    """Convert SVG to PNG using Playwright. Returns path or None on fail."""
     l_png_path = p_svg_path.with_suffix(".png")
     try:
-        cairosvg.svg2png(url=str(p_svg_path), write_to=str(l_png_path), dpi=96)
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page(viewport={"width": 600, "height": 300})
+            page.goto(f"file://{p_svg_path.resolve()}")
+            page.screenshot(path=str(l_png_path))
+            browser.close()
         return l_png_path
     except Exception as p_e:
         print(f"svg render failed: {p_svg_path.name} ({p_e})", file=sys.stderr)
@@ -201,7 +211,12 @@ def m_convert_png_to_format(p_png: Path, p_fmt: str, p_aseprite: str,
 def m_export_flag(p_flag: str, p_parent: str, p_theme: Path, p_aseprite: str,
                   p_convert: str) -> tuple[str, str, int]:
     """Export single flag: SVG → PNG → all formats."""
-    l_svg = p_theme / p_parent / f"{p_flag}.svg"
+    if p_flag != p_parent:
+        l_flag_dir = p_theme / p_parent / p_flag
+    else:
+        l_flag_dir = p_theme / p_parent
+
+    l_svg = l_flag_dir / f"{p_flag}.svg"
 
     if not l_svg.exists():
         return p_flag, p_theme.name, 0
@@ -274,7 +289,7 @@ def m_run_catwalk(
 ) -> tuple[str, bool, str]:
     """Execute catwalk and normalize output."""
     try:
-        l_paths = m_get_image_paths(p_parent, p_flavours)
+        l_paths = m_get_image_paths(p_flag, p_parent, p_flavours)
         l_output = f"assets/{p_layout}/{p_flag}.webp"
 
         l_cmd = [
@@ -293,18 +308,14 @@ def m_run_catwalk(
                 if l_img.mode != 'RGBA':
                     l_img = l_img.convert('RGBA')
 
-                l_aspect = l_img.width / l_img.height
-                l_new_width = int(CANONICAL_HEIGHT * l_aspect)
-                l_resized = l_img.resize((l_new_width, CANONICAL_HEIGHT),
-                                         Image.Resampling.LANCZOS)
-
-                # Crop transparent borders
-                l_alpha = l_resized.split()[-1]
+                l_alpha = l_img.split()[-1]
                 l_bbox = l_alpha.getbbox()
 
                 if l_bbox:
-                    l_final = l_resized.crop(l_bbox)
+                    l_final = l_img.crop(l_bbox)
                     l_final.save(l_output, "WEBP")
+                else:
+                    l_img.save(l_output, "WEBP")
 
         return f"{p_flag}:{p_layout}", l_result.returncode == 0, l_result.stderr
 
