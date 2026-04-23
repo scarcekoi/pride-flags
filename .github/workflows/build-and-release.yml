@@ -5,36 +5,157 @@ on:
     branches: [main]
     tags: ['*']
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - name: Cache build artifacts
+        id: cache-build
+        uses: actions/cache@v4
+        with:
+          path: dist/
+          key: ${{ runner.os }}-build-${{ hashFiles('templates/**', 'themes/**', 'scripts/build.py')
+            }}
+          restore-keys: ${{ runner.os }}-build-
       - name: Set up Python
-        uses: actions/setup-python@v4
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        uses: actions/setup-python@v6
         with:
           python-version: '3.10'
+      - name: Cache npm
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-svgo
+          restore-keys: ${{ runner.os }}-npm-
+      - name: Cache pip
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+      - name: Cache Playwright
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright/
+          key: ${{ runner.os }}-playwright-chromium-${{ hashFiles('**/requirements.txt')
+            }}
+          restore-keys: ${{ runner.os }}-playwright-chromium-
       - name: Install system deps
+        if: steps.cache-build.outputs.cache-hit != 'true'
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            imagemagick optipng jpegoptim xz-utils libresprite
+          sudo apt-get install -y flatpak imagemagick jpegoptim optipng xz-utils
+          npm install -g svgo
+      - name: Install libresprite
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        run: |
+          sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          sudo flatpak install -y flathub com.github.libresprite.LibreSprite
+          sudo tee /usr/local/bin/libresprite > /dev/null <<'EOF'
+          #!/bin/bash
+          flatpak run com.github.libresprite.LibreSprite "$@"
+          EOF
+          sudo chmod +x /usr/local/bin/libresprite
+      - name: Setup Whiskers
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        uses: catppuccin/setup-whiskers@v2
+      - name: Setup Catwalk
+        if: steps.cache-build.outputs.cache-hit != 'true'
+        uses: catppuccin/setup-catwalk@v1
       - name: Install Python deps
+        if: steps.cache-build.outputs.cache-hit != 'true'
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
       - name: Run build pipeline
+        if: steps.cache-build.outputs.cache-hit != 'true'
         run: python scripts/build.py all
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+      - name: Upload flag artifacts
+        uses: actions/upload-artifact@v5
         with:
-          name: pride-flags-dist
-          path: dist/release/
+          name: pride-flags
+          path: dist/flags/
           retention-days: 30
+      - name: Upload flavour artifacts
+        uses: actions/upload-artifact@v5
+        with:
+          name: pride-flavours
+          path: dist/flavours/
+          retention-days: 30
+  regenerate:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    outputs:
+      tag_name: ${{ steps.create-tag.outputs.tag_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install git-cliff
+        uses: taiki-e/install-action@git-cliff
+      - name: Generate CHANGELOG.md
+        run: git-cliff -o CHANGELOG.md
+      - name: Commit and push changelog
+        run: |-
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git diff --cached --quiet || git commit -m "chore(changelog): regenerate data [skip ci]"
+          git push
+      - name: Create tag from version
+        id: create-tag
+        run: |
+          VERSION=$(grep -m1 "^## " CHANGELOG.md | sed 's/## \[//; s/\].*//')
+          if [ "$VERSION" = "unreleased" ] || [ "$VERSION" = "continuous-release" ]; then
+            TAG="continuous-release"
+            git tag -f "$TAG"
+            git push -f origin "$TAG"
+          else
+            TAG="v$VERSION"
+            git tag "$TAG"
+            git push origin "$TAG"
+          fi
+          echo "tag_name=$TAG" >> $GITHUB_OUTPUT
+  release:
+    needs: regenerate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: pride-flags
+          path: dist/flags/
+      - uses: actions/download-artifact@v4
+        with:
+          name: pride-flavours
+          path: dist/flavours/
       - name: Create GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/release/**/*
+          files: |
+            dist/flags/*
+            dist/flavours/*
           draft: false
           generate_release_notes: true
+          tag_name: ${{ needs.regenerate.outputs.tag_name }}
+          body: |-
+            ## 🚩 Flags
+            Download individual flag `.tar.xz` files as needed:
+            - `flags_mocha.tar.xz`
+            - `flags_latte.tar.xz`
+            - etc.
+
+            ## 🎨 Flavours
+            Download individual flavour `.tar.xz` files as needed:
+            - `flavours_mocha.tar.xz`
+            - `flavours_latte.tar.xz`
+            - etc.

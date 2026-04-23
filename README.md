@@ -1,14 +1,16 @@
 <h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px" alt="Spacer"/>
 	Catppuccin for Pride Flags
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
+
+[![Build & Release](https://github.com/scarcekoi/pride-flags/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/scarcekoi/pride-flags/actions/workflows/build-and-release.yml)
+<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px"/>
 </h3>
 
 <p align="center">
-	<a href="https://github.com/scarcekoi/pride-flags/stargazers"><img src="https://img.shields.io/github/stars/scarcekoi/pride-flags?colorA=363a4f&colorB=b7bdf8&style=for-the-badge"></a>
-	<a href="https://github.com/scarcekoi/pride-flags/issues"><img src="https://img.shields.io/github/issues/scarcekoi/pride-flags?colorA=363a4f&colorB=f5a97f&style=for-the-badge"></a>
-	<a href="https://github.com/scarcekoi/pride-flags/contributors"><img src="https://img.shields.io/github/contributors/scarcekoi/pride-flags?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+	<a href="https://github.com/scarcekoi/pride-flags/stargazers"><img src="https://img.shields.io/github/stars/scarcekoi/pride-flags?colorA=363a4f&colorB=b7bdf8&style=for-the-badge" alt="Stargazers"></a>
+	<a href="https://github.com/scarcekoi/pride-flags/issues"><img src="https://img.shields.io/github/issues/scarcekoi/pride-flags?colorA=363a4f&colorB=f5a97f&style=for-the-badge" alt="Issues"></a>
+	<a href="https://github.com/scarcekoi/pride-flags/contributors"><img src="https://img.shields.io/github/contributors/scarcekoi/pride-flags?colorA=363a4f&colorB=a6da95&style=for-the-badge" alt="Contributors"></a>
 </p>
 
 ## Previews
@@ -164,10 +166,10 @@
 </details>
 
 <details closed>
-<summary>Polyamorous - Red Howell, 1995</summary>
-<img src="assets/composite/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 composite" style="width:50%;"/>
-<img src="assets/grid/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 grid" style="width:50%;"/>
-<img src="assets/row/polyam-howell.webp" alt="Polyamorous - Red Howell, 1995 row" style="width:50%;"/>
+<summary>Polyamorous - Red Howell, 2022</summary>
+<img src="assets/composite/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 composite" style="width:50%;"/>
+<img src="assets/grid/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 grid" style="width:50%;"/>
+<img src="assets/row/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 row" style="width:50%;"/>
 </details>
 
 <details closed>
@@ -259,7 +261,7 @@
 - Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappé/lesbian/), [Latte](themes/latte/lesbian/))
 - Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/), [Latte](themes/latte/pansexual/))
 - Polyamorous - Jim Evans, 1995 ([Mocha](themes/mocha/polyam-evans/), [Macchiato](themes/macchiato/polyam-evans/), [Frappé](themes/frappé/polyam-evans/), [Latte](themes/latte/polyam-evans/))
-- Polyamorous - Red Howell, 1995 ([Mocha](themes/mocha/polyam-howell/), [Macchiato](themes/macchiato/polyam-howell/), [Frappé](themes/frappé/polyam-howell/), [Latte](themes/latte/polyam-howell/))
+- Polyamorous - Red Howell, 2022 ([Mocha](themes/mocha/polyam-howell/), [Macchiato](themes/macchiato/polyam-howell/), [Frappé](themes/frappé/polyam-howell/), [Latte](themes/latte/polyam-howell/))
 - Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
 - Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frappé/sapphic/), [Latte](themes/latte/sapphic/))
 - Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frappé/womasexual/), [Latte](themes/latte/womasexual/))
