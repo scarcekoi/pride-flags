@@ -12,6 +12,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import yaml
 
 from PIL import Image
@@ -21,7 +22,6 @@ from io import StringIO
 from multiprocessing import cpu_count
 from pathlib import Path
 from shutil import which
-from tqdm import tqdm
 
 # --- Constants ---
 FLAVOURS = ["latte", "frappe", "macchiato", "mocha"]
@@ -34,6 +34,8 @@ CATEGORIES_FILE = Path("resources/categories.yml")
 README_FILE = Path("README.md")
 THEMES_DIR = Path("themes")
 CANONICAL_HEIGHT = 1000
+MAX_CONVERT_RETRIES = 10
+CONVERT_RETRY_DELAY = 1
 
 EXPORT_FORMATS = ["ase", "aseprite", "bmp", "flc", "jpeg", "jpg", "pcx", "pcc",
                   "qoi", "tga", "webp"]
@@ -168,22 +170,32 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
 
 def m_convert_png_to_format(p_png: Path, p_fmt: str, p_aseprite: str,
                             p_convert: str) -> bool:
-    """Convert PNG to a specific format."""
+    """Convert PNG to a specific format with retry logic."""
     l_output = p_png.with_suffix(f".{p_fmt}")
 
-    if p_fmt in ASEPRITE_FORMATS:
-        l_cmd = [p_aseprite, "-b", str(p_png), "--save-as", str(l_output)]
-    elif p_fmt == "webp":
-        l_cmd = [p_convert, str(p_png), "-define", "webp:lossless=true",
-                 str(l_output)]
-    else:
-        l_cmd = [p_convert, str(p_png), str(l_output)]
+    for l_attempt in range(MAX_CONVERT_RETRIES):
+        if p_fmt in ASEPRITE_FORMATS:
+            l_cmd = [p_aseprite, "-b", str(p_png), "--save-as", str(l_output)]
+        elif p_fmt == "webp":
+            l_cmd = [p_convert, str(p_png), "-define", "webp:lossless=true",
+                     str(l_output)]
+        else:
+            l_cmd = [p_convert, str(p_png), str(l_output)]
 
-    try:
-        subprocess.run(l_cmd, capture_output=True, timeout=10, check=True)
-        return True
-    except subprocess.CalledProcessError:
-        return False
+        try:
+            subprocess.run(l_cmd, capture_output=True, timeout=10, check=True)
+            return True
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as e:
+            if l_attempt < MAX_CONVERT_RETRIES - 1:
+                time.sleep(
+                    CONVERT_RETRY_DELAY * (2 ** l_attempt))
+            else:
+                print(
+                    f"  ✗ {p_fmt} failed for {p_png.name} after {MAX_CONVERT_RETRIES} attempts...BWEH >.<\n{e}",
+                    file=sys.stderr)
+                return False
+
+    return False
 
 
 def m_export_flag(p_flag: str, p_parent: str, p_theme: Path, p_aseprite: str,
@@ -235,18 +247,15 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
             for l_f, l_p, l_t in l_work
         }
 
-        with tqdm(total=len(l_futures), unit="combo",
-                  desc="exporting") as l_pbar:
-            for l_future in as_completed(l_futures):
-                l_flag, l_theme, l_count = l_future.result()
-                l_ok = l_count == len(EXPORT_FORMATS)
-                l_sym = "✓" if l_ok else ("⚠" if l_count > 0 else "✗")
-                l_pbar.update(1)
-                l_pbar.write(
-                    f"{l_sym} {l_flag}/{l_theme}: {l_count}/{len(EXPORT_FORMATS)}")
+        for l_future in as_completed(l_futures):
+            l_flag, l_theme, l_count = l_future.result()
+            l_ok = l_count == len(EXPORT_FORMATS)
 
-                if not l_ok:
-                    l_failed.append((l_flag, l_theme))
+            if not l_ok:
+                l_sym = "⚠" if l_count > 0 else "✗"
+                print(
+                    f"{l_sym} {l_flag}/{l_theme}: {l_count}/{len(EXPORT_FORMATS)}")
+                l_failed.append((l_flag, l_theme))
 
     if l_failed:
         print(f"\n✗ {len(l_failed)} exports incomplete", file=sys.stderr)
@@ -335,18 +344,12 @@ def m_stage_composite(p_flags: dict[str, str]) -> bool:
             for l_f, l_p, l_l in l_work
         }
 
-        with tqdm(total=len(l_futures), unit="composite",
-                  desc="compositing") as l_pbar:
-            for l_future in as_completed(l_futures):
-                l_status, l_ok, l_err = l_future.result()
-                l_sym = "✓" if l_ok else "✗"
-                l_pbar.update(1)
-                l_pbar.write(f"{l_sym} {l_status}" + (
-                    f" ({l_err[:40]})" if not l_ok else ""))
+        for l_future in as_completed(l_futures):
+            l_status, l_ok, l_err = l_future.result()
 
-                if not l_ok:
-                    l_flag, l_layout = l_futures[l_future]
-                    l_failed.append((l_flag, l_layout, l_err))
+            if not l_ok:
+                l_flag, l_layout = l_futures[l_future]
+                l_failed.append((l_flag, l_layout, l_err))
 
     if l_failed:
         print(f"\n✗ {len(l_failed)}/{len(l_work)} composites didn't work out",
@@ -397,16 +400,11 @@ def m_stage_optimize() -> bool:
         l_futures = {l_executor.submit(m_optimize_file, l_f): l_f for l_f in
                      l_files}
 
-        with tqdm(total=len(l_futures), unit="file",
-                  desc="optimizing") as l_pbar:
-            for l_future in as_completed(l_futures):
-                l_path, l_ok, l_err = l_future.result()
-                l_sym = "✓" if l_ok else "✗"
-                l_pbar.update(1)
-                l_pbar.write(f"{l_sym} {l_path.name}" + (
-                    f" ({l_err[:35]})" if not l_ok else ""))
-                if not l_ok:
-                    l_failed.append((l_path, l_err))
+        for l_future in as_completed(l_futures):
+            l_path, l_ok, l_err = l_future.result()
+
+            if not l_ok:
+                l_failed.append((l_path, l_err))
 
     if l_failed:
         print(f"\n✗ {len(l_failed)}/{len(l_files)} optimizations hit a snag",
@@ -514,8 +512,7 @@ def m_create_theme_archives() -> bool:
 
     print(f"packaging {len(FLAVOURS)} themes...")
     l_failed = []
-
-    for l_theme in tqdm(FLAVOURS, desc="themes", unit="theme"):
+    for l_theme in FLAVOURS:
         l_src = THEMES_DIR / l_theme
         l_dest = FLAVOURS_DIR / f"{l_theme}.tar.xz"
 
@@ -533,9 +530,9 @@ def m_create_theme_archives() -> bool:
 
         if l_result.returncode != 0:
             l_failed.append((l_theme, l_result.stderr))
-            tqdm.write(f"  ✗ {l_theme}")
+            print(f"  ✗ {l_theme}")
         else:
-            tqdm.write(f"  ✓ {l_theme}")
+            print(f"  ✓ {l_theme}")
 
     return _flag_check(l_failed, len(FLAVOURS))
 
@@ -552,12 +549,7 @@ def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
 
     print(f"packaging {len(l_by_parent)} parents...")
     l_failed = []
-
-    for l_parent, l_flags in tqdm(
-        l_by_parent.items(),
-        desc="parents",
-        unit="parent"
-    ):
+    for l_parent, l_flags in l_by_parent.items():
         l_dest = FLAGS_DIR / f"{l_parent}.tar.xz"
         l_dest.unlink(missing_ok=True)
 
@@ -573,7 +565,7 @@ def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
                     l_tar_paths.append(str(l_rel))
 
         if not l_tar_paths:
-            tqdm.write(f"  ⚠ {l_parent} has no assets")
+            print(f"  ⚠ {l_parent} has no assets")
             continue
 
         l_result = subprocess.run(
@@ -586,9 +578,9 @@ def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
 
         if l_result.returncode != 0:
             l_failed.append((l_parent, l_result.stderr))
-            tqdm.write(f"  ✗ {l_parent}")
+            print(f"  ✗ {l_parent}")
         else:
-            tqdm.write(f"  ✓ {l_parent}")
+            print(f"  ✓ {l_parent}")
 
     return _flag_check(l_failed, len(l_by_parent))
 
