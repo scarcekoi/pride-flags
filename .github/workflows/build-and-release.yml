@@ -115,7 +115,7 @@ jobs:
       - name: Create tag from version
         id: create-tag
         run: |-
-          VERSION=$(grep '^version = ' pyproject.toml | sed 's/version = "\(.*\)"/\1/')
+          VERSION=$(awk -F'"' '/version = / {gsub(/[[:space:]]/, "", $2); print $2}' pyproject.toml)
           TAG="v$VERSION"
           git tag -f "$TAG"
           git push -f origin "$TAG"
