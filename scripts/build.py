@@ -673,7 +673,6 @@ def main() -> int:
 
     l_flags = m_load_flags()
 
-    # Stage definitions
     l_stages = {
         "templates": m_process_templates,
         "export": lambda: m_stage_export(l_flags),
