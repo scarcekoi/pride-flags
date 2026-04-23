@@ -514,7 +514,7 @@ def m_create_theme_archives() -> bool:
     l_failed = []
     for l_theme in FLAVOURS:
         l_src = THEMES_DIR / l_theme
-        l_dest = FLAVOURS_DIR / f"{l_theme}.tar.xz"
+        l_dest = FLAVOURS_DIR / f"flavours_{l_theme}.tar.xz"
 
         if not l_src.exists():
             print(f"  ⚠ {l_theme} not found", file=sys.stderr)
@@ -550,7 +550,7 @@ def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
     print(f"packaging {len(l_by_parent)} parents...")
     l_failed = []
     for l_parent, l_flags in l_by_parent.items():
-        l_dest = FLAGS_DIR / f"{l_parent}.tar.xz"
+        l_dest = FLAGS_DIR / f"flags_{l_parent}.tar.xz"
         l_dest.unlink(missing_ok=True)
 
         l_tar_paths = []

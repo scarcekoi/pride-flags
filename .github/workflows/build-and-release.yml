@@ -138,7 +138,7 @@ jobs:
           draft: false
           generate_release_notes: true
           tag_name: ${{ needs.regenerate.outputs.tag_name }}
-          body: |
+          body: |-
             ## 🚩 Flags
             Download individual flag `.tar.xz` files as needed:
             - `flags_mocha.tar.xz`
