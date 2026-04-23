@@ -15,6 +15,7 @@ exclude = [
 [formatting]
   align_entries         = true
   align_comments        = true
+  align_single_comments = true
   array_trailing_comma  = true
   array_auto_expand     = true
   array_auto_collapse   = true
@@ -34,7 +35,7 @@ exclude = [
   crlf                  = false
 
 [[rule]]
-  include = [ "taplo.toml", ".taplo.toml" ]
+  include = [ "taplo.toml", ".taplo.toml", "pyproject.toml" ]
   keys    = [ "exclude" ]
 
   [rule.formatting]

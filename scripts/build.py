@@ -1,30 +1,23 @@
-"""
-Asset pipeline: templates → exports → composites → optimisation.
-Subcommands: templates, export, composite, optimise, all.
-"""
+"""This is the main build script :3"""
 
 import argparse
-import json
-import json
 import os
 import re
-import shutil
 import subprocess
 import sys
-import tarfile
-import tempfile
 import time
 import xml.etree.ElementTree as ElementTree
-import yaml
-
-from PIL import Image
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from glob import glob
 from io import StringIO
 from multiprocessing import cpu_count
 from pathlib import Path
-from playwright.sync_api import sync_playwright
-from shutil import which
+from shutil import rmtree, which
+from typing import cast
+
+import yaml
+from PIL import Image
+from playwright.sync_api import sync_playwright, ViewportSize
 
 # --- Constants ---
 FLAVOURS = ["latte", "frappe", "macchiato", "mocha"]
@@ -73,7 +66,7 @@ def m_load_flags() -> dict[str, str]:
 
 
 def m_get_svg_dimensions(p_svg_path: Path) -> tuple[int, int] | None:
-    """Extract width and height from SVG file. Returns (width, height) or None."""
+    """Extract width and height from the SVG file. Returns (width, height) or None."""
     try:
         tree = ElementTree.parse(p_svg_path)
         root = tree.getroot()
@@ -116,8 +109,6 @@ def m_scan_flag_dimensions(p_parent: str, p_flavours: list[str]) -> tuple[
     with Image.open(l_files[0]) as l_img:
         return l_img.width, l_img.height
 
-    return None
-
 
 def m_get_image_paths(p_flag: str, p_parent: str, p_flavours: list[str]) -> \
     dict[str, str]:
@@ -141,7 +132,7 @@ def m_get_image_paths(p_flag: str, p_parent: str, p_flavours: list[str]) -> \
 # --- Stage 1: Generate SVGs - Whiskers ---
 def m_process_templates() -> bool:
     """Process .tera files with whiskers."""
-    shutil.rmtree(THEMES_DIR, ignore_errors=True)
+    rmtree(THEMES_DIR, ignore_errors=True)
     THEMES_DIR.mkdir(parents=True, exist_ok=True)
 
     l_templates_dir = Path(__file__).resolve().parent.parent / "templates"
@@ -185,9 +176,6 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
     """Convert SVG to PNG using Playwright with retry logic. Returns path or None on fail."""
     l_png_path = p_svg_path.with_suffix(".png")
     try:
-        from playwright.sync_api import sync_playwright
-        import time
-
         l_dims = m_get_svg_dimensions(p_svg_path)
         if not l_dims:
             print(f"Could not determine SVG dimensions: {p_svg_path.name}",
@@ -201,9 +189,21 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
                 with sync_playwright() as p:
                     browser = p.chromium.launch()
                     page = browser.new_page(
-                        viewport={"width": l_width, "height": l_height})
-                    page.goto(f"file://{p_svg_path.resolve()}",
-                              wait_until="networkidle")
+                        viewport=cast(
+                            ViewportSize,
+                            cast(
+                                object,
+                                {
+                                    "width": l_width,
+                                    "height": l_height
+                                }
+                            )
+                        )
+                    )
+                    page.goto(
+                        f"file://{p_svg_path.resolve()}",
+                        wait_until="networkidle"
+                    )
                     page.screenshot(path=str(l_png_path))
                     browser.close()
                 return l_png_path
@@ -367,9 +367,9 @@ def m_run_catwalk(
         return f"{p_flag}:{p_layout}", False, f"Image processing failed: {e}"
 
 
-def m_stage_composite(p_flags: dict[str, str]) -> bool:
+def m_stage_catwalk(p_flags: dict[str, str]) -> bool:
     """Generate composite assets via catwalk."""
-    shutil.rmtree(ASSETS_DIR, ignore_errors=True)
+    rmtree(ASSETS_DIR, ignore_errors=True)
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 
     for layout in COMPOSITE_LAYOUTS:
@@ -495,7 +495,7 @@ def m_stage_update_readme() -> bool:
         if not l_cat_flags[l_key]:
             continue
 
-        l_lines.append("<details closed>")
+        l_lines.append("<details>")
         l_lines.append(f"<summary>{l_name}</summary>\n")
 
         for l_flag_key, l_flag_name in l_cat_flags[l_key]:
@@ -532,7 +532,7 @@ def m_stage_update_readme() -> bool:
     for l_flag_key, l_flag_info in l_sorted_flags:
         l_flag_name = l_flag_info["name"]
         l_buf.write(
-            f"<details closed>\n"
+            f"<details>\n"
             f"<summary>{l_flag_name}</summary>\n"
             f'<img src="assets/composite/{l_flag_key}.webp" alt="{l_flag_name} composite" style="width:50%;"/>\n'
             f'<img src="assets/grid/{l_flag_key}.webp" alt="{l_flag_name} grid" style="width:50%;"/>\n'
@@ -632,10 +632,10 @@ def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
     return _flag_check(l_failed, len(l_by_parent))
 
 
-def m_stage_package_archives(p_flags: dict[str, str]) -> bool:
+def m_stage_package(p_flags: dict[str, str]) -> bool:
     """Create tar.xz archives for themes and flags."""
 
-    shutil.rmtree(DIST_DIR, ignore_errors=True)
+    rmtree(DIST_DIR, ignore_errors=True)
     (DIST_DIR / "flavours").mkdir(parents=True, exist_ok=True)
     (DIST_DIR / "flags").mkdir(parents=True, exist_ok=True)
 
@@ -657,7 +657,7 @@ def main() -> int:
     subparsers = parser.add_subparsers(dest='command',
                                        help='available commands')
 
-    subparsers.add_parser('templates', help='Process templates')
+    subparsers.add_parser('whiskers', help='Process whiskers templates')
     subparsers.add_parser('export', help='Export flags')
     subparsers.add_parser('composite', help='Generate composite assets')
     subparsers.add_parser('optimize', help='Optimize images')
@@ -675,12 +675,12 @@ def main() -> int:
 
     # Stage definitions
     l_stages = {
-        "templates": m_process_templates,
+        "whiskers": lambda: m_process_templates(),
         "export": lambda: m_stage_export(l_flags),
-        "composite": lambda: m_stage_composite(l_flags),
-        "optimize": m_stage_optimize,
+        "catwalk": lambda: m_stage_catwalk(l_flags),
+        "optimize": lambda: m_stage_optimize(),
         "readme": lambda: m_stage_update_readme(),
-        "package": lambda: m_stage_package_archives(l_flags),
+        "package": lambda: m_stage_package(l_flags),
     }
 
     if args.command == "all":
