@@ -1,17 +1,27 @@
 [build-system]
-requires = ["setuptools>=65.0"]
-build-backend = "setuptools.build_meta"
+  requires      = [ "uv>=0.1.0" ]
+  build-backend = "uv.build"
 
 [project]
-name = "catppuccin-pride-flags"
-version = "1.0.0"
-description = "Pride flag assets with Catppuccin color theming"
-readme = "README.md"
-license = { text = "MIT" }
-authors = [
-  { name = "scarcekoi" },
-  { name = "ninetailedtori", email = "ninetailedtori@uwu.gal" },
-]
+  name = "catppuccin-pride-flags"
+  version = "1.0.0"
+  description = "Pride flag assets with Catppuccin color theming"
+  readme = "README.md"
+  license = { text = "MIT" }
+  authors = [
+    { name = "scarcekoi" },
+    { name = "ninetailedtori", email = "ninetailedtori@uwu.gal" },
+  ]
+  dependencies = [
+    "catppuccin>=1.0.0",
+    "pillow>=8.0.0",
+    "playwright>=1.40.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.60",
+  ]
 
-[project.urls]
-Repository = "https://github.com/catppuccin/pride-flags"
+  [project.urls]
+    Repository    = "https://github.com/catppuccin/pride-flags"
+    Documentation = "https://github.com/catppuccin/pride-flags#readme"
+    Issues        = "https://github.com/catppuccin/pride-flags/issues"
+    Changelog     = "https://github.com/catppuccin/pride-flags/blob/main/CHANGELOG.md"

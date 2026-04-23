@@ -1,5 +1,0 @@
-catppuccin>=1.0.0
-pillow>=8.0.0
-playwright>=1.40.0
-pyyaml>=6.0
-tqdm>=4.60
