@@ -85,6 +85,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
+    outputs:
+      tag_name: ${{ steps.create-tag.outputs.tag_name }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -101,15 +103,19 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(changelog): regenerate data [skip ci]"
           git push
       - name: Create tag from version
+        id: create-tag
         run: |
           VERSION=$(grep -m1 "^## " CHANGELOG.md | sed 's/## \[//; s/\].*//')
-          if [ "$VERSION" = "unreleased" ]; then
-            git tag -f continuous-release
-            git push -f origin continuous-release
+          if [ "$VERSION" = "unreleased" ] || [ "$VERSION" = "continuous-release" ]; then
+            TAG="continuous-release"
+            git tag -f "$TAG"
+            git push -f origin "$TAG"
           else
-            git tag "v$VERSION"
-            git push origin "v$VERSION"
+            TAG="v$VERSION"
+            git tag "$TAG"
+            git push origin "$TAG"
           fi
+          echo "tag_name=$TAG" >> $GITHUB_OUTPUT
   release:
     needs: regenerate
     runs-on: ubuntu-latest
@@ -125,10 +131,22 @@ jobs:
           path: dist/flavours/
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             dist/flags/*
             dist/flavours/*
           draft: false
           generate_release_notes: true
+          tag_name: ${{ needs.regenerate.outputs.tag_name }}
+          body: |
+            ## 🚩 Flags
+            Download individual flag `.tar.xz` files as needed:
+            - `flags_mocha.tar.xz`
+            - `flags_latte.tar.xz`
+            - etc.
+
+            ## 🎨 Flavours
+            Download individual flavour `.tar.xz` files as needed:
+            - `flavours_mocha.tar.xz`
+            - `flavours_latte.tar.xz`
+            - etc.
