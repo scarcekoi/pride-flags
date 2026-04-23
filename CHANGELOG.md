@@ -441,6 +441,7 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/1679d785085c8199eebce7e66287c83abb2667a0)
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/64b077ab7e43f88f2113ad8d9a959dc5bacfd7de)
 - [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/1af193aa126b7ca352b61376da93190377be9915)
+- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/79d57f3d311ba219473a702f56ec3afa2d71d6ba)
 
 #### Cliff
 
