@@ -65,7 +65,7 @@ flags:
     parent: polyam
     categories: [attraction]
   polyam-howell:
-    name: Polyamorous - Red Howell, 1995
+    name: Polyamorous - Red Howell, 2022
     parent: polyam
     categories: [attraction]
   polysexual:
@@ -80,11 +80,19 @@ flags:
   transfeminine:
     name: Transfeminine
     categories: [gender, expression]
+  transfeminine-ryanyflags:
+    name: Transfeminine - ryanyflags, 2019
+    parent: transfeminine
+    categories: [gender, expression]
   transgender:
     name: Transgender
     categories: [gender]
   transmasculine:
     name: Transmasculine
+    categories: [gender, expression]
+  transmasculine-ryanyflags:
+    name: Transmasculine - ryanyflags, 2019
+    parent: transmasculine
     categories: [gender, expression]
   trigender:
     name: Trigender
