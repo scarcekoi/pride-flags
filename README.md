@@ -1,4 +1,4 @@
-<h3 style="text-align: center;">
+<h3 align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px" alt="Spacer"/>
 	Catppuccin for Pride Flags
@@ -8,7 +8,7 @@
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="30" width="0px" alt="Spacer"/>
 </h3>
 
-<p style="text-align: center;">
+<p align="center">
 	<a href="https://github.com/scarcekoi/pride-flags/stargazers"><img src="https://img.shields.io/github/stars/scarcekoi/pride-flags?colorA=363a4f&colorB=b7bdf8&style=for-the-badge" alt="Stargazers"></a>
 	<a href="https://github.com/scarcekoi/pride-flags/issues"><img src="https://img.shields.io/github/issues/scarcekoi/pride-flags?colorA=363a4f&colorB=f5a97f&style=for-the-badge" alt="Issues"></a>
 	<a href="https://github.com/scarcekoi/pride-flags/contributors"><img src="https://img.shields.io/github/contributors/scarcekoi/pride-flags?colorA=363a4f&colorB=a6da95&style=for-the-badge" alt="Contributors"></a>
