@@ -1,3 +1,23 @@
+## [unreleased]
+
+### 🚀 Features
+
+
+### 📚 Documentation
+
+
+#### README
+
+- [Center alignment](https://codeberg.org/scarcekoi/pride-flags/commit/98e4a39c798646f59b3a0f7b2693cdf9372c0e21)
+## [1.0.0] - 2026-04-23
+
+
+### ⚙️ Chores
+
+
+#### Changelog
+
+- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/c98f0c21ebd0b17ac93add141823af1a9230901e)
 ## [] - 2026-04-23
 
 
