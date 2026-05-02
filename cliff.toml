@@ -13,13 +13,13 @@
 {% if scope %}
 #### {{ scope | upper_first }}{% endif %}
 {% for commit in scoped_commits %}
-- {% if commit.breaking %}[**breaking**] {% endif %}[{{ commit.message | upper_first }}](https://codeberg.org/scarcekoi/pride-flags/commit/{{ commit.id }}){% endfor %}{% endfor %}
+- {% if commit.breaking %}[**breaking**] {% endif %}[{{ commit.message | upper_first }}](https://github.com/scarcekoi/pride-flags/commit/{{ commit.id }}){% endfor %}{% endfor %}
 {% endfor %}
 """
   trim = true
   render_always = true
   link_commits = true
-  commit_url = "https://codeberg.org/scarcekoi/pride-flags/commit/{{hash}}"
+  commit_url = "https://github.com/scarcekoi/pride-flags/commit/{{hash}}"
 
 [git]
   conventional_commits = true
