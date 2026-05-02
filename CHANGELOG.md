@@ -1,3 +1,11 @@
+## [unreleased]
+
+### ⚙️ Chores
+
+
+#### Changelog
+
+- [Regenerate [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/2fb4e8fe3ffd4fdc37aa2042399da65ba377d7ee)
 ## [1.0.0] - 2026-05-02
 
 
