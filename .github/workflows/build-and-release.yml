@@ -53,18 +53,8 @@ jobs:
         if: steps.cache-build.outputs.cache-hit != true
         run: |-
           sudo apt-get update
-          sudo apt-get install -y flatpak imagemagick jpegoptim optipng xz-utils
+          sudo apt-get install -y jpegoptim optipng xz-utils
           npm install -g svgo
-      - name: Install libresprite
-        if: steps.cache-build.outputs.cache-hit != true
-        run: |-
-          sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-          sudo flatpak install -y flathub com.github.libresprite.LibreSprite
-          sudo tee /usr/local/bin/libresprite > /dev/null <<'EOF'
-          #!/bin/bash
-          flatpak run com.github.libresprite.LibreSprite "$@"
-          EOF
-          sudo chmod +x /usr/local/bin/libresprite
       - name: Setup Whiskers
         if: steps.cache-build.outputs.cache-hit != true
         uses: catppuccin/setup-whiskers@v2

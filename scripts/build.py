@@ -116,7 +116,7 @@ def m_scan_flag_dimensions(
 def m_get_image_paths(
     p_flag: str, p_parent: str, p_flavours: list[str]
 ) -> dict[str, str]:
-    """Get webp for each flavour, checking subdirectory if flag != parent."""
+    """Get webp for each flavour, checking subdirectory if `flag != parent`."""
     l_paths = {}
 
     for l_f in p_flavours:
@@ -140,7 +140,7 @@ def m_report_whiskers_result(
     """Report the result from Whiskers, then return success status."""
     if l_failed:
         print(
-            f"\nuh oh—{len(l_failed)}/{l_total} on whiskers {l_stage} borked:",
+            f"\nuh oh—{len(l_failed)}/{l_total} on whiskers {l_stage} failed:",
             file=sys.stderr,
         )
         for l_path, l_err in l_failed:

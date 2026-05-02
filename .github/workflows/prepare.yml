@@ -24,7 +24,7 @@ jobs:
       - run: uv sync --all-extras
         if: steps.cache-uv.outputs.cache-hit != true
       - run: yamllint  $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
-      - run: uv run ruff check scripts/
+      - run: uv run ruff check scripts/build.py
       - run: uv run mypy scripts/build.py
   changelog:
     needs: lint
@@ -60,7 +60,7 @@ jobs:
       - run: uv sync --all-extras
       - run: yamlfix . --exclude=".github/**"
       - run: taplo format $(find . -name '*.toml' | grep -v '.github/')
-      - run: mdformat
+      - run: mdformat .
       - run: uv run ruff format scripts/build.py
       - run: |
           git config user.name "github-actions[bot]"
