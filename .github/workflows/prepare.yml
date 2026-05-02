@@ -23,7 +23,7 @@ jobs:
           restore-keys: ${{ runner.os }}-uv-
       - run: uv sync --all-extras
         if: steps.cache-uv.outputs.cache-hit != true
-      - run: yamllint  $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
+      - run: uv run yamllint  $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
       - run: uv run ruff check scripts/build.py
       - run: uv run mypy scripts/build.py
   changelog:
@@ -34,7 +34,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: taiki-e/install-action@git-cliff
-      - run: git-cliff -o CHANGELOG.md
+      - run: git-cliff -v -o CHANGELOG.md
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -58,16 +58,16 @@ jobs:
           key: ${{ runner.os }}-uv-${{ hashFiles('pyproject.toml') }}
           restore-keys: ${{ runner.os }}-uv-
       - run: uv sync --all-extras
-      - run: yamlfix . --exclude=".github/**"
+      - run: uv run yamlfix . --exclude=".github/**"
       - run: taplo format $(find . -name '*.toml' | grep -v '.github/')
-      - run: mdformat .
+      - run: uv run mdformat .
       - run: uv run ruff format scripts/build.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A ':!.github/**'
           if ! git diff --cached --quiet; then
-            git commit -m "style: auto-format YAML, TOML, Markdown, Python [skip ci]"
+            git commit -m "style: format files [skip ci]"
             git push
           fi
   tag:

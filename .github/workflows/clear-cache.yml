@@ -1,0 +1,23 @@
+---
+name: Clear All Caches
+
+on:
+  workflow_dispatch: null
+
+permissions:
+  actions: write
+
+jobs:
+  clear-all-caches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete all caches
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |-
+          echo "Listing all caches..."
+          gh cache list -R ${{ github.repository }} --json name -q '.[].name' | while read cache; do
+            echo "Deleting: $cache"
+            gh cache delete "$cache" -R ${{ github.repository }} --confirm
+          done
+          echo "Cache deletion complete"
