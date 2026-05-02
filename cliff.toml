@@ -20,14 +20,12 @@
   render_always = true
   link_commits = true
   commit_url = "https://codeberg.org/scarcekoi/pride-flags/commit/{{hash}}"
-  postprocessors = [  ]
 
 [git]
   conventional_commits = true
   filter_unconventional = true
   require_conventional = false
   split_commits = false
-  commit_preprocessors = [  ]
   protect_breaking_commits = false
   commit_parsers = [
     { message = "^feat", group = "<!-- 0 -->🚀 Features" },
@@ -50,7 +48,6 @@
   ]
   filter_commits = false
   fail_on_unmatched_commit = false
-  link_parsers = [  ]
   use_branch_tags = false
   topo_order = false
   topo_order_commits = true
