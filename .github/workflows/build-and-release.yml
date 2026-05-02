@@ -103,7 +103,7 @@ jobs:
       - name: Get tag name
         id: tag
         run: |-
-          VERSION=$(awk -F'"' '/version = / {gsub(/[[:space:]]/, "", $2); print $2}' pyproject.toml)
+          VERSION=$(awk -F'"' '/version = / {gsub(/[[:space:]]/, "", $2); print $2; exit}' pyproject.toml)
           TAG="v$VERSION"
           echo "tag_name=$TAG" >> $GITHUB_OUTPUT
       - name: Create GitHub Release
