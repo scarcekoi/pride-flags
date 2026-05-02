@@ -2,16 +2,15 @@
 
 ### ⚙️ Chores
 
-
 #### Changelog
 
 - [Regenerate [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/2fb4e8fe3ffd4fdc37aa2042399da65ba377d7ee)
 - [Regenerate [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/8bb1e4cbbbe0940db8f13cb73569d7ff35a056d0)
+- [Regenerate [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/04baeb30538e3232bb6ea332a8b1fa2969368109)
+
 ## [1.0.0] - 2026-05-02
 
-
 ### 🚀 Features
-
 
 #### Aroace
 
@@ -117,7 +116,6 @@
 
 ### 🐛 Bug Fixes
 
-
 #### Asexual
 
 - [Remove s](https://codeberg.org/scarcekoi/pride-flags/commit/1b23f1524ffd6d2c84f6905e24f5eb4a99d01d7d)
@@ -157,7 +155,6 @@
 - [Update latte colours](https://codeberg.org/scarcekoi/pride-flags/commit/a5caa1d218727e16a45d5ddf36ee13c8a20a62c4)
 
 ### ⚙️ CI/CD
-
 
 #### Regenerate
 
@@ -241,9 +238,7 @@
 
 ### 🔀 Merges
 
-
 ### 🚜 Refactor
-
 
 #### Aroace
 
@@ -290,7 +285,6 @@
 
 ### 📚 Documentation
 
-
 #### README
 
 - [Update credits](https://codeberg.org/scarcekoi/pride-flags/commit/1ab8ee0c970e7c29c38467cef5797f4b54e45ad2)
@@ -327,7 +321,6 @@
 
 ### 🎨 Styling
 
-
 #### Bisexual
 
 - [Update top colour](https://codeberg.org/scarcekoi/pride-flags/commit/feb1bfd9715dafd22711acb6e5ea08c4751e77f4)
@@ -357,7 +350,6 @@
 - [Change colours](https://codeberg.org/scarcekoi/pride-flags/commit/1ca70b2bd430b32ae2acbfd3a6d574dd0e7c7985)
 
 ### ⚙️ Chores
-
 
 #### ISSUE_TEMPLATE
 
@@ -540,4 +532,3 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/8711358accd511ea3d9c4a4bf439096cef483c51)
 
 ### ◀️ Revert
-
