@@ -1,35 +1,8 @@
-## [unreleased]
+## [1.0.0] - 2026-05-02
 
-### ⚙️ Chores
-
-## [1.0.0] - 2026-04-24
 
 ### 🚀 Features
 
-### 📚 Documentation
-
-#### README
-
-- [Center alignment](https://codeberg.org/scarcekoi/pride-flags/commit/98e4a39c798646f59b3a0f7b2693cdf9372c0e21)
-
-### ⚙️ Chores
-
-#### Changelog
-
-- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/c98f0c21ebd0b17ac93add141823af1a9230901e)
-- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/3a367e8a06e3d47b35b465d984cdbc31499c0a36)
-
-## [] - 2026-04-23
-
-### ⚙️ Chores
-
-#### Changelog
-
-- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/a016010a61febf5639eb0a5c6ffa5f9569f9b823)
-
-## [continuous-release] - 2026-04-23
-
-### 🚀 Features
 
 #### Aroace
 
@@ -135,6 +108,7 @@
 
 ### 🐛 Bug Fixes
 
+
 #### Asexual
 
 - [Remove s](https://codeberg.org/scarcekoi/pride-flags/commit/1b23f1524ffd6d2c84f6905e24f5eb4a99d01d7d)
@@ -174,6 +148,7 @@
 - [Update latte colours](https://codeberg.org/scarcekoi/pride-flags/commit/a5caa1d218727e16a45d5ddf36ee13c8a20a62c4)
 
 ### ⚙️ CI/CD
+
 
 #### Regenerate
 
@@ -257,7 +232,9 @@
 
 ### 🔀 Merges
 
+
 ### 🚜 Refactor
+
 
 #### Aroace
 
@@ -304,11 +281,13 @@
 
 ### 📚 Documentation
 
+
 #### README
 
 - [Update credits](https://codeberg.org/scarcekoi/pride-flags/commit/1ab8ee0c970e7c29c38467cef5797f4b54e45ad2)
 - [Update](https://codeberg.org/scarcekoi/pride-flags/commit/ee0b7bb44e1e1314e83b71d82009bc992b50a15e)
 - [Fix](https://codeberg.org/scarcekoi/pride-flags/commit/e9d168d77bd8153db692d3aeeb906ff1961cdbc8)
+- [Center alignment](https://codeberg.org/scarcekoi/pride-flags/commit/98e4a39c798646f59b3a0f7b2693cdf9372c0e21)
 
 #### Contributing
 
@@ -339,6 +318,7 @@
 
 ### 🎨 Styling
 
+
 #### Bisexual
 
 - [Update top colour](https://codeberg.org/scarcekoi/pride-flags/commit/feb1bfd9715dafd22711acb6e5ea08c4751e77f4)
@@ -368,6 +348,7 @@
 - [Change colours](https://codeberg.org/scarcekoi/pride-flags/commit/1ca70b2bd430b32ae2acbfd3a6d574dd0e7c7985)
 
 ### ⚙️ Chores
+
 
 #### ISSUE_TEMPLATE
 
@@ -462,6 +443,10 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/64b077ab7e43f88f2113ad8d9a959dc5bacfd7de)
 - [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/1af193aa126b7ca352b61376da93190377be9915)
 - [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/79d57f3d311ba219473a702f56ec3afa2d71d6ba)
+- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/a016010a61febf5639eb0a5c6ffa5f9569f9b823)
+- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/c98f0c21ebd0b17ac93add141823af1a9230901e)
+- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/3a367e8a06e3d47b35b465d984cdbc31499c0a36)
+- [Regenerate data [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/48e7198bc8524cd407243b81574c4332dbdb5a33)
 
 #### Cliff
 
@@ -546,3 +531,4 @@
 - [Regenerate data](https://codeberg.org/scarcekoi/pride-flags/commit/8711358accd511ea3d9c4a4bf439096cef483c51)
 
 ### ◀️ Revert
+
