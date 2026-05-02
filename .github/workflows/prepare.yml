@@ -1,4 +1,3 @@
----
 name: Prepare
 
 on:
@@ -26,30 +25,17 @@ jobs:
       - run: uv run yamllint  $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
       - run: uv run ruff check scripts/build.py
       - run: uv run mypy scripts/build.py
-  changelog:
+
+  prepare:
     needs: lint
     runs-on: ubuntu-latest
+    outputs:
+      tag_name: ${{ steps.create-tag.outputs.tag_name }}
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - uses: taiki-e/install-action@git-cliff
-      - run: git-cliff -v -o CHANGELOG.md
-      - run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md
-          if ! git diff --cached --quiet; then
-            git commit -m "chore(changelog): regenerate [skip ci]"
-            git push
-          fi
-  format:
-    needs: changelog
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
       - uses: taiki-e/install-action@taplo
       - uses: astral-sh/setup-uv@v7
       - uses: actions/cache@v5
@@ -58,6 +44,7 @@ jobs:
           key: ${{ runner.os }}-uv-${{ hashFiles('pyproject.toml') }}
           restore-keys: ${{ runner.os }}-uv-
       - run: uv sync --all-extras
+      - run: git-cliff -v -o CHANGELOG.md
       - run: uv run yamlfix . --exclude=".github/**"
       - run: taplo format $(find . -name '*.toml' | grep -v '.github/')
       - run: uv run mdformat .
@@ -66,24 +53,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A ':!.github/**'
-          if ! git diff --cached --quiet; then
-            git commit -m "style: format files [skip ci]"
-            git push
-          fi
-  tag:
-    needs: format
-    runs-on: ubuntu-latest
-    outputs:
-      tag_name: ${{ steps.create-tag.outputs.tag_name }}
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+          git commit -m "chore: changelog and style formatting [skip ci]" || true
       - run: |
-          git pull origin main
           VERSION=$(awk -F'"' '/version = / {gsub(/[[:space:]]/, "", $2); print $2}' pyproject.toml)
           TAG="v$VERSION"
           git tag -f "$TAG"
-          git push -f origin "$TAG"
           echo "tag_name=$TAG" >> $GITHUB_OUTPUT
         id: create-tag
+      - run: git push -f origin main
+      - run: git push -f origin ${{ steps.create-tag.outputs.tag_name }}
