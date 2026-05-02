@@ -2,101 +2,101 @@
 flags:
   agender:
     name: Agender
-    categories: [gender]
+    categories: [pride]
   aroace:
     name: Aromantic Asexual
-    categories: [attraction, orientation, romantic]
+    categories: [pride]
   aromantic:
     name: Aromantic
-    categories: [romantic]
+    categories: [pride]
   asexual:
     name: Asexual
-    categories: [attraction]
+    categories: [pride]
   bisexual:
     name: Bisexual
-    categories: [attraction, orientation]
+    categories: [pride]
   demiboy:
     name: Demiboy
-    categories: [gender, expression]
+    categories: [pride]
   demigender:
     name: Demigender
-    categories: [gender, expression]
+    categories: [pride]
   demigirl:
     name: Demigirl
-    categories: [gender, expression]
+    categories: [pride]
   femboy:
     name: Femboy
-    categories: [gender, expression]
+    categories: [pride]
   finromantic:
     name: Finromantic
-    categories: [attraction, orientation]
+    categories: [pride]
   gay-man:
     name: Gay Men
-    categories: [attraction, orientation]
+    categories: [pride]
   genderfluid:
     name: Genderfluid
-    categories: [gender, fluidity]
+    categories: [pride]
   genderqueer:
     name: Genderqueer
-    categories: [gender, expression]
+    categories: [pride]
   greysexual:
     name: Greysexual
-    categories: [attraction, orientation, other]
+    categories: [pride]
   intersex:
     name: Intersex
-    categories: [gender]
+    categories: [pride]
   lesbian:
     name: Lesbian
-    categories: [attraction, orientation]
+    categories: [pride]
   lgbt:
     name: LGBT
-    categories: [other]
+    categories: [pride]
   neutrois:
     name: Neutrois
-    categories: [gender]
+    categories: [pride]
   nonbinary:
     name: Nonbinary
-    categories: [gender]
+    categories: [pride]
   pansexual:
     name: Pansexual
-    categories: [attraction, orientation, fluidity]
+    categories: [pride]
   polyam-evans:
     name: Polyamorous - Jim Evans, 1995
     parent: polyam
-    categories: [attraction]
+    categories: [pride]
   polyam-howell:
     name: Polyamorous - Red Howell, 2022
     parent: polyam
-    categories: [attraction]
+    categories: [pride]
   polysexual:
     name: Polysexual
-    categories: [attraction, orientation, fluidity]
+    categories: [pride]
   sapphic:
     name: Sapphic
-    categories: [attraction, orientation]
+    categories: [pride]
   transandrogynous:
     name: Transandrogynous
-    categories: [gender, expression]
+    categories: [pride]
   transfeminine:
     name: Transfeminine
-    categories: [gender, expression]
+    categories: [pride]
   transfeminine-ryanyflags:
     name: Transfeminine - ryanyflags, 2019
     parent: transfeminine
-    categories: [gender, expression]
+    categories: [pride]
   transgender:
     name: Transgender
-    categories: [gender]
+    categories: [pride]
   transmasculine:
     name: Transmasculine
-    categories: [gender, expression]
+    categories: [pride]
   transmasculine-ryanyflags:
     name: Transmasculine - ryanyflags, 2019
     parent: transmasculine
-    categories: [gender, expression]
+    categories: [pride]
   trigender:
     name: Trigender
-    categories: [gender, fluidity]
+    categories: [pride]
   womasexual:
     name: Womasexual
-    categories: [attraction, orientation]
+    categories: [pride]
