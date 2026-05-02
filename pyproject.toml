@@ -4,7 +4,7 @@
   description = "Soothing pastel pride flags for everyone!"
   readme = "README.md"
   license = { file = "LICENSE" }
-  requires-python = ">=3.10"
+  requires-python = ">=3.13"
   dependencies = [
     "catppuccin>=1.0.0",
     "pillow>=8.0.0",
@@ -57,7 +57,7 @@
   include        = [ "scripts/build.py" ]
   line-length    = 80
   indent-width   = 4
-  target-version = "py310"
+  target-version = "py313"
 
   [tool.ruff.lint]
     select             = [ "E4", "E7", "E9", "F" ]
@@ -89,7 +89,7 @@
   quote_representation             = '"'
 
 [tool.mypy]
-  python_version = "3.10"
+  python_version = "3.13"
   warn_return_any = true
   warn_unused_configs = true
   exclude = [
