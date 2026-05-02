@@ -18,7 +18,9 @@ jobs:
       - uses: actions/cache@v5
         id: cache-uv
         with:
-          path: ~/.cache/uv
+          path: |
+            ~/.cache/uv
+            .venv
           key: ${{ runner.os }}-uv-${{ hashFiles('pyproject.toml') }}
           restore-keys: ${{ runner.os }}-uv-
       - run: uv sync --all-extras
@@ -26,7 +28,6 @@ jobs:
       - run: uv run yamllint  $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
       - run: uv run ruff check scripts/build.py
       - run: uv run mypy scripts/build.py
-
   prepare:
     needs: lint
     runs-on: ubuntu-latest
