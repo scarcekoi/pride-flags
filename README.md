@@ -356,7 +356,7 @@
 
 1. Download the flags in your flavour of your choice from [themes](themes), or a
    tarball from [releases](https://github.com/scarcekoi/pride-flags/releases).
-2. Enjoy!
+1. Enjoy!
 
 ## 🙋 FAQ
 
@@ -369,7 +369,7 @@
 - [Scarce Koi](https://github.com/scarcekoi)
 - [Toria](https://github.com/ninetailedtori)
 
-&nbsp;
+&#160;
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true"  alt="footer line with cat sitting on it"/>

@@ -12,8 +12,8 @@ from glob import glob
 from io import StringIO
 from multiprocessing import cpu_count
 from pathlib import Path
-from shutil import rmtree, which
-from typing import cast
+from shutil import rmtree
+from typing import cast, Any
 
 import yaml
 from PIL import Image
@@ -32,22 +32,22 @@ THEMES_DIR = Path("themes")
 MAX_CONVERT_RETRIES = 10
 CONVERT_RETRY_DELAY = 1
 
-EXPORT_FORMATS = ["ase", "aseprite", "bmp", "flc", "jpeg", "jpg", "pcx", "pcc",
-                  "qoi", "tga", "webp"]
-ASEPRITE_FORMATS = {"ase", "aseprite", "bmp", "flc", "pcx", "pcc", "tga"}
+EXPORT_FORMATS = [
+    "avif",
+    "bmp",
+    "dds",
+    "jpeg",
+    "pcx",
+    "qoi",
+    "sgi",
+    "tga",
+    "tiff",
+    "webp",
+]
 COMPOSITE_LAYOUTS = ["composite", "grid", "row"]
 
 
 # --- Utility Functions ---
-def m_ensure_tool(*names: str) -> str:
-    """Find and verify that the tool exists, raise a RuntimeError if missing."""
-    for name in names:
-        path = which(name)
-        if path:
-            return path
-    raise RuntimeError(f"One of {names} required but none found in PATH")
-
-
 def m_load_flags() -> dict[str, str]:
     """Load flags → parent directory mapping from YAML."""
     with FLAGS_FILE.open() as f:
@@ -55,8 +55,11 @@ def m_load_flags() -> dict[str, str]:
 
     l_flags = {}
     for l_flag_name, l_config in l_data.get("flags", {}).items():
-        l_parent = l_config.get("parent") if isinstance(l_config,
-                                                        dict) else l_flag_name
+        l_parent = (
+            l_config.get("parent")
+            if isinstance(l_config, dict)
+            else l_flag_name
+        )
         l_flags[l_flag_name] = l_parent or l_flag_name
 
     return l_flags
@@ -68,16 +71,18 @@ def m_get_svg_dimensions(p_svg_path: Path) -> tuple[int, int] | None:
         tree = ElementTree.parse(p_svg_path)
         root = tree.getroot()
 
-        width = root.get('width')
-        height = root.get('height')
+        w_str = root.get("width")
+        h_str = root.get("height")
 
-        if width and height:
-            width = int(float(width.rstrip('px')))
-            height = int(float(height.rstrip('px')))
-            return width, height
+        if w_str and h_str:
+            w_int = int(float(w_str.rstrip("px")))
+            h_int = int(float(h_str.rstrip("px")))
+            return w_int, h_int
     except Exception as p_e:
-        print(f"Failed to parse SVG dimensions from {p_svg_path.name}: {p_e}",
-              file=sys.stderr)
+        print(
+            f"Failed to parse SVG dimensions from {p_svg_path.name}: {p_e}",
+            file=sys.stderr,
+        )
 
     return None
 
@@ -85,7 +90,7 @@ def m_get_svg_dimensions(p_svg_path: Path) -> tuple[int, int] | None:
 def _flag_check(l_failed, l_count) -> bool:
     """Check archive results."""
     if l_failed:
-        print(f"\n✗ {len(l_failed)} archives failed:", file=sys.stderr)
+        print(f"\n[FAIL] {len(l_failed)} archives failed:", file=sys.stderr)
         for l_name, l_err in l_failed:
             print(f"  {l_name}: {l_err.strip()[:60]}", file=sys.stderr)
         return False
@@ -94,8 +99,9 @@ def _flag_check(l_failed, l_count) -> bool:
     return True
 
 
-def m_scan_flag_dimensions(p_parent: str, p_flavours: list[str]) -> tuple[
-    int, int]:
+def m_scan_flag_dimensions(
+    p_parent: str, p_flavours: list[str]
+) -> tuple[int, int]:
     """Get native dimensions from the first flavour of the parent group."""
     l_path = f"themes/{p_flavours[0]}/{p_parent}/"
     l_files = sorted(glob(f"{l_path}*.webp"))
@@ -107,8 +113,9 @@ def m_scan_flag_dimensions(p_parent: str, p_flavours: list[str]) -> tuple[
         return l_img.width, l_img.height
 
 
-def m_get_image_paths(p_flag: str, p_parent: str, p_flavours: list[str]) -> \
-    dict[str, str]:
+def m_get_image_paths(
+    p_flag: str, p_parent: str, p_flavours: list[str]
+) -> dict[str, str]:
     """Get webp for each flavour, checking subdirectory if flag != parent."""
     l_paths = {}
 
@@ -127,8 +134,57 @@ def m_get_image_paths(p_flag: str, p_parent: str, p_flavours: list[str]) -> \
 
 
 # --- Stage 1: Generate SVGs - Whiskers ---
+def m_report_whiskers_result(
+    l_failed: list, l_total: int, l_stage: str
+) -> bool:
+    """Report the result from Whiskers, then return success status."""
+    if l_failed:
+        print(
+            f"\nuh oh—{len(l_failed)}/{l_total} on whiskers {l_stage} borked:",
+            file=sys.stderr,
+        )
+        for l_path, l_err in l_failed:
+            print(f"  {l_path}: {l_err.strip()[:80]}", file=sys.stderr)
+        return False
+
+    print(f":3 all {l_total} on whiskers {l_stage} successful!")
+    return True
+
+
+def m_whiskers_check() -> bool:
+    """Check .tera files against generated output."""
+    l_templates_dir = Path(__file__).resolve().parent.parent / "templates"
+    l_tera_files = sorted(l_templates_dir.glob("**/*.tera"))
+
+    if not l_tera_files:
+        return True
+
+    print(f"checking {len(l_tera_files)} templates...")
+    l_failed = []
+
+    for l_file in l_tera_files:
+        l_result = subprocess.run(
+            ["whiskers", str(l_file), "--check"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+
+        l_relative = l_file.relative_to(l_templates_dir)
+        if l_result.returncode != 0:
+            print(f"  [FAIL] {l_relative}")
+            l_failed.append((l_relative, l_result.stderr))
+        else:
+            print(f"  [OK] {l_relative}")
+
+    if not m_report_whiskers_result(l_failed, len(l_tera_files), "check"):
+        return False
+
+    return True
+
+
 def m_process_templates() -> bool:
-    """Process .tera files with whiskers."""
+    """Process .tera files with whiskers and verify output."""
     rmtree(THEMES_DIR, ignore_errors=True)
     THEMES_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -144,27 +200,22 @@ def m_process_templates() -> bool:
 
     for l_file in l_tera_files:
         l_result = subprocess.run(
-            ["whiskers", str(l_file)],
-            capture_output=True,
-            text=True,
-            timeout=5
+            ["whiskers", str(l_file)], capture_output=True, text=True, timeout=5
         )
 
         l_relative = l_file.relative_to(l_templates_dir)
         if l_result.returncode != 0:
-            print(f"  ✗ {l_relative}")
+            print(f"  [FAIL] {l_relative}")
             l_failed.append((l_relative, l_result.stderr))
         else:
-            print(f"  ✓ {l_relative}")
+            print(f"  [OK] {l_relative}")
 
-    if l_failed:
-        print(f"\nuh oh—{len(l_failed)}/{len(l_tera_files)} templates borked:",
-              file=sys.stderr)
-        for l_path, l_err in l_failed:
-            print(f"  {l_path}: {l_err.strip()[:80]}", file=sys.stderr)
+    if not m_report_whiskers_result(l_failed, len(l_tera_files), "generate"):
         return False
 
-    print(f":3 all {len(l_tera_files)} templates good!")
+    if not m_whiskers_check():
+        return False
+
     return True
 
 
@@ -175,8 +226,10 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
     try:
         l_dims = m_get_svg_dimensions(p_svg_path)
         if not l_dims:
-            print(f"Could not determine SVG dimensions: {p_svg_path.name}",
-                  file=sys.stderr)
+            print(
+                f"Could not determine SVG dimensions: {p_svg_path.name}",
+                file=sys.stderr,
+            )
             return None
 
         l_width, l_height = l_dims
@@ -189,64 +242,74 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
                         viewport=cast(
                             ViewportSize,
                             cast(
-                                object,
-                                {
-                                    "width": l_width,
-                                    "height": l_height
-                                }
-                            )
+                                object, {"width": l_width, "height": l_height}
+                            ),
                         )
                     )
                     page.goto(
                         f"file://{p_svg_path.resolve()}",
-                        wait_until="networkidle"
+                        wait_until="networkidle",
                     )
                     page.screenshot(path=str(l_png_path))
                     browser.close()
                 return l_png_path
             except Exception as l_e:
                 if l_attempt < MAX_CONVERT_RETRIES - 1:
-                    time.sleep(CONVERT_RETRY_DELAY * (2 ** l_attempt))
+                    time.sleep(CONVERT_RETRY_DELAY * (2**l_attempt))
                 else:
                     raise l_e
+
+        return None  # Never reached, but linter wants it :3
 
     except Exception as p_e:
         print(f"svg render failed: {p_svg_path.name} ({p_e})", file=sys.stderr)
         return None
 
 
-def m_convert_png_to_format(p_png: Path, p_fmt: str, p_aseprite: str,
-                            p_convert: str) -> bool:
+def m_convert_png_to_format(p_png: Path, p_fmt: str) -> bool:
     """Convert PNG to a specific format with retry logic."""
     l_output = p_png.with_suffix(f".{p_fmt}")
 
     for l_attempt in range(MAX_CONVERT_RETRIES):
-        if p_fmt in ASEPRITE_FORMATS:
-            l_cmd = [p_aseprite, "-b", str(p_png), "--save-as", str(l_output)]
-        elif p_fmt == "webp":
-            l_cmd = [p_convert, str(p_png), "-define", "webp:lossless=true",
-                     str(l_output)]
-        else:
-            l_cmd = [p_convert, str(p_png), str(l_output)]
-
         try:
-            subprocess.run(l_cmd, capture_output=True, timeout=10, check=True)
+            img = Image.open(p_png)
+
+            kwargs: dict[str, Any] = {}
+            match p_fmt:
+                case "avif":
+                    kwargs["quality"] = 100
+                    kwargs["speed"] = 0
+                    kwargs["range"] = "full"
+                    kwargs["codec"] = "auto"
+                case "jpeg":
+                    kwargs["quality"] = 95
+                    kwargs["optimize"] = True
+                case "png":
+                    kwargs["optimize"] = True
+                case "webp":
+                    kwargs["lossless"] = True
+                    kwargs["quality"] = 100
+                    kwargs["alpha_quality"] = 100
+                    kwargs["method"] = 6
+
+            img.save(l_output, format=p_fmt.upper(), **kwargs)
             return True
-        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as e:
+        except (OSError, IOError) as e:
             if l_attempt < MAX_CONVERT_RETRIES - 1:
-                time.sleep(
-                    CONVERT_RETRY_DELAY * (2 ** l_attempt))
+                time.sleep(CONVERT_RETRY_DELAY * (2**l_attempt))
             else:
                 print(
-                    f"  ✗ {p_fmt} failed for {p_png.name} after {MAX_CONVERT_RETRIES} attempts...BWEH >.<\n{e}",
-                    file=sys.stderr)
+                    f"  [FAIL] {p_fmt} failed for {p_png.name} after {MAX_CONVERT_RETRIES} attempts...BWEH >.<\n{e}",
+                    file=sys.stderr,
+                )
                 return False
 
     return False
 
 
-def m_export_flag(p_flag: str, p_parent: str, p_theme: Path, p_aseprite: str,
-                  p_convert: str) -> tuple[str, str, int]:
+def m_export_flag(
+    p_flag: str, p_parent: str, p_theme: Path
+) -> tuple[str, str, int]:
     """Export single flag: SVG → PNG → all formats."""
     if p_flag != p_parent:
         l_flag_dir = p_theme / p_parent / p_flag
@@ -264,7 +327,7 @@ def m_export_flag(p_flag: str, p_parent: str, p_theme: Path, p_aseprite: str,
 
     l_success = 0
     for l_fmt in EXPORT_FORMATS:
-        if m_convert_png_to_format(l_png, l_fmt, p_aseprite, p_convert):
+        if m_convert_png_to_format(l_png, l_fmt):
             l_success += 1
 
     return p_flag, p_theme.name, l_success
@@ -272,9 +335,6 @@ def m_export_flag(p_flag: str, p_parent: str, p_theme: Path, p_aseprite: str,
 
 def m_stage_export(p_flags: dict[str, str]) -> bool:
     """Export all flags across all themes."""
-    l_convert = m_ensure_tool("convert")
-    l_aseprite = m_ensure_tool("aseprite", "libresprite")
-
     l_themes = sorted([d for d in THEMES_DIR.iterdir() if d.is_dir()])
     l_work = [
         (l_flag, l_parent, l_theme)
@@ -287,15 +347,15 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
         return True
 
     print(
-        f"exporting {len(p_flags)} flags × {len(l_themes)} themes → {len(EXPORT_FORMATS)} formats...")
+        f"exporting {len(p_flags)} flags x {len(l_themes)} themes -> {len(EXPORT_FORMATS)} formats..."
+    )
 
     l_max_workers = min(cpu_count() - 1, 8)
     l_failed = []
 
     with ThreadPoolExecutor(max_workers=l_max_workers) as l_executor:
         l_futures = {
-            l_executor.submit(m_export_flag, l_f, l_p, l_t, l_aseprite,
-                              l_convert): (l_f, l_t.name)
+            l_executor.submit(m_export_flag, l_f, l_p, l_t): (l_f, l_t.name)
             for l_f, l_p, l_t in l_work
         }
 
@@ -304,13 +364,14 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
             l_ok = l_count == len(EXPORT_FORMATS)
 
             if not l_ok:
-                l_sym = "⚠" if l_count > 0 else "✗"
+                l_sym = "⚠" if l_count > 0 else "[FAIL]"
                 print(
-                    f"{l_sym} {l_flag}/{l_theme}: {l_count}/{len(EXPORT_FORMATS)}")
+                    f"{l_sym} {l_flag}/{l_theme}: {l_count}/{len(EXPORT_FORMATS)}"
+                )
                 l_failed.append((l_flag, l_theme))
 
     if l_failed:
-        print(f"\n✗ {len(l_failed)} exports incomplete", file=sys.stderr)
+        print(f"\n[FAIL] {len(l_failed)} exports incomplete", file=sys.stderr)
         return False
 
     print(f":3 exported {len(l_work)} flag/theme combos")
@@ -319,10 +380,7 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
 
 # --- Stage 3: Composite Assembly - Catwalk ---
 def m_run_catwalk(
-    p_flag: str,
-    p_parent: str,
-    p_layout: str,
-    p_flavours: list[str]
+    p_flag: str, p_parent: str, p_layout: str, p_flavours: list[str]
 ) -> tuple[str, bool, str]:
     """Execute catwalk and normalize output."""
     try:
@@ -332,18 +390,22 @@ def m_run_catwalk(
         l_cmd = [
             "catwalk",
             *[l_paths[l_f] for l_f in p_flavours],
-            "-o", l_output,
-            "-l", p_layout,
-            "-r", "0"
+            "-o",
+            l_output,
+            "-l",
+            p_layout,
+            "-r",
+            "0",
         ]
 
-        l_result = subprocess.run(l_cmd, capture_output=True, text=True,
-                                  timeout=15)
+        l_result = subprocess.run(
+            l_cmd, capture_output=True, text=True, timeout=15
+        )
 
         if l_result.returncode == 0:
             with Image.open(l_output) as l_img:
-                if l_img.mode != 'RGBA':
-                    l_img = l_img.convert('RGBA')
+                if l_img.mode != "RGBA":
+                    l_img = l_img.convert("RGBA")
 
                 l_alpha = l_img.split()[-1]
                 l_bbox = l_alpha.getbbox()
@@ -379,7 +441,8 @@ def m_stage_catwalk(p_flags: dict[str, str]) -> bool:
     ]
 
     print(
-        f"compositing {len(p_flags)} flags × {len(COMPOSITE_LAYOUTS)} layouts...")
+        f"compositing {len(p_flags)} flags x {len(COMPOSITE_LAYOUTS)} layouts..."
+    )
 
     l_max_workers = min(cpu_count() - 1, 8)
     l_failed = []
@@ -387,7 +450,9 @@ def m_stage_catwalk(p_flags: dict[str, str]) -> bool:
     with ThreadPoolExecutor(max_workers=l_max_workers) as l_executor:
         l_futures = {
             l_executor.submit(m_run_catwalk, l_f, l_p, l_l, FLAVOURS): (
-                l_f, l_l)
+                l_f,
+                l_l,
+            )
             for l_f, l_p, l_l in l_work
         }
 
@@ -399,8 +464,10 @@ def m_stage_catwalk(p_flags: dict[str, str]) -> bool:
                 l_failed.append((l_flag, l_layout, l_err))
 
     if l_failed:
-        print(f"\n✗ {len(l_failed)}/{len(l_work)} composites didn't work out",
-              file=sys.stderr)
+        print(
+            f"\n[FAIL] {len(l_failed)}/{len(l_work)} composites didn't work out",
+            file=sys.stderr,
+        )
         return False
 
     print(f":3 all {len(l_work)} composites done")
@@ -412,15 +479,26 @@ def m_optimize_file(p_path: Path) -> tuple[Path, bool, str]:
     """Optimize image; tool chosen by extension."""
     l_suffix = p_path.suffix.lower()
 
-    if l_suffix == ".png":
-        l_cmd = ["optipng", "-o7", "-zm1-9", "-strip", "all", "-fix",
-                 "-preserve", "-clobber", "-quiet", str(p_path)]
-    elif l_suffix == ".svg":
-        l_cmd = ["svgo", "--quiet", "--multipass", str(p_path)]
-    elif l_suffix in (".jpg", ".jpeg"):
-        l_cmd = ["jpegoptim", "--quiet", "-s", "--", str(p_path)]
-    else:
-        return p_path, False, "unknown file type"
+    match l_suffix:
+        case ".png":
+            l_cmd = [
+                "optipng",
+                "-o7",
+                "-zm1-9",
+                "-strip",
+                "all",
+                "-fix",
+                "-preserve",
+                "-clobber",
+                "-quiet",
+                str(p_path),
+            ]
+        case ".svg":
+            l_cmd = ["svgo", "--quiet", "--multipass", str(p_path)]
+        case ".jpeg":
+            l_cmd = ["jpegoptim", "--quiet", "-s", "--", str(p_path)]
+        case _:
+            return p_path, False, "unknown file type"
 
     l_result = subprocess.run(l_cmd, capture_output=True, text=True, timeout=10)
     return p_path, l_result.returncode == 0, l_result.stderr
@@ -429,10 +507,9 @@ def m_optimize_file(p_path: Path) -> tuple[Path, bool, str]:
 def m_stage_optimize() -> bool:
     """Optimize all images in place."""
     l_files = (
-        list(Path(".").rglob("*.png")) +
-        list(Path(".").rglob("*.svg")) +
-        list(Path(".").rglob("*.jpg")) +
-        list(Path(".").rglob("*.jpeg"))
+        list(Path(".").rglob("*.png"))
+        + list(Path(".").rglob("*.svg"))
+        + list(Path(".").rglob("*.jpeg"))
     )
 
     if not l_files:
@@ -444,8 +521,9 @@ def m_stage_optimize() -> bool:
 
     l_failed = []
     with ThreadPoolExecutor(max_workers=l_jobs) as l_executor:
-        l_futures = {l_executor.submit(m_optimize_file, l_f): l_f for l_f in
-                     l_files}
+        l_futures = {
+            l_executor.submit(m_optimize_file, l_f): l_f for l_f in l_files
+        }
 
         for l_future in as_completed(l_futures):
             l_path, l_ok, l_err = l_future.result()
@@ -454,8 +532,10 @@ def m_stage_optimize() -> bool:
                 l_failed.append((l_path, l_err))
 
     if l_failed:
-        print(f"\n✗ {len(l_failed)}/{len(l_files)} optimizations hit a snag",
-              file=sys.stderr)
+        print(
+            f"\n[FAIL] {len(l_failed)}/{len(l_files)} optimizations hit a snag",
+            file=sys.stderr,
+        )
         return False
 
     print(f":3 optimized {len(l_files)} images")
@@ -471,7 +551,9 @@ def m_stage_update_readme() -> bool:
     with CATEGORIES_FILE.open() as f:
         l_cat_data = yaml.safe_load(f)
 
-    l_cat_flags = {l_cat["key"]: [] for l_cat in l_cat_data}
+    l_cat_flags: dict[str, list[tuple[str, str]]] = {
+        l_cat["key"]: [] for l_cat in l_cat_data
+    }
     for l_flag_key, l_flag_info in l_flags_data.get("flags", {}).items():
         for l_cat_key in l_flag_info.get("categories", []):
             if l_cat_key in l_cat_flags:
@@ -518,13 +600,14 @@ def m_stage_update_readme() -> bool:
 
     l_sorted_flags = sorted(
         l_flags_data.get("flags", {}).items(),
-        key=lambda x: x[1]["name"].lower()
+        key=lambda x: x[1]["name"].lower(),
     )
 
     l_buf = StringIO()
     l_buf.write("<!-- AUTOGEN:PREVIEWS START -->\n")
     l_buf.write(
-        "<!-- the following section is auto-generated, do not edit -->\n\n")
+        "<!-- the following section is auto-generated, do not edit -->\n\n"
+    )
 
     for l_flag_key, l_flag_info in l_sorted_flags:
         l_flag_name = l_flag_info["name"]
@@ -568,18 +651,26 @@ def m_create_theme_archives() -> bool:
             continue
 
         l_result = subprocess.run(
-            ["tar", "-I", "xz -T0 -c -z --best", "-cf", str(l_dest), "-C",
-             str(l_src.parent), l_theme],
+            [
+                "tar",
+                "-I",
+                "xz -T0 -c -z --best",
+                "-cf",
+                str(l_dest),
+                "-C",
+                str(l_src.parent),
+                l_theme,
+            ],
             capture_output=True,
             text=True,
-            timeout=60
+            timeout=60,
         )
 
         if l_result.returncode != 0:
             l_failed.append((l_theme, l_result.stderr))
-            print(f"  ✗ {l_theme}")
+            print(f"  [FAIL] {l_theme}")
         else:
-            print(f"  ✓ {l_theme}")
+            print(f"  [OK] {l_theme}")
 
     return _flag_check(l_failed, len(FLAVOURS))
 
@@ -587,7 +678,7 @@ def m_create_theme_archives() -> bool:
 def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
     """Create tar.xz for each parent (combining all variants and themes)."""
 
-    l_by_parent = {}
+    l_by_parent: dict[str, list[str]] = {}
     for l_flag, l_parent in p_flags.items():
         if l_parent not in l_by_parent:
             l_by_parent[l_parent] = []
@@ -613,18 +704,28 @@ def m_create_flag_archives(p_flags: dict[str, str]) -> bool:
             continue
 
         l_result = subprocess.run(
-            ["tar", "-I", "xz -T0 -c -z --best", "-cf", str(l_dest),
-             "-C", str(THEMES_DIR), "--exclude", ".*", *l_tar_paths],
+            [
+                "tar",
+                "-I",
+                "xz -T0 -c -z --best",
+                "-cf",
+                str(l_dest),
+                "-C",
+                str(THEMES_DIR),
+                "--exclude",
+                ".*",
+                *l_tar_paths,
+            ],
             capture_output=True,
             text=True,
-            timeout=30
+            timeout=30,
         )
 
         if l_result.returncode != 0:
             l_failed.append((l_parent, l_result.stderr))
-            print(f"  ✗ {l_parent}")
+            print(f"  [FAIL] {l_parent}")
         else:
-            print(f"  ✓ {l_parent}")
+            print(f"  [OK] {l_parent}")
 
     return _flag_check(l_failed, len(l_by_parent))
 
@@ -639,7 +740,7 @@ def m_stage_package(p_flags: dict[str, str]) -> bool:
     l_ok = m_create_theme_archives() and m_create_flag_archives(p_flags)
 
     if l_ok:
-        print(f"✓ packaged to {DIST_DIR}")
+        print(f"[OK] packaged to {DIST_DIR}")
     return l_ok
 
 
@@ -647,20 +748,20 @@ def m_stage_package(p_flags: dict[str, str]) -> bool:
 def main() -> int:
     """Run pipeline stages."""
     parser = argparse.ArgumentParser(
-        prog='build.py',
-        description='Flag theme asset build pipeline'
+        prog="build.py", description="Flag theme asset build pipeline"
     )
 
-    subparsers = parser.add_subparsers(dest='command',
-                                       help='available commands')
+    subparsers = parser.add_subparsers(
+        dest="command", help="available commands"
+    )
 
-    subparsers.add_parser('whiskers', help='Process whiskers templates')
-    subparsers.add_parser('export', help='Export flags')
-    subparsers.add_parser('composite', help='Generate composite assets')
-    subparsers.add_parser('optimize', help='Optimize images')
-    subparsers.add_parser('readme', help='Update README')
-    subparsers.add_parser('package', help='Package archives')
-    subparsers.add_parser('all', help='Run all stages')
+    subparsers.add_parser("whiskers", help="Process whiskers templates")
+    subparsers.add_parser("export", help="Export flags")
+    subparsers.add_parser("composite", help="Generate composite assets")
+    subparsers.add_parser("optimize", help="Optimize images")
+    subparsers.add_parser("readme", help="Update README")
+    subparsers.add_parser("package", help="Package archives")
+    subparsers.add_parser("all", help="Run all stages")
 
     args = parser.parse_args()
 
@@ -690,14 +791,14 @@ def main() -> int:
         try:
             l_ok = l_stage()
             if not l_ok:
-                print(f"\n✗ {l_name} failed, stopping", file=sys.stderr)
+                print(f"\n[FAIL] {l_name} failed, stopping", file=sys.stderr)
                 return 1
         except Exception as l_e:
-            print(f"\n✗ {l_name} crashed: {l_e}", file=sys.stderr)
+            print(f"\n[FAIL] {l_name} crashed: {l_e}", file=sys.stderr)
             return 1
         print()
 
-    print("✓ all done! everything looks good :3")
+    print(":3 all done! everything looks good")
     return 0
 
 

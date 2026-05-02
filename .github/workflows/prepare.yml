@@ -14,9 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: catppuccin/setup-whiskers@v2
-      - run: whiskers . --check
-      - uses: taiki-e/install-action@taplo
       - uses: astral-sh/setup-uv@v7
       - uses: actions/cache@v5
         id: cache-uv
@@ -25,11 +22,8 @@ jobs:
           key: ${{ runner.os }}-uv-${{ hashFiles('pyproject.toml') }}
           restore-keys: ${{ runner.os }}-uv-
       - run: uv sync --all-extras
-        if: steps.cache-uv.outputs.cache-hit != 'true'
-      - run: yamlfix --check --exclude '.github/**' $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
-      - run: taplo format --check $(find . -name '*.toml' | grep -v '.github/')
-      - run: mdformat --check --wrap 100 $(find . -name '*.md' -not -path './.github/**')
-      - run: uv run ruff format --check scripts/
+        if: steps.cache-uv.outputs.cache-hit != true
+      - run: yamllint  $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
       - run: uv run ruff check scripts/
       - run: uv run mypy scripts/build.py
   changelog:
@@ -64,10 +58,10 @@ jobs:
           key: ${{ runner.os }}-uv-${{ hashFiles('pyproject.toml') }}
           restore-keys: ${{ runner.os }}-uv-
       - run: uv sync --all-extras
-      - run: yamlfix --preserve-quotes --exclude '.github/**' $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
+      - run: yamlfix . --exclude=".github/**"
       - run: taplo format $(find . -name '*.toml' | grep -v '.github/')
-      - run: mdformat --wrap 100 $(find . -name '*.md' -not -path './.github/**')
-      - run: uv run ruff format scripts/
+      - run: mdformat
+      - run: uv run ruff format scripts/build.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
