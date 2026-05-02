@@ -6,6 +6,7 @@
 #### Changelog
 
 - [Regenerate [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/2fb4e8fe3ffd4fdc37aa2042399da65ba377d7ee)
+- [Regenerate [skip ci]](https://codeberg.org/scarcekoi/pride-flags/commit/8bb1e4cbbbe0940db8f13cb73569d7ff35a056d0)
 ## [1.0.0] - 2026-05-02
 
 
