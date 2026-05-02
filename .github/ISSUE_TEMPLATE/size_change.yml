@@ -2,6 +2,7 @@
 name: Size Change
 description: Request a size change for an existing flag
 title: '[Flag]'
+
 body:
   - id: change
     type: textarea

@@ -2,6 +2,7 @@
 name: Colour Change
 description: Request a colour change for an existing flag
 title: '[Flag]'
+
 body:
   - id: change
     type: textarea

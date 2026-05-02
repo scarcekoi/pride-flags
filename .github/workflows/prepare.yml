@@ -1,0 +1,95 @@
+---
+name: Prepare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: null
+
+permissions:
+  contents: write
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: catppuccin/setup-whiskers@v2
+      - run: whiskers . --check
+      - uses: taiki-e/install-action@taplo
+      - uses: astral-sh/setup-uv@v7
+      - uses: actions/cache@v5
+        id: cache-uv
+        with:
+          path: ~/.cache/uv
+          key: ${{ runner.os }}-uv-${{ hashFiles('pyproject.toml') }}
+          restore-keys: ${{ runner.os }}-uv-
+      - run: uv sync --all-extras
+        if: steps.cache-uv.outputs.cache-hit != 'true'
+      - run: yamlfix --check --exclude '.github/**' $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
+      - run: taplo format --check $(find . -name '*.toml' | grep -v '.github/')
+      - run: mdformat --check --wrap 100 $(find . -name '*.md' -not -path './.github/**')
+      - run: uv run ruff format --check scripts/
+      - run: uv run ruff check scripts/
+      - run: uv run mypy scripts/build.py
+  changelog:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: taiki-e/install-action@git-cliff
+      - run: git-cliff -o CHANGELOG.md
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(changelog): regenerate [skip ci]"
+            git push
+          fi
+  format:
+    needs: changelog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: taiki-e/install-action@taplo
+      - uses: astral-sh/setup-uv@v7
+      - uses: actions/cache@v5
+        with:
+          path: ~/.cache/uv
+          key: ${{ runner.os }}-uv-${{ hashFiles('pyproject.toml') }}
+          restore-keys: ${{ runner.os }}-uv-
+      - run: uv sync --all-extras
+      - run: yamlfix --preserve-quotes --exclude '.github/**' $(find . -name '*.yml' -o -name '*.yaml' | grep -v '.github/')
+      - run: taplo format $(find . -name '*.toml' | grep -v '.github/')
+      - run: mdformat --wrap 100 $(find . -name '*.md' -not -path './.github/**')
+      - run: uv run ruff format scripts/
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A ':!.github/**'
+          if ! git diff --cached --quiet; then
+            git commit -m "style: auto-format YAML, TOML, Markdown, Python [skip ci]"
+            git push
+          fi
+  tag:
+    needs: format
+    runs-on: ubuntu-latest
+    outputs:
+      tag_name: ${{ steps.create-tag.outputs.tag_name }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - run: |
+          git pull origin main
+          VERSION=$(awk -F'"' '/version = / {gsub(/[[:space:]]/, "", $2); print $2}' pyproject.toml)
+          TAG="v$VERSION"
+          git tag -f "$TAG"
+          git push -f origin "$TAG"
+          echo "tag_name=$TAG" >> $GITHUB_OUTPUT
+        id: create-tag

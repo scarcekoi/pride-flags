@@ -37,18 +37,15 @@ EXPORT_FORMATS = ["ase", "aseprite", "bmp", "flc", "jpeg", "jpg", "pcx", "pcc",
 ASEPRITE_FORMATS = {"ase", "aseprite", "bmp", "flc", "pcx", "pcc", "tga"}
 COMPOSITE_LAYOUTS = ["composite", "grid", "row"]
 
-# --- Globals (resolved at runtime) ---
-g_convert = which("convert")
-g_aseprite = which("aseprite") or which("libresprite")
-
 
 # --- Utility Functions ---
-def m_ensure_tool(p_name: str, p_path: str | None) -> str:
-    """Verify tool exists, die gracefully if missing."""
-    if not p_path:
-        print(f"✗ {p_name} not found. install it & try again!", file=sys.stderr)
-        sys.exit(1)
-    return p_path
+def m_ensure_tool(*names: str) -> str:
+    """Find and verify that the tool exists, raise a RuntimeError if missing."""
+    for name in names:
+        path = which(name)
+        if path:
+            return path
+    raise RuntimeError(f"One of {names} required but none found in PATH")
 
 
 def m_load_flags() -> dict[str, str]:
@@ -275,8 +272,8 @@ def m_export_flag(p_flag: str, p_parent: str, p_theme: Path, p_aseprite: str,
 
 def m_stage_export(p_flags: dict[str, str]) -> bool:
     """Export all flags across all themes."""
-    m_ensure_tool("ImageMagick (convert)", g_convert)
-    m_ensure_tool("Aseprite/LibreSprite", g_aseprite)
+    l_convert = m_ensure_tool("convert")
+    l_aseprite = m_ensure_tool("aseprite", "libresprite")
 
     l_themes = sorted([d for d in THEMES_DIR.iterdir() if d.is_dir()])
     l_work = [
@@ -297,8 +294,8 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
 
     with ThreadPoolExecutor(max_workers=l_max_workers) as l_executor:
         l_futures = {
-            l_executor.submit(m_export_flag, l_f, l_p, l_t, g_aseprite,
-                              g_convert): (l_f, l_t.name)
+            l_executor.submit(m_export_flag, l_f, l_p, l_t, l_aseprite,
+                              l_convert): (l_f, l_t.name)
             for l_f, l_p, l_t in l_work
         }
 
@@ -673,7 +670,6 @@ def main() -> int:
 
     l_flags = m_load_flags()
 
-    # Stage definitions
     l_stages = {
         "whiskers": lambda: m_process_templates(),
         "export": lambda: m_stage_export(l_flags),

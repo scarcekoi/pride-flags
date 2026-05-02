@@ -8,7 +8,7 @@
   dependencies = [
     "catppuccin>=1.0.0",
     "pillow>=8.0.0",
-    "playwright>=1.40.0",
+    "playwright>=1.59.0",
     "pyyaml>=6.0",
     "tqdm>=4.60",
   ]
@@ -16,7 +16,15 @@
     { name = "scarcekoi" },
     { name = "ninetailedtori", email = "ninetailedtori@uwu.gal" },
   ]
-  keywords = [ "catppuccin", "pride", "flags", "assets", "themes" ]
+  keywords = [
+    "catppuccin",
+    "lgbt",
+    "lgbtqia",
+    "pride",
+    "flags",
+    "assets",
+    "themes",
+  ]
   classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: End Users/Desktop",
@@ -32,3 +40,74 @@
     Issues        = "https://github.com/catppuccin/pride-flags/issues"
     Changelog     = "https://github.com/catppuccin/pride-flags/blob/main/CHANGELOG.md"
     Contributing  = "https://github.com/catppuccin/pride-flags/blob/main/CONTRIBUTING.md"
+
+  [project.optional-dependencies]
+    dev = [ "ruff>=0.4.0", "mypy>=1.8.0", "yamlfix>=0.11.0", "mdformat>=0.7.0" ]
+
+[tool.ruff]
+  include        = [ "scripts/build.py" ]
+  line-length    = 80
+  indent-width   = 4
+  target-version = "py310"
+
+  [tool.ruff.lint]
+    select             = [ "E4", "E7", "E9", "F" ]
+    ignore             = [  ]
+    fixable            = [ "ALL" ]
+    unfixable          = [  ]
+    dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+  [tool.ruff.format]
+    quote-style                = "double"
+    indent-style               = "space"
+    skip-magic-trailing-comma  = false
+    line-ending                = "auto"
+    docstring-code-format      = true
+    docstring-code-line-length = "dynamic"
+
+[tool.yamlfix]
+  allow_duplicate_keys             = false
+  comments_min_spaces_from_content = 2
+  comments_require_starting_space  = true
+  whitelines                       = 0
+  comments_whitelines              = 1
+  section_whitelines               = 1
+  explicit_start                   = true
+  sequence_style                   = "flow_style"
+  line_length                      = 120
+  none_representation              = "null"
+  quote_basic_values               = false
+  quote_representation             = '"'
+
+[tool.mypy]
+  python_version = "3.10"
+  warn_return_any = true
+  warn_unused_configs = true
+  exclude = [
+    ".bzr/**",
+    ".direnv/**",
+    ".eggs/**",
+    ".git/**",
+    ".git-rewrite/**",
+    ".hg/**",
+    ".ipynb_checkpoints/**",
+    ".mypy_cache/**",
+    ".nox/**",
+    ".pants.d/**",
+    ".pyenv/**",
+    ".pytest_cache/**",
+    ".pytype/**",
+    ".ruff_cache/**",
+    ".svn/**",
+    ".tox/**",
+    ".venv/**",
+    ".vscode/**",
+    "__pypackages__/**",
+    "_build/**",
+    "buck-out/**",
+    "build/**",
+    "dist/**",
+    "node_modules/**",
+    "site-packages/**",
+    "venv/**",
+  ]
