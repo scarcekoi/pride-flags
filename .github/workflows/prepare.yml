@@ -56,7 +56,7 @@ jobs:
           git add -A ':!.github/**'
           git commit -m "chore: changelog and style formatting [skip ci]" || true
       - run: |
-          VERSION=$(awk -F'"' '/version = / {gsub(/[[:space:]]/, "", $2); print $2}' pyproject.toml)
+          VERSION=$(awk -F'"' '/version = / {gsub(/[[:space:]]/, "", $2); print $2; exit}' pyproject.toml)
           TAG="v$VERSION"
           git tag -f "$TAG"
           echo "tag_name=$TAG" >> $GITHUB_OUTPUT
