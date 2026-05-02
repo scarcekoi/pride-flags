@@ -1,6 +1,6 @@
 [project]
   name = "catppuccin.pride-flags"
-  version = "1.0.0"
+  version = "2.0.0"
   description = "Soothing pastel pride flags for everyone!"
   readme = "README.md"
   license = { file = "LICENSE" }
