@@ -9,7 +9,6 @@ import time
 import xml.etree.ElementTree as ElementTree
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from glob import glob
-from io import StringIO
 from multiprocessing import cpu_count
 from pathlib import Path
 from shutil import rmtree
@@ -32,18 +31,19 @@ THEMES_DIR = Path("themes")
 MAX_CONVERT_RETRIES = 10
 CONVERT_RETRY_DELAY = 1
 
-EXPORT_FORMATS = [
-    "avif",
-    "bmp",
-    "dds",
-    "jpeg",
-    "pcx",
-    "qoi",
-    "sgi",
-    "tga",
-    "tiff",
-    "webp",
-]
+FORMAT_DICT = {
+    "avif": "AVIF",
+    "bmp": "BMP",
+    "dds": "DDS",
+    "jpeg": "JPEG",
+    "pcx": "PCX",
+    "qoi": "QOI",
+    "sgi": "SGI",
+    "tga": "TGA",
+    "tiff": "TIFF",
+    "webp": "WEBP",
+}
+FORMAT_TUPLE = tuple(FORMAT_DICT.keys())
 COMPOSITE_LAYOUTS = ["composite", "grid", "row"]
 
 
@@ -255,7 +255,7 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
                 return l_png_path
             except Exception as l_e:
                 if l_attempt < MAX_CONVERT_RETRIES - 1:
-                    time.sleep(CONVERT_RETRY_DELAY * (2**l_attempt))
+                    time.sleep(CONVERT_RETRY_DELAY * (2 ** l_attempt))
                 else:
                     raise l_e
 
@@ -296,7 +296,7 @@ def m_convert_png_to_format(p_png: Path, p_fmt: str) -> bool:
             return True
         except (OSError, IOError) as e:
             if l_attempt < MAX_CONVERT_RETRIES - 1:
-                time.sleep(CONVERT_RETRY_DELAY * (2**l_attempt))
+                time.sleep(CONVERT_RETRY_DELAY * (2 ** l_attempt))
             else:
                 print(
                     f"  [FAIL] {p_fmt} failed for {p_png.name} after {MAX_CONVERT_RETRIES} attempts...BWEH >.<\n{e}",
@@ -326,7 +326,7 @@ def m_export_flag(
         return p_flag, p_theme.name, 0
 
     l_success = 0
-    for l_fmt in EXPORT_FORMATS:
+    for l_fmt in FORMAT_TUPLE:
         if m_convert_png_to_format(l_png, l_fmt):
             l_success += 1
 
@@ -347,7 +347,7 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
         return True
 
     print(
-        f"exporting {len(p_flags)} flags x {len(l_themes)} themes -> {len(EXPORT_FORMATS)} formats..."
+        f"exporting {len(p_flags)} flags x {len(l_themes)} themes -> {len(FORMAT_TUPLE)} formats..."
     )
 
     l_max_workers = min(cpu_count() - 1, 8)
@@ -361,12 +361,12 @@ def m_stage_export(p_flags: dict[str, str]) -> bool:
 
         for l_future in as_completed(l_futures):
             l_flag, l_theme, l_count = l_future.result()
-            l_ok = l_count == len(EXPORT_FORMATS)
+            l_ok = l_count == len(FORMAT_TUPLE)
 
             if not l_ok:
                 l_sym = "⚠" if l_count > 0 else "[FAIL]"
                 print(
-                    f"{l_sym} {l_flag}/{l_theme}: {l_count}/{len(EXPORT_FORMATS)}"
+                    f"{l_sym} {l_flag}/{l_theme}: {l_count}/{len(FORMAT_TUPLE)}"
                 )
                 l_failed.append((l_flag, l_theme))
 
@@ -543,14 +543,8 @@ def m_stage_optimize() -> bool:
 
 
 # --- Stage 5: README Generation ---
-def m_stage_update_readme() -> bool:
-    """Regenerate the flag list and preview sections in README."""
-
-    with FLAGS_FILE.open() as f:
-        l_flags_data = yaml.safe_load(f)
-    with CATEGORIES_FILE.open() as f:
-        l_cat_data = yaml.safe_load(f)
-
+def m_readme_flaglist(l_flags_data: dict, l_cat_data: list) -> str:
+    """Generate the flag list section for README."""
     l_cat_flags: dict[str, list[tuple[str, str]]] = {
         l_cat["key"]: [] for l_cat in l_cat_data
     }
@@ -587,11 +581,66 @@ def m_stage_update_readme() -> bool:
         l_lines.append("\n</details>\n")
 
     l_lines.append("<!-- AUTOGEN:FLAGLIST END -->")
+    return "\n".join(l_lines)
 
+
+def m_readme_previews(l_sorted_flags: list[tuple[str, dict]]) -> str:
+    """Generate the previews section for README."""
+    l_lines = [
+        "<!-- AUTOGEN:PREVIEWS START -->",
+        "<!-- the following section is auto-generated, do not edit -->\n",
+    ]
+
+    for l_flag_key, l_flag_info in l_sorted_flags:
+        l_flag_name = l_flag_info["name"]
+        l_lines.extend(
+            [
+                "<details>",
+                f"<summary>{l_flag_name}</summary>",
+                f'<img src="assets/composite/{l_flag_key}.webp" alt="{l_flag_name} composite" style="width:50%;"/>',
+                f'<img src="assets/grid/{l_flag_key}.webp" alt="{l_flag_name} grid" style="width:50%;"/>',
+                f'<img src="assets/row/{l_flag_key}.webp" alt="{l_flag_name} row" style="width:50%;"/>',
+                "</details>",
+            ]
+        )
+
+    l_lines.append("<!-- AUTOGEN:PREVIEWS END -->")
+    return "\n".join(l_lines)
+
+
+def m_readme_formats() -> str:
+    """Generate the file formats section for README."""
+    if not FORMAT_TUPLE:
+        return "<!-- AUTOGEN:FORMATS START --><!-- AUTOGEN:FORMATS END -->"
+
+    l_formats = [
+        FORMAT_DICT.get(l_format, l_format.upper()) for l_format in FORMAT_TUPLE
+    ]
+    l_lines = [
+        "<!-- AUTOGEN:FORMATS START -->",
+        "<!-- the following section is auto-generated, do not edit -->",
+        '- Q: "What file formats are available?"',
+        f"  A: Currently, the available file formats are "
+        f"{', '.join(f'`{l_format}`' for l_format in l_formats[:-1])}, "
+        f"and `{l_formats[-1]}`.",
+        "<!-- AUTOGEN:FORMATS END -->",
+    ]
+    return "\n".join(l_lines)
+
+
+def m_stage_update_readme() -> bool:
+    """Regenerate the flag list, preview sections, and file formats in README."""
+
+    with FLAGS_FILE.open() as f:
+        l_flags_data = yaml.safe_load(f)
+    with CATEGORIES_FILE.open() as f:
+        l_cat_data = yaml.safe_load(f)
+
+    l_flaglist_text = m_readme_flaglist(l_flags_data, l_cat_data)
     l_readme_text = README_FILE.read_text()
     l_updated = re.sub(
         r"<!-- AUTOGEN:FLAGLIST START -->.*?<!-- AUTOGEN:FLAGLIST END -->",
-        "\n".join(l_lines),
+        l_flaglist_text,
         l_readme_text,
         flags=re.DOTALL,
     )
@@ -602,27 +651,7 @@ def m_stage_update_readme() -> bool:
         l_flags_data.get("flags", {}).items(),
         key=lambda x: x[1]["name"].lower(),
     )
-
-    l_buf = StringIO()
-    l_buf.write("<!-- AUTOGEN:PREVIEWS START -->\n")
-    l_buf.write(
-        "<!-- the following section is auto-generated, do not edit -->\n\n"
-    )
-
-    for l_flag_key, l_flag_info in l_sorted_flags:
-        l_flag_name = l_flag_info["name"]
-        l_buf.write(
-            f"<details>\n"
-            f"<summary>{l_flag_name}</summary>\n"
-            f'<img src="assets/composite/{l_flag_key}.webp" alt="{l_flag_name} composite" style="width:50%;"/>\n'
-            f'<img src="assets/grid/{l_flag_key}.webp" alt="{l_flag_name} grid" style="width:50%;"/>\n'
-            f'<img src="assets/row/{l_flag_key}.webp" alt="{l_flag_name} row" style="width:50%;"/>\n'
-            f"</details>\n\n"
-        )
-
-    l_buf.write("<!-- AUTOGEN:PREVIEWS END -->")
-    l_preview_section = l_buf.getvalue()
-
+    l_preview_section = m_readme_previews(l_sorted_flags)
     l_readme_text = README_FILE.read_text()
     l_updated = re.sub(
         r"<!-- AUTOGEN:PREVIEWS START -->.*?<!-- AUTOGEN:PREVIEWS END -->",
@@ -632,6 +661,17 @@ def m_stage_update_readme() -> bool:
     )
     README_FILE.write_text(l_updated)
     print(f"updated previews for {len(l_sorted_flags)} flags")
+
+    l_formats_text = m_readme_formats()
+    l_readme_text = README_FILE.read_text()
+    l_updated = re.sub(
+        r"<!-- AUTOGEN:FORMATS START -->.*?<!-- AUTOGEN:FORMATS END -->",
+        l_formats_text,
+        l_readme_text,
+        flags=re.DOTALL,
+    )
+    README_FILE.write_text(l_updated)
+    print("updated file formats")
 
     return True
 

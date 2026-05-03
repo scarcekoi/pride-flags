@@ -17,7 +17,6 @@
 ## Previews
 
 <!-- AUTOGEN:PREVIEWS START -->
-
 <!-- the following section is auto-generated, do not edit -->
 
 <details>
@@ -26,329 +25,296 @@
 <img src="assets/grid/agender.webp" alt="Agender grid" style="width:50%;"/>
 <img src="assets/row/agender.webp" alt="Agender row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Aromantic</summary>
 <img src="assets/composite/aromantic.webp" alt="Aromantic composite" style="width:50%;"/>
 <img src="assets/grid/aromantic.webp" alt="Aromantic grid" style="width:50%;"/>
 <img src="assets/row/aromantic.webp" alt="Aromantic row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Aromantic Asexual</summary>
 <img src="assets/composite/aroace.webp" alt="Aromantic Asexual composite" style="width:50%;"/>
 <img src="assets/grid/aroace.webp" alt="Aromantic Asexual grid" style="width:50%;"/>
 <img src="assets/row/aroace.webp" alt="Aromantic Asexual row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Asexual</summary>
 <img src="assets/composite/asexual.webp" alt="Asexual composite" style="width:50%;"/>
 <img src="assets/grid/asexual.webp" alt="Asexual grid" style="width:50%;"/>
 <img src="assets/row/asexual.webp" alt="Asexual row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Bisexual</summary>
 <img src="assets/composite/bisexual.webp" alt="Bisexual composite" style="width:50%;"/>
 <img src="assets/grid/bisexual.webp" alt="Bisexual grid" style="width:50%;"/>
 <img src="assets/row/bisexual.webp" alt="Bisexual row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Demiboy</summary>
 <img src="assets/composite/demiboy.webp" alt="Demiboy composite" style="width:50%;"/>
 <img src="assets/grid/demiboy.webp" alt="Demiboy grid" style="width:50%;"/>
 <img src="assets/row/demiboy.webp" alt="Demiboy row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Demigender</summary>
 <img src="assets/composite/demigender.webp" alt="Demigender composite" style="width:50%;"/>
 <img src="assets/grid/demigender.webp" alt="Demigender grid" style="width:50%;"/>
 <img src="assets/row/demigender.webp" alt="Demigender row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Demigirl</summary>
 <img src="assets/composite/demigirl.webp" alt="Demigirl composite" style="width:50%;"/>
 <img src="assets/grid/demigirl.webp" alt="Demigirl grid" style="width:50%;"/>
 <img src="assets/row/demigirl.webp" alt="Demigirl row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Femboy</summary>
 <img src="assets/composite/femboy.webp" alt="Femboy composite" style="width:50%;"/>
 <img src="assets/grid/femboy.webp" alt="Femboy grid" style="width:50%;"/>
 <img src="assets/row/femboy.webp" alt="Femboy row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Finromantic</summary>
 <img src="assets/composite/finromantic.webp" alt="Finromantic composite" style="width:50%;"/>
 <img src="assets/grid/finromantic.webp" alt="Finromantic grid" style="width:50%;"/>
 <img src="assets/row/finromantic.webp" alt="Finromantic row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Gay Men</summary>
 <img src="assets/composite/gay-man.webp" alt="Gay Men composite" style="width:50%;"/>
 <img src="assets/grid/gay-man.webp" alt="Gay Men grid" style="width:50%;"/>
 <img src="assets/row/gay-man.webp" alt="Gay Men row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Genderfluid</summary>
 <img src="assets/composite/genderfluid.webp" alt="Genderfluid composite" style="width:50%;"/>
 <img src="assets/grid/genderfluid.webp" alt="Genderfluid grid" style="width:50%;"/>
 <img src="assets/row/genderfluid.webp" alt="Genderfluid row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Genderqueer</summary>
 <img src="assets/composite/genderqueer.webp" alt="Genderqueer composite" style="width:50%;"/>
 <img src="assets/grid/genderqueer.webp" alt="Genderqueer grid" style="width:50%;"/>
 <img src="assets/row/genderqueer.webp" alt="Genderqueer row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Greysexual</summary>
 <img src="assets/composite/greysexual.webp" alt="Greysexual composite" style="width:50%;"/>
 <img src="assets/grid/greysexual.webp" alt="Greysexual grid" style="width:50%;"/>
 <img src="assets/row/greysexual.webp" alt="Greysexual row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Intersex</summary>
 <img src="assets/composite/intersex.webp" alt="Intersex composite" style="width:50%;"/>
 <img src="assets/grid/intersex.webp" alt="Intersex grid" style="width:50%;"/>
 <img src="assets/row/intersex.webp" alt="Intersex row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Lesbian</summary>
 <img src="assets/composite/lesbian.webp" alt="Lesbian composite" style="width:50%;"/>
 <img src="assets/grid/lesbian.webp" alt="Lesbian grid" style="width:50%;"/>
 <img src="assets/row/lesbian.webp" alt="Lesbian row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>LGBT</summary>
 <img src="assets/composite/lgbt.webp" alt="LGBT composite" style="width:50%;"/>
 <img src="assets/grid/lgbt.webp" alt="LGBT grid" style="width:50%;"/>
 <img src="assets/row/lgbt.webp" alt="LGBT row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Neutrois</summary>
 <img src="assets/composite/neutrois.webp" alt="Neutrois composite" style="width:50%;"/>
 <img src="assets/grid/neutrois.webp" alt="Neutrois grid" style="width:50%;"/>
 <img src="assets/row/neutrois.webp" alt="Neutrois row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Nonbinary</summary>
 <img src="assets/composite/nonbinary.webp" alt="Nonbinary composite" style="width:50%;"/>
 <img src="assets/grid/nonbinary.webp" alt="Nonbinary grid" style="width:50%;"/>
 <img src="assets/row/nonbinary.webp" alt="Nonbinary row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Pansexual</summary>
 <img src="assets/composite/pansexual.webp" alt="Pansexual composite" style="width:50%;"/>
 <img src="assets/grid/pansexual.webp" alt="Pansexual grid" style="width:50%;"/>
 <img src="assets/row/pansexual.webp" alt="Pansexual row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Polyamorous - Jim Evans, 1995</summary>
 <img src="assets/composite/polyam-evans.webp" alt="Polyamorous - Jim Evans, 1995 composite" style="width:50%;"/>
 <img src="assets/grid/polyam-evans.webp" alt="Polyamorous - Jim Evans, 1995 grid" style="width:50%;"/>
 <img src="assets/row/polyam-evans.webp" alt="Polyamorous - Jim Evans, 1995 row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Polyamorous - Red Howell, 2022</summary>
 <img src="assets/composite/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 composite" style="width:50%;"/>
 <img src="assets/grid/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 grid" style="width:50%;"/>
 <img src="assets/row/polyam-howell.webp" alt="Polyamorous - Red Howell, 2022 row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Polysexual</summary>
 <img src="assets/composite/polysexual.webp" alt="Polysexual composite" style="width:50%;"/>
 <img src="assets/grid/polysexual.webp" alt="Polysexual grid" style="width:50%;"/>
 <img src="assets/row/polysexual.webp" alt="Polysexual row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Sapphic</summary>
 <img src="assets/composite/sapphic.webp" alt="Sapphic composite" style="width:50%;"/>
 <img src="assets/grid/sapphic.webp" alt="Sapphic grid" style="width:50%;"/>
 <img src="assets/row/sapphic.webp" alt="Sapphic row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Transandrogynous</summary>
 <img src="assets/composite/transandrogynous.webp" alt="Transandrogynous composite" style="width:50%;"/>
 <img src="assets/grid/transandrogynous.webp" alt="Transandrogynous grid" style="width:50%;"/>
 <img src="assets/row/transandrogynous.webp" alt="Transandrogynous row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Transfeminine</summary>
 <img src="assets/composite/transfeminine.webp" alt="Transfeminine composite" style="width:50%;"/>
 <img src="assets/grid/transfeminine.webp" alt="Transfeminine grid" style="width:50%;"/>
 <img src="assets/row/transfeminine.webp" alt="Transfeminine row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Transfeminine - ryanyflags, 2019</summary>
 <img src="assets/composite/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2019 composite" style="width:50%;"/>
 <img src="assets/grid/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2019 grid" style="width:50%;"/>
 <img src="assets/row/transfeminine-ryanyflags.webp" alt="Transfeminine - ryanyflags, 2019 row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Transgender</summary>
 <img src="assets/composite/transgender.webp" alt="Transgender composite" style="width:50%;"/>
 <img src="assets/grid/transgender.webp" alt="Transgender grid" style="width:50%;"/>
 <img src="assets/row/transgender.webp" alt="Transgender row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Transmasculine</summary>
 <img src="assets/composite/transmasculine.webp" alt="Transmasculine composite" style="width:50%;"/>
 <img src="assets/grid/transmasculine.webp" alt="Transmasculine grid" style="width:50%;"/>
 <img src="assets/row/transmasculine.webp" alt="Transmasculine row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Transmasculine - ryanyflags, 2019</summary>
 <img src="assets/composite/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2019 composite" style="width:50%;"/>
 <img src="assets/grid/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2019 grid" style="width:50%;"/>
 <img src="assets/row/transmasculine-ryanyflags.webp" alt="Transmasculine - ryanyflags, 2019 row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Trigender</summary>
 <img src="assets/composite/trigender.webp" alt="Trigender composite" style="width:50%;"/>
 <img src="assets/grid/trigender.webp" alt="Trigender grid" style="width:50%;"/>
 <img src="assets/row/trigender.webp" alt="Trigender row" style="width:50%;"/>
 </details>
-
 <details>
 <summary>Womasexual</summary>
 <img src="assets/composite/womasexual.webp" alt="Womasexual composite" style="width:50%;"/>
 <img src="assets/grid/womasexual.webp" alt="Womasexual grid" style="width:50%;"/>
 <img src="assets/row/womasexual.webp" alt="Womasexual row" style="width:50%;"/>
 </details>
-
 <!-- AUTOGEN:PREVIEWS END -->
 
 ## Flags
 
 <!-- AUTOGEN:FLAGLIST START -->
-
 <!-- the following section is auto-generated, do not edit -->
 
 <details>
 <summary>Attraction</summary>
 
-- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frapp%C3%A9/aroace/), [Latte](themes/latte/aroace/))
-- Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frapp%C3%A9/asexual/), [Latte](themes/latte/asexual/))
-- Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frapp%C3%A9/bisexual/), [Latte](themes/latte/bisexual/))
-- Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frapp%C3%A9/finromantic/), [Latte](themes/latte/finromantic/))
-- Gay Men ([Mocha](themes/mocha/gay-man/), [Macchiato](themes/macchiato/gay-man/), [Frappé](themes/frapp%C3%A9/gay-man/), [Latte](themes/latte/gay-man/))
-- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frapp%C3%A9/greysexual/), [Latte](themes/latte/greysexual/))
-- Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frapp%C3%A9/lesbian/), [Latte](themes/latte/lesbian/))
-- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frapp%C3%A9/pansexual/), [Latte](themes/latte/pansexual/))
-- Polyamorous - Jim Evans, 1995 ([Mocha](themes/mocha/polyam-evans/), [Macchiato](themes/macchiato/polyam-evans/), [Frappé](themes/frapp%C3%A9/polyam-evans/), [Latte](themes/latte/polyam-evans/))
-- Polyamorous - Red Howell, 2022 ([Mocha](themes/mocha/polyam-howell/), [Macchiato](themes/macchiato/polyam-howell/), [Frappé](themes/frapp%C3%A9/polyam-howell/), [Latte](themes/latte/polyam-howell/))
-- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frapp%C3%A9/polysexual/), [Latte](themes/latte/polysexual/))
-- Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frapp%C3%A9/sapphic/), [Latte](themes/latte/sapphic/))
-- Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frapp%C3%A9/womasexual/), [Latte](themes/latte/womasexual/))
+- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappé/aroace/), [Latte](themes/latte/aroace/))
+- Asexual ([Mocha](themes/mocha/asexual/), [Macchiato](themes/macchiato/asexual/), [Frappé](themes/frappé/asexual/), [Latte](themes/latte/asexual/))
+- Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappé/bisexual/), [Latte](themes/latte/bisexual/))
+- Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappé/finromantic/), [Latte](themes/latte/finromantic/))
+- Gay Men ([Mocha](themes/mocha/gay-man/), [Macchiato](themes/macchiato/gay-man/), [Frappé](themes/frappé/gay-man/), [Latte](themes/latte/gay-man/))
+- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappé/greysexual/), [Latte](themes/latte/greysexual/))
+- Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappé/lesbian/), [Latte](themes/latte/lesbian/))
+- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/), [Latte](themes/latte/pansexual/))
+- Polyamorous - Jim Evans, 1995 ([Mocha](themes/mocha/polyam-evans/), [Macchiato](themes/macchiato/polyam-evans/), [Frappé](themes/frappé/polyam-evans/), [Latte](themes/latte/polyam-evans/))
+- Polyamorous - Red Howell, 2022 ([Mocha](themes/mocha/polyam-howell/), [Macchiato](themes/macchiato/polyam-howell/), [Frappé](themes/frappé/polyam-howell/), [Latte](themes/latte/polyam-howell/))
+- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
+- Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frappé/sapphic/), [Latte](themes/latte/sapphic/))
+- Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frappé/womasexual/), [Latte](themes/latte/womasexual/))
 
 </details>
 
 <details>
 <summary>Expression</summary>
 
-- Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frapp%C3%A9/demiboy/), [Latte](themes/latte/demiboy/))
-- Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frapp%C3%A9/demigender/), [Latte](themes/latte/demigender/))
-- Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frapp%C3%A9/demigirl/), [Latte](themes/latte/demigirl/))
-- Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frapp%C3%A9/femboy/), [Latte](themes/latte/femboy/))
-- Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frapp%C3%A9/genderqueer/), [Latte](themes/latte/genderqueer/))
-- Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frapp%C3%A9/transandrogynous/), [Latte](themes/latte/transandrogynous/))
-- Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frapp%C3%A9/transfeminine/), [Latte](themes/latte/transfeminine/))
-- Transfeminine - ryanyflags, 2019 ([Mocha](themes/mocha/transfeminine-ryanyflags/), [Macchiato](themes/macchiato/transfeminine-ryanyflags/), [Frappé](themes/frapp%C3%A9/transfeminine-ryanyflags/), [Latte](themes/latte/transfeminine-ryanyflags/))
-- Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frapp%C3%A9/transmasculine/), [Latte](themes/latte/transmasculine/))
-- Transmasculine - ryanyflags, 2019 ([Mocha](themes/mocha/transmasculine-ryanyflags/), [Macchiato](themes/macchiato/transmasculine-ryanyflags/), [Frappé](themes/frapp%C3%A9/transmasculine-ryanyflags/), [Latte](themes/latte/transmasculine-ryanyflags/))
+- Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappé/demiboy/), [Latte](themes/latte/demiboy/))
+- Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappé/demigender/), [Latte](themes/latte/demigender/))
+- Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappé/demigirl/), [Latte](themes/latte/demigirl/))
+- Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappé/femboy/), [Latte](themes/latte/femboy/))
+- Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappé/genderqueer/), [Latte](themes/latte/genderqueer/))
+- Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frappé/transandrogynous/), [Latte](themes/latte/transandrogynous/))
+- Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappé/transfeminine/), [Latte](themes/latte/transfeminine/))
+- Transfeminine - ryanyflags, 2019 ([Mocha](themes/mocha/transfeminine-ryanyflags/), [Macchiato](themes/macchiato/transfeminine-ryanyflags/), [Frappé](themes/frappé/transfeminine-ryanyflags/), [Latte](themes/latte/transfeminine-ryanyflags/))
+- Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frappé/transmasculine/), [Latte](themes/latte/transmasculine/))
+- Transmasculine - ryanyflags, 2019 ([Mocha](themes/mocha/transmasculine-ryanyflags/), [Macchiato](themes/macchiato/transmasculine-ryanyflags/), [Frappé](themes/frappé/transmasculine-ryanyflags/), [Latte](themes/latte/transmasculine-ryanyflags/))
 
 </details>
 
 <details>
 <summary>Fluidity</summary>
 
-- Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frapp%C3%A9/genderfluid/), [Latte](themes/latte/genderfluid/))
-- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frapp%C3%A9/pansexual/), [Latte](themes/latte/pansexual/))
-- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frapp%C3%A9/polysexual/), [Latte](themes/latte/polysexual/))
-- Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frapp%C3%A9/trigender/), [Latte](themes/latte/trigender/))
+- Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frappé/genderfluid/), [Latte](themes/latte/genderfluid/))
+- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/), [Latte](themes/latte/pansexual/))
+- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
+- Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frappé/trigender/), [Latte](themes/latte/trigender/))
 
 </details>
 
 <details>
 <summary>Gender</summary>
 
-- Agender ([Mocha](themes/mocha/agender/), [Macchiato](themes/macchiato/agender/), [Frappé](themes/frapp%C3%A9/agender/), [Latte](themes/latte/agender/))
-- Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frapp%C3%A9/demiboy/), [Latte](themes/latte/demiboy/))
-- Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frapp%C3%A9/demigender/), [Latte](themes/latte/demigender/))
-- Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frapp%C3%A9/demigirl/), [Latte](themes/latte/demigirl/))
-- Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frapp%C3%A9/femboy/), [Latte](themes/latte/femboy/))
-- Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frapp%C3%A9/genderfluid/), [Latte](themes/latte/genderfluid/))
-- Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frapp%C3%A9/genderqueer/), [Latte](themes/latte/genderqueer/))
-- Intersex ([Mocha](themes/mocha/intersex/), [Macchiato](themes/macchiato/intersex/), [Frappé](themes/frapp%C3%A9/intersex/), [Latte](themes/latte/intersex/))
-- Neutrois ([Mocha](themes/mocha/neutrois/), [Macchiato](themes/macchiato/neutrois/), [Frappé](themes/frapp%C3%A9/neutrois/), [Latte](themes/latte/neutrois/))
-- Nonbinary ([Mocha](themes/mocha/nonbinary/), [Macchiato](themes/macchiato/nonbinary/), [Frappé](themes/frapp%C3%A9/nonbinary/), [Latte](themes/latte/nonbinary/))
-- Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frapp%C3%A9/transandrogynous/), [Latte](themes/latte/transandrogynous/))
-- Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frapp%C3%A9/transfeminine/), [Latte](themes/latte/transfeminine/))
-- Transfeminine - ryanyflags, 2019 ([Mocha](themes/mocha/transfeminine-ryanyflags/), [Macchiato](themes/macchiato/transfeminine-ryanyflags/), [Frappé](themes/frapp%C3%A9/transfeminine-ryanyflags/), [Latte](themes/latte/transfeminine-ryanyflags/))
-- Transgender ([Mocha](themes/mocha/transgender/), [Macchiato](themes/macchiato/transgender/), [Frappé](themes/frapp%C3%A9/transgender/), [Latte](themes/latte/transgender/))
-- Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frapp%C3%A9/transmasculine/), [Latte](themes/latte/transmasculine/))
-- Transmasculine - ryanyflags, 2019 ([Mocha](themes/mocha/transmasculine-ryanyflags/), [Macchiato](themes/macchiato/transmasculine-ryanyflags/), [Frappé](themes/frapp%C3%A9/transmasculine-ryanyflags/), [Latte](themes/latte/transmasculine-ryanyflags/))
-- Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frapp%C3%A9/trigender/), [Latte](themes/latte/trigender/))
+- Agender ([Mocha](themes/mocha/agender/), [Macchiato](themes/macchiato/agender/), [Frappé](themes/frappé/agender/), [Latte](themes/latte/agender/))
+- Demiboy ([Mocha](themes/mocha/demiboy/), [Macchiato](themes/macchiato/demiboy/), [Frappé](themes/frappé/demiboy/), [Latte](themes/latte/demiboy/))
+- Demigender ([Mocha](themes/mocha/demigender/), [Macchiato](themes/macchiato/demigender/), [Frappé](themes/frappé/demigender/), [Latte](themes/latte/demigender/))
+- Demigirl ([Mocha](themes/mocha/demigirl/), [Macchiato](themes/macchiato/demigirl/), [Frappé](themes/frappé/demigirl/), [Latte](themes/latte/demigirl/))
+- Femboy ([Mocha](themes/mocha/femboy/), [Macchiato](themes/macchiato/femboy/), [Frappé](themes/frappé/femboy/), [Latte](themes/latte/femboy/))
+- Genderfluid ([Mocha](themes/mocha/genderfluid/), [Macchiato](themes/macchiato/genderfluid/), [Frappé](themes/frappé/genderfluid/), [Latte](themes/latte/genderfluid/))
+- Genderqueer ([Mocha](themes/mocha/genderqueer/), [Macchiato](themes/macchiato/genderqueer/), [Frappé](themes/frappé/genderqueer/), [Latte](themes/latte/genderqueer/))
+- Intersex ([Mocha](themes/mocha/intersex/), [Macchiato](themes/macchiato/intersex/), [Frappé](themes/frappé/intersex/), [Latte](themes/latte/intersex/))
+- Neutrois ([Mocha](themes/mocha/neutrois/), [Macchiato](themes/macchiato/neutrois/), [Frappé](themes/frappé/neutrois/), [Latte](themes/latte/neutrois/))
+- Nonbinary ([Mocha](themes/mocha/nonbinary/), [Macchiato](themes/macchiato/nonbinary/), [Frappé](themes/frappé/nonbinary/), [Latte](themes/latte/nonbinary/))
+- Transandrogynous ([Mocha](themes/mocha/transandrogynous/), [Macchiato](themes/macchiato/transandrogynous/), [Frappé](themes/frappé/transandrogynous/), [Latte](themes/latte/transandrogynous/))
+- Transfeminine ([Mocha](themes/mocha/transfeminine/), [Macchiato](themes/macchiato/transfeminine/), [Frappé](themes/frappé/transfeminine/), [Latte](themes/latte/transfeminine/))
+- Transfeminine - ryanyflags, 2019 ([Mocha](themes/mocha/transfeminine-ryanyflags/), [Macchiato](themes/macchiato/transfeminine-ryanyflags/), [Frappé](themes/frappé/transfeminine-ryanyflags/), [Latte](themes/latte/transfeminine-ryanyflags/))
+- Transgender ([Mocha](themes/mocha/transgender/), [Macchiato](themes/macchiato/transgender/), [Frappé](themes/frappé/transgender/), [Latte](themes/latte/transgender/))
+- Transmasculine ([Mocha](themes/mocha/transmasculine/), [Macchiato](themes/macchiato/transmasculine/), [Frappé](themes/frappé/transmasculine/), [Latte](themes/latte/transmasculine/))
+- Transmasculine - ryanyflags, 2019 ([Mocha](themes/mocha/transmasculine-ryanyflags/), [Macchiato](themes/macchiato/transmasculine-ryanyflags/), [Frappé](themes/frappé/transmasculine-ryanyflags/), [Latte](themes/latte/transmasculine-ryanyflags/))
+- Trigender ([Mocha](themes/mocha/trigender/), [Macchiato](themes/macchiato/trigender/), [Frappé](themes/frappé/trigender/), [Latte](themes/latte/trigender/))
 
 </details>
 
 <details>
 <summary>Orientation</summary>
 
-- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frapp%C3%A9/aroace/), [Latte](themes/latte/aroace/))
-- Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frapp%C3%A9/bisexual/), [Latte](themes/latte/bisexual/))
-- Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frapp%C3%A9/finromantic/), [Latte](themes/latte/finromantic/))
-- Gay Men ([Mocha](themes/mocha/gay-man/), [Macchiato](themes/macchiato/gay-man/), [Frappé](themes/frapp%C3%A9/gay-man/), [Latte](themes/latte/gay-man/))
-- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frapp%C3%A9/greysexual/), [Latte](themes/latte/greysexual/))
-- Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frapp%C3%A9/lesbian/), [Latte](themes/latte/lesbian/))
-- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frapp%C3%A9/pansexual/), [Latte](themes/latte/pansexual/))
-- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frapp%C3%A9/polysexual/), [Latte](themes/latte/polysexual/))
-- Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frapp%C3%A9/sapphic/), [Latte](themes/latte/sapphic/))
-- Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frapp%C3%A9/womasexual/), [Latte](themes/latte/womasexual/))
+- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappé/aroace/), [Latte](themes/latte/aroace/))
+- Bisexual ([Mocha](themes/mocha/bisexual/), [Macchiato](themes/macchiato/bisexual/), [Frappé](themes/frappé/bisexual/), [Latte](themes/latte/bisexual/))
+- Finromantic ([Mocha](themes/mocha/finromantic/), [Macchiato](themes/macchiato/finromantic/), [Frappé](themes/frappé/finromantic/), [Latte](themes/latte/finromantic/))
+- Gay Men ([Mocha](themes/mocha/gay-man/), [Macchiato](themes/macchiato/gay-man/), [Frappé](themes/frappé/gay-man/), [Latte](themes/latte/gay-man/))
+- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappé/greysexual/), [Latte](themes/latte/greysexual/))
+- Lesbian ([Mocha](themes/mocha/lesbian/), [Macchiato](themes/macchiato/lesbian/), [Frappé](themes/frappé/lesbian/), [Latte](themes/latte/lesbian/))
+- Pansexual ([Mocha](themes/mocha/pansexual/), [Macchiato](themes/macchiato/pansexual/), [Frappé](themes/frappé/pansexual/), [Latte](themes/latte/pansexual/))
+- Polysexual ([Mocha](themes/mocha/polysexual/), [Macchiato](themes/macchiato/polysexual/), [Frappé](themes/frappé/polysexual/), [Latte](themes/latte/polysexual/))
+- Sapphic ([Mocha](themes/mocha/sapphic/), [Macchiato](themes/macchiato/sapphic/), [Frappé](themes/frappé/sapphic/), [Latte](themes/latte/sapphic/))
+- Womasexual ([Mocha](themes/mocha/womasexual/), [Macchiato](themes/macchiato/womasexual/), [Frappé](themes/frappé/womasexual/), [Latte](themes/latte/womasexual/))
 
 </details>
 
 <details>
 <summary>Other</summary>
 
-- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frapp%C3%A9/greysexual/), [Latte](themes/latte/greysexual/))
-- LGBT ([Mocha](themes/mocha/lgbt/), [Macchiato](themes/macchiato/lgbt/), [Frappé](themes/frapp%C3%A9/lgbt/), [Latte](themes/latte/lgbt/))
+- Greysexual ([Mocha](themes/mocha/greysexual/), [Macchiato](themes/macchiato/greysexual/), [Frappé](themes/frappé/greysexual/), [Latte](themes/latte/greysexual/))
+- LGBT ([Mocha](themes/mocha/lgbt/), [Macchiato](themes/macchiato/lgbt/), [Frappé](themes/frappé/lgbt/), [Latte](themes/latte/lgbt/))
 
 </details>
 
 <details>
 <summary>Romantic</summary>
 
-- Aromantic ([Mocha](themes/mocha/aromantic/), [Macchiato](themes/macchiato/aromantic/), [Frappé](themes/frapp%C3%A9/aromantic/), [Latte](themes/latte/aromantic/))
-- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frapp%C3%A9/aroace/), [Latte](themes/latte/aroace/))
+- Aromantic ([Mocha](themes/mocha/aromantic/), [Macchiato](themes/macchiato/aromantic/), [Frappé](themes/frappé/aromantic/), [Latte](themes/latte/aromantic/))
+- Aromantic Asexual ([Mocha](themes/mocha/aroace/), [Macchiato](themes/macchiato/aroace/), [Frappé](themes/frappé/aroace/), [Latte](themes/latte/aroace/))
 
 </details>
 
@@ -358,13 +324,15 @@
 
 1. Download the flags in your flavour of your choice from [themes](themes), or a
    tarball from [releases](https://github.com/scarcekoi/pride-flags/releases).
-1. Enjoy!
+2. Enjoy!
 
 ## 🙋 FAQ
 
-- Q: **_"What file formats are available?"_**\
-  A: Currently, the available file formats are `ASE`, `ASEPRITE`, `BMP`, `CSS`,
-  `FLC`, `FLI`, `JPEG`, `JPG`, `PCX`, `PCC`, `PNG`, `QOI`, `TGA`, and `WEBP`.
+<!-- AUTOGEN:FORMATS START -->
+<!-- the following section is auto-generated, do not edit -->
+- Q: "What file formats are available?"
+  A: Currently, the available file formats are `AVIF`, `BMP`, `DDS`, `JPEG`, `PCX`, `QOI`, `SGI`, `TGA`, `TIFF`, and `WEBP`.
+<!-- AUTOGEN:FORMATS END -->
 
 ## 💝 Thanks to
 
