@@ -255,7 +255,7 @@ def m_export_svg_to_png(p_svg_path: Path) -> Path | None:
                 return l_png_path
             except Exception as l_e:
                 if l_attempt < MAX_CONVERT_RETRIES - 1:
-                    time.sleep(CONVERT_RETRY_DELAY * (2 ** l_attempt))
+                    time.sleep(CONVERT_RETRY_DELAY * (2**l_attempt))
                 else:
                     raise l_e
 
@@ -296,7 +296,7 @@ def m_convert_png_to_format(p_png: Path, p_fmt: str) -> bool:
             return True
         except (OSError, IOError) as e:
             if l_attempt < MAX_CONVERT_RETRIES - 1:
-                time.sleep(CONVERT_RETRY_DELAY * (2 ** l_attempt))
+                time.sleep(CONVERT_RETRY_DELAY * (2**l_attempt))
             else:
                 print(
                     f"  [FAIL] {p_fmt} failed for {p_png.name} after {MAX_CONVERT_RETRIES} attempts...BWEH >.<\n{e}",
