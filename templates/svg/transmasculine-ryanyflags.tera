@@ -9,7 +9,7 @@ whiskers:
 <?xml version="1.0" encoding="UTF-8" ?>
 <svg version="1.1" width="800" height="400" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
 <rect x="0" y="0" width="800" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" stroke="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
-<rect x="0" y="100" width="800" height="100" fill="{{sky.hex}}" stroke="{{sky.hex}}" />
+<rect x="0" y="100" width="800" height="100" fill="{{sapphire.hex}}" stroke="{{sapphire.hex}}" />
 <rect x="0" y="200" width="800" height="100" fill="{{blue.hex}}" stroke="{{blue.hex}}" />
 <rect x="0" y="300" width="800" height="100" fill="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" stroke="{{if(cond=flavor.light, t=text.hex, f=crust.hex)}}" />
 </svg>
