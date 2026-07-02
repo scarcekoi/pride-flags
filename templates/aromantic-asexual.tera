@@ -1,0 +1,28 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - variant: ["css", "svg"]
+    - flavor
+  filename: "themes/{{flavor.identifier}}/aromantic-asexual/aromantic-asexual.{{ variant }}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+---
+/* themes/{{flavor.identifier}}/aromantic-asexual/aromantic-asexual.{{ variant }} */
+{%- if variant == "css" %}
+:root {
+  --ctp-{{flavor.identifier}}-aromantic-asexual-peach: {{peach.hex}};
+  --ctp-{{flavor.identifier}}-aromantic-asexual-yellow: {{yellow.hex}};
+  --ctp-{{flavor.identifier}}-aromantic-asexual-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+  --ctp-{{flavor.identifier}}-aromantic-asexual-sky: {{sky.hex}};
+  --ctp-{{flavor.identifier}}-aromantic-asexual-blue: {{blue.hex}};
+}
+{%- elif variant == "svg" %}
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1000" height="100" fill="{{peach.hex}}" />
+<rect x="0" y="100" width="1000" height="100" fill="{{yellow.hex}}" />
+<rect x="0" y="200" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
+<rect x="0" y="300" width="1000" height="100" fill="{{sky.hex}}" />
+<rect x="0" y="400" width="1000" height="100" fill="{{blue.hex}}" />
+</svg>
+{% endif %}
