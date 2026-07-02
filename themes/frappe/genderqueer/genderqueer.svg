@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" shape-rendering="crispEdges"><path fill="#ca9ee6" stroke="#ca9ee6" d="M0 0h600v100H0z"/><path fill="#c6d0f5" stroke="#c6d0f5" d="M0 100h600v100H0z"/><path fill="#a6d189" stroke="#a6d189" d="M0 200h600v100H0z"/></svg>
+/* themes/frappe/genderqueer/genderqueer.svg */
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="600" height="100" fill="#ca9ee6" stroke="#ca9ee6" />
+<rect x="0" y="100" width="600" height="100" fill="#c6d0f5" stroke="#c6d0f5" />
+<rect x="0" y="200" width="600" height="100" fill="#a6d189" stroke="#a6d189" />
+</svg>
+

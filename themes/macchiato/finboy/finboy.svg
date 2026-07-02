@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" shape-rendering="crispEdges"><path fill="#eed49f" d="M0 0h1000v100H0z"/><path fill="#f5bde6" d="M0 100h1000v100H0z"/><path fill="#c6a0f6" d="M0 200h1000v200H0z"/><path fill="#8aadf4" d="M0 400h1000v100H0z"/><path fill="#91d7e3" d="M0 500h1000v100H0z"/></svg>
+/* themes/macchiato/finboy/finboy.svg */
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1000" height="600" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1000" height="100" fill="#eed49f" />
+<rect x="0" y="100" width="1000" height="100" fill="#f5bde6" />
+<rect x="0" y="200" width="1000" height="200" fill="#c6a0f6" />
+<rect x="0" y="400" width="1000" height="100" fill="#8aadf4" />
+<rect x="0" y="500" width="1000" height="100" fill="#91d7e3" />
+</svg>
+

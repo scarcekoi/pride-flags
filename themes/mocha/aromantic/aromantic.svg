@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" shape-rendering="crispEdges"><path fill="#a6e3a1" stroke="#a6e3a1" d="M0 0h1000v100H0z"/><path fill="#94e2d5" stroke="#94e2d5" d="M0 100h1000v100H0z"/><path fill="#cdd6f4" stroke="#cdd6f4" d="M0 200h1000v100H0z"/><path fill="#6c7086" stroke="#6c7086" d="M0 300h1000v100H0z"/><path fill="#11111b" stroke="#11111b" d="M0 400h1000v100H0z"/></svg>
+/* themes/mocha/aromantic/aromantic.svg */
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1000" height="100" fill="#a6e3a1" stroke="#a6e3a1" />
+<rect x="0" y="100" width="1000" height="100" fill="#94e2d5" stroke="#94e2d5" />
+<rect x="0" y="200" width="1000" height="100" fill="#cdd6f4" stroke="#cdd6f4" />
+<rect x="0" y="300" width="1000" height="100" fill="#6c7086" stroke="#6c7086" />
+<rect x="0" y="400" width="1000" height="100" fill="#11111b" stroke="#11111b" />
+</svg>
+
