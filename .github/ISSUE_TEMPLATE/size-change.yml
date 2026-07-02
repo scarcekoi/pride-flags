@@ -1,0 +1,32 @@
+name: Flag size change
+description: Request a size change for an existing pride flag
+labels: [size change]
+body:
+  - type: input
+    attributes:
+      label: Current dimensions
+      description: What are the current dimensions of the flag?
+      placeholder: 1400x600
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Correct dimensions
+      description: What should the correct dimensions of the flag?
+      placeholder: 1600x400
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Explanation
+      description: What is incorrect?
+      placeholder: |
+        The top and bottom stripes are each 100 pixels too tall. The middle stripe should remain the same height.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: References
+      description: Links, images, docs with example(s) of what the flag should look like.
+    validations:
+      required: true

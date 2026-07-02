@@ -1,0 +1,43 @@
+name: Flag color change
+description: Request a color change for an existing pride flag
+labels: [color change]
+body:
+  - type: checkboxes
+    attributes:
+      label: Affected flavor(s)
+      description: Which flavor(s) should this color change apply to?
+      options:
+        - label: Latte
+        - label: Frappé
+        - label: Macchiato
+        - label: Mocha
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Current color
+      description: What is the current color? (Color name)
+      placeholder: "mauve"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Correct color
+      description: What should the color be? (Color name)
+      placeholder: "pink"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Explanation
+      description: What is incorrect?
+      placeholder: |
+        The pink stripe should be red.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: References
+      description: Links, images, docs with example(s) of what the flag should look like.
+    validations:
+      required: false

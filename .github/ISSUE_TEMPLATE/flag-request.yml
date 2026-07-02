@@ -1,0 +1,16 @@
+name: Flag request
+description: Request a new pride flag
+labels: [flag request]
+body:
+  - type: textarea
+    attributes:
+      label: Context and associations
+      description: What category(s) should the flag be labeled as?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: References
+      description: Links, images, docs with example(s) of what the flag looks like.
+    validations:
+      required: true
