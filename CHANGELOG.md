@@ -1,8 +1,14 @@
 ## [unreleased]
 
-### 🐛 Bug Fixes
+### ⚙️ Chores
+
+#### Issue_template
+
+- [Update issue templates](https://github.com/scarcekoi/pride-flags/commit/2f841c57ecf4b31e952ce563995886427efd7382)
 
 ## [2.0.0] - 2026-07-02
+
+### 🐛 Bug Fixes
 
 ### 💼 Other
 
