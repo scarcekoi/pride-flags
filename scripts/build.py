@@ -619,7 +619,7 @@ def m_readme_formats() -> str:
     l_lines = [
         "<!-- AUTOGEN:FORMATS START -->",
         "<!-- the following section is auto-generated, do not edit -->",
-        '- Q: "What file formats are available?"',
+        '- Q: "What file formats are available?"\\',
         f"  A: Currently, the available file formats are "
         f"{', '.join(f'`{l_format}`' for l_format in l_formats[:-1])}, "
         f"and `{l_formats[-1]}`.",
