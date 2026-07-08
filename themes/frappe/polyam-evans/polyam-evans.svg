@@ -1,0 +1,9 @@
+/* themes/frappe/polyam-evans/polyam-evans.svg */
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="600" height="100" fill="#8caaee" stroke="#8caaee" />
+<rect x="0" y="100" width="600" height="100" fill="#e78284" stroke="#e78284" />
+<rect x="0" y="200" width="600" height="100" fill="#232634" stroke="#232634" />
+<text x="300" y="150" text-anchor="middle" dominant-baseline="middle" fill="#e5c890" font-size="150" font-family="Times New Roman">π</text>
+</svg>
+

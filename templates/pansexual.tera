@@ -1,0 +1,24 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - variant: ["css", "svg"]
+    - flavor
+  filename: "themes/{{flavor.identifier}}/pansexual/pansexual.{{ variant }}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+---
+/* themes/{{flavor.identifier}}/pansexual/pansexual.{{ variant }} */
+{%- if variant == "css" %}
+:root {
+  --ctp-{{flavor.identifier}}-pansexual-pink: {{pink.hex}};
+  --ctp-{{flavor.identifier}}-pansexual-yellow: {{yellow.hex}};
+  --ctp-{{flavor.identifier}}-pansexual-blue: {{sapphire.hex}};
+}
+{%- elif variant == "svg" %}
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="600" height="100" fill="{{pink.hex}}" stroke="{{pink.hex}}" />
+<rect x="0" y="100" width="600" height="100" fill="{{yellow.hex}}" stroke="{{yellow.hex}}" />
+<rect x="0" y="200" width="600" height="100" fill="{{sapphire.hex}}" stroke="{{sapphire.hex}}" />
+</svg>
+{% endif %}

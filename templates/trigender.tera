@@ -1,0 +1,26 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - variant: ["css", "svg"]
+    - flavor
+  filename: "themes/{{flavor.identifier}}/trigender/trigender.{{ variant }}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+---
+/* themes/{{flavor.identifier}}/trigender/trigender.{{ variant }} */
+{%- if variant == "css" %}
+:root {
+  --ctp-{{flavor.identifier}}-trigender-pink: {{pink.hex}};
+  --ctp-{{flavor.identifier}}-trigender-purple: {{mauve.hex}};
+  --ctp-{{flavor.identifier}}-trigender-green: {{green.hex}};
+}
+{%- elif variant == "svg" %}
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1000" height="100" fill="{{pink.hex}}" stroke="{{pink.hex}}" />
+<rect x="0" y="100" width="1000" height="100" fill="{{mauve.hex}}" stroke="{{mauve.hex}}" />
+<rect x="0" y="200" width="1000" height="100" fill="{{green.hex}}" stroke="{{green.hex}}" />
+<rect x="0" y="300" width="1000" height="100" fill="{{mauve.hex}}" stroke="{{mauve.hex}}" />
+<rect x="0" y="400" width="1000" height="100" fill="{{pink.hex}}" stroke="{{pink.hex}}" />
+</svg>
+{% endif %}

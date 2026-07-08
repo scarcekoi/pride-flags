@@ -1,0 +1,24 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - variant: ["css", "svg"]
+    - flavor
+  filename: "themes/{{flavor.identifier}}/bisexual/bisexual.{{ variant }}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+---
+/* themes/{{flavor.identifier}}/bisexual/bisexual.{{ variant }} */
+{%- if variant == "css" %}
+:root {
+  --ctp-{{flavor.identifier}}-bisexual-pink: {{if(cond=flavor.light, t=pink.hex, f=(mauve | mix(color=red, amount=0.8) | get(key="hex")))}};
+  --ctp-{{flavor.identifier}}-bisexual-purple: {{mauve.hex}};
+  --ctp-{{flavor.identifier}}-bisexual-blue: {{blue.hex}};
+}
+{%- elif variant == "svg" %}
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1000" height="500" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1000" height="200" fill="{{if(cond=flavor.light, t=pink.hex, f=(mauve | mix(color=red, amount=0.5) | get(key="hex")))}}" stroke="{{if(cond=flavor.light, t=pink.hex, f=(mauve | mix(color=red, amount=0.5) | get(key="hex")))}}" />
+<rect x="0" y="200" width="1000" height="100" fill="{{mauve.hex}}" stroke="{{mauve.hex}}" />
+<rect x="0" y="300" width="1000" height="200" fill="{{blue.hex}}" stroke="{{blue.hex}}" />
+</svg>
+{% endif %}

@@ -1,0 +1,29 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - variant: ["css", "svg"]
+    - flavor
+  filename: "themes/{{flavor.identifier}}/demigender/demigender.{{ variant }}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+---
+/* themes/{{flavor.identifier}}/demigender/demigender.{{ variant }} */
+{%- if variant == "css" %}
+:root {
+  --ctp-{{flavor.identifier}}-demigender-light-gray: {{if(cond=flavor.light, t=overlay2.hex, f=overlay0.hex)}};
+  --ctp-{{flavor.identifier}}-demigender-dark-gray: {{if(cond=flavor.light, t=overlay0.hex, f=overlay2.hex)}};
+  --ctp-{{flavor.identifier}}-demigender-yellow: {{yellow.hex}};
+  --ctp-{{flavor.identifier}}-demigender-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+}
+{%- elif variant == "svg" %}
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1000" height="700" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1000" height="100" fill="{{if(cond=flavor.light, t=overlay2.hex, f=overlay0.hex)}}" stroke="{{if(cond=flavor.light, t=overlay2.hex, f=overlay0.hex)}}" />
+<rect x="0" y="100" width="1000" height="100" fill="{{if(cond=flavor.light, t=overlay0.hex, f=overlay2.hex)}}" stroke="{{if(cond=flavor.light, t=overlay0.hex, f=overlay2.hex)}}" />
+<rect x="0" y="200" width="1000" height="100" fill="{{yellow.hex}}" stroke="{{yellow.hex}}" />
+<rect x="0" y="300" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" stroke="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
+<rect x="0" y="400" width="1000" height="100" fill="{{yellow.hex}}" stroke="{{yellow.hex}}" />
+<rect x="0" y="500" width="1000" height="100" fill="{{if(cond=flavor.light, t=overlay0.hex, f=overlay2.hex)}}" stroke="{{if(cond=flavor.light, t=overlay0.hex, f=overlay2.hex)}}" />
+<rect x="0" y="600" width="1000" height="100" fill="{{if(cond=flavor.light, t=overlay2.hex, f=overlay0.hex)}}" stroke="{{if(cond=flavor.light, t=overlay2.hex, f=overlay0.hex)}}" />
+</svg>
+{% endif %}

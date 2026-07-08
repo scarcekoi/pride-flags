@@ -1,0 +1,32 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - variant: ["css", "svg"]
+    - flavor
+  filename: "themes/{{flavor.identifier}}/gay-man/gay-man.{{ variant }}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+---
+/* themes/{{flavor.identifier}}/gay-man/gay-man.{{ variant }} */
+{%- if variant == "css" %}
+:root {
+  --ctp-{{flavor.identifier}}-gay-man-dark-teal: {{teal | sub(lightness=20) | get(key="hex")}};
+  --ctp-{{flavor.identifier}}-gay-man-teal: {{teal | sub(lightness=10) | get(key="hex")}};
+  --ctp-{{flavor.identifier}}-gay-man-light-teal: {{teal.hex}};
+  --ctp-{{flavor.identifier}}-gay-man-white: {{if(cond=flavor.light, t=crust.hex, f=text.hex)}};
+  --ctp-{{flavor.identifier}}-gay-man-light-blue: {{sapphire.hex}};
+  --ctp-{{flavor.identifier}}-gay-man-blue: {{blue.hex}};
+  --ctp-{{flavor.identifier}}-gay-man-purple: {{mauve.hex}};
+}
+{%- elif variant == "svg" %}
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1400" height="700" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1000" height="100" fill="{{teal | sub(lightness=20) | get(key="hex")}}" stroke="{{teal | sub(lightness=20) | get(key="hex")}}" />
+<rect x="0" y="100" width="1000" height="100" fill="{{teal | sub(lightness=10) | get(key="hex")}}" stroke="{{teal | sub(lightness=10) | get(key="hex")}}" />
+<rect x="0" y="200" width="1000" height="100" fill="{{teal.hex}}" stroke="{{teal.hex}}" />
+<rect x="0" y="300" width="1000" height="100" fill="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" stroke="{{if(cond=flavor.light, t=crust.hex, f=text.hex)}}" />
+<rect x="0" y="400" width="1000" height="100" fill="{{sapphire.hex}}" stroke="{{sapphire.hex}}" />
+<rect x="0" y="500" width="1000" height="100" fill="{{blue.hex}}" stroke="{{blue.hex}}" />
+<rect x="0" y="600" width="1000" height="100" fill="{{mauve.hex}}" stroke="{{mauve.hex}}" />
+</svg>
+{% endif %}

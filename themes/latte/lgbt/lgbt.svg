@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" shape-rendering="crispEdges"><path fill="#d20f39" stroke="#d20f39" d="M0 0h1200v100H0z"/><path fill="#fe640b" stroke="#fe640b" d="M0 100h1200v100H0z"/><path fill="#df8e1d" stroke="#df8e1d" d="M0 200h1200v100H0z"/><path fill="#40a02b" stroke="#40a02b" d="M0 300h1200v100H0z"/><path fill="#04a5e5" stroke="#04a5e5" d="M0 400h1200v100H0z"/><path fill="#8839ef" stroke="#8839ef" d="M0 500h1200v100H0z"/></svg>
+/* themes/latte/lgbt/lgbt.svg */
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="1200" height="600" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="1200" height="100" fill="#d20f39" stroke="#d20f39" />
+<rect x="0" y="100" width="1200" height="100" fill="#fe640b" stroke="#fe640b" />
+<rect x="0" y="200" width="1200" height="100" fill="#df8e1d" stroke="#df8e1d" />
+<rect x="0" y="300" width="1200" height="100" fill="#40a02b" stroke="#40a02b" />
+<rect x="0" y="400" width="1200" height="100" fill="#04a5e5" stroke="#04a5e5" />
+<rect x="0" y="500" width="1200" height="100" fill="#8839ef" stroke="#8839ef" />
+</svg>
+

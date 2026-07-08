@@ -1,0 +1,24 @@
+---
+whiskers:
+  version: "^2.9.0"
+  matrix:
+    - variant: ["css", "svg"]
+    - flavor
+  filename: "themes/{{flavor.identifier}}/polysexual/polysexual.{{ variant }}"
+  hex_format: "#{{r}}{{g}}{{b}}{{z}}"
+---
+/* themes/{{flavor.identifier}}/polysexual/polysexual.{{ variant }} */
+{%- if variant == "css" %}
+:root {
+  --ctp-{{flavor.identifier}}-polysexual-purple: {{mauve.hex}};
+  --ctp-{{flavor.identifier}}-polysexual-green: {{green.hex}};
+  --ctp-{{flavor.identifier}}-polysexual-blue: {{blue.hex}};
+}
+{%- elif variant == "svg" %}
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="600" height="100" fill="{{mauve.hex}}" stroke="{{mauve.hex}}" />
+<rect x="0" y="100" width="600" height="100" fill="{{green.hex}}" stroke="{{green.hex}}" />
+<rect x="0" y="200" width="600" height="100" fill="{{blue.hex}}" stroke="{{blue.hex}}" />
+</svg>
+{% endif %}

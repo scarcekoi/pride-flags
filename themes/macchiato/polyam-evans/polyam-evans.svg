@@ -1,0 +1,9 @@
+/* themes/macchiato/polyam-evans/polyam-evans.svg */
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1" width="600" height="300" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+<rect x="0" y="0" width="600" height="100" fill="#8aadf4" stroke="#8aadf4" />
+<rect x="0" y="100" width="600" height="100" fill="#ed8796" stroke="#ed8796" />
+<rect x="0" y="200" width="600" height="100" fill="#181926" stroke="#181926" />
+<text x="300" y="150" text-anchor="middle" dominant-baseline="middle" fill="#eed49f" font-size="150" font-family="Times New Roman">π</text>
+</svg>
+
