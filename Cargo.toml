@@ -1,0 +1,10 @@
+[package]
+name = "catppuccin-pride-flags"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[[bin]]
+name = "_build" # build isn't allowed by cargo so the prefix is necessary
+path = "scripts/build.rs"
